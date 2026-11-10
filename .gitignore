@@ -1,5 +1,6 @@
 __pycache__/
 *.py[cod]
-*$py.class
+*.class
 .pytest_cache/
 math_gov_candidate_source/
+*.bundle

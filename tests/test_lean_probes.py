@@ -121,5 +121,57 @@ class TestLeanProbes(unittest.TestCase):
                 temp_path.unlink()
 
 
+
+    def test_probe_5_weakened_theorem_alias_mismatch(self):
+        with tempfile.NamedTemporaryFile(suffix='.lean', delete=False, dir=self.lean_project_root) as tf:
+            temp_path = Path(tf.name)
+            temp_path.write_text(
+                'namespace MathGov\n\ntheorem weakened_alias (n : Nat) : 0 = 0 := rfl\n\nend MathGov\n',
+                encoding='utf-8',
+            )
+
+        src_sha = hashlib.sha256(temp_path.read_bytes()).hexdigest()
+        try:
+            res = check_lean_step(
+                project_root=str(self.lean_project_root),
+                relative_source=temp_path.name,
+                theorem='MathGov.weakened_alias',
+                expected_statement='forall (n : Nat), n = n + 0',
+                expected_file_sha256=src_sha,
+                timeout=120,
+            )
+            self.assertEqual(res['verdict'], 'LEAN_COMPILATION_OR_WARNING')
+            self.assertFalse(res['lean_kernel_check_passed'])
+            self.assertEqual(res['returncode'], 1)
+        finally:
+            if temp_path.exists():
+                temp_path.unlink()
+
+    def test_probe_6_invalid_assumption_case(self):
+        with tempfile.NamedTemporaryFile(suffix='.lean', delete=False, dir=self.lean_project_root) as tf:
+            temp_path = Path(tf.name)
+            temp_path.write_text(
+                'namespace MathGov\n\ntheorem invalid_assumption (n : Nat) (h : False) : n = n + 1 := False.elim h\n\nend MathGov\n',
+                encoding='utf-8',
+            )
+
+        src_sha = hashlib.sha256(temp_path.read_bytes()).hexdigest()
+        try:
+            res = check_lean_step(
+                project_root=str(self.lean_project_root),
+                relative_source=temp_path.name,
+                theorem='MathGov.invalid_assumption',
+                expected_statement='forall (n : Nat), n = n + 1',
+                expected_file_sha256=src_sha,
+                timeout=120,
+            )
+            self.assertEqual(res['verdict'], 'LEAN_COMPILATION_OR_WARNING')
+            self.assertFalse(res['lean_kernel_check_passed'])
+            self.assertEqual(res['returncode'], 1)
+        finally:
+            if temp_path.exists():
+                temp_path.unlink()
+
+
 if __name__ == "__main__":
     unittest.main()

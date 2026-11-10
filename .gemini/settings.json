@@ -1,0 +1,20 @@
+{
+  "hooksConfig": {
+    "enabled": true
+  },
+  "hooks": {
+    "BeforeTool": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "name": "math-gov-read-only-guard",
+            "type": "command",
+            "command": "python .gemini/hooks/deny_mutations.py",
+            "timeout": 5000
+          }
+        ]
+      }
+    ]
+  }
+}
