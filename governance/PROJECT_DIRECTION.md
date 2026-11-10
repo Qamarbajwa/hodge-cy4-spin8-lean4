@@ -1,6 +1,6 @@
 # PROJECT DIRECTION — HODGE CONJECTURE RESEARCH (BINDING RECORD)
 
-**Status: BOUND_TO_ORIGINAL_INTENT.**  
+**Status: BOUND_TO_ORIGINAL_INTENT.**
 This binding document ties the MATH-GOV v0.6 governance framework directly to the owner's original research question and verified baseline registers.
 
 ---

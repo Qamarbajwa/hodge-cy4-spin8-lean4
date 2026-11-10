@@ -1,11 +1,11 @@
 # MATH-GOV v0.6 Governance OS Implementation & Verification Audit
 ## Candidate Adoption, Structural Implementation, Positive/Adversarial Verification, and Control Matrix (C01–C32)
 
-**Implementation Agent:** Logical Supervisor / Implementation Agent (Antigravity Host)  
-**Date:** November 10, 2026  
-**Candidate Package:** `MATH_GOV_v0_6_PROJECT_GOVERNANCE_ADOPTION_CANDIDATE.zip`  
-**Git Branch:** `candidate/math-gov-v0.6` (Base revision: `e3bb04ec9ebdcaf597fd0d829a71369894393136` on `main`)  
-**Lean Toolchain:** `leanprover/lean4:v4.35.0`, Lake version 5.0.0  
+**Implementation Agent:** Logical Supervisor / Implementation Agent (Antigravity Host)
+**Date:** November 10, 2026
+**Candidate Package:** `MATH_GOV_v0_6_PROJECT_GOVERNANCE_ADOPTION_CANDIDATE.zip`
+**Git Branch:** `candidate/math-gov-v0.6` (Base revision: `e3bb04ec9ebdcaf597fd0d829a71369894393136` on `main`)
+**Lean Toolchain:** `leanprover/lean4:v4.35.0`, Lake version 5.0.0
 **Status:** `CANDIDATE_PREPARED_EXTERNAL_VERIFICATION_PENDING` (Fail-Closed: No Self-Release)
 
 ---
@@ -177,7 +177,7 @@ tests\test_weil_fourfolds.py ....                                        [100%]
 
 ### 5. Control Matrix Audit (C01–C32)
 
-Evidence Contract:  
+Evidence Contract:
 `control_id, requirement, affected_files, code_change_ref, source_digest, test_ref, negative_test_ref, raw_tool_result_ref, verifier_identity, review_status, active_host_binding, confidence_limits, acceptance_decision`
 
 | ID | Control Requirement | Affected Files | Status | Test Reference & Observed Result | Host Binding / Limitation | Decision |
