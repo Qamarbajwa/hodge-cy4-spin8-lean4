@@ -1,0 +1,75 @@
+schema: "MATH-GOV-PROJECT-STATE-0.6"
+status: "CANDIDATE_PREPARED_EXTERNAL_VERIFICATION_PENDING"
+revision: 1
+authority_files:
+  - "governance/GOVERNANCE.md"
+  - "governance/PROJECT_DIRECTION.md"
+  - "governance/PROJECT_STATE.yaml"
+foundational_registers:
+  - "governance/PROJECT_INTENT.md"
+  - "governance/PROBLEM_IDENTITY_REGISTER.yaml"
+  - "governance/ASSUMPTION_LEDGER.yaml"
+  - "governance/LOAD_BEARING_LEMMA_REGISTER.yaml"
+  - "governance/PERMANENT_NO_GO_LEDGER.md"
+  - "governance/CURRENT_SCIENTIFIC_STATE.md"
+  - "governance/SIGNED_INVARIANTS.jsonl"
+  - "policies/hodge_gates.rego"
+project:
+  id: "HODGE-MILLENNIUM-001"
+  owner_grant_ref: "governance/PROJECT_INTENT.md"
+  original_archive_ref: "governance/PROBLEM_IDENTITY_REGISTER.yaml"
+  original_digest: "e829cd38fb13386aa93532397d4f0267c269a3059b7dbce3791edba08434ee05"
+  formal_target_ref: "lean_blueprint/HodgeVerification.lean"
+  formal_target_digest: "b5c018dae146301be274a14312440114960aebb43411d02d104031be68d1023b"
+  approved_contract_digest: "a7c6b7335cbefb9259d01c93b48f34300165824959a3f105a9cc1a389cbb45ec"
+  research_scope: "Smooth complex projective algebraic varieties over C, Hodge structures, algebraic cycles"
+supervisor:
+  identity: "Antigravity_Single_Logical_Supervisor"
+  lease_ref: "LOCAL_SESSION_2026-11-10"
+  authorized: true
+external_host:
+  authenticated: false
+  policy_engine_ref: "policies/hodge_gates.rego"
+  cas_store_ref: "git_commit_sha_local"
+  independent_watchdog_ref: null
+  archive_anchor_ref: "ARTIFACT_HASH_MANIFEST.sha256"
+toolchain:
+  lean_version: "leanprover/lean4:v4.35.0"
+  lake_manifest_digest: "d0bd16554a646323ad7c1f3c19c80cb18f2b42b8ff0191c7d3523f746786332a"
+  isolated_runner_ref: "toolkit/governance/lean_step_runner.py"
+  independent_replay_ref: null
+actors:
+  workers:
+    - "Model_Builder_Explorer"
+    - "Formal_Blueprint_Architect"
+  reviewers:
+    - "Adversarial_Verification_Auditor"
+  acceptors:
+    - "Governance_Mathematical_Arbiter"
+status_counts:
+  tasks_executed: 86
+  tasks_verified: 86
+  steps_formally_checked: 15
+  open_obligations: "Millennium Hodge Conjecture remains open; 2 open frontiers tracked (Mumford spinor cycles on End_Q(A)=Q varieties and global algebraic cycle realization on Calabi-Yau fourfolds)"
+  theorem_progress: "UNKNOWN"
+hard_gates:
+  G0: "LOCAL_OBSERVED_PRISTINE"
+  G1: "LOCAL_OBSERVED_PRISTINE"
+  G2: "LOCAL_OBSERVED_PRISTINE"
+  G3: "LOCAL_OBSERVED_PRISTINE"
+  G4: "LOCAL_OBSERVED_PRISTINE"
+  G5: "LOCAL_CHECKED_PASS"
+  G6: "LOCAL_CHECKED_PASS_PENDING_INDEPENDENT_REPLAY"
+  G7: "LOCAL_OBSERVED_PRISTINE"
+  G8: "CANDIDATE_BRANCH_ISOLATED"
+  G9: "PENDING_EXTERNAL_INDEPENDENT_REVIEWER"
+  G10: "CALIBRATED_HONEST_NO_OVERCLAIM"
+  G11: "BLOCKED_UNSOLVED_MILLENNIUM"
+  G12: "READONLY_L0_OBSERVATIONS_ONLY"
+blockers:
+  - id: "BOUND-001"
+    priority: "P0"
+    reason: "Awaiting external independent reviewer and trusted host attestation for live production cutover"
+    status: "OPEN_PENDING_EXTERNAL_REVIEW"
+last_validated_at: "2026-11-10T02:46:10Z"
+release_authorized: false
