@@ -1,0 +1,28 @@
+# LOAD-BEARING LEMMA REGISTER
+# Governing Standard: MATHEMATICAL_RESEARCH_CONSTITUTION_v1.0 §10
+# Reconciled: 2026-08-28 (RH-MATHEMATICAL-RESEARCH-CONSTITUTION-001R1)
+
+version: "1.1"
+last_updated_utc: "2026-08-28T09:52:00Z"
+
+load_bearing_lemmas:
+  - lemma_id: "LBL-CCM-A1"
+    parent_target: "CCM-A1"
+    name: "Arithmetic Prime Attractive Sector Depression Lemma"
+    statement: >
+      The quadratic form contribution of the prime sum
+      P(f) = -\sum_{p, m \ge 1} \frac{\log p}{p^{m/2}} [g(p^m) + g(p^{-m})] with g = f * f^*
+      satisfies \inf_{f \in H_+, \|f\|=1} P(f) < \inf_{f \in H_-, \|f\|=1} P(f), ensuring that
+      the attractive prime potential lowers the even ground energy below the odd ground energy.
+    why_it_is_novel: >
+      Prior works (e.g. Connes 1999) analyzed the trace distribution over smooth test functions,
+      but did not prove strict spectral splitting between even and odd sectors on the truncated interval.
+    what_depends_on_it:
+      - "CCM-A1 (Ground state evenness / parity ordering)"
+      - "CCM Theorem 5.10 (Admissibility into Dirac regularized determinant representation)"
+    what_breaks_without_it:
+      - "The Dirac determinant cannot be expressed as a single-mode Mellin transform."
+    known_analogues:
+      - "Attractive central potentials in quantum mechanics (ground state is always s-wave/even)."
+    possible_generalizations:
+      - "General semilocal Euler products with positive coefficients."

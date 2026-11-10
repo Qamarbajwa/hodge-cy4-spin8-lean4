@@ -1,0 +1,2 @@
+User Notification: Please check the arXiv API terms of use at https://info.arxiv.org/help/api/index.html and always verify the license of retrieved papers for any restrictions.
+Recorded at: 2026-11-02T19:57:00Z

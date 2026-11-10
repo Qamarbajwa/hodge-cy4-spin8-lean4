@@ -1,0 +1,11 @@
+# Chain component acceptance
+
+Verdict **ACCEPTED_BOUNDED_CHAIN_COMPONENTS_ONLY**, terminal DONE, final acceptor `/root/gov_acceptor`. Exact source/review hashes and distinct per-component role mappings are in the JSON companion. Quadrature author is `/root/quadrature_repair`; `/root/operator_identity` reviewed it independently. That latter role authored the different identity foundation reviewed by `/root/gov_reviewer`. These are internal AI contexts on one host.
+
+All source hashes matched terminal scoped reviews. Baseline22 plus quadrature5, Schur4 and pole4 tests pass together:35. Additional acceptor checks passed:9 exact scalar Schur principal-minor cases,12 ideal Gauss remainder identities,6 high-degree orthogonality cases and8 pole zero-argument limits. No source or state changes were made.
+
+Accepted only: historical source-code identity defects, proposed form/compression foundation, exact fixed-rational spatial integration and ideal Gauss20 negative witness, conditional full-Gram Schur inequality, and canonical pole entry enclosures. The Gauss witness does not bound actual floating node/weight/accumulation error. No first end-to-end certificate, full scientific13-test PASS, complete matrix/operator validation or restored interval follows.
+
+Operator BLOCKED; pipeline_validated=false; restored_intervals=0; frontier NONE; NO_RH_PROOF=true; theorem/release NO-GO. Inherited [0.8,L7] remains unrevalidated. Missing Archimedean special-function/remainder bounds, canonical full identity, complete prime cutoff, actual full mixed coupling Gram, complement floor, reference spectral upper bound and continuum assembly remain explicit obligations.
+
+Form-domain membership does not assert operator-domain membership. Zero-extended Legendre boundary jumps prohibit treating an interior derivative L2 norm as a global weak-derivative norm without a separate domain/boundary theorem. Bounded L2 cross-coupling must be proved or replaced by an appropriate form-relative theorem. Individual compressed-shift norm discontinuity does not exclude cancellation or weaker continuity of a complete form. Pole input conversion hygiene and supplied-Gram provenance remain the bounded advisories recorded by reviews.

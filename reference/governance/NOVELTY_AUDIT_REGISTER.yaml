@@ -1,0 +1,47 @@
+# NOVELTY AUDIT REGISTER
+# Governing Standard: MATHEMATICAL_RESEARCH_CONSTITUTION_v1.0 §16
+# Reconciled: 2026-08-28 (RH-MATHEMATICAL-RESEARCH-CONSTITUTION-001R1)
+
+version: "1.1"
+last_updated_utc: "2026-08-28T09:52:00Z"
+
+novelty_records:
+  - target_id: "CCM-SYM"
+    classification: "KNOWN"
+    prior_art_citations:
+      - "Connes–Consani–Moscovici (2025) arXiv:2511.22755, Section 3.2"
+    historical_precursors:
+      - "Weil (1952) explicit formula symmetry"
+    novelty_summary: "Established foundational property of the semilocal Weil form."
+
+  - target_id: "CCM-A1"
+    classification: "POSSIBLY_NEW"
+    prior_art_citations:
+      - "CCM (2025) Section 8 (Identified as Open Prerequisite Step 1)"
+    historical_precursors:
+      - "Jentzsch (1912) positive kernel theory"
+    novelty_summary: "No complete proof currently published for general cutoff lambda."
+
+  - target_id: "CCM-A2"
+    classification: "POSSIBLY_NEW"
+    prior_art_citations:
+      - "CCM (2025) Section 8 (Identified as Open Prerequisite Step 1)"
+    historical_precursors:
+      - "Krein–Rutman theorem (1948)"
+    novelty_summary: "No complete proof currently published for semilocal Weil operator."
+
+  - target_id: "CCM-A3"
+    classification: "KNOWN_TECHNIQUE_NEW_APPLICATION"
+    prior_art_citations:
+      - "Rayleigh-Ritz projection method; Reed-Simon XIII.64 (historical compact-resolvent/discrete-spectrum reference only)"
+    historical_precursors:
+      - "Rayleigh-Ritz projection method"
+    novelty_summary: "Standard functional analysis applied to the form core E = \bigcup E_N of QW_lambda."
+
+  - target_id: "CCM-B*"
+    classification: "POSSIBLY_NEW"
+    prior_art_citations:
+      - "CCM (2025) Section 8, Step 2; Slepian (1965)"
+    historical_precursors:
+      - "Slepian & Pollak (1961) Prolate Spheroidal Wave Functions"
+    novelty_summary: "Quantitative weighted approximation of arithmetic ground state on critical substrips."

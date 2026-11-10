@@ -1,0 +1,44 @@
+# ASSUMPTION LEDGER (Hodge Conjecture Laboratory)
+version: "1.0"
+kinds: [ORIGINAL, DERIVED, KNOWN_CONSEQUENCE, TEMPORARY, ADDITIONAL, UNJUSTIFIED]
+
+drift_detection_rules:
+  unjustified_assumption_blocks_promotion: true
+  flagged_patterns:
+    - pattern_id: FLAG-HODGE-01
+      name: "Silent integral coefficient substitution"
+      description: "Working over Z instead of Q without accounting for Atiyah-Hirzebruch torsion obstructions."
+      severity: CRITICAL
+    - pattern_id: FLAG-HODGE-02
+      name: "Kähler-without-projective generalization"
+      description: "Assuming a property of projective varieties holds on general compact Kähler manifolds."
+      severity: CRITICAL
+    - pattern_id: FLAG-HODGE-03
+      name: "Unjustified vector bundle span"
+      description: "Assuming Chern classes of vector bundles generate all codimension p cycles for p >= 2."
+      severity: HIGH
+    - pattern_id: FLAG-HODGE-04
+      name: "Analytic current to algebraic variety jump"
+      description: "Asserting that a closed (p,p)-current is an integration current of an algebraic cycle without Remmert-Grauert or King/Harvey-Shiffman support and positive integer multiplicity proofs."
+      severity: CRITICAL
+    - pattern_id: FLAG-HODGE-05
+      name: "Global extension from local Hodge locus"
+      description: "Extending a cycle constructed at a special point in moduli without checking Cattani-Deligne-Kaplan or Griffiths transversality."
+      severity: HIGH
+
+assumptions:
+  - id: A-HODGE-001
+    text: "X is a smooth, projective complex algebraic variety embedded in P^N_C."
+    kind: ORIGINAL
+    used_in: ["ALL"]
+    classification: ESSENTIAL
+  - id: A-HODGE-002
+    text: "Hodge decomposition holds: H^k(X, C) = DirectSum_{p+q=k} H^{p,q}(X)."
+    kind: KNOWN_CONSEQUENCE
+    used_in: ["ALL"]
+    classification: ESSENTIAL
+  - id: A-HODGE-003
+    text: "Cycle class map cl: Z^p(X)_Q -> Hdg^{2p}(X) is well-defined and factors through rational Chow groups CH^p(X)_Q."
+    kind: KNOWN_CONSEQUENCE
+    used_in: ["ALL"]
+    classification: ESSENTIAL

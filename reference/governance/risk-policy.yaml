@@ -1,0 +1,56 @@
+risk_policy_version: "2.9.0"
+governance_standard: "MASTER_AUTONOMOUS_PROJECT_GOVERNANCE_DEVELOPMENT_EVOLUTION_v2.9.md"
+
+risk_tiers:
+  T1:
+    name: "Trivial / Cosmetic"
+    description: "Zero operational risk, minor documentation formatting, local comments."
+    min_evidence_floor: "E2"
+    requires_independent_verification: false
+    requires_human_signoff: false
+  T2:
+    name: "Local / Standard Development"
+    description: "Non-breaking internal features, unit tests, local helpers."
+    min_evidence_floor: "E3"
+    requires_independent_verification: false
+    requires_human_signoff: false
+  T3:
+    name: "Material Scientific Research / Structural Change"
+    description: "Primary mathematical/numerical experiments, operator matrix evaluations, core algorithms."
+    min_evidence_floor: "E3 + E4"
+    requires_independent_verification: true
+    requires_human_signoff: false
+  T4:
+    name: "Critical Control Plane / Governance Mutation"
+    description: "Modifications to governance rules, acceptance gates, operator oracle configurations, public fixtures."
+    min_evidence_floor: "E3 + E4 + E5"
+    requires_independent_verification: true
+    requires_human_signoff: true
+  T5:
+    name: "Consequential / External Release"
+    description: "Publishing external proof claims, broad production releases, external package releases."
+    min_evidence_floor: "E5"
+    requires_independent_verification: true
+    requires_human_signoff: true
+
+mandatory_escalators:
+  - trigger: "Modification of protected CvS operator oracle or matrix generation path"
+    target_tier: "T4"
+  - trigger: "Modification of acceptance gates or evaluation criteria"
+    target_tier: "T4"
+  - trigger: "Creation of broad mathematical claim (e.g. proof of RH or continuum positivity)"
+    target_tier: "T5"
+  - trigger: "Discrepancy between CSV raw evidence and Markdown report narrative"
+    target_tier: "T4"
+  - trigger: "Degeneracy in candidate direction or basis breakdown"
+    target_tier: "T3"
+
+post_start_retiering_policy:
+  enabled: true
+  direction: "UPWARD_ONLY_AUTOMATIC (Downward requires explicit human justification)"
+  fields_required:
+    - "ORIGINAL_RISK_TIER"
+    - "CURRENT_RISK_TIER"
+    - "RETIER_REASON"
+    - "RETIER_TIMESTAMP"
+    - "RETIER_AUTHORITY"

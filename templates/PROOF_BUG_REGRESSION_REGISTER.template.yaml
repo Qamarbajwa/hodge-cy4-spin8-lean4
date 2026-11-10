@@ -1,0 +1,10 @@
+﻿# PROOF BUG REGRESSION REGISTER  (every flaw becomes a permanent regression rule)
+bugs:
+  - bug_id: PB-001
+    title: "Finite Galerkin positivity inferred as continuum positivity"
+    where_found: "<protocol/doc>"
+    description: "lambda_min of finite sections > 0 for all N while limiting ground energy < 0 (limit can approach from above)."
+    counterexample_or_correction: "Operator with ground state -1/10 whose finite sections give 1/N > 0."
+    affected_pathways: ["<path ids>"]
+    regression_rule: "Never infer continuum positivity from finite eigenvalue positivity without a quantitative lower bound exceeding truncation error."
+    status: ACTIVE

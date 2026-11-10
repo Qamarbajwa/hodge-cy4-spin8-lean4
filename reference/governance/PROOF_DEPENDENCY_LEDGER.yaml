@@ -1,0 +1,97 @@
+# PROOF DEPENDENCY LEDGER
+# Governing Standard: MATHEMATICAL_RESEARCH_CONSTITUTION_v1.0 §8
+# Purpose: Machine-readable registry of external theorems, lemmas, and dependencies.
+# Reconciled: 2026-08-29 (RH-CCM-SOURCE-LOCK-001)
+
+version: "1.3"
+last_updated_utc: "2026-08-29T02:40:00Z"
+
+external_theorems:
+  - theorem_id: "EXT-THM-001"
+    name: "Akiva Groskin Archimedean Tail Order and Certification"
+    source: "Akiva Groskin, arXiv:2607.02828v3 (2026)"
+    theorem_number: "Lemma 3.1, Theorem 3.2, Corollary 3.3"
+    scope: "Fixed finite frequency subspace E_N, fixed (c, N), T > max(rho* N, 7), T -> \\infty"
+    exact_statement: >
+      For fixed c = lambda^2 and finite Galerkin dimension N, the Archimedean integration truncation
+      error satisfies 0 <= Q_\infty - Q_T <= B_T I on E_N for all T > max(rho* N, 7), with B_T -> 0 as T -> \infty.
+    assumptions_verified: true
+    how_used: "Strict upper-bound certification of finite numerical integration cutoff."
+
+  - theorem_id: "EXT-THM-002"
+    name: "CCM Form Core and Monotonic Eigenvalue Convergence"
+    source: "Connes–Consani–Moscovici, arXiv:2511.22755 (2025)"
+    theorem_number: "Proposition 3.3 & Proposition 3.4"
+    scope: "Semilocal interval [lambda^-1, lambda], lambda > 1, form domain Dom(QW_lambda) = {f : QW_lambda(f) < \\infty}"
+    exact_statement: >
+      QW_lambda is closed, lower-bounded, and lower-semicontinuous on H_lambda = L^2([lambda^-1, lambda], d*u).
+      The nested union E = \bigcup E_N is a form core for QW_lambda, and lambda_min(QW_lambda^N) \downarrow \mu(\lambda).
+    assumptions_verified: true
+    how_used: "Forms the mathematical foundation for finite-to-continuum spectral approximation."
+
+  - theorem_id: "EXT-THM-003"
+    name: "CCM Regularized Determinant Identity on Finite Sections"
+    source: "Connes–Consani–Moscovici, arXiv:2511.22755 (2025)"
+    theorem_number: "Theorem 5.10"
+    scope: 'Hilbert space E''_N \oplus E_N^\perp, rank-one perturbed scaling operator D_log^(lambda,N), finite eigenvector xi_(lambda,N)'
+    exact_statement: >
+      Under the hypothesis that epsilon_N = lambda_min(QW_lambda^N) is simple and xi_(lambda,N) is even with delta_N(xi_(lambda,N)) = 1,
+      the regularized spectral determinant satisfies det_reg(D_log^(lambda,N) - z) = -i lambda^(-iz) \widehat{xi_(lambda,N)}(z),
+      and all its zeros lie on the real line on E_N.
+    assumptions_verified: false
+    how_used: "Connects the finite-dimensional Dirac determinant to the finite Galerkin eigenvector Mellin transform."
+
+  - theorem_id: "EXT-THM-004"
+    name: "CCM Prolate-to-Xi Uniform Substrip Convergence"
+    source: "Connes–Consani–Moscovici, arXiv:2511.22755 (2025) & arXiv:2307.03961"
+    theorem_number: "Lemma 7.3 & Section 7"
+    scope: "Prolate comparison mode k_lambda = E(h_lambda) on [lambda^-1, lambda], closed substrips |Im z| <= a < 1/2"
+    exact_statement: >
+      The reference mode k_lambda = E(h_lambda) (constructed from prolate modes h_(0,lambda) and h_(4,lambda) of PW_lambda
+      with vanishing integral) satisfies \lim_{lambda \to \infty} \widehat{k_lambda}(z) = \Xi(z) uniformly on compact subsets of |Im z| < 1/2.
+    assumptions_verified: true
+    how_used: "Provides the explicit proved prolate bridge to the Riemann Xi function on critical substrips."
+
+  - theorem_id: "EXT-THM-005-HISTORICAL"
+    name: "Reed-Simon XIII.64 (historical citation correction)"
+    source: "Reed & Simon, Methods of Modern Mathematical Physics IV (1978)"
+    theorem_number: "XIII.64"
+    scope: "Compact-resolvent/discrete-spectrum facts, where applicable"
+    exact_statement: >
+      This entry records the historical attribution only. XIII.64 is not used as
+      the theorem proving the CCM-A3 Ritz eigenvector convergence claim.
+    assumptions_verified: false
+    how_used: "Historical regression record; not a proof dependency for CCM-A3."
+
+  - theorem_id: "EXT-THM-006"
+    name: "Chuk / Zhu Fixed-Window Certified Positivity and Simple-Even Ground State"
+    source: "arXiv:2608.24827 [v1: Marcus Chuk (2026-08-25); v2: Xuefeng Zhu (2026-09-02)]"
+    theorem_number: "v1: Theorem 1, 7, 8, Cor 9; v2: Theorem 1.2, 1.1, 6.2, Cor 6.3"
+    scope: "Support [-0.8,0.8] for the certified result; Theorem 7 (v1) / 1.1 (v2) gives the parameterized reduction for L>0"
+    exact_statement: >
+      Theorem 1 (v1) / 1.2 (v2) gives Q(f) >= 8.9e-18 ||f||^2 for real even f supported in
+      [-0.8,0.8]. Theorem 7 (v1) / 1.1 (v2) reduces the form to a finite Legendre matrix under
+      beta* = log(Tsharp/(2 pi)) - 1/Tsharp - A_L > 0, with
+      A_L = sum_{log n < 2L} 2 Lambda(n)/sqrt(n). Theorem 8 (v1) / 6.2 (v2) gives
+      8.9e-18 <= lambda_1^even <= 2.523e-16,
+      lambda_2^even >= 2.085e-12, and
+      8.206e-15 <= lambda_1^odd <= 2.347e-14 at L=0.8.
+      Corollary 9 (v1) / 6.3 (v2) extends the 8.9e-18 lower bound to complex f.
+      The certified additive gap g_cert = 7.9537e-15 is a repository-derived directed subtraction
+      (8.206e-15 - 2.523e-16), not a verbatim textual constant in the source.
+    assumptions_verified: true
+    how_used: "Unitary fixed-scale transfer to CCM-A1-L08 and CCM-A2-L08 at lambda=e^0.8; invariant across v1 and v2; no general-lambda inference."
+
+
+  - theorem_id: "EXT-THM-007"
+    name: "Parity-Gap Continuation Lemma"
+    source: "Standard min-max perturbation consequence; project candidate"
+    theorem_number: "Conditional lemma in RH-CCM-A1A2-CHUK-TRANSFER-001"
+    scope: "Common fixed Hilbert space, common parity-invariant closed form domain, and uniform bounded form difference"
+    exact_statement: >
+      If |q_L[f]-q_L0[f]| <= epsilon ||f||^2 and
+      g = min(lambda_1^odd(L0)-lambda_1^even(L0),
+      lambda_2^even(L0)-lambda_1^even(L0)) > 0, then epsilon < g/2
+      preserves a simple even ground state.
+    assumptions_verified: false
+    how_used: "Candidate continuation criterion; the CCM-specific form-variation estimate and threshold crossing control remain open."

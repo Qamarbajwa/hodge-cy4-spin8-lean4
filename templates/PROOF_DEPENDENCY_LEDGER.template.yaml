@@ -1,0 +1,4 @@
+﻿# PROOF DEPENDENCY LEDGER
+claims:
+  - {id: "T-main", statement: "<target>", state: OPEN, depends_on: ["L1","L2"], bridge_needed: "<missing analytic bridge>"}
+  - {id: "L1", statement: "<lemma>", state: INDEPENDENTLY_VERIFIED_CONDITIONAL, conditions: ["fixed parameter only"], depends_on: []}

@@ -1,0 +1,104 @@
+{
+  "protocol_id": "RH-T056R8R3",
+  "protocol_title": "PUBLIC-CVS MULTI-CELL BOUNDARY-AUGMENTATION FALSIFICATION GRID",
+  "governing_standard": "MASTER_AUTONOMOUS_PROJECT_GOVERNANCE_DEVELOPMENT_EVOLUTION_v2.5.md",
+  "schema_version": "2.5.0",
+  "starting_git_checkpoint": "a400489dc49cd3a84836c6275139ffeefefa3583",
+  "canonical_predecessor": "RH-T056R8R2 = DIRECT_PUBLIC_CVS_ONE_CELL_NEGATIVE_OBSERVATION",
+  "rh_t057_status": "FROZEN / UNEXECUTED",
+  "public_oracle": {
+    "package": "connes-cvs",
+    "version": "0.3.1",
+    "imported_functions": [
+      "build_galerkin_matrix",
+      "compute_ground_state"
+    ]
+  },
+  "precision_requirements": {
+    "arithmetic_library": "mpmath",
+    "solver": "mp.eigsy",
+    "initial_dps": 80,
+    "escalation_ladder": [80, 120, 160],
+    "forbidden": [
+      "float",
+      "numpy.float64",
+      "scipy.linalg.eigh",
+      "custom_matrix_builders",
+      "synthetic_surrogates"
+    ]
+  },
+  "random_control": {
+    "algorithm": "random.Random.gauss",
+    "random_seed": 560803
+  },
+  "degeneracy_diagnostic_threshold": "1e-40",
+  "outer_section_rule": "M_outer = max(20, 2*n_inner)",
+  "primary_grid_20_cells": [
+    {"cell_id": "R8R3-P01", "c": 9, "n_inner": 6, "M_outer": 20, "T": 400},
+    {"cell_id": "R8R3-P02", "c": 9, "n_inner": 8, "M_outer": 20, "T": 400},
+    {"cell_id": "R8R3-P03", "c": 9, "n_inner": 10, "M_outer": 20, "T": 400},
+    {"cell_id": "R8R3-P04", "c": 9, "n_inner": 12, "M_outer": 24, "T": 400},
+    {"cell_id": "R8R3-P05", "c": 11, "n_inner": 6, "M_outer": 20, "T": 400},
+    {"cell_id": "R8R3-P06", "c": 11, "n_inner": 8, "M_outer": 20, "T": 400},
+    {"cell_id": "R8R3-P07", "c": 11, "n_inner": 10, "M_outer": 20, "T": 400},
+    {"cell_id": "R8R3-P08", "c": 11, "n_inner": 12, "M_outer": 24, "T": 400},
+    {"cell_id": "R8R3-P09", "c": 13, "n_inner": 6, "M_outer": 20, "T": 400},
+    {"cell_id": "R8R3-P10", "c": 13, "n_inner": 8, "M_outer": 20, "T": 400},
+    {"cell_id": "R8R3-P11", "c": 13, "n_inner": 10, "M_outer": 20, "T": 400},
+    {"cell_id": "R8R3-P12", "c": 13, "n_inner": 12, "M_outer": 24, "T": 400},
+    {"cell_id": "R8R3-P13", "c": 15, "n_inner": 6, "M_outer": 20, "T": 400},
+    {"cell_id": "R8R3-P14", "c": 15, "n_inner": 8, "M_outer": 20, "T": 400},
+    {"cell_id": "R8R3-P15", "c": 15, "n_inner": 10, "M_outer": 20, "T": 400},
+    {"cell_id": "R8R3-P16", "c": 15, "n_inner": 12, "M_outer": 24, "T": 400},
+    {"cell_id": "R8R3-P17", "c": 17, "n_inner": 6, "M_outer": 20, "T": 400},
+    {"cell_id": "R8R3-P18", "c": 17, "n_inner": 8, "M_outer": 20, "T": 400},
+    {"cell_id": "R8R3-P19", "c": 17, "n_inner": 10, "M_outer": 20, "T": 400},
+    {"cell_id": "R8R3-P20", "c": 17, "n_inner": 12, "M_outer": 24, "T": 400}
+  ],
+  "competitor_spaces": {
+    "A1": "Ordinary Fourier extension V_(n+1)^even",
+    "B": "Tested t^2 boundary augmentation V_n^even + span{v_t2}",
+    "H": "Frozen polynomial control V_n^even + span{v_J1=0}",
+    "RAND": "Neutral deterministic random control V_n^even + span{v_rand}"
+  },
+  "primary_statistic": "R_B = lambda_B / lambda_A1",
+  "decision_rules": {
+    "Outcome_A": "T2_BOUNDARY_DISFAVORED_ACROSS_ALL_RESOLVED_PREREGISTERED_PRIMARY_CELLS",
+    "Outcome_B": "T2_BOUNDARY_EFFECT_NONUNIVERSAL_ON_PREREGISTERED_GRID",
+    "Outcome_C": "T2_BOUNDARY_FAVORED_ACROSS_ALL_RESOLVED_PREREGISTERED_PRIMARY_CELLS_REQUIRES_REPLICATION",
+    "Outcome_D": "PRIMARY_GRID_NUMERICALLY_INCONCLUSIVE"
+  },
+  "outer_section_robustness_grid": [
+    {"c": 9, "n": 8, "T": 400, "M_ladder": [20, 28, 36]},
+    {"c": 9, "n": 10, "T": 400, "M_ladder": [20, 28, 36]},
+    {"c": 9, "n": 12, "T": 400, "M_ladder": [24, 32, 40]},
+    {"c": 13, "n": 8, "T": 400, "M_ladder": [20, 28, 36]},
+    {"c": 13, "n": 10, "T": 400, "M_ladder": [20, 28, 36]},
+    {"c": 13, "n": 12, "T": 400, "M_ladder": [24, 32, 40]},
+    {"c": 17, "n": 8, "T": 400, "M_ladder": [20, 28, 36]},
+    {"c": 17, "n": 10, "T": 400, "M_ladder": [20, 28, 36]},
+    {"c": 17, "n": 12, "T": 400, "M_ladder": [24, 32, 40]}
+  ],
+  "truncation_height_robustness_grid": [
+    {"c": 9, "n": 10, "M": 20, "T_ladder": [300, 400, 600]},
+    {"c": 13, "n": 10, "M": 20, "T_ladder": [300, 400, 600]},
+    {"c": 17, "n": 10, "M": 20, "T_ladder": [300, 400, 600]}
+  ],
+  "contamination_declarations": {
+    "RH_T056R9_USED_TO_SELECT_R8R3_PARAMETERS": false,
+    "RH_T056R9_USED_TO_CHANGE_R8R3_DECISION_RULE": false,
+    "TASK_823_NUMERICAL_RESULTS_OBSERVED": true,
+    "TASK_823_DISCLOSURE_DETAILS": "Partial console output from cancelled task-823 showed unauthenticated partial logs for c=13 and c=17. 20-cell grid parameters and decision rules were authored independently in user prompt."
+  },
+  "authentication_fixture_gate": {
+    "target": "c=13, N=80, T=400",
+    "expected_lambda_min": "2.5282661401965756026859551460395357984852932822457493202998634125895744410943922e-59",
+    "tolerance_rel": "1e-15",
+    "precisions": [80, 120, 160]
+  },
+  "predecessor_reproduction_gate": {
+    "target": "c=13, n=10, M=20, T=400, dps=80",
+    "expected_ordering": "lambda_A1 < lambda_B",
+    "expected_ratio_approx": "51.25"
+  }
+}

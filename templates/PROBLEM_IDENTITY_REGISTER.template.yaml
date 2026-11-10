@@ -1,0 +1,10 @@
+﻿# PROBLEM IDENTITY REGISTER  (Identity Law: nothing here may drift silently)
+problems:
+  - problem_id: "<ID>"
+    canonical_statement: "<exact statement with quantifiers>"
+    domain: "<spaces, parameter ranges>"
+    assumptions_original: ["<A1>", "<A2>"]
+    equivalent_forms: ["<form 1 (cite source)>"]
+    not_the_problem: ["<weaker / restricted variants that must be reclassified, not substituted>"]
+    source_lock: {primary_source: "<paper/theorem number>", authenticated: false}
+    frozen_utc: "<timestamp>"

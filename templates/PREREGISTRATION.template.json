@@ -1,0 +1,24 @@
+﻿{
+  "protocol_id": "<ID>",
+  "title": "<what is being falsified/compared>",
+  "oracle": {"package": "<authenticated-package>", "version": "<x.y.z>", "imported_functions": ["<fn>"]},
+  "precision_requirements": {"arithmetic_library": "mpmath", "solver": "mp.eigsy", "initial_dps": 80,
+    "escalation_ladder": [80, 120, 160],
+    "forbidden": ["float", "numpy.float64", "scipy.linalg.eigh", "custom_matrix_builders", "synthetic_surrogates"]},
+  "random_control": {"algorithm": "random.Random.gauss", "random_seed": 560803},
+  "degeneracy_diagnostic_threshold": "1e-40",
+  "outer_section_rule": "M_outer = max(20, 2*n_inner)",
+  "primary_grid": [{"cell_id": "P01", "c": 9, "n_inner": 6, "M_outer": 20, "T": 400}],
+  "competitor_spaces": {"A1": "ordinary extension", "B": "tested augmentation", "H": "frozen control", "RAND": "seeded random control"},
+  "primary_statistic": "R_B = lambda_B / lambda_A1",
+  "decision_rules": {
+    "Outcome_A": "B_DISFAVORED_ACROSS_ALL_RESOLVED_CELLS",
+    "Outcome_B": "B_EFFECT_NONUNIVERSAL",
+    "Outcome_C": "B_FAVORED_ACROSS_ALL_CELLS_REQUIRES_REPLICATION",
+    "Outcome_D": "GRID_NUMERICALLY_INCONCLUSIVE"},
+  "outer_section_robustness_grid": [{"c": 9, "n": 8, "T": 400, "M_ladder": [20, 28, 36]}],
+  "truncation_height_robustness_grid": [{"c": 9, "n": 10, "M": 20, "T_ladder": [300, 400, 600]}],
+  "contamination_declarations": {"<LATER_PROTOCOL>_USED_TO_SELECT_PARAMETERS": false, "PARTIAL_RESULTS_OBSERVED": false, "DETAILS": ""},
+  "authentication_fixture_gate": {"target": "<params>", "expected_lambda_min": "<known high-precision value>", "tolerance_rel": "1e-15", "precisions": [80, 120, 160]},
+  "predecessor_reproduction_gate": {"target": "<params>", "expected_ordering": "lambda_A1 < lambda_B", "expected_ratio_approx": "<x>"}
+}

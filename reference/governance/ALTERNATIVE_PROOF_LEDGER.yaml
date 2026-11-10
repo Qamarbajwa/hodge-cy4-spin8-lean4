@@ -1,0 +1,21 @@
+# ALTERNATIVE PROOF LEDGER
+# Governing Standard: MATHEMATICAL_RESEARCH_CONSTITUTION_v1.0 §14
+# Reconciled: 2026-08-28 (RH-MATHEMATICAL-RESEARCH-CONSTITUTION-001R1)
+
+version: "1.1"
+last_updated_utc: "2026-08-28T09:52:00Z"
+
+alternative_proofs:
+  - problem_id: "CCM-SYM"
+    proof_route_id: "ALT-CCM-SYM-01"
+    name: "Coordinate Reflection L2 Isometry Route"
+    primary_mechanism: "Direct algebraic substitution in the logarithmic coordinate integral."
+    independence_status: "AUTHENTICATED_PRIMARY_PROOF"
+    source: "CCM (2025) Proposition 3.3"
+
+  - problem_id: "CCM-SYM"
+    proof_route_id: "ALT-CCM-SYM-02"
+    name: "Mellin Inversion Unitary Symmetry Route"
+    primary_mechanism: "Mellin transform maps f(u^-1) to \widehat{f}(-z), preserving the symmetric kernel."
+    independence_status: "INDEPENDENT_DUAL_ROUTE"
+    source: "Project Mathematical Derivation (2026)"

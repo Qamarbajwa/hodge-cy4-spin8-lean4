@@ -1,0 +1,262 @@
+# PROOF BUG REGRESSION REGISTER
+# Governing Standard: MATHEMATICAL_RESEARCH_CONSTITUTION_v1.0 §9
+# Purpose: Permanent registry of discovered mathematical proof defects and active regression rules.
+# Reconciled: 2026-08-29 (RH-CCM-SOURCE-LOCK-001)
+
+version: "1.3"
+last_updated_utc: "2026-08-29T02:40:00Z"
+
+proof_bugs:
+  - error_id: "PROOF-ERROR-001"
+    name: "Parity Commutation vs Spectral Ordering Confusion"
+    claim: 'CCM-A1 follows directly from inversion symmetry [A_lambda, J] = 0.'
+    incorrect_step: 'Inferring that the continuum ground state xi_lambda must be in H_+ solely because A_lambda commutes with J.'
+    why_false: >
+      Commutation [A_lambda, J] = 0 guarantees that the eigenspaces decompose into even
+      and odd orthogonal sectors (H_lambda = H_+ \oplus H_-), but does not prove which sector
+      achieves the lower variational infimum (mu_+ < mu_-). For general non-local symmetric
+      operators, level crossings occur.
+    counterexample_or_correction: >
+      Toy matrix M = diag(1, -1) commutes with parity P = diag(1, -1), but its ground state is
+      purely odd with eigenvalue -1. A separate parity-sector comparison theorem is required.
+    affected_pathways:
+      - "PATH-RH-CVS-BRIDGE-01"
+      - "CCM-A1"
+    regression_rule: >
+      Any symmetry argument must explicitly separate invariance/decomposition from spectral
+      ordering between parity sectors.
+    status: "ACTIVE_REGRESSION_RULE"
+
+  - error_id: "PROOF-ERROR-002"
+    name: "Finite-Section Positivity to Continuum Positivity Inference"
+    claim: 'lambda_min(QW_lambda^N) > 0 for finite N proves mu(lambda) > 0.'
+    incorrect_step: 'Assuming finite-section matrix positivity lower-bounds the continuum operator form.'
+    why_false: >
+      By Rayleigh-Ritz min-max principle (CCM Prop 3.4), lambda_min(QW_lambda^N) converges to
+      mu(lambda) monotonically from ABOVE. Therefore, lambda_min(QW_lambda^N) > 0 is completely
+      compatible with mu(lambda) < 0.
+    counterexample_or_correction: >
+      Operator with ground state -1/10 and finite Galerkin sections yielding 1/N > 0 for all N.
+    affected_pathways:
+      - "PATH-RH-T056-03"
+      - "PATH-RH-CVS-BRIDGE-01"
+    regression_rule: >
+      Never infer continuum form positivity from finite Galerkin eigenvalue positivity without
+      a quantitative lower bound exceeding the truncation error.
+    status: "ACTIVE_REGRESSION_RULE"
+
+  - error_id: "PROOF-ERROR-003"
+    name: "Two-Way Hurwitz Equivalence Fallacy"
+    claim: 'Locally uniform determinant convergence D_c(z) -> Xi(z) is strictly logically equivalent to RH.'
+    incorrect_step: 'Asserting that RH implies this specific constructive determinant convergence.'
+    why_false: >
+      Hurwitz theorem guarantees that locally uniform convergence of real-zero entire functions
+      implies the limit has real zeros (one-way). The converse (RH => locally uniform convergence
+      of D_c) is an open conjecture and not a logical equivalence.
+    counterexample_or_correction: >
+      Corrected classification to ONE-WAY RH-SUFFICIENT / RH-HARD WITHIN THIS ROUTE.
+    affected_pathways:
+      - "PATH-RH-CVS-BRIDGE-01"
+      - "RH-CVS-FINITE-INFINITE-BRIDGE-001"
+    regression_rule: >
+      Hurwitz entire-function limits must be classified as one-way sufficient for RH unless the
+      converse implication is independently proved.
+    status: "ACTIVE_REGRESSION_RULE"
+
+  - error_id: "PROOF-ERROR-004"
+    name: "Unweighted Convergence to Complex Critical Substrip Fallacy"
+    claim: 'Unweighted L^1 or L^2 convergence on expanding supports automatically implies locally uniform Mellin-transform convergence on complex substrips.'
+    incorrect_step: 'Claiming unweighted L^1 or L^2 bounds suffice without supplying an estimate to control the Mellin kernel growth u^|Im z|.'
+    why_false: >
+      On an expanding interval [lambda^-1, lambda] where lambda -> \infty, the Mellin kernel
+      u^{-iz} grows as u^|Im z| <= max(u^a, u^-a) <= u^a + u^-a on closed substrips |Im z| <= a < 1/2.
+      Unweighted L^1 or L^2 mass near boundaries is amplified by lambda^a. A proof must supply an estimate
+      sufficient to control the Mellin kernel growth. Weighted L^1 is one authenticated sufficient mechanism;
+      weaker sufficient topologies remain open for optimization.
+    counterexample_or_correction: >
+      Error e_lambda(u) concentrated near lambda with unweighted L^1 norm lambda^{-a/2} -> 0 has
+      weighted norm \|e_lambda\|_(1,a) ~ lambda^{a/2} -> \infty, destroying strip convergence.
+    affected_pathways:
+      - "PATH-RH-CVS-BRIDGE-01"
+      - "CCM-B*"
+    regression_rule: >
+      Unweighted L^1 or L^2 convergence on expanding supports does not by itself imply locally uniform
+      Mellin-transform convergence on the required complex substrips. A proof must supply an estimate
+      sufficient to control the Mellin kernel growth. Weighted L^1 is one authenticated sufficient mechanism.
+      Do not state it is uniquely necessary.
+    status: "ACTIVE_REGRESSION_RULE"
+
+  - error_id: "PROOF-ERROR-005"
+    name: "Finite vs Continuum Ground State Conflation in Determinant Identity"
+    claim: 'det_reg(D_log^(lambda,N) - z) = -i lambda^(-iz) \widehat{xi_lambda}(z).'
+    incorrect_step: 'Replacing the finite Galerkin eigenvector xi_(lambda,N) with the continuum eigenfunction xi_lambda inside CCM Theorem 5.10.'
+    why_false: >
+      CCM Theorem 5.10 applies directly to the rank-one perturbed scaling operator D_log^(lambda,N) on
+      E'_N \oplus E_N^\perp and expresses its determinant in terms of the finite Galerkin eigenvector xi_(lambda,N).
+      Connecting this to the continuum ground state xi_lambda requires the separate Galerkin eigenvector convergence step CCM-A3.
+    counterexample_or_correction: >
+      Corrected CCM Theorem 5.10 formula to det_reg(D_log^(lambda,N) - z) = -i lambda^(-iz) \widehat{xi_(lambda,N)}(z).
+    affected_pathways:
+      - "PATH-RH-CVS-BRIDGE-01"
+      - "CCM-FIN-SE"
+      - "CCM-A3"
+    regression_rule: >
+      Always strictly distinguish finite Galerkin eigenvector xi_(lambda,N) from continuum eigenfunction xi_lambda.
+    status: "ACTIVE_REGRESSION_RULE"
+
+  - error_id: "PROOF-ERROR-006"
+    name: "Arithmetic Map E vs Log Coordinate Map Conflation"
+    claim: 'The arithmetic map E is given by (Ef)(u) = f(\log u).'
+    incorrect_step: 'Conflating the arithmetic sum map E with the logarithmic coordinate isometry \kappa.'
+    why_false: >
+      CCM Eq 7.2 defines the arithmetic map as E(f)(u) = u^{1/2} \sum_{n \ge 1} f(nu) on \mathbb{R}_+^*.
+      CCM Proposition 3.2 instead gives L = 2 log(lambda) and the source-direction map
+      \kappa_\lambda: L^2([0,L],dx) -> L^2([\lambda^{-1},\lambda],d*u),
+      (\kappa_\lambda f)(u) = f(log(lambda*u)). A centered coordinate such as tau = log u
+      is a distinct project symbol. Conflating the maps destroys the arithmetic prime/zeta structure of k_\lambda.
+    counterexample_or_correction: >
+      Arithmetic map E incorporates prime sum / Poisson summation effects; \kappa is a pure change of variables.
+    affected_pathways:
+      - "PATH-RH-CVS-BRIDGE-01"
+      - "CCM-B*"
+    regression_rule: >
+      Never confuse the arithmetic map E(f)(u) = u^{1/2} \sum_{n \ge 1} f(nu) with the logarithmic coordinate
+      change map \kappa_\lambda: L^2([0,L],dx) -> L^2([\lambda^{-1},\lambda],d*u),
+      (\kappa_\lambda f)(u) = f(log(lambda*u)); a centered coordinate tau = log u is distinct.
+    status: "ACTIVE_REGRESSION_RULE"
+
+  - error_id: "PROOF-ERROR-007"
+    name: "Unsupported H1 Form Domain Identification"
+    claim: 'Dom(QW_lambda) = H^1([\lambda^{-1}, \lambda], d*u).'
+    incorrect_step: 'Asserting that the form domain is Sobolev H^1 without primary source proof.'
+    why_false: >
+      CCM Proposition 3.3 defines QW_lambda as a lower-bounded, lower-semicontinuous closed quadratic form on
+      H_lambda = L^2([\lambda^{-1}, \lambda], d*u), whose canonical form domain is Dom(QW_lambda) = {f \in H_lambda : QW_lambda(f) < \infty}.
+      CCM Proposition 3.4 proves that E = \bigcup E_N is a form core, but does not identify Dom(QW_lambda) with standard H^1.
+    counterexample_or_correction: >
+      Preserved canonical definition Dom(QW_lambda) = {f \in H_lambda : QW_lambda(f) < \infty} with form core E.
+    affected_pathways:
+      - "PATH-RH-CVS-BRIDGE-01"
+      - "CCM-SYM"
+      - "CCM-A1"
+    regression_rule: >
+      Never claim Dom(QW_lambda) = H^1 without explicit primary source authentication; use Dom(QW_lambda) = {f : QW_lambda(f) < \infty}.
+    status: "ACTIVE_REGRESSION_RULE"
+
+  - error_id: "PROOF-ERROR-008"
+    name: "L2 Eigenvector Convergence vs Boundary Normalization Conflation"
+    claim: 'L^2 convergence \|xi_(lambda,N) - xi_lambda\|_{H_lambda} -> 0 implies boundary normalization convergence delta_N(xi_(lambda,N)) -> \xi_\lambda(\lambda).'
+    incorrect_step: 'Inferring pointwise boundary value convergence directly from strong L^2 convergence.'
+    why_false: >
+      Strong L^2 convergence does not control point evaluations or boundary values without additional Sobolev
+      embedding or regularized determinant scaling absorption lemmas (CCM-A3N).
+    counterexample_or_correction: >
+      Sequence of functions f_N with \|f_N\|_{L^2} -> 0 but f_N(\lambda) = 1 for all N.
+    affected_pathways:
+      - "PATH-RH-CVS-BRIDGE-01"
+      - "CCM-A3"
+      - "CCM-A3N"
+    regression_rule: >
+      L^2 Hilbert-space convergence of eigenvectors does not automatically imply pointwise or boundary normalization
+      convergence. Normalization compatibility must be proved separately via CCM-A3N.
+    status: "ACTIVE_REGRESSION_RULE"
+
+  - error_id: "PROOF-ERROR-009"
+    name: "Primary Source Version Staleness and Derived Constant Attribution Fallacy"
+    claim: 'Attributing repository-derived quantities as verbatim primary-source text, or failing to track arXiv author/metadata version shifts.'
+    incorrect_step: 'Treating g_cert = 7.9537e-15 as a verbatim constant in arXiv:2608.24827, or ignoring the author revision from Marcus Chuk (v1) to Xuefeng Zhu (v2).'
+    why_false: >
+      Primary sources evolve on arXiv (e.g. arXiv:2608.24827v1 vs v2 changed author byline from Marcus Chuk to Xuefeng Zhu
+      and theorem numbering from Thm 8 to Thm 6.2). Furthermore, g_cert = 7.9537e-15 is a repository-derived directed
+      subtraction (8.206e-15 - 2.523e-16), not a verbatim textual constant in the source.
+    counterexample_or_correction: >
+      Explicitly record source versions (v1 vs v2), author transitions, and label derived gap quantities as repository-calculated.
+    affected_pathways:
+      - "PATH-RH-CVS-BRIDGE-01"
+      - "CHUK-L08-TRANSFER"
+      - "WINDOW-001"
+    regression_rule: >
+      Never represent a repository-derived algebraic difference as a verbatim primary-source constant; always verify
+      author bylines, theorem numbering, and mathematical invariance across arXiv versions.
+    status: "ACTIVE_REGRESSION_RULE"
+
+  - error_id: "PROOF-ERROR-010"
+    name: "Unproved Rank-One Classification of Partial Translation Operators"
+    claim: 'The entering arithmetic contribution at prime-power thresholds (such as n=5 at L_5 = 0.5 log 5) is rank-one.'
+    incorrect_step: 'Calling the partial shift/translation operator entering at L_n = 0.5 log n a rank-one perturbation without proof.'
+    why_false: >
+      A truncated translation operator f(x) |-> f(x + log n) on L^2([-L, L]) is an infinite-dimensional partial isometry/shift.
+      Its spectral projection in the transported space has infinite operator rank, not rank-one.
+    counterexample_or_correction: >
+      Classified the threshold contribution as an indefinite partial-translation operator on the continuum space.
+    affected_pathways:
+      - "PATH-RH-CVS-BRIDGE-01"
+      - "PRIME-THRESHOLD-005"
+      - "QUANT-002"
+    regression_rule: >
+      Do not classify partial translation or convolution operators as rank-one unless a finite-dimensional rank proof is established.
+    status: "ACTIVE_REGRESSION_RULE"
+
+  - error_id: "PROOF-ERROR-011"
+    name: "Rayleigh-Ritz Min-Max Principle Direction Inversion"
+    claim: 'Evaluating trial functions or finite subspaces in the odd sector proves a lower bound mu_-(L) >= c > 0.'
+    incorrect_step: 'Asserting that the numerical infimum over a finite trial family V \subset H_- lower-bounds the infinite-dimensional ground state.'
+    why_false: >
+      By the Rayleigh-Ritz variational principle, minimizing over any subspace V \subset H_- provides an UPPER bound
+      mu_-(L) = \inf_{f \in H_-} Q(f) <= \inf_{f \in V} Q(f). Inferring a lower bound from trial evaluations inverts the min-max inequality.
+    counterexample_or_correction: >
+      Trial evaluation of 4.225e-7 proves only mu_-(L) <= 4.225e-7; lower bounds require coercivity, nested monotonicity, or certified Kato-Temple inclusions.
+    affected_pathways:
+      - "CCM-A1"
+      - "Branch-B"
+    regression_rule: >
+      Never infer a lower bound on an operator ground-state eigenvalue from trial-function minimization; Rayleigh-Ritz yields strictly upper bounds.
+    status: "ACTIVE_REGRESSION_RULE"
+
+  - error_id: "PROOF-ERROR-012"
+    name: "Large-Scale Asymptotic Growth Divergence Fallacy"
+    claim: 'The bulk error bound \|xi_lambda - C_lambda k_lambda\|_bulk <= lambda^{a(1-epsilon)} O(1/log lambda) vanishes as lambda -> infinity.'
+    incorrect_step: 'Asserting that lambda^alpha / log lambda -> 0 as lambda -> infinity for alpha = a(1-epsilon) > 0.'
+    why_false: >
+      For any alpha > 0, lambda^alpha = exp(alpha log lambda) grows exponentially in log lambda, so lambda^alpha / log lambda -> +infinity.
+    counterexample_or_correction: >
+      Invalidated the purported convergence proof while retaining CCM-B* as OPEN.
+    affected_pathways:
+      - "CCM-B*"
+      - "Branch-F"
+    regression_rule: >
+      Never claim asymptotic decay to zero from expressions containing positive powers divided by logarithms (lambda^alpha / log lambda, alpha > 0).
+    status: "ACTIVE_REGRESSION_RULE"
+
+  - error_id: "PROOF-ERROR-013"
+    name: "Surrogate Basis Substitution without Continuum Transfer Theorem"
+    claim: 'Simplicity in a 3-mode Legendre polynomial model at 7 discrete points proves continuum prolate simplicity on [0.4, 1.6].'
+    incorrect_step: 'Substituting Legendre polynomials for canonical Slepian prolate functions and extrapolating from 7 grid points to a continuum interval.'
+    why_false: >
+      Legendre polynomials are not prolate spheroidal wavefunctions, and finite point sampling cannot establish an interval-wide or continuum theorem.
+    counterexample_or_correction: >
+      Retained finite matrix calculations strictly as non-extrapolative toy models unless a projection transfer theorem is proved.
+    affected_pathways:
+      - "CCM-A1"
+      - "CCM-A2"
+      - "Branch-E"
+    regression_rule: >
+      Never substitute surrogate bases for Slepian prolate functions or promote discrete grid evaluations to continuum theorems without a proved transfer bound.
+    status: "ACTIVE_REGRESSION_RULE"
+
+  - error_id: "PROOF-ERROR-014"
+    name: "Uniform Linear Lipschitz Form Modulus Fallacy vs Logarithmic H^{log} Modulus"
+    claim: 'The Weil quadratic form Q_L has a uniform linear Lipschitz modulus \|Q_L - Q_{L0}\| <= M |L - L0| on Dom(q) = H^{log}, or conversely admits no constructive modulus without H^s (s > 1/2) boundary traces.'
+    incorrect_step: 'Assuming H^1 derivative bounds on Dom(q) = H^{log}, or treating the upper integration limit 1 - w_n(L) as a non-zero boundary trace on zero-extended functions.'
+    why_false: >
+      Because Dom(q) = H^{log} weights frequencies by log(2+|u|), the linear ratio |u|/log(2+|u|) is unbounded. However, since f in Dom_L is extended by zero to R,
+      the truncated shift integral equals the whole-line Fourier multiplier cos(u w_n(L)) with zero boundary trace, admitting an exact logarithmic modulus 2/log(2 + 2/(L0 eta_n)).
+    counterexample_or_correction: >
+      Replaced invalid linear Lipschitz constants with the exact whole-line Fourier logarithmic modulus on H^{log} and nested-subspace monotonicity.
+    affected_pathways:
+      - "QUANT-002"
+      - "Branch-C"
+    regression_rule: >
+      Do not claim a uniform linear Lipschitz modulus on Dom(q) = H^{log}; use the exact whole-line Fourier logarithmic modulus on H^{log} or nested-subspace monotonicity.
+    status: "ACTIVE_REGRESSION_RULE"
+

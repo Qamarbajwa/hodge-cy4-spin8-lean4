@@ -1,0 +1,8 @@
+﻿# LOAD-BEARING LEMMA REGISTER
+lemmas:
+  - id: LB-001
+    statement: "<the genuinely novel step>"
+    what_breaks_without_it: ""
+    known_analogues: ["<functional-analytic analogue>"]
+    why_prior_techniques_failed: ""
+    understanding_levels: {one_sentence: "", one_page: "<path>", full_proof: "<path>"}

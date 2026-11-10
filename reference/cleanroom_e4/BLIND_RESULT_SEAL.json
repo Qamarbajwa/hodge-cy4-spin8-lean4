@@ -1,0 +1,8 @@
+{
+  "protocol_id": "RH-T056R8R3",
+  "sealed_file": "BLIND_RESULTS.json",
+  "sha256": "ff98c22a9b055ef4477f6a41b9d3c49f19d7bc99ebb874916f62f818d74c1775",
+  "sealed_at_utc": "2026-08-24T18:39:26.232766+00:00",
+  "script_sha256": "c098eb478457b53ce1b9dd80d1d46395df221449c0bd02236b2cca1450db74c9",
+  "status": "SEALED"
+}

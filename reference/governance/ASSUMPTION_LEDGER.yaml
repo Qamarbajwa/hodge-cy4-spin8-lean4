@@ -1,0 +1,82 @@
+# ASSUMPTION LEDGER
+# Governing Standard: MATHEMATICAL_RESEARCH_CONSTITUTION_v1.0 §4
+# Purpose: Explicit tracking and drift detection for all mathematical hypotheses across proof attempts.
+# Reconciled: 2026-08-28 (RH-MATHEMATICAL-RESEARCH-CONSTITUTION-001R1)
+
+version: "1.1"
+last_updated_utc: "2026-08-28T09:52:00Z"
+
+drift_detection_rules:
+  unjustified_assumption_blocks_promotion: true
+  flagged_ccm_patterns:
+    - pattern_id: "FLAG-CCM-01"
+      name: "Silent Threshold Introduction"
+      description: 'Introducing lambda >= lambda_0 without an explicit, verifiable bound or characterization of lambda_0.'
+      severity: "HIGH"
+    - pattern_id: "FLAG-CCM-02"
+      name: "Unproved Positivity-Improving Assumption"
+      description: 'Assuming e^-tA_lambda is positivity-improving (Perron-Frobenius/Jentzsch) without proving sign of the non-local arithmetic prime integral kernel.'
+      severity: "CRITICAL"
+    - pattern_id: "FLAG-CCM-03"
+      name: "Unproved Ground-State Simplicity"
+      description: 'Treating mu_+(lambda) as simple without proving dim ker(A_lambda|_{H_+} - mu_+ I) = 1.'
+      severity: "CRITICAL"
+    - pattern_id: "FLAG-CCM-04"
+      name: "Unproved Parity Sector Ordering"
+      description: 'Assuming ground state is even (xi_lambda(u^-1) = xi_lambda(u)) solely from [A_lambda, J] = 0.'
+      severity: "CRITICAL"
+    - pattern_id: "FLAG-CCM-05"
+      name: "Unproved Uniform Spectral Gap"
+      description: 'Assuming mu_2(lambda) - mu_1(lambda) >= delta > 0 uniformly as lambda -> \infty without asymptotic resolvent estimates.'
+      severity: "HIGH"
+    - pattern_id: "FLAG-CCM-06"
+      name: "Unweighted Convergence Promotion Fallacy"
+      description: 'Assuming unweighted L^1 or L^2 convergence implies locally uniform convergence of Mellin transforms on complex critical substrips.'
+      severity: "CRITICAL"
+    - pattern_id: "FLAG-CCM-07"
+      name: "Finite vs Continuum Ground State Conflation"
+      description: 'Conflating the finite Galerkin eigenvector xi_(lambda,N) with the continuum eigenfunction xi_lambda.'
+      severity: "CRITICAL"
+
+active_assumptions:
+  - assumption_id: "ASM-001"
+    target_problem: "CCM-SYM"
+    statement: 'QW_lambda is the closed quadratic form on H^1([lambda^-1, lambda], du/u) defined by CCM (2025) Proposition 3.3.'
+    classification: "ORIGINAL"
+    provenance: "CCM (2025) Proposition 3.3"
+    status: "PROVED_IN_PRIMARY_SOURCE"
+
+  - assumption_id: "ASM-002"
+    target_problem: "CCM-SYM"
+    statement: 'The scaling involution J(f)(u) = f(u^-1) preserves the measure du/u and maps H^1([lambda^-1, lambda]) isometrically onto itself.'
+    classification: "KNOWN_CONSEQUENCE"
+    provenance: "Standard functional analysis on symmetric logarithmic interval"
+    status: "PROVED"
+
+  - assumption_id: "ASM-003"
+    target_problem: "CCM-A1"
+    statement: 'The arithmetic prime quadratic form contribution depresses the even sector H_+ strictly below the odd sector H_- over the required lambda range.'
+    classification: "ORIGINAL"
+    provenance: "CCM (2025) Section 8, Step 1"
+    status: "OPEN_TARGET_HYPOTHESIS"
+
+  - assumption_id: "ASM-004"
+    target_problem: "CCM-A2"
+    statement: 'The compact self-adjoint operator A_lambda restricted to H_+ has a non-degenerate lowest eigenvalue.'
+    classification: "ORIGINAL"
+    provenance: "CCM (2025) Section 8, Step 1"
+    status: "OPEN_TARGET_HYPOTHESIS"
+
+  - assumption_id: "ASM-005"
+    target_problem: "CCM-A3"
+    statement: 'Under the frozen CCM-A3 assumptions, normalized finite Galerkin ground minimizers converge strongly in H for fixed lambda, with eventual simplicity and even parity.'
+    classification: "DERIVED"
+    provenance: "RH-CCM-A3-DIRECT-PROOF-001 direct compact-form-domain proof"
+    status: "INDEPENDENTLY_VERIFIED_CONDITIONAL"
+
+  - assumption_id: "ASM-006"
+    target_problem: "CCM-B*"
+    statement: 'For each 0 <= a < 1/2, the weighted L^1 norm difference \|xi_lambda - C_lambda k_lambda\|_(1,a) decays to zero as lambda -> \infty.'
+    classification: "ORIGINAL"
+    provenance: "CCM (2025) Section 8, Step 2; Substrip Mellin bound"
+    status: "OPEN_TARGET_HYPOTHESIS"

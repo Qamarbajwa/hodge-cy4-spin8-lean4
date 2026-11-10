@@ -1,0 +1,9 @@
+# Bounded Archimedean and compact acceptance
+
+Verdict **ACCEPTED_BOUNDED_ARCH_AND_COMPACT_COMPONENTS_ONLY**, terminal DONE. Acceptor `/root/gov_acceptor` is distinct from reviewer `/root/gov_reviewer` and per-component writers. All scoped terminal reviews and live source hashes matched, including arch adapter SHA256 `bf00c4db5cc530d69d0876786207449a439ce3d809f61ad13d97713ec67fa217`. Exact bindings appear in the JSON companion.
+
+Old35, compact3 and arch7 tests pass together:45. Independent acceptor checks cover32 signed exact directed-rounding cases,5 Bessel origin limits,2 squared compact delta bounds and rejection of a T400 entry request. Inspected full rational constants, series tails, signed panel ranges, uniform length normalization, compact majorant and scalar monotonicity arguments support only their explicit scopes. No source/state mutations occurred.
+
+Accepted: conditional compact replacement/majorant and defined cutoff Archimedean entries with max(L)*T<=2, plus scalar exterior h(T) flooring, including T400. The T400 scalar floor supplies no T400 full matrix enclosure. Operator BLOCKED; pipeline_validated=false; restored0; frontier NONE; NO_RH_PROOF=true; theorem/release NO-GO. Inherited [0.8,L7] remains unrevalidated.
+
+Missing large-cutoff entries or a proved substitute, full pole compact error, complete arithmetic coupling Gram/norm, positive complement, canonical identity/domain, finite Schur positivity and continuum scientific suite remain obligations. Supplied analytic M and all same-cell projection hypotheses remain conditional. Large majorants are certificate obstructions rather than negative spectrum evidence. Direct rounding digit hygiene and mixed-parity unused precision validation are bounded advisories. This is internal AI technical acceptance on a shared workstation, not external mathematical review.

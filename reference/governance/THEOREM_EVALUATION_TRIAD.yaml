@@ -1,0 +1,56 @@
+# THEOREM EVALUATION TRIAD LEDGER
+# Governing Standard: MATHEMATICAL_RESEARCH_CONSTITUTION_v1.0 §3 & §6
+# Purpose: Strict separation of Correctness, Novelty, and Significance.
+# Reconciled: 2026-08-29 (RH-CCM-SOURCE-LOCK-001)
+
+version: "1.3"
+last_updated_utc: "2026-08-29T02:40:00Z"
+
+evaluations:
+  - target_id: "CCM-SYM"
+    correctness_status: "PROVED_IN_PRIMARY_SOURCE"
+    novelty_status: "KNOWN"
+    significance_status: "STRUCTURAL_PREREQUISITE"
+    notes: "Parity commutation proved in CCM (2025) Section 3.2 on Dom(QW_lambda)."
+
+  - target_id: "CCM-FIN-SE"
+    correctness_status: "UNVERIFIED (Open / Hypothesis of Thm 5.10)"
+    novelty_status: "POSSIBLY_NEW"
+    significance_status: "FINITE_STAGE_PREREQUISITE"
+    notes: "Finite-section simple-even property for xi_(lambda,N) on E_N with delta_N(xi_(lambda,N))=1."
+
+  - target_id: "CCM-A1"
+    correctness_status: "PARTIALLY_ESTABLISHED_LOCAL_WINDOW; GLOBAL_TARGET_OPEN"
+    novelty_status: "POSSIBLY_NEW"
+    significance_status: "STRUCTURAL_BRIDGE"
+    notes: "The existential ordering is established on some [0.8,0.8+delta) below 0.5 log(5) by RH-CCM-A1A2-WINDOW-OPENNESS-001; explicit delta and required/global lambda-range coverage remain open."
+
+  - target_id: "CCM-A2"
+    correctness_status: "PARTIALLY_ESTABLISHED_LOCAL_WINDOW; GLOBAL_TARGET_OPEN"
+    novelty_status: "POSSIBLY_NEW"
+    significance_status: "STRUCTURAL_BRIDGE"
+    notes: "The existential even-sector simplicity is established jointly with A1 on some [0.8,0.8+delta) below 0.5 log(5) by RH-CCM-A1A2-WINDOW-OPENNESS-001; explicit delta and required/global lambda-range coverage remain open."
+
+  - target_id: "RH-CCM-A1A2-WINDOW-OPENNESS-001"
+    correctness_status: "COMPLETED_WITH_LIMITATIONS"
+    novelty_status: "BOUNDED_PROJECT_RESULT"
+    significance_status: "LOCAL_STRUCTURAL_ADVANCE"
+    notes: "Fresh IND1 review supports existence of a positive local window only. Quantitative delta, threshold crossing, required-range A1/A2, global A1/A2, RH, and publication remain unproved."
+
+  - target_id: "CCM-A3"
+    correctness_status: "INDEPENDENTLY_VERIFIED_CONDITIONAL"
+    novelty_status: "KNOWN_TECHNIQUE_NEW_APPLICATION"
+    significance_status: "STRUCTURAL_BRIDGE"
+    notes: "Independent audit verdict PROOF_PASS_WITH_LIMITATIONS: fixed-lambda direct proof from compact form-domain embedding, energy convergence, and simple limit eigenvalue; Reed-Simon XIII.64 is not used as the convergence theorem."
+
+  - target_id: "CCM-A3N"
+    correctness_status: "UNVERIFIED (Open Normalization Bridge)"
+    novelty_status: "POSSIBLY_NEW"
+    significance_status: "TECHNICAL_LEMMA"
+    notes: "Finite evaluation functional normalization delta_N(xi)=1 to continuum normalization bridge."
+
+  - target_id: "CCM-B*"
+    correctness_status: "UNVERIFIED (Open Target 3)"
+    novelty_status: "POSSIBLY_NEW"
+    significance_status: "FOUNDATIONAL_BREAKTHROUGH"
+    notes: "Quantitative approximation xi_lambda ~ C_lambda k_lambda to transfer CCM Lemma 7.3 to xi_lambda."

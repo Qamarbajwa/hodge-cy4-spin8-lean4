@@ -1,0 +1,13 @@
+﻿# ASSUMPTION LEDGER  (UNJUSTIFIED blocks promotion)
+version: "1.0"
+kinds: [ORIGINAL, DERIVED, KNOWN_CONSEQUENCE, TEMPORARY, ADDITIONAL, UNJUSTIFIED]
+drift_detection_rules:
+  unjustified_assumption_blocks_promotion: true
+  flagged_patterns:
+    - {pattern_id: FLAG-01, name: "Silent threshold introduction", description: "Introducing parameter >= p0 without explicit verifiable p0", severity: HIGH}
+    - {pattern_id: FLAG-02, name: "Unproved positivity-improving / Perron-Frobenius", description: "Assuming semigroup positivity w/o sign of non-local kernel", severity: CRITICAL}
+    - {pattern_id: FLAG-03, name: "Unproved ground-state simplicity", description: "Treating lowest eigenvalue as simple w/o dim ker = 1", severity: CRITICAL}
+    - {pattern_id: FLAG-04, name: "Unproved symmetry-sector ordering", description: "Ground state parity from commutation alone", severity: CRITICAL}
+    - {pattern_id: FLAG-05, name: "Unproved uniform gap", description: "Uniform spectral gap as parameter->infinity w/o resolvent estimates", severity: CRITICAL}
+assumptions:
+  - {id: A-001, text: "<text>", kind: ORIGINAL, used_in: ["<lemma id>"], classification: ESSENTIAL|REMOVABLE|PROOF_ARTIFACT}
