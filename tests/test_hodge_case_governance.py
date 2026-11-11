@@ -46,7 +46,7 @@ class TestHodgeCaseGovernance(unittest.TestCase):
         ver = event_ledger.verify(conn)
         conn.close()
         self.assertEqual(ver["verdict"], "LOCAL_CHAIN_VALID_UNAUTHENTICATED")
-        self.assertEqual(ver["count"], 12)
+        self.assertEqual(ver["count"], 13)
 
     def test_04_lean_four_pillars_exactness(self):
         # Test Pillar 1: exact_chain_im_sub_ker
