@@ -1,5 +1,7 @@
 """Unit tests for the complete Google Cloud Project Chrysalis Engine."""
 
+import os
+import tempfile
 import unittest
 from toolkit.chrysalis_engine import ChrysalisAutonomousLab, RuntimeToolSynthesizer
 
@@ -32,38 +34,44 @@ def test_calc(a, b):
         self.assertIn("BINARY_AUTHORIZATION_FAILED", err)
 
     def test_chrysalis_cycle_k3_surface(self):
-        lab = ChrysalisAutonomousLab()
-        result = lab.run_hodge_moduli_cycle(
-            dimension_n=2,
-            degree_d=4,
-            family_name="K3 Surface Family",
-            target_codim=1,
-        )
-        self.assertEqual(result["status"], "CHRYALIS_CYCLE_SUCCESSFUL")
-        self.assertTrue(result["boundary_cycles_algebraic"])
-        self.assertEqual(len(lab.receipts), 5)
+        with tempfile.TemporaryDirectory() as tmp:
+            lab = ChrysalisAutonomousLab(memory_path=os.path.join(tmp, "inv.jsonl"))
+            result = lab.run_hodge_moduli_cycle(
+                dimension_n=2,
+                degree_d=4,
+                family_name="K3 Surface Family",
+                target_codim=1,
+            )
+            self.assertEqual(result["status"], "CHRYALIS_CYCLE_SUCCESSFUL")
+            self.assertTrue(result["boundary_cycles_algebraic"])
+            self.assertEqual(len(lab.receipts), 5)
 
     def test_chrysalis_cycle_cubic_fourfold(self):
-        lab = ChrysalisAutonomousLab()
-        result = lab.run_hodge_moduli_cycle(
-            dimension_n=4,
-            degree_d=3,
-            family_name="Cubic Fourfold Family",
-            target_codim=2,
-        )
-        self.assertEqual(result["status"], "CHRYALIS_CYCLE_SUCCESSFUL")
-        self.assertTrue(result["boundary_cycles_algebraic"])
-        self.assertEqual(len(lab.receipts), 5)
+        with tempfile.TemporaryDirectory() as tmp:
+            lab = ChrysalisAutonomousLab(memory_path=os.path.join(tmp, "inv.jsonl"))
+            result = lab.run_hodge_moduli_cycle(
+                dimension_n=4,
+                degree_d=3,
+                family_name="Cubic Fourfold Family",
+                target_codim=2,
+            )
+            self.assertEqual(result["status"], "CHRYALIS_CYCLE_SUCCESSFUL")
+            self.assertTrue(result["boundary_cycles_algebraic"])
+            self.assertEqual(len(lab.receipts), 5)
 
     def test_chrysalis_normal_function_audit(self):
-        lab = ChrysalisAutonomousLab(dual_custody_token="LEAD_RESEARCHER_DUAL_CUSTODY_APPROVAL_TOKEN_2026")
-        result = lab.run_normal_function_audit(field_d=1)
-        self.assertEqual(result["status"], "CHRYSALIS_NORMAL_FUNCTION_AUDIT_SUCCESSFUL")
-        self.assertEqual(result["ivhs_rank"], 4)
-        self.assertEqual(result["dim_chow_image"], 1)
-        self.assertEqual(result["primitive_weil_cycles"], 0)
-        self.assertIn("signed_invariant_sha256", result)
-        self.assertEqual(len(lab.receipts), 5)
+        with tempfile.TemporaryDirectory() as tmp:
+            lab = ChrysalisAutonomousLab(
+                dual_custody_token="LEAD_RESEARCHER_DUAL_CUSTODY_APPROVAL_TOKEN_2026",
+                memory_path=os.path.join(tmp, "inv.jsonl"),
+            )
+            result = lab.run_normal_function_audit(field_d=1)
+            self.assertEqual(result["status"], "CHRYSALIS_NORMAL_FUNCTION_AUDIT_SUCCESSFUL")
+            self.assertEqual(result["ivhs_rank"], 4)
+            self.assertEqual(result["dim_chow_image"], 1)
+            self.assertEqual(result["primitive_weil_cycles"], 0)
+            self.assertIn("signed_invariant_sha256", result)
+            self.assertEqual(len(lab.receipts), 5)
 
 
 if __name__ == "__main__":

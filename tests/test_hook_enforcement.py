@@ -19,8 +19,9 @@ HOOK_PATH = Path("toolkit/governance/deny_mutations.py")
 class TestHookEnforcement(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        # Create toolkit/governance/deny_mutations.py with proper SystemExit re-raising
-        hook_code = '''#!/usr/bin/env python3
+        if not HOOK_PATH.exists():
+            HOOK_PATH.parent.mkdir(parents=True, exist_ok=True)
+            hook_code = '''#!/usr/bin/env python3
 """Gemini CLI preliminary read-only hook, not a security sandbox.
 
 ALL unknown or write-capable tools are blocked. Allowed read-only names are limited
@@ -58,7 +59,7 @@ if __name__ == '__main__':
         print(f'READ_ONLY_ADOPTION_BLOCKED: {type(err).__name__}', file=sys.stderr)
         sys.exit(2)
 '''
-        HOOK_PATH.write_text(hook_code, encoding="utf-8")
+            HOOK_PATH.write_text(hook_code, encoding="utf-8")
 
     def run_hook(self, payload):
         p = subprocess.run(

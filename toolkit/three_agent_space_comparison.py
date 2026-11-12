@@ -12,6 +12,7 @@ Strictly adheres to mathematical guardrails:
 from typing import Dict, List, Tuple, Any
 import math
 import numpy as np
+from toolkit.exact_linalg import exact_matrix_rank
 
 
 class ExactAbelianFourfoldCohomology:
@@ -111,9 +112,9 @@ class ExactLocalizationSequence:
 
         # 2. Check dimension equality: dim(im(Res)) == dim(ker(i_*))
         # rank(Res)
-        res_rank = int(np.linalg.matrix_rank(self.Res))
+        res_rank = exact_matrix_rank(self.Res)
         # nullity of i_*
-        i_rank = int(np.linalg.matrix_rank(self.i_star))
+        i_rank = exact_matrix_rank(self.i_star)
         i_nullity = self.m - i_rank
         exact = (res_rank == i_nullity) and comp_zero
 
@@ -136,8 +137,8 @@ class ExactLocalizationSequence:
         comp_zero = bool(np.all(comp == 0))
 
         # 2. Check dimension equality
-        i_rank = int(np.linalg.matrix_rank(self.i_star))
-        j_rank = int(np.linalg.matrix_rank(self.j_star))
+        i_rank = exact_matrix_rank(self.i_star)
+        j_rank = exact_matrix_rank(self.j_star)
         j_nullity = self.dim_H4 - j_rank
         exact = (i_rank == j_nullity) and comp_zero
 

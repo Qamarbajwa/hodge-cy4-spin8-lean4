@@ -91,9 +91,9 @@ class RuntimeToolSynthesizer:
 class ChrysalisAutonomousLab:
     """Orchestrates the 5-Actor Chrysalis DAG for Hodge Conjecture Research."""
 
-    def __init__(self, dual_custody_token: Optional[str] = None):
+    def __init__(self, dual_custody_token: Optional[str] = None, memory_path: str = "governance/SIGNED_INVARIANTS.jsonl"):
         self.dual_custody_token = dual_custody_token
-        self.memory = SignedInvariantMemory("governance/SIGNED_INVARIANTS.jsonl")
+        self.memory = SignedInvariantMemory(memory_path)
 
         # Establish 5 Distinct Chrysalis Actors (strict separation of duties)
         self.router = ChrysalisActor("chrysalis_router_01", "ROUTER", ["SCHEDULE", "PLAN", "ALLOCATE_BUDGET"])

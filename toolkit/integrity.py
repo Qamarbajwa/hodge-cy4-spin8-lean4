@@ -31,10 +31,14 @@ def verify_seal(results_path: str) -> bool:
 
 def build_manifest(root: str, out: str = "ARTIFACT_HASH_MANIFEST.sha256"):
     lines = []
-    for dp, _, fs in os.walk(root):
+    exclude_dirs = {".git", ".pytest_cache", "__pycache__", ".lake", "build"}
+    for dp, dirs, fs in os.walk(root):
+        dirs[:] = sorted(d for d in dirs if d not in exclude_dirs)
         for fn in sorted(fs):
+            if fn.endswith(".bundle") or fn.endswith(".pyc"):
+                continue
             p = os.path.join(dp, fn)
-            if os.path.abspath(p) == os.path.abspath(os.path.join(root, out)) or "__pycache__" in p:
+            if os.path.abspath(p) == os.path.abspath(os.path.join(root, out)):
                 continue
             lines.append(f"{sha256_file(p)}  {os.path.relpath(p, root).replace(os.sep, '/')}")
     with open(os.path.join(root, out), "w", encoding="utf-8") as f:

@@ -1,17 +1,19 @@
-# CURRENT SCIENTIFIC STATE — HODGE CONJECTURE
+# CURRENT SCIENTIFIC STATE — HODGE CONJECTURE (`HODGE-MILLENNIUM-001`)
 
-**Global Status:** `NO_HODGE_PROOF = TRUE` (Hodge Conjecture Remains OPEN)  
-**Current Date:** 2026-11-09  
-**Governance Version:** Universal Governance v4.1.0-r3 (Adversarial Audit Certified)  
+**Global Status:** `NO_HODGE_PROOF = TRUE` (Clay Millennium Hodge Conjecture Remains OPEN)
+**Updated Date:** 2026-11-12
+**Governance Version:** MATH-GOV v0.6 OS + Co-Scientist Dark Factory Research OS (`COSCIENTIST_DF_v0_1`)
 
 ---
 
 ## 1. Executive Summary
-The Hodge Conjecture (Clay Mathematics Institute Millennium Prize Problem) posits that on any non-singular complex projective manifold $X$, every rational Hodge class in $H^{2p}(X, \mathbb{Q}) \cap H^{p,p}(X)$ is algebraic (the fundamental class of a formal rational linear combination of algebraic subvarieties).
+The Hodge Conjecture (Clay Mathematics Institute Millennium Prize Problem, Deligne 2000) posits that on any non-singular complex projective algebraic variety $X$, every rational Hodge class in $H^{2p}(X, \mathbb{Q}) \cap H^{p,p}(X)$ is algebraic (the fundamental class of a formal rational linear combination of algebraic subvarieties).
 
-Following rigorous adversarial audit, the project strictly upholds the foundational governance rule:
+Under MATH-GOV v0.6 and the Absolute Scientific Honesty Law:
 $$\text{NO\_HODGE\_PROOF} = \text{TRUE}$$
-Neither an affirmative proof nor a counterexample has been conclusively established in the peer-reviewed mathematical literature. Our laboratory has mapped the obstruction landscape of Weil-type abelian fourfolds with exact exterior algebra, while formulating the two grand candidate pathways (Obstruction Sieve vs. Markman Modular Correspondences).
+Neither a global proof nor a counterexample to the rational Hodge Conjecture has been established. Following Eyal Markman's February 2025 affirmative resolution of Weil classes on abelian fourfolds (`arXiv:2502.03415`), the project's active discovery frontier centers on the two regimes where Markman's secant-sheaf engine cannot apply:
+1. **Mumford Spinor Classes on Simple Abelian Sixfolds** with trivial endomorphisms ($\operatorname{End}_{\mathbb{Q}}(A) = \mathbb{Q}$, $\rho(A) = 1$).
+2. **Non-Abelian Sextic Calabi–Yau Fourfolds** $X_4 \subset \mathbb{P}^5$ ($b_1 = 0$, $h^{2,2}_{\mathrm{prim}} = 1751$), governed by Griffiths residues and Voisin second-order syzygy integrability.
 
 ---
 
@@ -19,35 +21,33 @@ Neither an affirmative proof nor a counterexample has been conclusively establis
 
 | Dimension / Case | Mathematical Status | Primary Theorem / Reference |
 |---|---|---|
-| **$p = 1$ (Divisors)** | **PROVED** | Solomon Lefschetz (1924), Lefschetz $(1,1)$-theorem via $H^1(X, \mathcal{O}_X^\times) \to H^2(X, \mathbb{Z})$ |
+| **$p = 1$ (Divisors)** | **PROVED** | Solomon Lefschetz (1924), Lefschetz $(1,1)$-theorem |
 | **$p = n - 1$ (Curves)** | **PROVED** | Hard Lefschetz theorem + Poincaré duality |
 | **$\dim(X) \le 3$ (Curves, Surfaces, Threefolds)** | **PROVED** | Combination of $p=1$ and $p=n-1$ |
-| **$\dim(X) \ge 4, p = 2$ (Weil Abelian 4-folds)** | **OPEN (Primary Frontier)** | Deligne (2000) CMI problem formulation; Weil (1977); Schoen (1998); Markman (2022); Obstructions to divisors/curves proved; overall status OPEN |
+| **Weil-type Abelian Fourfolds** | **SETTLED AFFIRMATIVELY** | Eyal Markman (Feb 2025, `arXiv:2502.03415`), secant sheaves on auxiliary abelian threefolds |
+| **Mumford Spinor Classes ($\operatorname{End}_{\mathbb{Q}}(A) = \mathbb{Q}$)** | **OPEN FRONTIER** | David Mumford (1969), $D_4 = \mathfrak{so}(8)$ spinor barrier; Markman secant engine inapplicable |
+| **Non-Abelian Calabi–Yau Fourfolds ($X_4 \subset \mathbb{P}^5$)** | **OPEN FRONTIER** | Voisin (1989) second-order integrability holds locally; global cycle realization in $\operatorname{CH}^2(X_4)_{\mathbb{Q}}$ unproved |
 | **Integral Coefficients ($\mathbb{Z}$)** | **DISPROVED** | Atiyah-Hirzebruch (1962), Kollár (1992), Totaro (1997) |
 | **Compact Kähler (non-projective)** | **DISPROVED** | Claire Voisin (2002) |
 
 ---
 
-## 3. Verified Proved Invariants vs. Active Open Frontiers
+## 3. Verified Structural Theorems vs. Active Open Frontiers
 
-### A. Certified Proved Theorems (Verified in Exact Code & Literature)
-1. **Exact Betti & Hodge Numbers:** For an abelian fourfold $A$, $b_4 = 70$, $h^{4,0} = 1, h^{3,1} = 16, h^{2,2} = 36, h^{1,3} = 16, h^{0,4} = 1$.
-2. **Picard Rank One:** For a very general Weil fourfold, $\rho(A) = 1$, so $\operatorname{NS}(A)_{\mathbb{Q}} = \mathbb{Q}\Theta$.
-3. **Divisor Orthogonality:** $W_0(A) \perp \operatorname{Sym}^2 \operatorname{NS}(A)_{\mathbb{Q}}$ ($\Theta \wedge w_i = 0$ in $\bigwedge^6$, and $\langle \Theta^2, w_i \rangle = 0$). Self-intersection $\int_A \Theta^4 = 24$.
-4. **The Pontryagin Curve Trap:** $\dim \operatorname{Hdg}_2(A, \mathbb{Q})^{\operatorname{SU}(2,2)} = 1$ (spanned by $\ell = \operatorname{PD}(\Theta^3/6)$). All curve classes $[C] \propto \ell$, so all curve Pontryagin products $[C_1] * [C_2] \propto \Theta^2 \perp W_0(A)$.
-5. **Semi-Homogeneous Bundle Vanishing:** Mukai (1978) proves semi-homogeneous bundles have $\Delta(\mathcal{E}) = 0$, so $c_2(\mathcal{E}) \in \mathbb{Q}\Theta^2 \perp W_0(A)$.
-6. **Schoen CM Boundary Algebraicity:** At $A_0 = E^4$, the Weil class is algebraic (Schoen 1998).
-7. **Simplicity of General Weil Fourfolds:** Very general $A \in \mathcal{M}_{\text{Weil}}$ has $\operatorname{End}^0(A) \cong K$ and contains no abelian subvarieties.
-8. **Localization Exactness:** $i_* \circ \operatorname{Res} = 0$, $\operatorname{im}(\operatorname{Res}) = \ker(i_*)$, and the negative space vanishing theorem: $j^*(w) = 0 \iff w \in \operatorname{im}(i_*)$.
-9. **Universal Confinement of Classes I–V:** Singular surfaces, non-reduced schemes, derived sheaves, o-minimal sets, and calibrated rectifiable currents all reduce to $\operatorname{cl}(\operatorname{CH}^2(A)_{\mathbb{Q}})$.
+### A. Formally Verified Structural Theorems (Lean 4.35.0 & Exact Rational Python Engines)
+1. **Deligne Localization Exactness:** $i_* \circ \operatorname{Res} = 0$, $\operatorname{im}(\operatorname{Res}) = \ker(i_*)$, and negative space vanishing $j^*(w) = 0 \iff w \in \operatorname{im}(i_*)$. (Verified in exact rational linear algebra and Lean 4 `exact_chain_im_sub_ker`).
+2. **Abelian Fourfold Exact Hodge & Weil Orthogonality:** $b_4 = 70$, $\rho(A) = 1$, $W_0(A) \perp \operatorname{Sym}^2 \operatorname{NS}(A)_{\mathbb{Q}}$. (Verified in Lean 4 `weil_w1_orthogonal_to_theta2`, `weil_w2_orthogonal_to_theta2`).
+3. **Mumford Spinor Combinatorics vs. Full $\mathfrak{so}(8)$ Invariance:** $\dim \bigwedge^4 S^+_8 = 70$, exactly $6$ Cartan zero-weight 4-tuples, and stacked simple root annihilation rank $= 6$ ($\ker = 0$, zero trivial singlets). (Verified in Lean 4 `four_tuples_len`, `zero_tuples_len` and exact rational `MumfordSpinorEngine`).
+4. **Calabi–Yau Fourfold Koszul & IVHS Rank:** Sextic $X_4 \subset \mathbb{P}^5$ has primitive Hodge diamond $(1, 426, 1751, 426, 1)$, Milnor number $15625$, and 2-plane $\Pi$ has rank $19$, kernel dimension $407$. (Verified in Lean 4 `h40_prim_eq`, `h31_prim_eq`, `h22_prim_eq`, `milnor_number_eq`, `r6_dim_eq`, `plane_kernel_dim_eq`).
+5. **Voisin Moving-Plane Full Integrability:** Under exact rational Gaussian elimination over $\mathbb{Q}$, all $407 / 407$ ($100\%$) tangent vectors of the 2-plane $\Pi$ are unobstructed in the moving-cycle variation subspace, while $\lambda_{\mathrm{chain}}$ fails second-order integrability.
 
-### B. Active Open Frontiers
-1. **The Chow-Rank Defect (`LBL-HODGE-006`):** Determining whether $\operatorname{cl}(\operatorname{CH}^2(A)_{\mathbb{Q}}) = \mathbb{Q}\Theta^2$ or whether signed modular cycles exist. (Status: `LOAD_BEARING_HYPOTHESIS_ACTIVE`).
-2. **Markman Modular Correspondences:** Determining whether the correspondence on $A \times K_2(A)$ can be proven to generate non-trivial algebraic cycles in $W_0(A)$. (Status: ACTIVE RESEARCH PROGRAM).
+### B. Active Open Frontiers (`NO_HODGE_PROOF = TRUE`)
+1. **Mumford Spinor Cycles (`LBL-HODGE-008`):** Constructing algebraic cycles or correspondences generating exceptional Hodge classes on simple abelian sixfolds with $\operatorname{End}_{\mathbb{Q}}(A) = \mathbb{Q}$.
+2. **Global Cycle Realization on Sextic CY4 (`LBL-HODGE-010`):** Proving whether every Voisin-integrable class in $R^{12}(F)$ comes from a global algebraic cycle $Z \in \operatorname{CH}^2(X_4)_{\mathbb{Q}}$.
 
 ---
 
-## 4. Active Governance & Laboratory Modules
-- **Load-Bearing Lemmas:** `LBL-HODGE-001` through `005` are verified; `LBL-HODGE-006` is `LOAD_BEARING_HYPOTHESIS_ACTIVE`.
-- **Test Suite:** 61/61 automated tests passing in 0.08s across 11 test suites.
-- **Governing Truth:** `NO_HODGE_PROOF = TRUE`.
+## 4. Active Architecture & Verification Infrastructure
+- **Co-Scientist Dark Factory Engine:** `toolkit/coscientist/` orchestrates 6 agents (Generation, Reflection, Proximity, Evolution, Tournament Elo, Meta-Review) through a fail-closed state machine (`ResearchGateKernel`) decoupled from independent verification (`MathProofAdapter`).
+- **Exact Linear Algebra:** `toolkit/exact_linalg.py` replaces floating-point `matrix_rank` and `svd` heuristics with exact rational elimination over $\mathbb{Q}$.
+- **Lean 4 Formal Verification:** 13 theorems verified in `lean_blueprint/HodgeVerification.lean` under Lean 4.35.0 with zero `sorry`, zero `admit`, and strictly allowed axioms (`propext`, `Classical.choice`, `Quot.sound`).

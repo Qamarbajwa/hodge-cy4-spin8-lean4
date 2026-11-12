@@ -1,3 +1,9 @@
+> [!WARNING]
+> **SUPERSEDED_HISTORICAL_RECORD (Pre-Markman 2025 Working Hypothesis)**
+> This document is preserved strictly as a historical record of an earlier counterexample investigation on Weil-type abelian fourfolds.
+> **Scientific Correction:** Eyal Markman (February 2025, `arXiv:2502.03415`) proved that Weil classes on abelian fourfolds ARE algebraic via secant sheaves on auxiliary abelian threefolds, **superseding and disproving** the counterexample claim below for Weil fourfolds.
+> **Current Status (`HODGE-MILLENNIUM-001`):** The Clay Millennium Hodge Conjecture remains strictly **OPEN**. See `docs/16`, `docs/17`, `docs/18`, and `governance/LOAD_BEARING_LEMMA_REGISTER.yaml` for the active frontiers (Mumford spinor classes with $\operatorname{End}_{\mathbb{Q}}(A)=\mathbb{Q}$ and Calabi–Yau fourfold global cycle realization).
+
 # The Weil Fourfold Counterexample Thesis: Falsification of the Hodge Conjecture over $\mathbb{Q}$
 
 *Formal documentation of the counterexample program to the Hodge Conjecture on very general Abelian Fourfolds of Weil Type under Clay Mathematics Institute Millennium Prize standards.*
@@ -8,7 +14,7 @@
 
 > **The Counterexample Thesis (Weil-Hodge Falsification):**
 > Let $A = \mathbb{C}^4 / \Lambda$ be a very general complex abelian fourfold of Weil type associated with an imaginary quadratic field $K = \mathbb{Q}(\sqrt{-d})$ ($d \ge 1$), having tangent signature $(2, 2)$ and minimal endomorphism algebra $\operatorname{End}^0(A) \cong K$.
-> 
+>
 > Then:
 > 1. The space of rational Hodge classes of codimension 2 on $A$ is 3-dimensional:
 >    $$\operatorname{Hdg}^4(A) = H^4(A, \mathbb{Q}) \cap H^{2,2}(A) = \mathbb{Q} \cdot \omega^2 \oplus W_0(A)$$
@@ -56,7 +62,7 @@ The thesis rests on five certified structural theorems that systematically elimi
 - **Result:** Resolving singularities provides **zero auxiliary cycles**.
 
 ### Pillar 4: The Mohan Kumar - Murthy - Roy Albanese Clash (Certified Invariant `INV-MUMFORD-TATE-SURFACE-OBSTRUCTION-D1`)
-- **Theorem:** By the adjunction formula in a trivial tangent manifold, any smooth effective surface $S \subset A$ must have $e(S) = Q(w_1, w_1) = 12$. 
+- **Theorem:** By the adjunction formula in a trivial tangent manifold, any smooth effective surface $S \subset A$ must have $e(S) = Q(w_1, w_1) = 12$.
   The Albanese variety $\operatorname{Alb}(S) \twoheadrightarrow A$ forces non-trivial endomorphisms on $A$, directly contradicting $\operatorname{End}^0(A) = K$.
 - **Proof:** $Q_W$ has eigenvalues $[4.0, 12.0]$ (positive-definite). By Bogomolov-Miyaoka-Yau and the universal property of the Albanese map, $\operatorname{Alb}(S) \sim A$ forces extra correspondences on $A$, violating genericity.
 - **Result:** **No smooth connected surface can represent the Weil class on a general Weil fourfold.**
@@ -77,10 +83,10 @@ The thesis rests on five certified structural theorems that systematically elimi
 
 ## 3. The Active Load-Bearing Hypothesis: The Chow-Rank Defect
 
-> **Hypothesis (Chow-Rank Defect on Simple Weil Fourfolds — `LBL-HODGE-006`):**  
+> **Hypothesis (Chow-Rank Defect on Simple Weil Fourfolds — `LBL-HODGE-006`):**
 > On a very general complex abelian fourfold $A$ of Weil type with $\operatorname{End}^0(A) \cong K$ and $\rho(A) = 1$:
 > $$\operatorname{cl}\left(\operatorname{CH}^2(A)_{\mathbb{Q}}\right) \stackrel{?}{=} \mathbb{Q} \cdot \Theta^2$$
-> **Status:** `LOAD_BEARING_HYPOTHESIS_ACTIVE` (Open Research Frontier).  
+> **Status:** `LOAD_BEARING_HYPOTHESIS_ACTIVE` (Open Research Frontier).
 > While divisors, curve Pontryagin products, and Kummer surfaces are proved orthogonal to $W_0(A)$, proving that no signed algebraic cycle or higher modular correspondence can represent $W_0(A)$ remains an open mathematical challenge.
 
 ---

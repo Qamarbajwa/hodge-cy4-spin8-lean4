@@ -252,6 +252,7 @@ class MumfordSpinorEngine:
            proving \dim ( \bigwedge^4 S^+_8 )^{\mathfrak{so}(8)} = 0.
         """
         import numpy as np
+        from toolkit.exact_linalg import exact_matrix_rank
 
         raw_weights = [signs for signs in itertools.product([1, -1], repeat=4) if math.prod(signs) == 1]
         weight_to_idx = {w: i for i, w in enumerate(raw_weights)}
@@ -319,8 +320,7 @@ class MumfordSpinorEngine:
             A_list.append(mat)
 
         stacked = np.vstack(A_list)
-        u, s, vt = np.linalg.svd(stacked.astype(float))
-        rank = int(np.sum(s > 1e-6))
+        rank = exact_matrix_rank(stacked)
         ker_dim = len(zero_weight_4_tuples) - rank
 
         return {

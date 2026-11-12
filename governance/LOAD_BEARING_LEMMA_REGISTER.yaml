@@ -1,7 +1,7 @@
-# LOAD-BEARING LEMMA REGISTER: HODGE CONJECTURE COUNTEREXAMPLE PROGRAM
-# Strict dependency and audit tracking under Universal Governance v4.1.0-r3
-version: "1.0"
-target_claim: "Falsification of the Hodge Conjecture over Q on very general Weil-type Abelian Fourfolds"
+# LOAD-BEARING LEMMA REGISTER: HODGE CONJECTURE DISCOVERY & VERIFICATION PROGRAM
+# Strict dependency and audit tracking under MATH-GOV v0.6 OS
+version: "2.0"
+target_claim: "Discovery and formal verification of structural theorems and open cycle frontiers for HODGE-MILLENNIUM-001 (Clay Millennium Hodge Conjecture remains OPEN)"
 
 lemmas:
   - id: LBL-HODGE-001
@@ -45,10 +45,42 @@ lemmas:
     dependencies: ["Adjunction formula for trivial tangent bundles", "Bogomolov-Miyaoka-Yau inequality", "Universal property of Albanese varieties"]
 
   - id: LBL-HODGE-006
-    name: "The Chow-Rank Defect on Simple Weil Fourfolds"
-    statement: "For a very general abelian fourfold of Weil type A in M_Weil with End^0(A) = K and rho(A) = 1, the image of the cycle class map cl: CH^2(A)_Q -> Hdg^4(A) is 1-dimensional, spanned solely by omega^2. The primitive Weil subspace W_0(A) contains no algebraic cycles."
-    status: LOAD_BEARING_HYPOTHESIS_ACTIVE
+    name: "The Chow-Rank Defect on Simple Weil Fourfolds (Classical Obstruction Scope)"
+    statement: "For a very general abelian fourfold of Weil type A in M_Weil, divisors, product surfaces, semi-homogeneous bundles, and Kummer exceptional divisors yield no primitive Weil class in W_0(A)."
+    status: SUPERSEDED_BY_MARKMAN_2025_AFFIRMATIVE_RESOLUTION
     proof_ref: "docs/13_the_weil_fourfold_counterexample_thesis.md"
-    invariant_id: "PENDING_COUNTEREXAMPLE_VALIDATION"
+    invariant_id: "HISTORICAL_WEIL_OBSTRUCTION_RECORD"
     dependencies: ["LBL-HODGE-001", "LBL-HODGE-002", "LBL-HODGE-003", "LBL-HODGE-004", "LBL-HODGE-005"]
-    audit_notes: "Downgraded from PROVED_CERTIFIED to LOAD_BEARING_HYPOTHESIS_ACTIVE following adversarial audit. While divisors, product surfaces, and Kummer exceptional surfaces are proved orthogonal/obstructed, ruling out all signed/modular algebraic cycles across CH^2(A)_Q remains an open mathematical problem."
+    audit_notes: "Superseded as a counterexample claim by Eyal Markman (Feb 2025, arXiv:2502.03415), who proved Weil classes on abelian fourfolds ARE algebraic via secant sheaves on auxiliary abelian threefolds."
+
+  - id: LBL-HODGE-007
+    name: "Markman Secant Sheaf Resolution for Weil Fourfolds"
+    statement: "Primitive Weil classes W_0(A) on abelian fourfolds of Weil type are realized affirmatively as Chern classes pushed forward via secant sheaves on auxiliary abelian threefolds."
+    status: PROVED_IN_LITERATURE_STRUCTURAL_VERIFIED
+    proof_ref: "toolkit/markman_secant_engine.py"
+    invariant_id: "arXiv:2502.03415"
+    dependencies: ["LBL-HODGE-001", "Derived categories & Fourier-Mukai secant correspondences"]
+
+  - id: LBL-HODGE-008
+    name: "Mumford Spinor Inapplicability of Secant Engine on End_Q(A)=Q Sixfolds"
+    statement: "For simple abelian sixfolds with End_Q(A) = Q (Mumford 1969), Cartan zero-weight 4-tuples in wedge^4 S+_8 (dim 6) have trivial so(8)-invariant intersection (stacked simple root rank = 6, ker = 0), and Schur's lemma blocks Markman auxiliary varieties."
+    status: PROVED_STRUCTURAL_AND_ACTIVE_OPEN_FRONTIER
+    proof_ref: "toolkit/mumford_spinor_engine.py"
+    invariant_id: "LEAN4:four_tuples_len,zero_tuples_len"
+    dependencies: ["Schur's Lemma", "Representation theory of D4 = so(8)"]
+
+  - id: LBL-HODGE-009
+    name: "Calabi-Yau Fourfold Moving-Plane Voisin Second-Order Integrability"
+    statement: "On the Fermat sextic Calabi-Yau fourfold X_4 in P^5, the 2-plane cycle Pi has first-order IVHS rank 19 (kernel dim 407) and achieves 407/407 (100%) unobstructed tangent vectors under the full Voisin moving-cycle variation pairing."
+    status: PROVED_STRUCTURAL_LEAN_AND_EXACT_PYTHON
+    proof_ref: "toolkit/calabi_yau_jacobian_engine.py"
+    invariant_id: "LEAN4:h22_prim_eq,r6_dim_eq,plane_kernel_dim_eq"
+    dependencies: ["Griffiths Residue Calculus", "Voisin Second-Order Syzygy Variation"]
+
+  - id: LBL-HODGE-010
+    name: "Global Algebraic Cycle Realization on Sextic Calabi-Yau Fourfolds"
+    statement: "Prove whether every Voisin-integrable (2,2)-class in R^{12}(F) on smooth sextic CY4 originates from a global algebraic cycle Z in CH^2(X_4)_Q."
+    status: ACTIVE_OPEN_FRONTIER
+    proof_ref: "docs/18_calabi_yau_fourfolds_griffiths_residue_and_noether_lefschetz.md"
+    invariant_id: "OPEN_MILLENNIUM_FRONTIER"
+    dependencies: ["LBL-HODGE-009"]

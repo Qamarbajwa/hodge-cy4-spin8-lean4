@@ -23,6 +23,7 @@ from typing import Dict, List, Tuple, Any
 import math
 import itertools
 import numpy as np
+from toolkit.exact_linalg import ExactColumnSpan, exact_matrix_rank
 
 
 class CalabiYauJacobianEngine:
@@ -191,12 +192,12 @@ class CalabiYauJacobianEngine:
         # 1. Linear 2-plane monomial: (4, 4, 4, 0, 0, 0)
         plane_monomial = (4, 4, 4, 0, 0, 0)
         mat_plane = self.build_ivhs_multiplication_matrix({plane_monomial: 1}, m6, m18)
-        rk_plane = int(np.linalg.matrix_rank(mat_plane))
+        rk_plane = exact_matrix_rank(mat_plane)
 
         # 2. Symmetric center monomial: (2, 2, 2, 2, 2, 2)
         center_monomial = (2, 2, 2, 2, 2, 2)
         mat_center = self.build_ivhs_multiplication_matrix({center_monomial: 1}, m6, m18)
-        rk_center = int(np.linalg.matrix_rank(mat_center))
+        rk_center = exact_matrix_rank(mat_center)
 
         # 3. Sum of four 2-plane cycles
         plane_4_monomials = {
@@ -206,14 +207,14 @@ class CalabiYauJacobianEngine:
             (0, 4, 0, 4, 0, 4): 1,
         }
         mat_4planes = self.build_ivhs_multiplication_matrix(plane_4_monomials, m6, m18)
-        rk_4planes = int(np.linalg.matrix_rank(mat_4planes))
+        rk_4planes = exact_matrix_rank(mat_4planes)
 
         # 4. Dense combination of 50 monomials with integer coefficients
         np.random.seed(42)
         selected_idx = np.random.choice(len(m12), size=50, replace=False)
         dense_coeffs = {m12[idx]: int(np.random.choice([1, -1, 2, -2])) for idx in selected_idx}
         mat_dense = self.build_ivhs_multiplication_matrix(dense_coeffs, m6, m18)
-        rk_dense = int(np.linalg.matrix_rank(mat_dense))
+        rk_dense = exact_matrix_rank(mat_dense)
 
         return {
             "matrix_shape": mat_plane.shape,
@@ -289,6 +290,7 @@ class CalabiYauJacobianEngine:
         M_lambda: np.ndarray | None = None,
         m6_basis: List[Tuple[int, ...]] | None = None,
         m18_basis: List[Tuple[int, ...]] | None = None,
+        im_span: ExactColumnSpan | None = None,
     ) -> Dict[str, Any]:
         r"""Computes Voisin's second-order quadratic obstruction \Phi_\lambda(u, v) in coker(M_\lambda).
 
@@ -305,7 +307,7 @@ class CalabiYauJacobianEngine:
         A = self.compute_koszul_syzygy(u_monomial, lam_coeffs)
 
         # Compute S(u, v) = \sum A_i(u) \partial_i v
-        vec = np.zeros(len(m18_basis), dtype=float)
+        vec = np.zeros(len(m18_basis), dtype=int)
         raw_monomial_count = 0
         in_j18_count = 0
 
@@ -324,18 +326,16 @@ class CalabiYauJacobianEngine:
                 else:
                     in_j18_count += 1
 
-        in_jacobian = np.all(vec == 0)
+        in_jacobian = bool(np.all(vec == 0))
         in_image = False
 
         if in_jacobian:
             in_image = True
         else:
-            # Check if vec is in column span of M_lambda
-            im_cols = M_lambda[:, np.where(M_lambda.sum(axis=0) != 0)[0]]
-            rk_im = int(np.linalg.matrix_rank(im_cols))
-            aug = np.column_stack([im_cols, vec])
-            rk_aug = int(np.linalg.matrix_rank(aug))
-            in_image = (rk_aug == rk_im)
+            if im_span is None:
+                im_cols = M_lambda[:, np.where(np.any(M_lambda != 0, axis=0))[0]]
+                im_span = ExactColumnSpan(im_cols)
+            in_image = im_span.contains(vec)
 
         return {
             "u_monomial": u_monomial,
@@ -357,6 +357,8 @@ class CalabiYauJacobianEngine:
         m18 = self.generate_monomial_basis(18)
         lam_pi = {(4, 4, 4, 0, 0, 0): 1}
         M_pi = self.build_ivhs_multiplication_matrix(lam_pi, m6, m18)
+        im_pi = M_pi[:, np.where(np.any(M_pi != 0, axis=0))[0]]
+        im_span = ExactColumnSpan(im_pi)
 
         # Canonical geometric deformation subspace
         u_canonical = [a for a in m6 if a[0] >= 1 and a[1] >= 1 and a[2] >= 1]
@@ -365,7 +367,7 @@ class CalabiYauJacobianEngine:
         obstructed_canonical = 0
         for u in u_canonical:
             for v in u_canonical:
-                res = self.compute_second_order_pairing(u, v, lam_pi, M_pi, m6, m18)
+                res = self.compute_second_order_pairing(u, v, lam_pi, M_pi, m6, m18, im_span=im_span)
                 if not res["is_unobstructed"]:
                     obstructed_canonical += 1
 
@@ -374,7 +376,7 @@ class CalabiYauJacobianEngine:
         self_zero_count = 0
         for j in ker_indices:
             u = m6[j]
-            res = self.compute_second_order_pairing(u, u, lam_pi, M_pi, m6, m18)
+            res = self.compute_second_order_pairing(u, u, lam_pi, M_pi, m6, m18, im_span=im_span)
             if res["is_unobstructed"]:
                 self_zero_count += 1
 
@@ -410,16 +412,17 @@ class CalabiYauJacobianEngine:
         lam_chain = {(4, 3, 3, 2, 0, 0): 1, (2, 3, 3, 4, 0, 0): 1}
         M_chain = self.build_ivhs_multiplication_matrix(lam_chain, m6, m18)
 
-        im_chain = M_chain[:, np.where(M_chain.sum(axis=0) != 0)[0]]
-        rk_chain = int(np.linalg.matrix_rank(im_chain))
+        im_chain = M_chain[:, np.where(np.any(M_chain != 0, axis=0))[0]]
+        chain_span = ExactColumnSpan(im_chain)
+        rk_chain = chain_span.rank
 
         # Explicit obstructed pair
         u_obs = (0, 0, 2, 0, 0, 4)
         v_obs = (0, 0, 2, 0, 4, 0)
-        res = self.compute_second_order_pairing(u_obs, v_obs, lam_chain, M_chain, m6, m18)
+        res = self.compute_second_order_pairing(u_obs, v_obs, lam_chain, M_chain, m6, m18, im_span=chain_span)
 
-        aug = np.column_stack([im_chain, res["projection_vector"]])
-        rk_aug = int(np.linalg.matrix_rank(aug))
+        in_base = chain_span.contains(res["projection_vector"])
+        rk_aug = rk_chain if in_base else rk_chain + 1
 
         return {
             "artificial_class": "lambda_chain = x_0^4 x_1^3 x_2^3 x_3^2 + x_0^2 x_1^3 x_2^3 x_4^4",
@@ -454,40 +457,42 @@ class CalabiYauJacobianEngine:
 
         lam_pi = {(4, 4, 4, 0, 0, 0): 1}
         M_pi = self.build_ivhs_multiplication_matrix(lam_pi, m6, m18)
-        im_pi = M_pi[:, np.where(M_pi.sum(axis=0) != 0)[0]]
+        im_pi = M_pi[:, np.where(np.any(M_pi != 0, axis=0))[0]]
+        im_pi_span = ExactColumnSpan(im_pi)
         ker_pi = [j for j in range(len(m6)) if not any(M_pi[:, j])]
 
         # Moving cycle variation subspace for Pi: monomials having (4,4) in any two of {0, 1, 2}
         mov_cols = []
         for a in m18:
             if (a[0] == 4 and a[1] == 4) or (a[0] == 4 and a[2] == 4) or (a[1] == 4 and a[2] == 4):
-                col = np.zeros(len(m18))
+                col = np.zeros(len(m18), dtype=int)
                 col[m18_idx[a]] = 1
                 mov_cols.append(col)
         mov_mat = np.column_stack(mov_cols)
         full_subspace_pi = np.column_stack([im_pi, mov_mat])
-        rk_full_pi = int(np.linalg.matrix_rank(full_subspace_pi))
+        full_pi_span = ExactColumnSpan(full_subspace_pi)
+        rk_full_pi = full_pi_span.rank
 
         # Test all 407 kernel vectors for Pi
         obstructed_count_pi = 0
         for j in ker_pi:
             u = m6[j]
-            res = self.compute_second_order_pairing(u, u, lam_pi, M_pi, m6, m18)
+            res = self.compute_second_order_pairing(u, u, lam_pi, M_pi, m6, m18, im_span=im_pi_span)
             vec = res["projection_vector"]
             if np.all(vec == 0):
                 continue
-            aug = np.column_stack([full_subspace_pi, vec])
-            if np.linalg.matrix_rank(aug) > rk_full_pi:
+            if not full_pi_span.contains(vec):
                 obstructed_count_pi += 1
 
         # Test artificial class lambda_chain
         lam_chain = {(4, 3, 3, 2, 0, 0): 1, (2, 3, 3, 4, 0, 0): 1}
         M_chain = self.build_ivhs_multiplication_matrix(lam_chain, m6, m18)
-        im_chain = M_chain[:, np.where(M_chain.sum(axis=0) != 0)[0]]
+        im_chain = M_chain[:, np.where(np.any(M_chain != 0, axis=0))[0]]
+        im_chain_span = ExactColumnSpan(im_chain)
 
         u_obs = (0, 0, 2, 0, 0, 4)
         v_obs = (0, 0, 2, 0, 4, 0)
-        res_chain = self.compute_second_order_pairing(u_obs, v_obs, lam_chain, M_chain, m6, m18)
+        res_chain = self.compute_second_order_pairing(u_obs, v_obs, lam_chain, M_chain, m6, m18, im_span=im_chain_span)
 
         # Build u * R^12 + v * R^12 for chain
         uv_cols = []
@@ -495,14 +500,14 @@ class CalabiYauJacobianEngine:
             for b in m12:
                 prod = tuple(u_mono[k] + b[k] for k in range(self.num_vars))
                 if all(x <= 4 for x in prod):
-                    col = np.zeros(len(m18))
+                    col = np.zeros(len(m18), dtype=int)
                     col[m18_idx[prod]] = 1
                     uv_cols.append(col)
 
         subspace_chain = np.column_stack([im_chain] + uv_cols)
-        rk_sub_chain = int(np.linalg.matrix_rank(subspace_chain))
-        aug_chain = np.column_stack([subspace_chain, res_chain["projection_vector"]])
-        rk_aug_chain = int(np.linalg.matrix_rank(aug_chain))
+        subspace_chain_span = ExactColumnSpan(subspace_chain)
+        rk_sub_chain = subspace_chain_span.rank
+        rk_aug_chain = rk_sub_chain if subspace_chain_span.contains(res_chain["projection_vector"]) else rk_sub_chain + 1
 
         return {
             "plane_total_kernel_vectors": len(ker_pi),

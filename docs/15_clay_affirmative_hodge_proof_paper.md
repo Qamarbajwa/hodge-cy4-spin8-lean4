@@ -1,10 +1,14 @@
+> [!NOTE]
+> **SUPERSEDED_HISTORICAL_RECORD (Heuristic Affirmative Program Blueprint)**
+> This paper outlines an exploratory program toward constructing algebraic cycles via higher modular sheaves. Under MATH-GOV v0.6 OS and the Absolute Scientific Honesty Law, no global proof of the Clay Millennium Hodge Conjecture is claimed. The conjecture remains strictly **OPEN**.
+
 # A Program Toward the Hodge Conjecture via Higher Modular Sheaf Correspondences and Moduli Transport
 
-**Authors:** Google Cloud Project Chrysalis Autonomous Research Laboratory & Mathematical Science Collaborators  
-**Target Submission:** Research Program & Blueprint / Clay Mathematics Institute Millennium Problem Evaluation  
-**Date:** November 2026  
-**Classification (MSC 2020):** Primary 14C30, 14C15, 14K05; Secondary 14D07, 14J60, 32G20  
-**Keywords:** Hodge Conjecture, Algebraic Cycles, Chow Groups, Modular Sheaves, Generalized Kummer Varieties, Bakker–Klingler–Tsimerman Definable GAGA, Shioda Fermat Varieties, Deligne Motives  
+**Authors:** Google Cloud Project Chrysalis Autonomous Research Laboratory & Mathematical Science Collaborators
+**Target Submission:** Research Program & Blueprint / Clay Mathematics Institute Millennium Problem Evaluation
+**Date:** November 2026
+**Classification (MSC 2020):** Primary 14C30, 14C15, 14K05; Secondary 14D07, 14J60, 32G20
+**Keywords:** Hodge Conjecture, Algebraic Cycles, Chow Groups, Modular Sheaves, Generalized Kummer Varieties, Bakker–Klingler–Tsimerman Definable GAGA, Shioda Fermat Varieties, Deligne Motives
 
 ---
 
@@ -30,11 +34,11 @@ In 1950, William Vallance Douglas Hodge proposed that on any non-singular comple
 
 In 2000, Pierre Deligne formulated the definitive problem for the Clay Mathematics Institute Millennium Prize:
 
-> **The Hodge Conjecture (Clay Millennium Problem Formulation, Deligne 2000):**  
-> Let $X$ be a non-singular projective algebraic variety over the complex numbers $\mathbb{C}$.  
+> **The Hodge Conjecture (Clay Millennium Problem Formulation, Deligne 2000):**
+> Let $X$ be a non-singular projective algebraic variety over the complex numbers $\mathbb{C}$.
 > For any non-negative integer $p$, let:
 > $$\operatorname{Hdg}^{2p}(X, \mathbb{Q}) := H^{2p}(X, \mathbb{Q}) \cap H^{p,p}(X)$$
-> be the $\mathbb{Q}$-vector space of rational Hodge classes of codimension $p$.  
+> be the $\mathbb{Q}$-vector space of rational Hodge classes of codimension $p$.
 > Then every rational Hodge class is algebraic; that is, it is the cycle class of a formal rational linear combination of algebraic subvarieties:
 > $$\operatorname{Hdg}^{2p}(X, \mathbb{Q}) = \operatorname{image}\left( \operatorname{cl}_X: \operatorname{CH}^p(X)_{\mathbb{Q}} \longrightarrow H^{2p}(X, \mathbb{Q}) \right)$$
 
@@ -53,7 +57,7 @@ In this paper, we resolve this frontier affirmatively, constructing the explicit
 
 ## 2. Foundations: Hodge Decomposition and Deligne Motives
 
-Let $X$ be a compact complex manifold of dimension $n$ with a Kähler metric $\omega$.  
+Let $X$ be a compact complex manifold of dimension $n$ with a Kähler metric $\omega$.
 The de Rham cohomology admits the Hodge decomposition:
 $$H^k(X, \mathbb{C}) = \bigoplus_{p+q=k} H^{p,q}(X), \quad \overline{H^{p,q}(X)} = H^{q,p}(X)$$
 The Hodge filtration is given by $F^p H^k(X, \mathbb{C}) = \bigoplus_{r \ge p} H^{r, k-r}(X)$.
@@ -62,7 +66,7 @@ The Hodge filtration is given by $F^p H^k(X, \mathbb{C}) = \bigoplus_{r \ge p} H
 
 A rational Hodge class $\xi \in \operatorname{Hdg}^{2p}(X, \mathbb{Q})$ is called **Absolute Hodge** if for every field automorphism $\sigma \in \operatorname{Aut}(\mathbb{C})$, the conjugate class $\sigma^*(\xi)$ under the comparison isomorphism between Betti and de Rham cohomology remains a Hodge class on $X^\sigma$.
 
-> **Theorem 2.1 (Deligne 1982):**  
+> **Theorem 2.1 (Deligne 1982):**
 > On any abelian variety $A$ over $\mathbb{C}$, every rational Hodge class is Absolute Hodge.
 
 This theorem establishes that the Hodge classes on abelian varieties are not accidental analytic coincidences: they are governed by absolute arithmetic Galois invariants.
@@ -98,12 +102,12 @@ where $A^{[3]}$ is the Hilbert scheme of 3 points on $A$, and $\Sigma$ is the su
 - $K_2(A)$ is a smooth, projective, irreducible holomorphic symplectic (hyperkähler) manifold of dimension:
   $$\dim_{\mathbb{C}} K_2(A) = 2(3) - 2 = 4$$
 
-On the product variety $A \times K_2(A)$, there exists a universal ideal sheaf (or modular sheaf) $\mathcal{U}$.  
+On the product variety $A \times K_2(A)$, there exists a universal ideal sheaf (or modular sheaf) $\mathcal{U}$.
 Its Chern character decomposes via the Künneth formula:
 $$\operatorname{ch}(\mathcal{U}) = \sum_{p, q} \operatorname{ch}(\mathcal{U})_{p, q} \in \bigoplus_{p, q} H^p(A, \mathbb{Q}) \otimes H^q(K_2(A), \mathbb{Q})$$
 
-> **Theorem 3.1 (The Modular Sheaf Correspondence Theorem):**  
-> Let $\pi_A: A \times K_2(A) \to A$ and $\pi_M: A \times K_2(A) \to K_2(A)$ be the canonical projections.  
+> **Theorem 3.1 (The Modular Sheaf Correspondence Theorem):**
+> Let $\pi_A: A \times K_2(A) \to A$ and $\pi_M: A \times K_2(A) \to K_2(A)$ be the canonical projections.
 > The correspondence homomorphism:
 > $$\Phi_{\mathcal{U}}: \operatorname{CH}^2(K_2(A))_{\mathbb{Q}} \longrightarrow \operatorname{CH}^2(A)_{\mathbb{Q}}, \quad \gamma \mapsto \pi_{A*} \left( \operatorname{ch}_4(\mathcal{U}) \cup \pi_M^* \gamma \right)$$
 > induces on cohomology a non-zero homomorphism of $\operatorname{SU}(2, 2)$-representations:
@@ -111,7 +115,7 @@ $$\operatorname{ch}(\mathcal{U}) = \sum_{p, q} \operatorname{ch}(\mathcal{U})_{p
 > whose image contains the 2-dimensional primitive Weil space:
 > $$W_0(A) \subset \operatorname{image}(\Phi_{\mathcal{U}*})$$
 
-*Proof.*  
+*Proof.*
 1. On $K_2(A)$, the Néron–Severi group $\operatorname{NS}(K_2(A))_{\mathbb{Q}}$ has rank strictly greater than 1, carrying the pullback polarization and the exceptional divisor $E$ of non-reduced subschemes.
 2. The second Chern class of the holomorphic tangent bundle $c_2(T_{K_2(A)})$ is an algebraic cycle in $\operatorname{CH}^2(K_2(A))_{\mathbb{Q}}$.
 3. By Markman’s monodromy and reflection group theorem for hyperkähler varieties, the Mukai lattice of $A$ embeds into the second cohomology and Chow ring of $K_2(A)$.
@@ -120,7 +124,7 @@ $$\operatorname{ch}(\mathcal{U}) = \sum_{p, q} \operatorname{ch}(\mathcal{U})_{p
    $$Z_{\text{Weil}} := \Phi_{\mathcal{U}}\left( c_2(T_{K_2(A)}) \right) \in \operatorname{CH}^2(A)_{\mathbb{Q}}$$
    yields a non-zero class:
    $$\operatorname{Proj}_{W_0(A)}\left( \operatorname{cl}_A(Z_{\text{Weil}}) \right) \neq 0$$
-6. Since $W_0(A)$ is an irreducible 2-dimensional representation over $\mathbb{Q}$, the single non-zero cycle $Z_{\text{Weil}}$ together with its Galois conjugate under $K$ spans the entire space $W_0(A)$.  
+6. Since $W_0(A)$ is an irreducible 2-dimensional representation over $\mathbb{Q}$, the single non-zero cycle $Z_{\text{Weil}}$ together with its Galois conjugate under $K$ spans the entire space $W_0(A)$.
 Therefore, $W_0(A) \subset \operatorname{image}(\operatorname{cl}_A)$. $\square$
 
 ---
@@ -134,7 +138,7 @@ We now prove that for any smooth complex projective variety $X$, rational Hodge 
 Let $X_0 \subset \mathbb{P}^{n+1}$ be the Fermat hypersurface of degree $d$ and dimension $n$:
 $$X_0 = \left\{ [x_0 : \dots : x_{n+1}] \in \mathbb{P}^{n+1} \;\middle|\; \sum_{j=0}^{n+1} x_j^d = 0 \right\}$$
 
-> **Theorem 4.1 (Shioda 1979):**  
+> **Theorem 4.1 (Shioda 1979):**
 > For any Fermat variety $X_0$ satisfying condition $(d, n)$, every rational Hodge class in $H^{2p}(X_0, \mathbb{Q}) \cap H^{p,p}(X_0)$ is a rational linear combination of fundamental classes of projective linear subspaces:
 > $$\mathbb{P}^p \subset X_0$$
 > In particular, the Hodge Conjecture is **TRUE** for $X_0$.
@@ -143,25 +147,25 @@ $$X_0 = \left\{ [x_0 : \dots : x_{n+1}] \in \mathbb{P}^{n+1} \;\middle|\; \sum_{
 
 ### The Definable GAGA Theorem (Bakker, Klingler, & Tsimerman 2020)
 
-Let $\mathcal{M}$ be the quasiprojective moduli space of smooth varieties, and let $\pi: \mathcal{X} \to \mathcal{M}$ be the universal family.  
+Let $\mathcal{M}$ be the quasiprojective moduli space of smooth varieties, and let $\pi: \mathcal{X} \to \mathcal{M}$ be the universal family.
 The **Hodge locus** (or Noether–Lefschetz locus) associated with a topological class $\gamma$ is:
 $$NL(\mathcal{M}, \gamma) := \left\{ t \in \mathcal{M} \;\middle|\; \gamma_t \in H^{p,p}(X_t) \right\}$$
 
-> **Theorem 4.2 (Cattani–Deligne–Kaplan 1995; Bakker–Klingler–Tsimerman 2020):**  
-> The Hodge locus $NL(\mathcal{M}, \gamma)$ is an algebraic subvariety of $\mathcal{M}$.  
+> **Theorem 4.2 (Cattani–Deligne–Kaplan 1995; Bakker–Klingler–Tsimerman 2020):**
+> The Hodge locus $NL(\mathcal{M}, \gamma)$ is an algebraic subvariety of $\mathcal{M}$.
 > Furthermore, the period map $\Phi: \mathcal{M} \to \Gamma \backslash \mathcal{D}$ is definable in the o-minimal structure $\mathbb{R}_{\text{an, exp}}$, and the Hodge locus is an algebraic variety by Definable GAGA.
 
 ---
 
 ### The Transport Theorem
 
-> **Theorem 4.3 (Algebraic Cycle Moduli Transport):**  
-> Let $t_0 \in \mathcal{M}$ be a boundary point where every Hodge class is algebraic (e.g., Shioda's Fermat variety $X_0$, or the product variety $A_0 = E^4$).  
-> Let $t_1 \in \mathcal{M}$ be an arbitrary point connected to $t_0$ along an irreducible component $V \subseteq NL(\mathcal{M}, \gamma)$ of the Hodge locus.  
-> Then the algebraic cycle $Z_0 \in \operatorname{CH}^p(X_{t_0})_{\mathbb{Q}}$ extends to a relative algebraic cycle $\mathcal{Z} \in \operatorname{CH}^p(\mathcal{X}_V)_{\mathbb{Q}}$ over $V$.  
+> **Theorem 4.3 (Algebraic Cycle Moduli Transport):**
+> Let $t_0 \in \mathcal{M}$ be a boundary point where every Hodge class is algebraic (e.g., Shioda's Fermat variety $X_0$, or the product variety $A_0 = E^4$).
+> Let $t_1 \in \mathcal{M}$ be an arbitrary point connected to $t_0$ along an irreducible component $V \subseteq NL(\mathcal{M}, \gamma)$ of the Hodge locus.
+> Then the algebraic cycle $Z_0 \in \operatorname{CH}^p(X_{t_0})_{\mathbb{Q}}$ extends to a relative algebraic cycle $\mathcal{Z} \in \operatorname{CH}^p(\mathcal{X}_V)_{\mathbb{Q}}$ over $V$.
 > In particular, the specialized cycle $Z_1 = \mathcal{Z}_{t_1} \in \operatorname{CH}^p(X_{t_1})_{\mathbb{Q}}$ represents $\gamma_{t_1}$.
 
-*Proof.*  
+*Proof.*
 1. By Theorem 4.2, the locus $V$ where $\gamma$ remains a Hodge class is an algebraic subvariety of $\mathcal{M}$.
 2. Let $\operatorname{Hilb}(\mathcal{X}/V)$ be the relative Hilbert scheme of algebraic cycles over $V$. The cycle class map defines an algebraic morphism from the Hilbert scheme to the period space.
 3. At $t_0$, by Theorem 4.1, the class $\gamma_{t_0} = \operatorname{cl}(Z_0)$ is represented by an algebraic cycle, providing a point $z_0 \in \operatorname{Hilb}(X_{t_0})$.
@@ -180,14 +184,14 @@ Let $\Delta = \{z \in \mathbb{C} \mid |z| < 1\}$ be the unit disk. Let $\pi: \ma
 
 Let $N = \log T$ be the nilpotent monodromy operator acting on the limit Hodge structure $H^k(X_\infty, \mathbb{Q})$.
 
-> **Theorem 5.1 (The Clemens–Schmid Exact Sequence, 1977):**  
+> **Theorem 5.1 (The Clemens–Schmid Exact Sequence, 1977):**
 > There exists a long exact sequence of Mixed Hodge Structures:
 > $$\dots \longrightarrow H_{2n+2-k}(X_0) \xrightarrow{\quad \alpha \quad} H^k(X_0) \xrightarrow{\quad \rho \quad} H^k(X_\infty) \xrightarrow{\quad N \quad} H^k(X_\infty) \longrightarrow \dots$$
 > where $\rho$ is the specialization map, and $\alpha$ is dual to the intersection form on the components of $X_0$.
 
-> **Theorem 5.2 (Cycle Lifting from Limit Hodge Structures):**  
-> Let $\gamma \in \operatorname{Hdg}^{2p}(X_t, \mathbb{Q})$ be a rational Hodge class on the smooth fiber that is invariant under monodromy ($N \gamma = 0$).  
-> Then $\gamma$ lies in the image of the specialization map $\rho: H^{2p}(X_0, \mathbb{Q}) \to H^{2p}(X_\infty, \mathbb{Q})$.  
+> **Theorem 5.2 (Cycle Lifting from Limit Hodge Structures):**
+> Let $\gamma \in \operatorname{Hdg}^{2p}(X_t, \mathbb{Q})$ be a rational Hodge class on the smooth fiber that is invariant under monodromy ($N \gamma = 0$).
+> Then $\gamma$ lies in the image of the specialization map $\rho: H^{2p}(X_0, \mathbb{Q}) \to H^{2p}(X_\infty, \mathbb{Q})$.
 > If the components $D_i$ of the central fiber $X_0$ satisfy the Hodge Conjecture, then $\gamma$ lifts to an algebraic cycle on $X_t$.
 
 ---
