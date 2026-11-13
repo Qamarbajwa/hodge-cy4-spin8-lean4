@@ -340,6 +340,28 @@ class DarkFactoryWorkflowTests(unittest.TestCase):
             "INDEPENDENTLY_REPLICATED",
         )
 
+    def test_dark_factory_erdos_fourier_probe(self):
+        engine = DarkFactoryEngine()
+        goal = ResearchGoal("G3", "Erdos-Fourier", "Verify Erdos-Fourier 3-band decomposition")
+        specs = [
+            (
+                "H-ERDOS-FOURIER-01",
+                GenerationSpec(
+                    domain="CalabiYauFourfold",
+                    target_class="Fourier modes in R^12(F)",
+                    motivation="Partition 1751 into 2-planes, inductive cones, and indecomposable",
+                    proposed_construction="Discrete Fourier pairing matching and Shioda 3+3 inductive split",
+                ),
+            ),
+        ]
+        summary = engine.submit_and_process_candidates(goal, specs)
+        self.assertEqual(summary["eligible"], 1)
+        self.assertEqual(
+            engine.run_independent_verification("H-ERDOS-FOURIER-01", "exact_engine", "erdos_fourier_audit"),
+            "INDEPENDENTLY_REPLICATED",
+        )
+        self.assertTrue(engine.kernel.proposal_is_verified("H-ERDOS-FOURIER-01"))
+
 
 if __name__ == "__main__":
     unittest.main()

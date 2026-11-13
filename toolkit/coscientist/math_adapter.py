@@ -103,6 +103,20 @@ class MathProofAdapter:
                 "schoen_codim_a4": schoen["fourfold_weil_class_codimension"],
                 "exact_arithmetic": True,
             }
+        elif probe_name == "erdos_fourier_audit":
+            from toolkit.erdos_fourier_incidence_engine import ErdosFourierIncidenceEngine
+            eng = ErdosFourierIncidenceEngine()
+            audit = eng.run_full_audit()
+            passed = bool(audit.get("all_mathematical_invariants_verified", False))
+            decomp = audit["three_band_fourier_decomposition"]
+            result_payload = {
+                "probe": probe_name,
+                "all_verified": passed,
+                "dim_planes_1001": decomp["dim_fourier_planes_2_2_2"],
+                "dim_inductive_630": decomp["dim_inductive_cones_3_3"],
+                "dim_indecomp_120": decomp["dim_indecomposable"],
+                "exact_arithmetic": True,
+            }
         else:
             raise ValueError(f"Unknown exact verification probe: {probe_name}")
 
