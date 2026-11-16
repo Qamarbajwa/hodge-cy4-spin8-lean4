@@ -13,9 +13,9 @@
 
 ---
 
-## 1. Executive Summary & Comparative Methodology
+## 1. Executive Summary & Governance Architecture
 
-This master document provides the binding forward-path roadmap and line-by-line verification ledger for research project **`HODGE-MILLENNIUM-001`**. It synthesizes and adapts the rigorous architectural principles established in the Riemann Hypothesis (Additive-Multiplicative Duality) formalization standard:
+This master document provides the binding forward-path roadmap and line-by-line verification ledger for research project **`HODGE-MILLENNIUM-001`** (The Hodge Conjecture on Complex Projective Varieties). It strictly enforces the MATH-GOV v0.7 Graph Proof Closure Protocol across four foundational pillars:
 
 1. **The Epistemic Firewall (Unconditional Theorems vs. Millennium Boundary):**
    - The global Clay Millennium Hodge Conjecture remains strictly **`OPEN`** (`NO_HODGE_PROOF = TRUE`).
