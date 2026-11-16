@@ -43,7 +43,7 @@ All 20 computational modules in `toolkit/` operate strictly with exact integer, 
 
 | Module Filename | Core Functionality | Epistemic Classification | What Is Proved vs. What Remains Open |
 | :--- | :--- | :--- | :--- |
-| `blind_gauss_manin_jet_reconstructor.py` | Blind $t^3$-jet Gauss--Manin transport over $\mathbb{F}_p[[t]]/(t^4)$, spontaneous $q_2(t)$ quadric generator recovery | `[SOLVED-COMPUTATIONAL-FINITE]` | Recovers smoothed quadric from reducible pair ideal without planting surface equations; effective bounds open |
+| `blind_gauss_manin_jet_reconstructor.py` | 3-Band blind $t^3$-jet Gauss--Manin transport over $\mathbb{F}_p[[t]]/(t^4)$ across Band 1 ($Q_2$), Band 2 ($3+3$), Band 3 ($2+4$) | `[SOLVED-COMPUTATIONAL-FINITE]` | Recovers smoothed quadric and computes exact Macaulay rank vectors for all 3 bands without planting equations; effective bounds open |
 | `calabi_yau_jacobian_engine.py` | Milnor number $\mu=15,625$, Gorenstein Hilbert dimensions $(1, 426, 1751, 426, 1)$ | `[SOLVED-COMPUTATIONAL-FINITE]` | Exact dimensions on Fermat sextic; does not prove global cycle existence |
 | `covariant_apolarity_and_weyl_shioda_census.py` | Wiebe transition determinant, initial-monomial bound $\ge 155$, $W(D_4)$ characters, Shioda census | `[SOLVED-COMPUTATIONAL-FINITE]` | Finite algebraicity tests on $I_\Pi \setminus I_\Pi^2$; does not prove global Hilbert bounds |
 | `cmi_autonomous_cycle1_engine.py` | First-order formal syzygy extension along Fermat deformation vectors | `[SOLVED-COMPUTATIONAL-FINITE]` | Solves local 1st-order infinitesimal deformation; formal series convergence to $\mathrm{CH}^2$ open |
@@ -119,8 +119,10 @@ Every single declaration in `lean_blueprint/HodgeVerification.lean` (and `exampl
 | 45 | `macaulay_plane_and_quadric_rank_witness_cert` | Graded polynomial action gives plane profile $[3, 6, 10, 15, 18, 19]$ (sum 72) and quadric profile $[4, 9, 16, 24, 30, 32]$ with 0 axioms |
 | 46 | `shioda_aoki_fermat_fourfold_census_m3_to_m10_empty_band4` | Fermat degrees $m=3\dots 10$ have empty Band 4, $m=12$ has 360 paired-diagonal residual characters, and $m=6$ has $1001+630+120+0=1751$ with 0 axioms |
 
-### 4.1 Standalone Formal Conjectures Module (`ShiodaFormalConjectures.lean`)
-In accordance with the `google-deepmind/formal-conjectures` specification, `lean_blueprint/ShiodaFormalConjectures.lean` (and `examples/math_gov/LeanDemoProject/ShiodaFormalConjectures.lean`) formalizes Checks 44--46 and defines `ShiodaFermatInductiveConjecture`, formulating Shioda's criterion for Fermat hypersurfaces $X_m^n$ without external Mathlib dependencies.
+### 4.1 Standalone Formal Conjectures Module (`ShiodaFormalConjectures.lean`) and Upstream Artifact
+In accordance with the `google-deepmind/formal-conjectures` specification:
+- `lean_blueprint/ShiodaFormalConjectures.lean` (and `examples/math_gov/LeanDemoProject/ShiodaFormalConjectures.lean`) formalizes Checks 44--46 with generative polynomial basis enumerators and Galois-norm census evaluators (`axioms: []`).
+- `docs/upstream_formal_conjectures/ShiodaFermatHodgeConjecture.lean` provides the full canonical Mathlib4 upstream pull request for `google-deepmind/formal-conjectures` along with `docs/upstream_formal_conjectures/UPSTREAM_PR_GUIDE.md`.
 
 **Critical Epistemic Scope:** None of these 46 checks formalize algebraic schemes, sheaves, cohomology groups, or global Hodge theory. They verify decidable finite combinatorial and algebraic arithmetic via `by rfl` in core Lean 4.
 
@@ -142,5 +144,5 @@ The following problems remain strictly **OPEN** and are beyond the scope of loca
 
 No claim is made in this repository that the Hodge Conjecture has been solved. The contributions of this work are strictly limited to:
 1. Exact rational and modular computational experiments on concrete Calabi--Yau fourfolds and $\mathrm{Spin}(8)$ weight representations;
-2. Formal verification of 43 finite combinatorial and algebraic identities in core Lean 4 without Mathlib;
+2. Formal verification of 46 finite combinatorial and generative certificates in core Lean 4 without Mathlib;
 3. Clarification of the precise mathematical mechanisms (normal obstruction cancellation, quadric recombination, and $W(D_4)$ chiral orbits) that govern local behavior near classical points.

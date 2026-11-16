@@ -1,8 +1,8 @@
 # CURRENT SCIENTIFIC STATE — HODGE CONJECTURE (`HODGE-MILLENNIUM-001`)
 
-**Global Status:** `NO_HODGE_PROOF = TRUE` (Clay Millennium Hodge Conjecture Remains OPEN)
-**Updated Date:** 2026-11-12
-**Governance Version:** MATH-GOV v0.6 OS + Co-Scientist Dark Factory Research OS (`COSCIENTIST_DF_v0_1`)
+**Global Status:** `NO_HODGE_PROOF = TRUE` (`GLOBAL_HODGE_CONJECTURE = OPEN`, `S-BRIDGE-DEFORM-CY4 = OPEN`, `S-BRIDGE-SPINOR-MOTIVE = OPEN`)
+**Updated Date:** 2026-11-15
+**Governance Version:** MATH-GOV v0.7 + Co-Scientist Dark Factory Research OS (`COSCIENTIST_DF_v0_1`)
 
 ---
 
@@ -40,14 +40,17 @@ Neither a global proof nor a counterexample to the rational Hodge Conjecture has
 3. **Mumford Spinor Combinatorics vs. Full $\mathfrak{so}(8)$ Invariance:** $\dim \bigwedge^4 S^+_8 = 70$, exactly $6$ Cartan zero-weight 4-tuples, and stacked simple root annihilation rank $= 6$ ($\ker = 0$, zero trivial singlets). (Verified in Lean 4 `four_tuples_len`, `zero_tuples_len` and exact rational `MumfordSpinorEngine`).
 4. **Calabi–Yau Fourfold Koszul & IVHS Rank:** Sextic $X_4 \subset \mathbb{P}^5$ has primitive Hodge diamond $(1, 426, 1751, 426, 1)$, Milnor number $15625$, and 2-plane $\Pi$ has rank $19$, kernel dimension $407$. (Verified in Lean 4 `h40_prim_eq`, `h31_prim_eq`, `h22_prim_eq`, `milnor_number_eq`, `r6_dim_eq`, `plane_kernel_dim_eq`).
 5. **Voisin Moving-Plane Full Integrability:** Under exact rational Gaussian elimination over $\mathbb{Q}$, all $407 / 407$ ($100\%$) tangent vectors of the 2-plane $\Pi$ are unobstructed in the moving-cycle variation subspace, while $\lambda_{\mathrm{chain}}$ fails second-order integrability.
+6. **Noether–Macaulay Gorenstein Symmetry & $W(D_4)$ Spinor Weight Decomposition:** Palindromic 25-degree Hilbert–Poincaré symmetry ($d_{\mathrm{socle}} = 24$, middle degree $12$, $\dim R^{12}(F_0) = 1751$, unobstructed kernel $1325 + 426 = 1751$) and $W(D_4)$ spinor chiral split ($\dim \bigwedge^4 S^+_8 = 70 = 35_+ \oplus 35_-$, $6$ Cartan zero-weight tuples, stacked root rank $6$, $|W(D_4)| = 192$) are formally proved in Lean 4 with zero axioms (`noether_macaulay_gorenstein_symmetry_eq`, `weyl_d4_spinor_weight_decomposition_eq`).
+7. **Typed Conditional Bridge Interface in Lean 4 (`ClassicalHodgeBridgeInterface`):** Mirroring `ClassicalAnalyticInterface` from the RH blueprint, `ClassicalHodgeBridgeInterface` isolates the irreducible open premises of Bridge A (`effective_hilbert_degree_bound_cy4`, `global_non_fermat_macaulay_stabilization`) and Bridge B (`kuga_satake_algebraic_cycle_over_Q`, `chow_flatness_mumford_sixfold`), and `conditional_hodge_closure_of_bridges` proves with zero axioms (`axioms: []`) that discharging those typed bridge fields implies `TargetHodgeClosureSpec h_interface`. Both bridges remain strictly **OPEN**.
 
-### B. Active Open Frontiers (`NO_HODGE_PROOF = TRUE`)
-1. **Mumford Spinor Cycles (`LBL-HODGE-008`):** Constructing algebraic cycles or correspondences generating exceptional Hodge classes on simple abelian sixfolds with $\operatorname{End}_{\mathbb{Q}}(A) = \mathbb{Q}$.
-2. **Global Cycle Realization on Sextic CY4 (`LBL-HODGE-010`):** Proving whether every Voisin-integrable class in $R^{12}(F)$ comes from a global algebraic cycle $Z \in \operatorname{CH}^2(X_4)_{\mathbb{Q}}$.
+### B. Active Open Frontiers (`NO_HODGE_PROOF = TRUE`, `GLOBAL_HODGE_CONJECTURE = OPEN`)
+1. **Bridge B — Mumford Spinor Cycles (`S-BRIDGE-SPINOR-MOTIVE = OPEN`, `LBL-HODGE-008`):** Constructing algebraic cycles or correspondences (`kuga_satake_algebraic_cycle_over_Q`, `chow_flatness_mumford_sixfold`) on simple abelian sixfolds with $\operatorname{End}_{\mathbb{Q}}(A) = \mathbb{Q}$.
+2. **Bridge A — Global Cycle Realization on Sextic CY4 (`S-BRIDGE-DEFORM-CY4 = OPEN`, `LBL-HODGE-010`):** Proving an effective Hilbert degree bound (`effective_hilbert_degree_bound_cy4`) and global non-Fermat Macaulay stabilization (`global_non_fermat_macaulay_stabilization`) realizing Voisin-integrable classes in $R^{12}(F_t)$ by global algebraic cycles $Z \in \operatorname{CH}^2(X_4)_{\mathbb{Q}}$.
 
 ---
 
 ## 4. Active Architecture & Verification Infrastructure
 - **Co-Scientist Dark Factory Engine:** `toolkit/coscientist/` orchestrates 6 agents (Generation, Reflection, Proximity, Evolution, Tournament Elo, Meta-Review) through a fail-closed state machine (`ResearchGateKernel`) decoupled from independent verification (`MathProofAdapter`).
-- **Exact Linear Algebra:** `toolkit/exact_linalg.py` replaces floating-point `matrix_rank` and `svd` heuristics with exact rational elimination over $\mathbb{Q}$.
-- **Lean 4 Formal Verification:** 13 theorems verified in `lean_blueprint/HodgeVerification.lean` under Lean 4.35.0 with zero `sorry`, zero `admit`, and strictly allowed axioms (`propext`, `Classical.choice`, `Quot.sound`).
+- **Exact Rational & Multi-Prime CRT Linear Algebra:** `toolkit/exact_linalg.py` provides exact rational elimination over $\mathbb{Q}$, while `toolkit/modular_crt_linear_solver.py` provides float-free 62-bit multi-prime $\mathbb{Z}/p\mathbb{Z}$ RREF + CRT + Wang rational reconstruction (`scan_forbidden == []`), certifying the `1751 x 426` non-Fermat sextic Macaulay matrix rank (`426`) in `< 1s` (`563 ms`, `228x` observed slice speedup vs `Fraction`).
+- **Lean 4 Formal Verification:** `48/48` theorems verified in `lean_blueprint/HodgeVerification.lean` (including `ClassicalHodgeBridgeInterface`, `UniversalClayHodgeInterface`, `conditional_hodge_closure_of_bridges`, `universal_clay_hodge_closure_of_five_conditions`, `liaison_socle_bypass_and_coupled_cy4_ranks_eq`, and `korselt_carmichael_hardy_ramanujan_unmasking_eq`) under Lean `v4.35.0` with zero `sorry`, zero `admit`, and strictly empty axioms (`axioms: []`).
+- **CMI Five-Condition Attack Engine (`toolkit/cmi_five_condition_attack_engine.py`):** Verifies Peskine-Szpiro liaison degree compression ($Z_{22} \mapsto Q_2$, ranks `[4, 9, 16, 24, 30, 32]`), non-separable 6-variable coupled CY4 stabilization (`[3, 6, 10, 15, 18, 19]`), `70/70` Kuga-Satake triality transfer & `6/6` Weyl basis inversion, and `22 = 7 + 15` Carmichael/Poulet unmasking on `[2, 10000]` (including `1729 = 12^3 + 1^3 = 10^3 + 9^3`).

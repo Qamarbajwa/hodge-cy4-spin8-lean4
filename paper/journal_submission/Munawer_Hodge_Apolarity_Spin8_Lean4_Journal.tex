@@ -247,8 +247,11 @@ where $C_3(x) = x_0 x_1 x_2 + x_3 x_4 x_5 + (x_0+x_3)(x_1+x_4)(x_2+x_5)$.
 Following Wiebe \cite{Wiebe1969}, Scheja--Storch \cite{SchejaStorch1975}, and Carlson--Griffiths \cite{CarlsonGriffiths1980}, let $F = \sum_{k=0}^2 y_k A_k(x)$ be a smooth sextic containing a codimension-3 subvariety $Z = V(y_0, y_1, y_2)$ (e.g., a 2-plane $\Pi$ or quadric $Q_2$). The colon ideal of the Jacobian ideal against the transition determinant $\Lambda_Z(F) = \det(\partial A_j / \partial z_m)$ satisfies $(J(F) : \Lambda_Z(F)) = \mathfrak{a}_Z$, recovering the defining ideal $\mathfrak{a}_Z$ in degree 1: $\Ann_{R^1(F)}(\Lambda_Z(F)) = \mathfrak{a}_{Z, 1}$. Across the linear perturbation regimes $W_1 \in I_\Pi \setminus I_\Pi^2$, $W_2 \in I_\Pi^2 \setminus I_\Pi^3$, and $W_3 \in I_\Pi^3$, the degree-12 covariant transition determinant $\Lambda_\Pi(F) \bmod J(F)$ recovers the Macaulay rank vector $[3, 6, 10, 15, 18, 19]$ for planes and $[4, 9, 16, 24, 30, 32]$ for quadrics under exact 61-bit multi-prime CRT.
 \end{theorem}
 
+\paragraph{Three-Band Blind Gauss--Manin Jet Reconstruction.}
+To test whether higher-order infinitesimal deformations autonomously detect the emergence and smoothing of algebraic cycles without planting equations, we execute blind power-series transport $\Lambda(t) = \sum_{k=0}^3 t^k \Lambda_k \pmod{J(F_t), t^4}$ over $\mathbb{F}_p[[t]]/(t^4)$ ($p = 2305843009213693951$) across all three non-empty cyclotomic bands. In Band 1 ($2+2+2$ planes), transport through order $t^3$ yields a degree-1 kernel drop $3 \to 2$, spontaneously recovers the unique quadric generator $q_2(t) \in \ker M^{(2)}_{\Lambda(t)}$ ($\dim = 12 = 11 + 1$), and stabilizes at Macaulay ranks $[4, 9, 16, 24, 30, 32]$ (Gotzmann $G=2$). In Band 2 ($3+3$ curve joins), linear and quadric annihilators vanish identically ($\dim \ker M^{(1)} = 0$, $\dim \ker M^{(2)} = 0$), while degree-3 syzygies ($\dim \ker M^{(3)} = 6$) govern the curve-join locus, stabilizing at $[6, 21, 50, 90, 126, 141]$. In Band 3 ($2+4$ surface-curve joins), the single linear hyperplane annihilator $y_0 = x_0 - x_3$ ($\dim \ker M^{(1)} = 1$) is preserved while expanding across the 4-variable surface block with stabilized ranks $[5, 15, 32, 53, 71, 78]$.
+
 \paragraph{Scope of This Section.}
-This section has demonstrated the preservation of the degree-counting Macaulay vector under non-separable perturbation and benchmarked the deterministic multi-prime Chinese Remainder Theorem solver.
+This section has demonstrated the preservation of the degree-counting Macaulay vector under non-separable perturbation, documented the three-band blind jet reconstruction results, and benchmarked the deterministic multi-prime Chinese Remainder Theorem solver.
 
 % ==============================================================================
 \section{Experiment E: \texorpdfstring{$D_4$}{D4} Clifford Triality Combinatorics and \texorpdfstring{$6 \times 6$}{6x6} Weyl-to-Weil Inversion}
@@ -277,14 +280,14 @@ Every element of the Weyl group $W(D_4)$ ($|W(D_4)| = 192$) acts as an even perm
 This section has established the Erd\H{o}s $K_{2,2}$ weight space characterization, $70/70$ triality correspondence transfer, and the invertible $6 \times 6$ rational Weyl transition matrix $B_{\mathrm{Weyl}}$. Motivic realization over $\mathbb{Q}$ remains open.
 
 % ==============================================================================
-\section{Decidable Core Lean~4.35.0 Finite Checks}
+\section{Decidable Core Lean~4.35.0 Finite Checks and Generative Certificates}
 \label{sec:thmFG}
 % ==============================================================================
 
-Alongside the computational experiments, our standalone formal verification suite in Lean~4 \cite{Lean4} provides $43$ decidable finite combinatorial and degree-counting checks with \textbf{zero Mathlib imports}. Every check satisfies \texttt{\#print axioms thm} $= \emptyset$ (zero \texttt{sorryAx}, zero \texttt{Classical.choice}, zero custom axioms) via \texttt{by rfl} or elementary constructive logic, verifying index-set inclusions, $D_4$ spinor/triality counts, Fermat band counts, collision counts, and Gorenstein Hilbert dimensions. It does not formalize schemes, cohomology, or Hodge theory.
+Alongside the computational experiments, our standalone formal verification suite in Lean~4 \cite{Lean4} provides $46$ decidable finite checks with \textbf{zero Mathlib imports} across \texttt{HodgeVerification.lean} (43 core checks) and \texttt{ShiodaFormalConjectures.lean} (Checks 44--46). Every check satisfies \texttt{\#print axioms thm} $= \emptyset$ (zero \texttt{sorryAx}, zero \texttt{Classical.choice}, zero custom axioms) via \texttt{by rfl} or elementary constructive logic. Checks 44--46 formally verify: (44) the invertibility certificate $B_{\mathrm{Weyl}} \cdot B_{\mathrm{adj}} = -8 \cdot I_6$ and $\det(B_{\mathrm{Weyl}}) \neq 0$ over $\mathbb{Z}$; (45) generative monomial evaluators certifying the plane Macaulay profile $[3, 6, 10, 15, 18, 19]$ (sum 72) and quadric profile $[4, 9, 16, 24, 30, 32]$; and (46) generative Shioda Galois-norm census proving that Band 4 is identically empty for $m \in [3..10]$, isolating the 4 paired-diagonal $S_6$-orbits (360 characters) at $m=12$, and confirming the degree-6 fourfold decomposition $1001 + 630 + 120 + 0 = 1751$. It does not formalize schemes, cohomology, or Hodge theory.
 
 \paragraph{Scope of This Section.}
-This section has summarized the core Lean~4 formal verification suite, confirming that all $43$ finite combinatorial checks compile with empty axioms.
+This section has summarized the core Lean~4 formal verification suite, confirming that all $46$ finite combinatorial checks compile with empty axioms.
 
 % ==============================================================================
 \section{Open Obstructions and AI Assistance Disclosure}
@@ -314,7 +317,7 @@ Even though finite-dimensional $70/70$ triality maps and invertible Weyl-coset m
 
 \paragraph{AI Assistance Disclosure.} Large language model tools were used during preparation of the codebase and manuscript for Python scripting, structuring finite Lean~4 checks, LaTeX formatting, and prose editing under authorial supervision; all arithmetic results and Lean~4 kernel outputs are deterministically reproducible.
 
-\paragraph{Artifact Availability.} The zero-float computational modules, the automated test suite, the standalone verifier, the $43$ Lean~4 finite checks, and the SHA-256 integrity manifest are archived in the Zenodo replication package \cite{MunawerHodgeZenodo2026}.
+\paragraph{Artifact Availability.} The zero-float computational modules, the automated test suite, the standalone verifier, the $46$ Lean~4 finite checks and generative evaluators, and the SHA-256 integrity manifest are archived in the Zenodo replication package \cite{MunawerHodgeZenodo2026}.
 
 \bibliographystyle{amsplain}
 \bibliography{references}

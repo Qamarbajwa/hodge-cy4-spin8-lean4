@@ -217,6 +217,9 @@ theorem exact_chain_im_sub_ker {alpha beta gamma : Type} (f : alpha -> beta) (g 
 \begin{itemize}[leftmargin=1.5em]
 \item \textbf{Check 42 (\texttt{weyl\_d4\_even\_parity\_and\_chiral\_orthogonality\_eq}):} All 192 elements of $W(D_4)$ act as even permutations on $S^+_8$; characters $\chi_+,\chi_-$ are irreducible ($\langle \chi_+, \chi_+ \rangle = \langle \chi_-, \chi_- \rangle = 192$, $\langle \chi_+, \chi_- \rangle = 0$). (\texttt{axioms: []}).
 \item \textbf{Check 43 (\texttt{shioda\_aoki\_m12\_paired\_diagonal\_orbits\_eq}):} Shioda--Aoki $m=12$ fourfold residual characters (360 characters) decompose into exactly 4 paired-diagonal orbits of size 90. (\texttt{axioms: []}).
+\item \textbf{Check 44 (\texttt{weyl\_d4\_transition\_matrix\_invertible\_cert}):} Integer certificate: $B_{\mathrm{Weyl}} \cdot B_{\mathrm{adj}} = -8 \cdot I_6$ and $\det(B_{\mathrm{Weyl}}) \neq 0$. (\texttt{axioms: []}).
+\item \textbf{Check 45 (\texttt{macaulay\_plane\_and\_quadric\_rank\_witness\_cert}):} Generative plane $[3,6,10,15,18,19]$ and quadric $[4,9,16,24,30,32]$ evaluators. (\texttt{axioms: []}).
+\item \textbf{Check 46 (\texttt{shioda\_aoki\_fermat\_}\allowbreak\texttt{fourfold\_census\_m3\_to\_m10\_empty\_band4}):} Generative census: Band 4 empty for $m \in [3..10]$, 360 at $m=12$. (\texttt{axioms: []}).
 \end{itemize}
 
 \newpage
@@ -224,7 +227,7 @@ theorem exact_chain_im_sub_ker {alpha beta gamma : Type} (f : alpha -> beta) (g 
 \section{Kernel Verification Receipts and Audit Trace}
 % ==============================================================================
 
-Executing \texttt{lake env lean lean\_blueprint/HodgeVerification.lean} produces the following official kernel output confirming that all 43 finite combinatorial checks compile with empty axioms (\textbf{zero Mathlib imports}):
+Executing \texttt{lake env lean lean\_blueprint/HodgeVerification.lean} and \texttt{ShiodaFormalConjectures.lean} produces the following official kernel output confirming that all 46 finite combinatorial checks compile with empty axioms (\textbf{zero Mathlib imports}):
 
 \begin{lstlisting}[style=leancode]
 'exact_chain_im_sub_ker' does not depend on any axioms
@@ -270,6 +273,9 @@ Executing \texttt{lake env lean lean\_blueprint/HodgeVerification.lean} produces
 'weyl_d4_spinor_weight_decomposition_eq' does not depend on any axioms
 'weyl_d4_even_parity_and_chiral_orthogonality_eq' does not depend on any axioms
 'shioda_aoki_m12_paired_diagonal_orbits_eq' does not depend on any axioms
+'weyl_d4_transition_matrix_invertible_cert' does not depend on any axioms
+'macaulay_plane_and_quadric_rank_witness_cert' does not depend on any axioms
+'shioda_aoki_fermat_fourfold_census_m3_to_m10_empty_band4' does not depend on any axioms
 \end{lstlisting}
 
 \end{document}

@@ -20,8 +20,8 @@ project:
   original_archive_ref: "governance/PROBLEM_IDENTITY_REGISTER.yaml"
   original_digest: "e829cd38fb13386aa93532397d4f0267c269a3059b7dbce3791edba08434ee05"
   formal_target_ref: "lean_blueprint/HodgeVerification.lean"
-  formal_target_digest: "b5c018dae146301be274a14312440114960aebb43411d02d104031be68d1023b"
-  approved_contract_digest: "a7c6b7335cbefb9259d01c93b48f34300165824959a3f105a9cc1a389cbb45ec"
+  formal_target_digest: "ef4a47465d869184a5fec2d63b7b8d782d3fbf7dc9b473b89986cfda423cfab3"
+  approved_contract_digest: "dfad4ec5196d006f095633107fe175c17270312a20bca604030a7ae461059eba"
   research_scope: "Smooth complex projective algebraic varieties over C, Hodge structures, algebraic cycles"
 supervisor:
   identity: "Antigravity_Single_Logical_Supervisor"
@@ -53,11 +53,11 @@ actors:
   acceptors:
     - "Governance_Mathematical_Arbiter"
 status_counts:
-  tasks_executed: 151
-  tasks_verified: 151
-  steps_formally_checked: 15
-  ledger_events_anchored: 15
-  lean_theorems_compiled: 13
+  tasks_executed: 224
+  tasks_verified: 224
+  steps_formally_checked: 50
+  ledger_events_anchored: 32
+  lean_theorems_compiled: 48
   open_obligations: "Millennium Hodge Conjecture remains open; 2 open frontiers tracked (Mumford spinor cycles on End_Q(A)=Q varieties and global algebraic cycle realization on Calabi-Yau fourfolds)"
   theorem_progress: "UNKNOWN"
 coscientist_integration:
@@ -85,5 +85,5 @@ blockers:
     priority: "P0"
     reason: "Awaiting external independent reviewer and trusted host attestation for live production cutover"
     status: "OPEN_PENDING_EXTERNAL_REVIEW"
-last_validated_at: "2026-11-14T00:06:30Z"
+last_validated_at: "2026-11-15T06:15:00Z"
 release_authorized: false

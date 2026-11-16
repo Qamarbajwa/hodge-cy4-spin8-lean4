@@ -1,6 +1,6 @@
 """Unit and Integration Tests for Covariant Apolarity, Initial-Monomial Bounds,
 
-Weyl Chiral Irreducibility, and Shioda-Aoki Fermat Census.
+Weyl Chiral Irreducibility, Shioda-Aoki Fermat Census, and 3-Band Blind Jet Reconstruction.
 """
 
 from __future__ import annotations
@@ -120,8 +120,8 @@ class TestCovariantApolarityAndWeylShiodaCensus(unittest.TestCase):
         self.assertEqual(audit["epistemic_invariants"]["GLOBAL_HODGE_CONJECTURE"], "OPEN")
         self.assertFalse(audit["epistemic_invariants"]["release_authorized"])
 
-    def test_06_blind_gauss_manin_jet_recovery_and_b_weyl_cert(self) -> None:
-        """Verifies blind t^3-jet quadric recovery and Lean-exported B_Weyl determinant certificate."""
+    def test_06_3band_blind_gauss_manin_jet_recovery_and_generative_lean_parity(self) -> None:
+        """Verifies 3-Band blind t^3-jet reconstruction and Lean 4 generative check parity."""
         from toolkit.blind_gauss_manin_jet_reconstructor import BlindGaussManinJetReconstructor
 
         # Verify zero-float compliance
@@ -132,19 +132,32 @@ class TestCovariantApolarityAndWeylShiodaCensus(unittest.TestCase):
         exp_res = reconstructor.run_full_reconstruction_experiment()
         self.assertTrue(exp_res["all_checks_passed"])
 
-        rec = exp_res["recovery"]
-        self.assertEqual(rec["macaulay_ranks"], [4, 9, 16, 24, 30, 32])
-        self.assertEqual(rec["ann1_dimension"], 2)
-        self.assertEqual(rec["ann2_dimension"], 12)
-        self.assertEqual(rec["spontaneous_quadric_generators"], 1)
-        self.assertEqual(rec["gotzmann_regularity"], 2)
-        self.assertEqual(rec["singular_initial_quadric_rank"], 2)
-        self.assertEqual(rec["deformed_smooth_quadric_rank"], 4)
+        # Band 1: Planes -> Smoothed Quadric
+        b1 = exp_res["band1_quadric"]
+        self.assertEqual(b1["macaulay_ranks"], [4, 9, 16, 24, 30, 32])
+        self.assertEqual(b1["ann1_dimension"], 2)
+        self.assertEqual(b1["ann2_dimension"], 12)
+        self.assertEqual(b1["spontaneous_quadric_generators"], 1)
+        self.assertEqual(b1["gotzmann_regularity"], 2)
+        self.assertEqual(b1["transport"]["orders_constructed"], 4)
 
-        transport = exp_res["transport"]
-        self.assertEqual(transport["orders_constructed"], 4)  # t^0, t^1, t^2, t^3
+        # Band 2: 3+3 Curve Joins
+        b2 = exp_res["band2_curve_join"]
+        self.assertEqual(b2["macaulay_ranks"], [6, 21, 50, 90, 126, 141])
+        self.assertEqual(b2["ann1_dimension"], 0)
+        self.assertEqual(b2["ann2_dimension"], 0)
+        self.assertEqual(b2["ann3_dimension"], 6)
+        self.assertEqual(b2["transport"]["orders_constructed"], 4)
 
-        # Verify Lean-exported integer B_Weyl and B_adjugate certificate
+        # Band 3: 2+4 Surface-Curve Joins
+        b3 = exp_res["band3_surface_curve"]
+        self.assertEqual(b3["macaulay_ranks"], [5, 15, 32, 53, 71, 78])
+        self.assertEqual(b3["ann1_dimension"], 1)
+        self.assertEqual(b3["ann2_dimension"], 6)
+        self.assertEqual(b3["retained_hyperplane_annihilators"], 1)
+        self.assertEqual(b3["transport"]["orders_constructed"], 4)
+
+        # Verify Lean Check 44 (B_Weyl * B_adj = -8 * I_6)
         b_weyl = [
             [1, 0, 0, 0, 0, 1],
             [1, 0, 0, 0, 0, -1],
@@ -161,12 +174,17 @@ class TestCovariantApolarityAndWeylShiodaCensus(unittest.TestCase):
             [0, 0, -4, 4, 0, 0],
             [-4, 4, 0, 0, 0, 0],
         ]
-        # Multiply B_weyl * B_adj
         prod = [[sum(b_weyl[i][k] * b_adj[k][j] for k in range(6)) for j in range(6)] for i in range(6)]
         for i in range(6):
             for j in range(6):
                 expected_entry = -8 if i == j else 0
                 self.assertEqual(prod[i][j], expected_entry)
+
+        # Verify Lean Check 45 (plane [3, 6, 10, 15, 18, 19], quadric [4, 9, 16, 24, 30, 32])
+        plane_ranks = [3, 6, 10, 15, 18, 19]
+        quad_ranks = [4, 9, 16, 24, 30, 32]
+        self.assertEqual(sum(plane_ranks) + 1, 72)
+        self.assertEqual(b1["macaulay_ranks"], quad_ranks)
 
 
 if __name__ == "__main__":

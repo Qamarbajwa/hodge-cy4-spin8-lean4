@@ -163,6 +163,46 @@ class TestErdosFourierIncidenceEngine(unittest.TestCase):
         self.assertFalse(bal_false["is_unit_balanced"])
         self.assertNotEqual(bal_false["net_volume_difference"], 0)
 
+    # --------------------------------------------------------------------------
+    # CHECK 6: 2+4 SHIODA-LEFSCHETZ COMPLETE CLOSURE AUDIT (0/1751 UNEXPLAINED)
+    # --------------------------------------------------------------------------
+    def test_06_shioda_lefschetz_2_plus_4_complete_closure_audit(self):
+        """Audits the 4-band split 1001 + 630 + 120 + 0 = 1751 on Fermat X^4_6 via Lefschetz (1,1)."""
+        detector = self.engine.detector
+        self.assertEqual(len(detector.pairs_15), 15)
+
+        decomp = detector.full_four_band_decomposition()
+        self.assertEqual(decomp["dim_fourier_planes_2_2_2"], 1001)
+        self.assertEqual(decomp["dim_inductive_cones_3_3"], 630)
+        self.assertEqual(decomp["dim_inductive_2_plus_4_lefschetz"], 120)
+        self.assertEqual(decomp["truly_indecomposable_count"], 0)
+        self.assertTrue(decomp["exact_four_band_closure"])
+        self.assertEqual(
+            decomp["dim_fourier_planes_2_2_2"]
+            + decomp["dim_inductive_cones_3_3"]
+            + decomp["dim_inductive_2_plus_4_lefschetz"]
+            + decomp["truly_indecomposable_count"],
+            1751,
+        )
+
+        # Verify Band-3 partitions explicitly map into INDUCTIVE_2_PLUS_4_LEFSCHETZ and TRULY_INDECOMPOSABLE is empty
+        self.assertEqual(decomp["band_partitions"]["TRULY_INDECOMPOSABLE"], [])
+        band3_parts = {
+            item["partition"]: item["multiplicity"]
+            for item in decomp["band_partitions"]["INDUCTIVE_2_PLUS_4_LEFSCHETZ"]
+        }
+        self.assertEqual(band3_parts, {(4, 2, 2, 2, 1, 1): 60, (3, 3, 2, 2, 2, 0): 60})
+
+        # Verify surface origin R^8(F_{P^3}) ~ H^{1,1}_{prim}(X^2_6)
+        surf = detector.verify_band3_surface_lefschetz_origin()
+        self.assertEqual(surf["band3_count"], 120)
+        self.assertEqual(surf["witness_pair"], (2, 2))
+        self.assertEqual(surf["surface_jacobian_degree"], 8)
+        self.assertEqual(surf["dim_H11_prim_X2_6"], 85)
+        self.assertTrue(surf["all_in_H11_prim_X2_6"])
+        self.assertTrue(surf["lefschetz_1_1_algebraic"])
+        self.assertEqual(surf["fermat_unexplained_modes"], 0)
+
 
 if __name__ == "__main__":
     unittest.main()

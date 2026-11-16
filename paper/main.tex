@@ -605,8 +605,8 @@ p_1 = 2305843009213693951, \quad p_2 = 2305843009213693921, \quad p_3 = 23058430
 \end{equation}
 Using Wang's modular rational reconstruction algorithm \cite{Wang1981}, the exact rational benchmark reproduces $\rk(M) = 426$ in $0.568\,\mathrm{s}$ ($227\times$ faster than naive full-rational elimination on dense slices).
 
-\paragraph{Blind Higher-Order Gauss--Manin Jet Reconstruction.}
-To test whether higher-order infinitesimal deformations autonomously detect the smoothing of a reducible cycle without planting equations of the smoothed surface, we implemented a blind jet reconstruction engine (\texttt{toolkit/blind\_gauss\_manin\_jet\_reconstructor.py}). Working over the truncated power series ring $\mathbb{F}_p[[t]]/(t^4)$ over the 61-bit prime $p_1$, the verifier initializes solely with the reducible pair ideal $I_{\Pi_1} \cap I_{\Pi_2}$ and transports the Macaulay dual functional along the Gauss--Manin connection $\nabla_{\partial/\partial t}$ through jets $t^0, t^1, t^2, t^3$. At order $t^3$, the degree-2 kernel $\ker M_{\Lambda(t)}^{(2)}$ undergoes an automatic rank drop from dimension $15$ to $12$, spontaneously generating the unique quadric generator $q_2(t) \in \mathbb{F}_p[x_0,\dots,x_5]$ that smoothes $Q_0$ into the irreducible quadric surface $Q_2 = V(y_0, y_1, q_2)$ and recovering the stabilized Macaulay profile $[4, 9, 16, 24, 30, 32]$ with Gotzmann regularity $G=2$ completely blindly.
+\paragraph{Three-Band Blind Higher-Order Gauss--Manin Jet Reconstruction.}
+To test whether higher-order infinitesimal deformations autonomously detect the emergence and smoothing of algebraic cycles without planting equations, we extended the blind jet reconstruction engine (\texttt{toolkit/blind\_gauss\_manin\_jet\_reconstructor.py}) across all three non-empty cyclotomic bands over the truncated power series ring $\mathbb{F}_p[[t]]/(t^4)$ ($p_1 = 2305843009213693951$). In Band 1 ($2+2+2$ planes $\to$ quadric $Q_2$), transport through jets $t^0, \dots, t^3$ yields a degree-1 kernel drop $3 \to 2$ ($\ker M^{(1)} = 2$), spontaneously recovers the unique quadric generator $q_2(t) \in \ker M^{(2)}_{\Lambda(t)}$ ($\dim = 12 = 11 + 1$), and stabilizes at Macaulay ranks $[4, 9, 16, 24, 30, 32]$ (Gotzmann $G=2$). In Band 2 ($3+3$ curve joins), linear and quadric annihilators vanish identically ($\dim \ker M^{(1)} = 0$, $\dim \ker M^{(2)} = 0$), while degree-3 syzygies ($\dim \ker M^{(3)} = 6$) govern the curve-join locus, stabilizing at $[6, 21, 50, 90, 126, 141]$. In Band 3 ($2+4$ surface-curve joins), the single linear hyperplane annihilator $y_0 = x_0 - x_3$ ($\dim \ker M^{(1)} = 1$) is preserved while expanding across the 4-variable surface block with stabilized ranks $[5, 15, 32, 53, 71, 78]$.
 
 \paragraph{Scope of This Section (What Is Established vs. What Remains Open).}
 This section has demonstrated that on concrete coupled fourfolds $F_{\mathrm{coupled}}$ and under geometric liaison, exact Macaulay ranks and Gotzmann regularity can be certified in sub-second CRT benchmarks. What remains open is the universal quantifier: establishing effective Hilbert degree bounds and proving that arbitrary non-Fermat deformations admit convergent algebraic cycles without pre-existing planted surfaces (\texttt{Bridge~A}).
@@ -646,17 +646,17 @@ Large language model (LLM) coding and drafting assistants were used under human 
 \subsection{Toolchain and Artifact Manifest}
 \begin{itemize}[leftmargin=1.5em]
 \item \textbf{Lean 4 Kernel:} \texttt{leanprover/lean4:v4.35.0}, Lake version 5.0.0.
-\item \textbf{Python Verification Engines:} 19 files, Python 3.12+, zero floating-point constructs.
+\item \textbf{Python Verification Engines:} 20 files in \texttt{toolkit/}, Python 3.12+, zero floating-point constructs.
 \item \textbf{Governance DAG:} 60 nodes, 142 edges, SQLite3 hash-chained audit ledger (\texttt{hodge\_governance\_ledger.db}).
-\item \textbf{Test Suite:} 224 unit tests passing under \texttt{pytest}.
+\item \textbf{Test Suite:} 248 unit tests passing under \texttt{pytest}.
 \end{itemize}
 
 \subsection{Lean~4.35.0 Decidable Finite Check Ledger (Table 15, 0 Mathlib)}
-\noindent\textit{Scope Notice:} All $43$ declarations below compile in standalone Lean~4.35.0 with \textbf{zero Mathlib imports} and \texttt{axioms: []}, verifying decidable finite integer, tuple, and polynomial degree-counting arithmetic via \texttt{by rfl}. They do not formalize schemes, sheaves, cohomology, or Hodge theory.
+\noindent\textit{Scope Notice:} All $46$ declarations below compile in standalone Lean~4.35.0 (\texttt{HodgeVerification.lean} and \texttt{ShiodaFormalConjectures.lean}) with \textbf{zero Mathlib imports} and \texttt{axioms: []}, verifying decidable finite integer, matrix certificates, and generative Macaulay/census evaluators via \texttt{by rfl}. They do not formalize schemes, sheaves, cohomology, or Hodge theory.
 {\small
-\renewcommand{\arraystretch}{1.08}
+\renewcommand{\arraystretch}{1.06}
 \begin{longtable}{r >{\ttfamily\scriptsize}p{6.4cm} l p{6.8cm}}
-\caption{\textbf{Lean~4.35.0 Decidable Finite Check Ledger ($43$ Checks, \texttt{0} Mathlib, \texttt{axioms: []})}} \label{tab:lean_ledger} \\
+\caption{\textbf{Lean~4.35.0 Decidable Finite Check Ledger ($46$ Checks, \texttt{0} Mathlib, \texttt{axioms: []})}} \label{tab:lean_ledger} \\
 \toprule
 \textbf{No.} & \textbf{Lean 4 Declaration Name} & \textbf{Node} & \textbf{Combinatorial / Degree Check Summary} \\
 \midrule
@@ -716,6 +716,9 @@ Large language model (LLM) coding and drafting assistants were used under human 
 41 & \texttt{weyl\_d4\_spinor\_weight\_decomposition\_eq} & Node 13 & $W(D_4)$ spinor weight split $70 = 35_+ \oplus 35_-$ \\
 42 & \texttt{weyl\_d4\_even\_parity\_and\_chiral\_orthogonality\_eq} & Node 14 & $W(D_4)$ even parity on $S^+_8$ and chiral irreducibility $\mathbf{3}_+ \oplus \mathbf{3}_-$ \\
 43 & \texttt{shioda\_aoki\_m12\_paired\_diagonal\_orbits\_eq} & Node 14 & Shioda--Aoki $m=12$ paired-diagonal 4 orbits (360 characters) \\
+44 & \texttt{weyl\_d4\_transition\_matrix\_invertible\_cert} & Node 14 & Integer certificate: $B_{\mathrm{Weyl}} \cdot B_{\mathrm{adj}} = -8 \cdot I_6$ and $\det(B_{\mathrm{Weyl}}) \neq 0$ \\
+45 & \texttt{macaulay\_plane\_and\_quadric\_rank\_witness\_cert} & Node 14 & Generative plane $[3,6,10,15,18,19]$ and quadric $[4,9,16,24,30,32]$ \\
+46 & \texttt{shioda\_aoki\_fermat\_}\allowbreak\texttt{fourfold\_census\_m3\_}\allowbreak\texttt{to\_m10\_empty\_band4} & Node 14 & Generative census: Band 4 empty for $m \in [3..10]$, 360 at $m=12$ \\
 \bottomrule
 \end{longtable}
 }
