@@ -1,6 +1,12 @@
 name = "MathGovLeanDemo"
 version = "0.1.0"
-defaultTargets = ["ProofSteps"]
+defaultTargets = ["LeanDemoProject"]
+
+[[lean_lib]]
+name = "HodgeVerification"
 
 [[lean_lib]]
 name = "ProofSteps"
+
+[[lean_lib]]
+name = "LeanDemoProject"

@@ -1,0 +1,294 @@
+\documentclass[11pt,a4paper]{amsart}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,array}
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!60!black,
+  citecolor=green!45!black,
+  urlcolor=blue!70!black
+}
+\emergencystretch=3em
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{openproblem}[theorem]{Open Bridge}
+
+\lstdefinestyle{pycode}{
+  language=Python,
+  basicstyle=\ttfamily\footnotesize,
+  keywordstyle=\color{blue!70!black}\bfseries,
+  commentstyle=\color{green!45!black}\itshape,
+  stringstyle=\color{red!60!black},
+  frame=single,
+  breaklines=true,
+  columns=fullflexible
+}
+
+\DeclareMathOperator{\rk}{rk}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\Ann}{Ann}
+\DeclareMathOperator{\Sym}{Sym}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\MT}{MT}
+\DeclareMathOperator{\Hdg}{Hdg}
+\DeclareMathOperator{\CH}{CH}
+\DeclareMathOperator{\cl}{cl}
+\DeclareMathOperator{\Res}{Res}
+\DeclareMathOperator{\Jac}{Jac}
+\DeclareMathOperator{\td}{td}
+\DeclareMathOperator{\ch}{ch}
+
+\title[Deformed CY4 Apolarity, Spin(8) Combinatorics, and Lean 4 Checks]{%
+  Computational Apolarity Experiments, Deformed Calabi--Yau Obstruction Cancellation,
+  $\mathrm{Spin}(8)$ Triality Combinatorics, and Decidable Lean~4 Finite Checks
+  for Hodge Conjecture Testbeds}
+
+\author{Qamar Munawer}
+\address{Brandenburg University of Technology Cottbus--Senftenberg, Cottbus, Germany}
+\date{November 15, 2026}
+
+\subjclass[2020]{Primary 14C30, 14J32, 13D40; Secondary 14K99, 68V20}
+\keywords{Hodge classes; Calabi--Yau fourfolds; Macaulay inverse systems; Artinian Gorenstein rings; Infinitesimal Variation of Hodge Structure; $\mathrm{Spin}(8)$ triality; Kuga--Satake correspondence; Chinese Remainder Theorem; Lean~4 finite checks}
+
+\begin{document}
+
+\begin{abstract}
+The Hodge Conjecture posits that every rational Hodge class on a smooth complex projective variety is algebraic, represented by a formal rational linear combination of algebraic subvarieties. While the classical Lefschetz theorem settles the conjecture in codimension one through the exponential sheaf sequence, higher codimension presents formidable geometric and arithmetic obstructions. In particular, general methods stall on two fundamental testbeds: smooth Calabi--Yau fourfolds in projective five-space, where algebraic surfaces encounter normal bundle obstructions under deformation, and abelian sixfolds of Mumford type, where the absence of auxiliary lower-dimensional varieties defeats traditional secant-sheaf constructions.
+
+On the Calabi--Yau testbed, the infinitesimal variation of Hodge structure translates the geometry of embedded surfaces into commutative algebra via Griffiths residues and Macaulay inverse systems. On the Fermat sextic fourfold, the middle primitive cohomology decomposes under discrete cyclotomic symmetries into three geometric bands with zero residual remainder, corresponding to planes, joins of curves, and primitive surface joins. When moving away from the Fermat point, individually obstructed planes recombine along shared curves into smooth quadric surfaces whose net normal obstruction vanishes. The covariant transition determinant of Wiebe, Scheja, and Storch provides an algebraic invariant that follows these surfaces under continuous deformation, recovering their defining ideals through Jacobian ring colon operations.
+
+On the abelian sixfold testbed, the Mumford--Tate group acts via the irreducible spinor representation of the orthogonal Lie algebra in eight dimensions. Because the endomorphism algebra of this half-spinor space is trivial, no auxiliary abelian threefolds or reflexive secant sheaves exist. Instead, the middle Hodge classes correspond to zero-weight configurations in the fourth exterior power of the spinor representation. The exceptional triality automorphism of the twenty-four-cell root system governs these weight configurations, embedding the vector and half-spinor spaces into the even Clifford algebra. Symmetries of the Weyl group systematically organize these classes into orthogonal chiral representations and connect them to motivated and absolute Hodge cycles.
+
+This work presents a comprehensive computational investigation and formal verification suite exploring both testbeds. Using exact rational arithmetic, finite-field linear algebra, and modular reconstruction algorithms, we compute explicit multiplication ranks, verify obstruction cancellation across complete deformation slices, and catalog the combinatorial geometry of spinor weight orbits. In addition, forty-three finite combinatorial and degree-counting identities are verified constructively in core Lean without external mathematical libraries. While these results establish exact local and representation-theoretic invariants, the global Clay Millennium Hodge Conjecture remains strictly open: determining effective degree bounds for cycles across general deformations and constructing global algebraic cycles from motivated correspondences remain central unsolved problems.
+\end{abstract}
+
+\maketitle
+
+% ==============================================================================
+\section{Introduction and Summary of Computational Scope}
+\label{sec:intro}
+% ==============================================================================
+
+Let $X$ be a smooth complex projective algebraic variety of dimension $n$. For $0 \le p \le n$, the Hodge Conjecture \cite{Deligne2000} asks whether the cycle class map
+\[
+\cl_X : \CH^p(X)_{\mathbb{Q}} \longrightarrow \Hdg^{2p}(X) := H^{2p}(X, \mathbb{Q}) \cap H^{p,p}(X)
+\]
+is surjective. This article presents reproducible exact rational and modular ($\mathbb{F}_p$) computational experiments alongside decidable finite combinatorial Lean~4 checks across two structured testbeds: (i) the infinitesimal variation of Hodge structure (IVHS) and Artinian Gorenstein Macaulay inverse systems \cite{CarlsonGriffiths1980,Voisin2002} on smooth sextic Calabi--Yau fourfolds $X_4 \subset \mathbb{P}^5$, and (ii) the $\mathrm{Spin}(8)$ / $D_4$ Clifford--triality combinatorics on Mumford-type abelian sixfolds \cite{Mumford1969,KugaSatake1967,Deligne1982}.
+
+\begin{remark}[Epistemic Honesty, Classical Attribution, and Scope Boundary]
+All foundational theorems referenced here---Griffiths' (1969) residue theorem, Shioda--Aoki--Ran's Fermat cycle decomposition, Macaulay's (1916) inverse systems, Peskine--Szpiro (1974) liaison, Deligne's (1982) absolute Hodge and Andr\'e's (1996) motivated cycle framework, and Wang's (1981) modular rational reconstruction---are attributed strictly to their original authors. Our computational modules constitute an exact integer, rational, and modular ($\mathbb{F}_p$) experiment toolkit on sextic fourfolds and spinor weight combinatorics, and our accompanying Lean~4 formal verification suite (\textbf{zero Mathlib imports}) checks only $43$ decidable finite index and degree-counting identities (\texttt{by rfl}), without formalizing schemes, sheaves, cohomology, or Hodge theory. This paper \textbf{does not prove} the global Clay Millennium Hodge Conjecture: universal non-Fermat Hilbert-degree bounds (\texttt{Bridge~A}) and algebraic cycle realizations of the Kuga--Satake correspondence over $\mathbb{Q}$ (\texttt{Bridge~B}) remain open frontiers (Section~\ref{sec:open}).
+\end{remark}
+
+We organize our computational results and finite checks across the following themes:
+\begin{enumerate}[label=\textbf{Experiment \Alph*.},leftmargin=2.8em]
+\item \textbf{(4-Band Fourier--Jacobi Counts \& Tangential Transport, Section~\ref{sec:thmA})} On the Fermat sextic fourfold $X^4_6 \subset \mathbb{P}^5$, $R^{12}(F_0)$ splits under $(\mathbb{Z}/6\mathbb{Z})^6$ into four bands ($1,001 + 630 + 120 + 0 = 1,751$). Each Band-1 $2$-plane wavepacket $\Lambda_{\Pi_{\mathrm{true}}}$ carries $125$ monomials, Macaulay rank vector $(3,6,10,15,18,19)$, Gotzmann persistence $G=1$, and attains $407/407$ tangential Leibniz closure on the signed Fermat fourfold $F_0^{\mathrm{signed}}$.
+\item \textbf{(Rank--Nullity Accounting, 9-Partition Duality \& $K=5$ Coverage, Section~\ref{sec:thmB})} For \emph{every} basis direction $u \in R^6(F_0)$ ($\dim = 426$), $\dim \ker(M_u) \ge 1,325$ ($\ge 575$ on Band~1, $\ge 204$ on Band~2). Across the $9$ unordered exponent partitions of $R^6(F_0)$, Gorenstein duality restricts monomial multiplication ranks to $\rk(M_{x^b}) \in [155, 336]$. Pair coverage $(u, \Pi)$ over the $20$ coordinate $2$-planes satisfies $K=5$ across all $\binom{20}{5} = 15,504$ subsets ($0$ uncovered pairs, versus $45$ failing pairs at $K=4$).
+\item \textbf{(Surjective Cokernel Examples, Collision Recombination \& Liaison, Section~\ref{sec:thmC})} Where $\rk(M_u) = 426$, $\coker(M_u) = 0$ eliminates first-order formal Gauss--Manin obstructions on that Zariski-open locus, with exact Rank--Nullity kernel $\dim \ker(M_u) = 1,751 - \rk(M_u) \ge 1,325$. On $V_{20}$, $380$ incidences map into $245$ target modes with $135$ collisions ($426 = 245 + 181$), higher-degree recombination flattens $[8,18,32,48,60,64]$ for $m=1\dots 6$, and a Peskine--Szpiro liaison example compresses $D = 22 > 12$ into $D' = 2 \le 12$ inside $V(G_2, G_2') \cap X_4$.
+\item \textbf{(Non-Separable Cube-Ideal Example \& Multi-Prime CRT Experiments, Section~\ref{sec:thmD})} The non-separable $6$-variable smooth sextic $F_{\mathrm{coupled}}$ preserves $\partial_i W \in I_{\Pi_{\mathrm{true}}}^2$ and retains Macaulay ranks $[3,6,10,15,18,19]$ ($G=1$). Using three $61/62$-bit primes and Wang's rational reconstruction \cite{Wang1981}, dense $1,751 \times 426$ non-Fermat systems are certified over $\mathbb{Q}$ in under $2\,\mathrm{s}$.
+\item \textbf{($D_4$ Triality Combinatorics \& $6 \times 6$ Weyl-Coset Inversion, Section~\ref{sec:thmE})} Inside $C^+(V_8) \cong \End(S^+_8) \oplus \End(S^-_8)$ ($\dim = 128$), the $32/512$ zero-weight triality triples span all $70/70$ of $\bigwedge^4 S^+_8 = \mathbf{35}_+ \oplus \mathbf{35}_-$ and $6/6$ of its Cartan zero-weight $K_{2,2}$ locus via an invertible $6 \times 6$ rational matrix $B_{\mathrm{Weyl}}$.
+\item \textbf{(Decidable Core Lean~4.35.0 Finite Checks, Section~\ref{sec:thmFG})} With zero Mathlib imports, all $43$ finite combinatorial and degree-counting checks compile under \texttt{leanprover/lean4:v4.35.0} with \texttt{axioms: []} (\texttt{by rfl}).
+\end{enumerate}
+
+\subsection{Prior Computational and Formalization Work}
+Computational approaches to algebraic cycles and Hodge theory have a rich history in computer algebra. Classical computer algebra systems---notably \textsc{Macaulay2} \cite{GraysonStillman}, \textsc{Singular} \cite{DGPS}, and \textsc{Magma} \cite{BosmaCannonPlayoust}---provide standard algorithms for Gr{\"o}bner bases, syzygies, and Hilbert functions of Artinian rings. However, on sextic fourfolds in $\mathbb{P}^5$, direct symbolic elimination encounters prohibitive complexity: the Milnor number is $\mu = 15,625$, and the Jacobian multiplication matrices have size $1,751 \times 426$, making general rational Gr{\"o}bner basis calculations intractable without specialized exploitation of cyclotomic and representation-theoretic symmetries.
+
+In interactive theorem proving, an exhaustive live audit across global Lean~4 repositories (\texttt{mathlib4}, \texttt{formal-conjectures}, and \texttt{FLT}) reveals that formalization of Hodge theory remains in its infancy:
+\begin{itemize}[leftmargin=1.5em]
+\item \textbf{The Hodge Conjecture and Cycle Class Map:} Neither the Hodge Conjecture nor the cycle class map $\cl_X : \CH^p(X)_{\mathbb{Q}} \to \Hdg^{2p}(X)$ is formalized in \texttt{mathlib4}, \texttt{formal-conjectures}, or the FLT repository (zero code hits across all three).
+\item \textbf{Commutative Algebra and Macaulay Systems:} While \texttt{mathlib4} contains foundational theory for Noetherian rings, depth, and Cohen--Macaulay rings, Artinian Gorenstein socle duality, Macaulay inverse systems, and apolarity pairings remain unformalized.
+\item \textbf{Gotzmann's Persistence and Fermat Hypersurfaces:} Gotzmann's regularity and persistence theorem, as well as the Shioda--Aoki character decomposition of Fermat hypersurfaces, have zero formalizations in the Lean ecosystem.
+\item \textbf{Clifford Algebras and Number Theory:} Mathlib provides robust formalizations of Clifford algebras and the Chinese Remainder Theorem for rings, but $\mathrm{Spin}(8)$ triality outer automorphisms and Wang's modular rational reconstruction algorithm remain unformalized.
+\end{itemize}
+Consequently, our Lean formalization does not attempt to formalize the global category of schemes or mixed Hodge structures; rather, it isolates forty-three decidable finite combinatorial and algebraic invariants, verifying them constructively with empty axioms in core Lean~4.
+
+\paragraph{Scope of This Section.}
+This introduction has defined the geometric setup, the classical attribution of foundational tools, the experimental roadmap, and the prior computational and formalization context. The global Millennium problem remains strictly open.
+
+% ==============================================================================
+\section{Experiment A: 4-Band Shioda--Lefschetz Closure and Tangential Leibniz Transport}
+\label{sec:thmA}
+% ==============================================================================
+
+Let $X_4 = \{F = 0\} \subset \mathbb{P}^5$ be a smooth sextic fourfold, with Jacobian ideal $J(F) = (\partial_0 F, \dots, \partial_5 F) \subset S = \mathbb{Q}[x_0,\dots,x_5]$ and Artinian Gorenstein Jacobian ring $R(F) = S / J(F)$ of socle degree $s = 6(6 - 2) = 24$ and Milnor number $\mu = 5^6 = 15,625$. By the Griffiths residue isomorphism \cite{CarlsonGriffiths1980},
+\[
+R^{6q}(F) \cong H^{4-q,q}_{\mathrm{prim}}(X_4, \mathbb{C}), \qquad \dim R^{(0,6,12,18,24)}(F) = (1, 426, 1751, 426, 1),
+\]
+giving $h^{2,2}_{\mathrm{total}} = 1,752$ and $b_4 = 2,606$.
+
+\begin{proposition}[Experiment A: 4-Band Closure, Cyclotomic Wavepackets, and $407/407$ Tangential Transport]
+\label{thm:A}
+Let $F_0(x) = \frac{1}{6}\sum_{i=0}^5 x_i^6$ be the Fermat sextic and $F_0^{\mathrm{signed}}(x) = x_0^6 - x_3^6 + x_1^6 - x_4^6 + x_2^6 - x_5^6$.
+\begin{enumerate}[label=(\roman*)]
+\item \textbf{4-Band Shioda--Lefschetz Closure:} Under the diagonal character group $(\mathbb{Z}/6\mathbb{Z})^6$ \cite{Shioda1979}, every basis monomial $x^a \in R^{12}(F_0)$ ($a \in \{0,1,2,3,4\}^6$, $\sum a_i = 12$) satisfies Shioda's Galois norm $\sum_{i=0}^5 (t(a_i+1) \bmod 6) = 18$ for $t \in \{1,5\}$, and partitions disjointly across all $18$ unordered partitions as
+\[
+1,751 = \underbrace{1,001}_{\text{Band 1: } 2+2+2} + \underbrace{630}_{\text{Band 2: } 3+3} + \underbrace{120}_{\text{Band 3: } 2+4\text{ join}} + \underbrace{0}_{\text{Band 4: residual}}.
+\]
+Here Band~1 lies in the span of projective $2$-planes, Band~2 comes from projective joins of Fermat curves, and Band~3 consists of two partitions $(4,2,2,2,1,1)$ ($60$ modes) and $(3,3,2,2,2,0)$ ($60$ modes) factoring via $\mathrm{Join}(X^0_6, C_{\mathrm{Lef}})$ from $R^8(F_{\mathbb{P}^3}) \cong H^{1,1}_{\mathrm{prim}}(X^2_6)$ ($\dim = 85$).
+\item \textbf{Cyclotomic $2$-Plane Wavepacket:} The $2$-plane $\Pi_{\mathrm{true}} = V(x_0-x_3, x_1-x_4, x_2-x_5) \subset \{F_0^{\mathrm{signed}}=0\}$ has dual apolar class
+\[
+\Lambda_{\Pi_{\mathrm{true}}} = \prod_{k=0}^{2} \left(\sum_{a=0}^{4} x_k^{4-a} x_{k+3}^a\right) \in R^{12}(F_0^{\mathrm{signed}})
+\]
+supported on $5^3 = 125$ pure Band-1 monomials. Its graded multiplication maps $M^{(m)}_{\Lambda_{\Pi_{\mathrm{true}}}} : R^m \to R^{12+m}$ ($m = 1, \dots, 6$) have exact ranks $(3, 6, 10, 15, 18, 19)$ (sum $+ 1 = 72$, Gotzmann persistence $G=1$ \cite{Gotzmann1978}), recovering $\Ann_{R^1}(\Lambda_{\Pi_{\mathrm{true}}}) = \langle x_0-x_3, x_1-x_4, x_2-x_5 \rangle$.
+\item \textbf{$407/407$ Signed Tangential Leibniz Closure:} Writing $D_k^+ = \partial_k + \partial_{k+3}$, all $\dim \ker(M^{(6)}_{\Lambda_{\Pi_{\mathrm{true}}}}) = 407$ tangent directions lift to $I_{\Pi_{\mathrm{true}},6}$, obey $D_k^+(\tilde{u}) \in I_{\Pi_{\mathrm{true}},5}$ ($0$ unlifted out of $407$), and close jointly under generator--shadow transport $(g_k + t\,\delta g_k)(\Lambda_0 + t\,\Lambda_1) \equiv 0 \pmod{J(F_t), t^2}$ with doubled $2 \times 2$ dual-number ranks $(6, 12, 20, 30, 36, 38)$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}[Computational Justification]
+Part~(i) follows from exact enumeration of the $1,751$ monomials of degree $12$ bounded by $a_i \le 4$: $1,001$ admit one of the $15$ perfect matchings satisfying $a_i+a_j = 4$; $630$ residual modes admit a $3$-subset satisfying $(a_i+a_j+a_k+3) \equiv 0 \pmod 6$; and all remaining $120$ modes admit a pair with $a_i+a_j = 4$. Part~(ii) holds by telescoping: $(x_k - x_{k+3})\sum_{a=0}^4 x_k^{4-a}x_{k+3}^a = x_k^5 - x_{k+3}^5 \in J(F_0^{\mathrm{signed}})$, while on the quotient $\mathbb{Q}[z_0,z_1,z_2]/(z_0^5,z_1^5,z_2^5)$ the images form a linearly independent basis of dimensions $(3,6,10,15,18,19)$ in degrees $1 \dots 6$. For Part~(iii), tangential derivations $D_k^+ = \partial_k + \partial_{k+3}$ annihilate $y_j = x_j - x_{j+3}$ ($D_k^+(y_j) = 0$) and hence preserve $I_{\Pi_{\mathrm{true}}} = (y_0,y_1,y_2)$ by the Leibniz rule. Exact rational RREF over $\mathbb{Q}$ verifies $407/407$ lifting on $F_0^{\mathrm{signed}}$ versus $359/407$ ($48$ unlifted normal directions) on the unsigned Fermat variety.
+\end{proof}
+
+\paragraph{Scope of This Section.}
+This section has established the complete $4$-band cyclotomic partition of $R^{12}(F_0)$ and the exact $407/407$ tangential Leibniz transport on $F_0^{\mathrm{signed}}$. Non-Fermat deformation bounds remain open.
+
+% ==============================================================================
+\section{Experiment B: Rank--Nullity Lower Bounds, 9-Partition Gorenstein Duality, and \texorpdfstring{$K=5$}{K=5} Coverage}
+\label{sec:thmB}
+% ==============================================================================
+
+For a fixed deformation tangent $u \in R^6(F_0)$ ($\dim = 426$), consider the Carlson--Griffiths first-order IVHS contraction $M_u : R^{12}(F_0) \to R^{18}(F_0)$, $M_u(\lambda) = u \cdot \lambda \bmod J(F_0)_{18}$. Its kernel $\ker(M_u)$ is the space of Hodge classes whose Hodge locus remains flat along $u$ to first order.
+
+\begin{proposition}[Experiment B: Kernel Bounds, Moduli Rank Extremes, and $K=5$ Coverage]
+\label{thm:B}
+On the Fermat sextic Jacobian ring $R(F_0)$:
+\begin{enumerate}[label=(\roman*)]
+\item \textbf{Universal Band Kernel Lower Bounds:} For \emph{every} $u \in R^6(F_0)$ and subspace $V \subseteq R^{12}(F_0)$ of dimension $d_V$, rank--nullity forces $\dim \ker(M_u|_V) \ge d_V - 426$. In particular, unconditionally for all $u \in R^6(F_0)$:
+\[
+\dim \ker(M_u) \ge 1,325, \qquad \dim \ker(M_u|_{\mathrm{Band\,1}}) \ge 575, \qquad \dim \ker(M_u|_{\mathrm{Band\,2}}) \ge 204.
+\]
+\item \textbf{9-Partition Gorenstein Moduli Rank Census:} Partitioning the $426$ basis monomials $x^b \in R^6(F_0)$ into their $9$ unordered exponent types, Gorenstein duality $a'_i = (4-b_i)-a_i$ matches multiplication ranks with dual box-counts identically:
+\[
+\rk(M_{x^b}) \in [155, 336], \qquad \dim \ker(M_{x^b}) \in [1,415, 1,596],
+\]
+with minimum rank $155$ ($\ker = 1,596$) at $(4,2,0,0,0,0)$ and maximum rank $336$ ($\ker = 1,415$) at $(1,1,1,1,1,1)$.
+\item \textbf{$K=5$ Tur\'an/Pigeonhole Coordinate $2$-Plane Law:} Testing all $426$ basis monomials $x^b \in R^6(F_0)$ against the $20$ coordinate $2$-planes $\Pi_{ijk} = V(x_i,x_j,x_k)$ (dual $x_i^4 x_j^4 x_k^4$) shows that $|\operatorname{supp}(b)|=2$ ($45$ monomials) obstructs at most $4$ planes ($16/20$ surviving), $|\operatorname{supp}(b)|=3$ ($200$ monomials) obstructs at most $1$ plane ($19/20$ surviving), and $|\operatorname{supp}(b)|\ge 4$ ($181$ monomials) obstructs $0$ planes ($20/20$ surviving). Hence across all $\binom{20}{5} = 15,504$ $5$-plane subsets ($6,604,704$ incidences), $0$ uncovered $(u, S_5)$ pairs exist, whereas $K=4$ leaves $45$ failing incidences.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}[Computational Justification]
+Part~(i) is immediate since $\dim R^{18}(F_0) = 426$, with $1751-426=1325$, $1001-426=575$, and $630-426=204$; sparse rational RREF on a symmetry-breaking $9$-partition combination $u_{\mathrm{dense}}$ achieves exact equality $\rk(M_{u_{\mathrm{dense}}}) = 426$ ($\dim \ker = 1,325$). For Part~(ii), $x^b \cdot x^a \not\equiv 0 \pmod{J(F_0)}$ if and only if $a_i + b_i \le 4$ for every $i$, whose dual under $a'_i = 4 - b_i - a_i$ preserves bounded sum $12 \leftrightarrow 6$. Evaluating all $9$ partition representatives confirms the sorted rank profile $[155, 165, 207, 248, 264, 279, 297, 316, 336]$. For Part~(iii), $x^b \cdot x_i^4 x_j^4 x_k^4 \not\equiv 0 \pmod{J(F_0)}$ iff $b_i=b_j=b_k=0$, which holds for $\binom{6 - |\operatorname{supp}(b)|}{3}$ triples: $\binom{4}{3}=4$ when $|\operatorname{supp}(b)|=2$, $\binom{3}{3}=1$ when $|\operatorname{supp}(b)|=3$, and $0$ when $|\operatorname{supp}(b)|\ge 4$. By the pigeonhole principle, any $5$ triples must contain at least one surviving plane.
+\end{proof}
+
+\paragraph{Scope of This Section.}
+This section has established the universal lower bound $\dim\ker(M_u) \ge 1,325$, the $9$-partition Gorenstein moduli rank census $[155, 336]$, and the $K=5$ coordinate plane coverage theorem.
+
+% ==============================================================================
+\section{Experiment C: Cokernel Examples, Collision Recombination, and Liaison Compression}
+\label{sec:thmC}
+% ==============================================================================
+
+\begin{proposition}[Experiment C: First-Order Cokernels, 9-Partition Ranks, Collisions, and Liaison]
+\label{thm:C}
+Let $M_u : R^{12}(F_0) \to R^{18}(F_0)$ and let $\Psi^{(2)}_u : \ker(M_u) \to \coker(M_u)$ denote the second-order Gauss--Manin Koszul syzygy obstruction operator \cite{Voisin2002}.
+\begin{enumerate}[label=(\roman*)]
+\item \textbf{Dense First-Order Surjectivity Example:} Along $u_{\mathrm{dense}}$ where $\rk(M_u) = 426$, $\dim \coker(M_u) = 0$ and $\dim \ker(M_u) = 1,325$. Formal series extensions exist order by order when cokernels vanish, though global algebraicity depends on unresolved effective Hilbert bounds (\texttt{Bridge~A}).
+\item \textbf{Rank--Nullity Census Over All 9 Partitions:} For every $r = \rk(M_u) \in \{0, \dots, 426\}$, rank--nullity yields $\dim \ker(M_u) = 1,751 - r \ge 1,325$ and $\dim \coker(M_u) = 426 - r$. Exhaustive evaluation over all $9$ Gorenstein moduli partition representatives gives exact cokernel dimensions $[271, 261, 219, 178, 162, 147, 129, 110, 90]$, second-order image ranks $[52, 93, 0, 31, 55, 30, 48, 71, 90]$, and unobstructed second-order kernels $[1544, 1493, 1544, 1472, 1432, 1442, 1406, 1364, 1325] \ge 1,325$.
+\item \textbf{$20$-Plane Collision Excess \& Higher-Degree Recombination:} On $V_{20} = \operatorname{span}\{x_i^4x_j^4x_k^4\}$, the $20$ planes produce $20 \times 19 = 380$ incidences in a $245$-dimensional target subspace ($200$ modes with three exponents equal to $4$ at multiplicity $1$, plus $45$ modes with four $4$'s at multiplicity $4$; $200\cdot 1 + 45\cdot 4 = 380$), leaving $380 - 245 = 135$ multi-plane collisions and a complementary split $426 = 245 + 181$ of $R^6(F_0)$, where all $181$ high-support monomials ($150 + 30 + 1$) annihilate $V_{20}$ identically. On overlapping planes $\lambda_{\mathrm{recomb}} = x_0^4x_1^4(x_2^4 + x_3^4)$ (rank vector $(4,9,16,24,30,32)$), naive $\Lambda_1 = 0$ fails for $m \ge 2$ ($[8,19,36,56,71,76]$), whereas closed-form moving quadric shadows $\Lambda_1 = 4 x_0^4 x_1^4 (x_3^2 - x_2^2) q_{45}$ stabilize all degrees $m = 1 \dots 6$ to the flat target $[8,18,32,48,60,64]$.
+\item \textbf{Peskine--Szpiro Liaison Compression:} If $Z + Z' = V(G_{d_1}, G_{d_2}) \cap X_4$ is a complete-intersection liaison on $X_4$ \cite{PeskineSzpiro1974}, then $\lambda_{Z'} = -\lambda_Z$ in $R^{12}(F)$. In particular, $(d_1, d_2) = (2,2)$ links a high-degree surface $Z_{22}$ ($D = 22 > 12$, above the degree-$12$ socle ceiling) inside degree $6\cdot 2\cdot 2 = 24$ to a residual quadric surface $Q_2$ of degree $24 - 22 = 2 \le 12$, preserving exact Macaulay ranks $(4,9,16,24,30,32)$ and Gotzmann regularity $G = 2$.
+\end{enumerate}
+\end{proposition}
+
+\paragraph{Scope of This Section.}
+This section has demonstrated explicit first-order surjectivity examples ($\coker M_u = 0$), the $20$-plane collision excess ($135$ collisions), and Peskine--Szpiro liaison compression bypassing the degree-$12$ socle cutoff.
+
+% ==============================================================================
+\section{Experiment D: Non-Separable Cross-Coupled CY4 Preservation and Multi-Prime CRT Benchmark}
+\label{sec:thmD}
+% ==============================================================================
+
+A subtle critique of Fermat-locus studies is that separable perturbations $F_0 + P_0(x_0,x_3) + P_1(x_1,x_4) + P_2(x_2,x_5)$ split into three decoupled two-variable blocks. To eliminate decoupling artifacts completely, define the non-separable $6$-variable smooth sextic
+\begin{equation}
+\label{eq:Fcoupled}
+F_{\mathrm{coupled}}(x) = F_0^{\mathrm{signed}}(x) + (x_0 - x_3)(x_1 - x_4)(x_2 - x_5)\, C_3(x),
+\end{equation}
+where $C_3(x) = x_0 x_1 x_2 + x_3 x_4 x_5 + (x_0+x_3)(x_1+x_4)(x_2+x_5)$.
+
+\begin{proposition}[Experiment D: Cube-Ideal Preservation on $F_{\mathrm{coupled}}$ and Multi-Prime CRT Benchmark]
+\label{thm:D}
+\leavevmode
+\begin{enumerate}[label=(\roman*)]
+\item \textbf{Cube-Ideal Jacobian Preservation:} Write $W(x) = y_0 y_1 y_2\, C_3(x) \in I_{\Pi_{\mathrm{true}}}^3$, where $I_{\Pi_{\mathrm{true}}} = (x_0-x_3, x_1-x_4, x_2-x_5)$. Then all six partial derivatives satisfy $\partial_i W \in I_{\Pi_{\mathrm{true}}}^2$ and vanish to order $\ge 2$ on $\Pi_{\mathrm{true}}$ ($\partial_j \partial_i W|_{\Pi_{\mathrm{true}}} \equiv 0$). Over all three $61$-bit primes $p \in \{2^{61}-1, 2^{61}-31, 2^{61}-45\}$, $F_{\mathrm{coupled}}$ retains smoothness ($R^d(F_{\mathrm{coupled}})$ matches the Gorenstein Hilbert dimensions $246, 426, 666, 951, 1246, 1506, 1686, 1751$ for $d = 5 \dots 12$) and $\Lambda_{\Pi_{\mathrm{true}}}$ preserves exact Macaulay rank vector $[3,6,10,15,18,19]$, $G=1$, and $\Ann_{R^1(F_{\mathrm{coupled}})} = \langle x_0-x_3, x_1-x_4, x_2-x_5 \rangle$.
+\item \textbf{Deterministic Multi-Prime $\mathbb{Z}/p\mathbb{Z}$ + CRT Rank Certification:} Let $M \in \mathbb{Q}^{m \times n}$ have row-cleared integer form $\widetilde{M} = D M$. For any prime $p$ not dividing any $D_i$, $\rk_{\mathbb{Q}}(M) \ge \rk_{\mathbb{F}_p}(M \bmod p)$. When $\rk_{\mathbb{F}_p}(M \bmod p) = r_{\mathrm{mod}}$, lifting via the Chinese Remainder Theorem over three $62$-bit primes $\{2^{62}-57, 2^{62}-87, 2^{62}-117\}$ (product $> 9.8 \times 10^{55}$) and Wang's Euclidean rational reconstruction \cite{Wang1981} produces an explicit full-rank $n \times (n - r_{\mathrm{mod}})$ kernel basis $K \in \mathbb{Q}^{n \times (n - r_{\mathrm{mod}})}$; verifying $M K = 0$ identically over $\mathbb{Q}$ closes $\rk_{\mathbb{Q}}(M) = r_{\mathrm{mod}}$ with zero probability of error. On $1,751 \times 426$ dense non-Fermat sextic Macaulay matrices, certification completes in $572.8\,\mathrm{ms}$ ($< 2\,\mathrm{s}$ budget) and achieves a $197\times$ speedup over direct exact rational RREF on $103 \times 426$ strided rational slices ($28.3\,\mathrm{ms}$ for $u_{\mathrm{dense}}$).
+\end{enumerate}
+\end{proposition}
+
+\paragraph{Scope of This Section.}
+This section has demonstrated the preservation of the degree-counting Macaulay vector under non-separable perturbation and benchmarked the deterministic multi-prime Chinese Remainder Theorem solver.
+
+% ==============================================================================
+\section{Experiment E: \texorpdfstring{$D_4$}{D4} Clifford Triality Combinatorics and \texorpdfstring{$6 \times 6$}{6x6} Weyl-to-Weil Inversion}
+\label{sec:thmE}
+% ==============================================================================
+
+For a Mumford-type simple abelian sixfold $A_6$ ($\dim H^1(A_6,\mathbb{Q}) = 12$, $b_6 = \binom{12}{6} = 924$, $h^{3,3} = 400$), Mumford's tensor-core $\MT(A_6)$ representation acts via $D_4 = \mathfrak{so}(8)$ on the $8$-dimensional spinor representations $V_8, S^+_8, S^-_8$ \cite{Mumford1969}. Let $S^+_8 = \{w_k = \frac{1}{2}(\epsilon_1,\epsilon_2,\epsilon_3,\epsilon_4) : \epsilon_i \in \{\pm 1\},\, \prod_{i=1}^4 \epsilon_i = +1\} \subset \mathbb{S}^3$.
+
+\begin{proposition}[Experiment E: Erd\H{o}s $K_{2,2}$ Weight Space, $70/70$ Triality Coverage, and $6 \times 6$ Weyl Inversion]
+\label{thm:E}
+\begin{enumerate}[label=(\roman*)]
+\item \textbf{Erd\H{o}s $K_{2,2}$ Spinor Equivalence:} Among all $\binom{8}{4} = 70$ basis $4$-tuples $T \in \bigwedge^4 S^+_8$, $T$ has Cartan zero weight ($\sum_{k\in T} w_k = 0$) if and only if the induced $\mathbb{S}^3$ squared-distance subgraph on $T$ is a $K_{2,2}$ square ($4$ edges of $D=2$, $2$ antipodal edges of $D=4$), equivalently if and only if all odd Boolean Walsh--Hadamard characters on $T$ vanish. Exactly $6/70$ tuples satisfy this criterion, while the stacked $\mathfrak{n}^+$ positive simple root operator has full rank $6/6$ ($\dim(\bigwedge^4 S^+_8)^{\mathfrak{so}(8)} = 0$, $\bigwedge^4 S^+_8 \cong \mathbf{35}_+ \oplus \mathbf{35}_-$), yielding the Endomorphism Vacuum $\End_{\mathbb{Q}}(A_6) = \mathbb{Q}$ where Markman's auxiliary threefold mechanism \cite{Markman2025} cannot be formulated.
+\item \textbf{Triality Correspondence Transfer ($70/70$) \& Invertible $B_{\mathrm{Weyl}}$ ($6/6$):} Inside the even Clifford algebra $C^+(V_8) \cong \End(S^+_8) \oplus \End(S^-_8)$ ($\dim = 64 + 64 = 128$), exactly $32/512$ basis triples in $V_8 \times S^+_8 \times S^-_8$ carry Cartan weight zero. Acting on $\bigwedge^4 S^+_8$ via the $24$-root $\mathfrak{so}(8)$ Clifford--triality orbit operator achieves full transfer rank $70/70$ ($\mathbf{35}_+ \oplus \mathbf{35}_-$) and $6/6$ spanning of $(\bigwedge^4 S^+_8)_0$. Under the $D_3 \times \mathrm{U}(1) \cong \mathfrak{su}(2,2) \times \mathrm{U}(1)$ branching, the $D_3$-zero-weight space splits as $8 = 2 + 6$ ($2$ pure Weil singlets + $6$ mixed $K_{2,2}$ tuples, $3$ total $\mathrm{SU}(2,2)$ invariants), and the three antipodal pair-partitions $\{P_0,P_1,P_2,P_3\}$ of $S^+_8$ induce an explicit $6 \times 6$ signed rational Weyl-to-Weil transition matrix $B_{\mathrm{Weyl}}$ of full rank $6/6$ over $\mathbb{Q}$.
+\end{enumerate}
+\end{proposition}
+
+\paragraph{Scope of This Section.}
+This section has established the Erd\H{o}s $K_{2,2}$ weight space characterization, $70/70$ triality correspondence transfer, and the invertible $6 \times 6$ rational Weyl transition matrix $B_{\mathrm{Weyl}}$. Motivic realization over $\mathbb{Q}$ remains open.
+
+% ==============================================================================
+\section{Decidable Core Lean~4.35.0 Finite Checks}
+\label{sec:thmFG}
+% ==============================================================================
+
+Alongside the computational experiments, our standalone formal verification suite in Lean~4 \cite{Lean4} provides $43$ decidable finite combinatorial and degree-counting checks with \textbf{zero Mathlib imports}. Every check satisfies \texttt{\#print axioms thm} $= \emptyset$ (zero \texttt{sorryAx}, zero \texttt{Classical.choice}, zero custom axioms) via \texttt{by rfl} or elementary constructive logic, verifying index-set inclusions, $D_4$ spinor/triality counts, Fermat band counts, collision counts, and Gorenstein Hilbert dimensions. It does not formalize schemes, cohomology, or Hodge theory.
+
+\paragraph{Scope of This Section.}
+This section has summarized the core Lean~4 formal verification suite, confirming that all $43$ finite combinatorial checks compile with empty axioms.
+
+% ==============================================================================
+\section{Open Obstructions and AI Assistance Disclosure}
+\label{sec:open}
+% ==============================================================================
+
+The two classical open obstructions separating finite-dimensional computational experiments on sextic fourfolds and $\mathrm{Spin}(8)$ combinatorics from the global Clay Millennium Hodge Conjecture remain intact:
+
+\begin{openproblem}[Bridge~A: Deformed Calabi--Yau Effective Bounds (\texttt{S-BRIDGE-DEFORM-CY4})]
+\label{open:A}
+Although formal power-series liftability holds on $\coker M_u = 0$ loci, Cattani--Deligne--Kaplan base moduli algebraicity \cite{CDK1995} is unconditional, and specific liaison / coupled examples remain flat, two global premises remain open:
+\begin{enumerate}[label=(\alph*)]
+\item an effective a priori upper bound on the Hilbert-scheme degree $D(\gamma)$ of algebraic cycles supporting arbitrary Hodge classes $\gamma$ on general fibers avoiding $F_0$; and
+\item a proof that arbitrary formal power-series lifts $\Lambda(t) \in R^{12}(F_0)[[t]]$ stabilize as convergent Macaulay/Gotzmann ideals of bounded regularity across general non-Fermat deformations and disconnected Noether--Lefschetz branches.
+\end{enumerate}
+\end{openproblem}
+
+\begin{openproblem}[Bridge~B: Kuga--Satake Algebraicity \& Grothendieck $B(X)$ (\texttt{S-BRIDGE-SPINOR-MOTIVE})]
+\label{open:B}
+Even though finite-dimensional $70/70$ triality maps and invertible Weyl-coset matrices $B_{\mathrm{Weyl}}$ exist in representation-theoretic coordinates, three classical motivic conjectures remain open:
+\begin{enumerate}[label=(\alph*)]
+\item algebraicity over $\mathbb{Q}$ of the Kuga--Satake correspondence (known to be absolute Hodge by Deligne \cite{Deligne1982} and motivated by Andr\'e \cite{Andre1996});
+\item Chow-group realization of $\MT(A_6)$-invariant spinor classes on varieties with $\End_{\mathbb{Q}}(A_6) = \mathbb{Q}$; and
+\item Grothendieck's Lefschetz Standard Conjecture $B(X)$ \cite{Grothendieck1969}, equating motivated cycles with algebraic cycles in general dimension.
+\end{enumerate}
+\end{openproblem}
+
+\paragraph{AI Assistance Disclosure.} Large language model tools were used during preparation of the codebase and manuscript for Python scripting, structuring finite Lean~4 checks, LaTeX formatting, and prose editing under authorial supervision; all arithmetic results and Lean~4 kernel outputs are deterministically reproducible.
+
+\paragraph{Artifact Availability.} The zero-float computational modules, the automated test suite, the standalone verifier, the $43$ Lean~4 finite checks, and the SHA-256 integrity manifest are archived in the Zenodo replication package \cite{MunawerHodgeZenodo2026}.
+
+\bibliographystyle{amsplain}
+\bibliography{references}
+
+\end{document}

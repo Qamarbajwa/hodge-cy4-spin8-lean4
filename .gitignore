@@ -4,3 +4,12 @@ __pycache__/
 .pytest_cache/
 math_gov_candidate_source/
 *.bundle
+.lake/
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.toc
+
+
