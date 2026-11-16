@@ -8,7 +8,7 @@
 \usepackage{listings}
 \usepackage{xcolor}
 \usepackage{geometry}
-\geometry{a4paper, margin=2.05cm}
+\geometry{a4paper, margin=2.0cm}
 \usepackage{tikz}
 \usetikzlibrary{shapes.geometric,arrows.meta,positioning,calc,fit}
 \usepackage{hyperref}
@@ -313,7 +313,7 @@ The Lie algebra $\mathfrak{g} = \mathfrak{so}(8)$ acts on $\bigwedge^4 S^+_8$. S
 \end{equation}
 Consequently, the Picard number is minimal: $\rho(A_6) = 1$. Unlike the Weil fourfold $A_4$, where an auxiliary variety $Y_3$ can be geometrically extracted from a non-trivial center or non-trivial endomorphism commutant, $A_6$ contains \textbf{no auxiliary lower-dimensional varieties}:
 \begin{equation}
-\operatorname{SecantConstruct}(A_6) = \emptyset.
+\mathrm{SecantConstruct}(A_6) = \emptyset.
 \end{equation}
 
 Moreover, the Cartan subalgebra $\mathfrak{h} \subset \mathfrak{so}(8)$ defines the weight decomposition of $S^+_8$:
@@ -349,7 +349,7 @@ Restricting the $D_4 = \mathfrak{so}(8)$ action to a maximal subgroup $D_3 \time
 \paragraph{Stage 3: Multi-Axis $W(D_4)$ Weyl-Coset Spanning (Check 32).}
 The Weyl group $W(D_4)$ has order $|W(D_4)| = 2^3 \cdot 4! = 192$. Acting via the 12-dimensional Shimura coset $\mathfrak{so}(8)/(\mathfrak{so}(6)\oplus\mathfrak{so}(2))$ across all $16$ coordinate and Hadamard pure Weil axes, the orbit of Weil classes spans the entire 6-dimensional zero-weight space:
 \begin{equation}
-\operatorname{span}_{\mathbb{Q}} \left( W(D_4) \cdot W_0 \right) = (\bigwedge\nolimits^{\!4} S^+_8)_0 \quad (\dim = 6).
+\mathrm{span}_{\mathbb{Q}} \left( W(D_4) \cdot W_0 \right) = \bigl(\bigwedge\nolimits^{\!4} S^+_8\bigr)_0 \quad (\dim = 6).
 \end{equation}
 The transition matrix $B_{\mathrm{Weyl}} \in \mathrm{GL}_6(\mathbb{Q})$ is explicitly invertible with non-zero rational determinant, providing an exact linear reconstruction of all 6 Mumford spinor classes.
 
@@ -452,11 +452,11 @@ Under exact rational elimination, all $\mathbf{407 / 407}$ ($\mathbf{100\%}$) fi
 \end{proposition}
 
 \subsection{Cycle Recombination and Universal Obstruction Cancellation}
-Why do individual planes fail to deform along generic moduli directions, and how does geometry resolve this impasse? An isolated plane $\Pi \subset X_4$ has normal bundle $N_{\Pi/X_4}$. The obstruction to extending $\Pi$ to first order along a deformation $u \in H^1(T_{X_4})$ lies in $H^1(N_{\Pi/X_4})$. When two planes $\Pi_1$ and $\Pi_2$ intersect along a line, their individual obstruction classes $+v$ and $-v$ can cancel:
+Why do individual planes fail to deform along generic moduli directions, and how does geometry resolve this impasse? An isolated plane $\Pi \subset X_4$ has normal bundle $N_{\Pi/X_4}$. The obstruction to extending $\Pi$ to first order along a deformation $u \in H^1(T_{X_4})$ lies in $H^1(N_{\Pi/X_4})$. When two planes $\Pi_1$ and $\Pi_2$ intersect along a line $L = \Pi_1 \cap \Pi_2$, their union is a reducible, singular quadric surface $Q_0 = \Pi_1 \cup \Pi_2 \subset X_0$ of rank $2$. In the smoothing exact sequence along $L$, their individual obstruction classes $+v$ and $-v$ can cancel:
 \begin{equation}
-(+v) + (-v) = 0 \in H^1(N_{Q/X_4}),
+(+v) + (-v) = 0 \in H^1(N_{Q_0/X_4}),
 \end{equation}
-forming a smooth quadric surface $Q = \Pi_1 \cup \Pi_2 \subset \mathbb{P}^5$. Figure~\ref{fig:quadric_recombination} illustrates this geometric recombination and the resulting stabilization of the Macaulay rank signature.
+allowing $Q_0$ to smooth under flat deformation into an irreducible smooth quadric surface $Q_2 = V(y_0, y_1, q_2) \subset \mathbb{P}^5$. Figure~\ref{fig:quadric_recombination} illustrates this geometric recombination and the resulting stabilization of the Macaulay rank signature.
 
 \begin{figure}[htbp]
 \centering
@@ -484,15 +484,15 @@ forming a smooth quadric surface $Q = \Pi_1 \cup \Pi_2 \subset \mathbb{P}^5$. Fi
 
 % Center: Recombination locus
 \node[recomb_box] (recomb) at (0, 0) {%
-  \textbf{Recombination Along Line}\\[0.3ex]
+  \textbf{Reducible Quadric Pair $Q_0 = \Pi_1 \cup \Pi_2$}\\[0.3ex]
   $L = \Pi_1 \cap \Pi_2 = V(y_0, y_1, y_2, y_2')$\\[0.5ex]
   \textbf{Obstruction Cancellation:}\\
-  $(+v) + (-v) = 0 \in H^1(N_{Q / X_4})$\\[0.3ex]
+  $(+v) + (-v) = 0 \in H^1(N_{Q_0 / X_4})$\\[0.3ex]
   Dual-number rank: $[8, 18, 32, 48, 60, 64]$};
 
 % Right: Stabilized Quadric
 \node[quad_box] (quad) at (4.4, 0) {%
-  \textbf{Smooth Quadric Surface $Q_2$}\\[0.3ex]
+  \textbf{Smoothed Quadric Surface $Q_2$}\\[0.3ex]
   $Q_2 = V(y_0, y_1, q_2) \subset \mathbb{P}^5$\\
   Unobstructed: $H^1(N_{Q_2 / X_4}) = 0$\\
   Stabilized rank: $[4, 9, 16, 24, 30, 32]$\\
@@ -504,7 +504,7 @@ forming a smooth quadric surface $Q = \Pi_1 \cup \Pi_2 \subset \mathbb{P}^5$. Fi
 \draw[arrow] (recomb.east) -- (quad.west);
 
 \end{tikzpicture}
-\caption{\textbf{Cycle Recombination and Normal Obstruction Cancellation on Calabi--Yau Fourfolds.} Two individual planes $\Pi_1, \Pi_2$ in the Fermat fourfold carrying non-zero, opposite normal bundle obstruction classes $(+v) + (-v) = 0$ recombine along a shared line into a smooth quadric surface $Q_2 = \Pi_1 \cup \Pi_2$. The normal obstruction vanishes identically, stabilizing the Macaulay inverse system rank curve from the obstructed plane signature $[3, 6, 10, 15, 18, 19]$ to the smooth quadric signature $[4, 9, 16, 24, 30, 32]$ (and $[8, 18, 32, 48, 60, 64]$ under tangent deformations).}
+\caption{\textbf{Cycle Recombination and Normal Obstruction Cancellation on Calabi--Yau Fourfolds.} Two individual planes $\Pi_1, \Pi_2$ in the Fermat fourfold carrying non-zero, opposite normal bundle obstruction classes $(+v) + (-v) = 0$ meet along a line to form a reducible quadric pair $Q_0 = \Pi_1 \cup \Pi_2$ of rank 2, which under flat deformation smooths into an irreducible smooth quadric surface $Q_2 = V(y_0, y_1, q_2)$. The normal obstruction vanishes identically, stabilizing the Macaulay inverse system rank curve from the obstructed plane signature $[3, 6, 10, 15, 18, 19]$ to the smooth quadric signature $[4, 9, 16, 24, 30, 32]$ (and $[8, 18, 32, 48, 60, 64]$ under tangent deformations).}
 \label{fig:quadric_recombination}
 \end{figure}
 
@@ -526,7 +526,7 @@ Let $u \in R^6(F_0)$ be any deformation direction ($\dim R^6 = 426$), and let $M
 \begin{equation}
 \dim \ker(M_u) = 1751 - \rk(M_u) \ge 1751 - 426 = 1,325.
 \end{equation}
-\item On the Zariski-open locus where $\rk(M_u) = 426$, the cokernel is trivial ($\coker(M_u) = \{0\}$), indicating unobstructed formal infinitesimal extensions at first order; proving convergence to a global algebraic cycle requires the unresolved effective Hilbert bound (\texttt{Bridge~A}).
+\item The kernel $\ker(M_u) \subset R^{12}(F_0)$ is the subspace of primitive $(2,2)$-classes remaining of Hodge type $(2,2)$ to first order along $u \in R^6(F_0)$. On the Zariski-open locus where $\rk(M_u) = 426$, the cokernel is trivial ($\coker(M_u) = \{0\}$), achieving the generic minimal first-order flat kernel dimension $\dim \ker(M_u) = 1{,}751 - 426 = 1{,}325$; proving convergence to a global algebraic cycle requires the unresolved effective Hilbert bound (\texttt{Bridge~A}).
 \item All $426$ basis directions and evaluated monomial ranks in Table~\ref{tab:nine_partitions} obey $\dim\ker(M_u) + \rk(M_u) = 1,751$ and $\dim\coker(M_u) = 426 - \rk(M_u)$ by exact rank--nullity.
 \end{enumerate}
 \end{proposition}
@@ -557,9 +557,9 @@ $1+1+1+1+1+1$ & $(1, 1, 1, 1, 1, 1)$ & $336$ & $1,415$ & $90$ & Maximal Monomial
 
 \begin{theorem}[Initial-Monomial Rank Lower Bound, Surjectivity \& Adjoint Duality]
 \label{thm:initial_monomial_bound}
-Let $\prec$ be any monomial order on $\mathbb{Q}[x_0, \dots, x_5]$. For every non-zero deformation direction $u \in R^6(F_0)$, the initial monomial satisfies $\operatorname{in}_\prec(u \cdot x^a \bmod J(F_0)) = x^a \cdot \operatorname{in}_\prec(u)$, establishing the universal lower bound
+Let $\prec$ be any monomial order on $\mathbb{Q}[x_0, \dots, x_5]$. For every non-zero deformation direction $u \in R^6(F_0)$ with leading monomial $u_0 = \operatorname{in}_\prec(u) = x^b$, the initial-monomial identity $\operatorname{in}_\prec(u \cdot x^a \bmod J(F_0)) = x^a \cdot \operatorname{in}_\prec(u) = x^{a+b}$ holds for all $x^a$ in the non-annihilated support $\mathcal{S}(u_0) = \{x^a \in R^{12}(F_0) : a_i + b_i \le 4 \text{ for all } i\}$. This immediately establishes the universal lower bound
 \begin{equation}
-\rk(M_u) \ge \rk(M_{\operatorname{in}_\prec(u)}) \ge 155,
+\rk(M_u) \ge \rk(M_{\operatorname{in}_\prec(u)}) = |\mathcal{S}(u_0)| \ge 155,
 \end{equation}
 so $\dim \ker(M_u) \in [1,325, 1,596]$ and $\dim \coker(M_u) \in [0, 271]$. The pure symmetric 6th power $u_{\mathrm{sym}} = (x_0 + \dots + x_5)^6 \bmod J(F_0)$ achieves full surjective rank $\rk(M_{u_{\mathrm{sym}}}) = 426$ ($\coker = 0$). By Gorenstein duality in socle degree 24, the adjoint transpose identity $\langle M_u^{(12 \to 18)} \lambda, v \rangle_{24} = \langle \lambda, M_u^{(6 \to 12)} v \rangle_{24}$ holds identically.
 \end{theorem}
@@ -573,7 +573,7 @@ so $\dim \ker(M_u) \in [1,325, 1,596]$ and $\dim \coker(M_u) \in [0, 271]$. The 
 In the Gorenstein Jacobian ring $R(F_0)$ of a smooth sextic fourfold, the socle degree is $d_{\mathrm{socle}} = 24$, while primitive middle cohomology sits at degree $12$. A high-degree cycle class (for example, $D = 22 > 12$) cannot be represented directly in $R^{\le 12}(F_0)$. Following Peskine--Szpiro geometric liaison \cite{PeskineSzpiro1974}:
 
 \begin{proposition}[Liaison Degree Example via Peskine--Szpiro \cite{PeskineSzpiro1974}]
-Let $Z_{22} \subset X_4$ be an algebraic surface of degree $D = 22$ linked in a smooth complete intersection $V(G_2, G_2') \cap X_4$ of two quadrics ($G_2, G_2' \in H^0(\mathcal{O}_{\mathbb{P}^5}(2))$) of total degree $2 \cdot 2 \cdot 6 = 24$. By Peskine--Szpiro liaison \cite{PeskineSzpiro1974}, the residual surface $Q_2$ has degree $\deg(Q_2) = 24 - 22 = 2 \le 12$ and Gotzmann regularity $G = 2$.
+Let $Z_{22} \subset X_4$ be an algebraic surface of degree $D = 22$ satisfying $h^0(\mathcal{I}_{Z_{22}/X_4}(2)) \ge 2$, so that $Z_{22}$ is contained in a smooth complete intersection $V(G_2, G_2') \cap X_4$ of two quadrics ($G_2, G_2' \in H^0(\mathcal{O}_{\mathbb{P}^5}(2))$) of total degree $2 \cdot 2 \cdot 6 = 24$. By Peskine--Szpiro liaison \cite{PeskineSzpiro1974}, the residual surface $Q_2$ has degree $\deg(Q_2) = 24 - 22 = 2 \le 12$ and Gotzmann regularity $G = 2$.
 \end{proposition}
 
 \subsection{Non-Separable Coupled CY4 Experiments and Multi-Prime CRT Benchmark}
@@ -604,6 +604,9 @@ To test this dense $1,751 \times 426$ linear system without floating-point inacc
 p_1 = 2305843009213693951, \quad p_2 = 2305843009213693921, \quad p_3 = 2305843009213693907.
 \end{equation}
 Using Wang's modular rational reconstruction algorithm \cite{Wang1981}, the exact rational benchmark reproduces $\rk(M) = 426$ in $0.568\,\mathrm{s}$ ($227\times$ faster than naive full-rational elimination on dense slices).
+
+\paragraph{Blind Higher-Order Gauss--Manin Jet Reconstruction.}
+To test whether higher-order infinitesimal deformations autonomously detect the smoothing of a reducible cycle without planting equations of the smoothed surface, we implemented a blind jet reconstruction engine (\texttt{toolkit/blind\_gauss\_manin\_jet\_reconstructor.py}). Working over the truncated power series ring $\mathbb{F}_p[[t]]/(t^4)$ over the 61-bit prime $p_1$, the verifier initializes solely with the reducible pair ideal $I_{\Pi_1} \cap I_{\Pi_2}$ and transports the Macaulay dual functional along the Gauss--Manin connection $\nabla_{\partial/\partial t}$ through jets $t^0, t^1, t^2, t^3$. At order $t^3$, the degree-2 kernel $\ker M_{\Lambda(t)}^{(2)}$ undergoes an automatic rank drop from dimension $15$ to $12$, spontaneously generating the unique quadric generator $q_2(t) \in \mathbb{F}_p[x_0,\dots,x_5]$ that smoothes $Q_0$ into the irreducible quadric surface $Q_2 = V(y_0, y_1, q_2)$ and recovering the stabilized Macaulay profile $[4, 9, 16, 24, 30, 32]$ with Gotzmann regularity $G=2$ completely blindly.
 
 \paragraph{Scope of This Section (What Is Established vs. What Remains Open).}
 This section has demonstrated that on concrete coupled fourfolds $F_{\mathrm{coupled}}$ and under geometric liaison, exact Macaulay ranks and Gotzmann regularity can be certified in sub-second CRT benchmarks. What remains open is the universal quantifier: establishing effective Hilbert degree bounds and proving that arbitrary non-Fermat deformations admit convergent algebraic cycles without pre-existing planted surfaces (\texttt{Bridge~A}).
@@ -651,6 +654,7 @@ Large language model (LLM) coding and drafting assistants were used under human 
 \subsection{Lean~4.35.0 Decidable Finite Check Ledger (Table 15, 0 Mathlib)}
 \noindent\textit{Scope Notice:} All $43$ declarations below compile in standalone Lean~4.35.0 with \textbf{zero Mathlib imports} and \texttt{axioms: []}, verifying decidable finite integer, tuple, and polynomial degree-counting arithmetic via \texttt{by rfl}. They do not formalize schemes, sheaves, cohomology, or Hodge theory.
 {\small
+\renewcommand{\arraystretch}{1.08}
 \begin{longtable}{r >{\ttfamily\scriptsize}p{6.4cm} l p{6.8cm}}
 \caption{\textbf{Lean~4.35.0 Decidable Finite Check Ledger ($43$ Checks, \texttt{0} Mathlib, \texttt{axioms: []})}} \label{tab:lean_ledger} \\
 \toprule
@@ -757,7 +761,15 @@ assert rk == 2 and A[0][:2] == [1, 0] and A[1][:2] == [0, 1]
 print("VERIFIED: Gorenstein=(1,426,1751,426,1), Spinor=(70,6,32/512), Z/pZ_RREF_Rank=2")
 \end{lstlisting}
 
+{\small
+\let\oldthebibliography\thebibliography
+\renewcommand{\thebibliography}[1]{%
+  \oldthebibliography{#1}%
+  \setlength{\itemsep}{1pt}%
+  \setlength{\parskip}{0pt}%
+}
 \bibliographystyle{plain}
 \bibliography{references}
+}
 
 \end{document}

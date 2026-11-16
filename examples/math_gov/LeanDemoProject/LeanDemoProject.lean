@@ -1,5 +1,6 @@
 import HodgeVerification
 import ProofSteps
+import ShiodaFormalConjectures
 
 -- Root library module for MathGovLeanDemo / LeanDemoProject.
--- Compiles all 43 decidable finite combinatorial checks and demo proof steps under lake build.
+-- Compiles all 43 HodgeVerification checks, demo proof steps, and Shioda formal conjecture rank certificates under lake build.

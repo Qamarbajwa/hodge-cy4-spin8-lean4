@@ -39,10 +39,11 @@ The following classical theorems provide the mathematical foundation for this in
 
 ## 3. Classification of Toolkit Verification Engines (`toolkit/`)
 
-All 19 computational modules in `toolkit/` operate strictly with exact integer, rational, and finite-field arithmetic (`scan_forbidden == []`).
+All 20 computational modules in `toolkit/` operate strictly with exact integer, rational, and finite-field arithmetic (`scan_forbidden == []`).
 
 | Module Filename | Core Functionality | Epistemic Classification | What Is Proved vs. What Remains Open |
 | :--- | :--- | :--- | :--- |
+| `blind_gauss_manin_jet_reconstructor.py` | Blind $t^3$-jet Gauss--Manin transport over $\mathbb{F}_p[[t]]/(t^4)$, spontaneous $q_2(t)$ quadric generator recovery | `[SOLVED-COMPUTATIONAL-FINITE]` | Recovers smoothed quadric from reducible pair ideal without planting surface equations; effective bounds open |
 | `calabi_yau_jacobian_engine.py` | Milnor number $\mu=15,625$, Gorenstein Hilbert dimensions $(1, 426, 1751, 426, 1)$ | `[SOLVED-COMPUTATIONAL-FINITE]` | Exact dimensions on Fermat sextic; does not prove global cycle existence |
 | `covariant_apolarity_and_weyl_shioda_census.py` | Wiebe transition determinant, initial-monomial bound $\ge 155$, $W(D_4)$ characters, Shioda census | `[SOLVED-COMPUTATIONAL-FINITE]` | Finite algebraicity tests on $I_\Pi \setminus I_\Pi^2$; does not prove global Hilbert bounds |
 | `cmi_autonomous_cycle1_engine.py` | First-order formal syzygy extension along Fermat deformation vectors | `[SOLVED-COMPUTATIONAL-FINITE]` | Solves local 1st-order infinitesimal deformation; formal series convergence to $\mathrm{CH}^2$ open |
@@ -114,8 +115,14 @@ Every single declaration in `lean_blueprint/HodgeVerification.lean` (and `exampl
 | 41 | `weyl_d4_spinor_weight_decomposition_eq` | $W(D_4)$ spinor weight split $70 = 35_+ \oplus 35_-$ |
 | 42 | `weyl_d4_even_parity_and_chiral_orthogonality_eq` | $W(D_4)$ even parity on $S^+_8$ and chiral irreducibility $\mathbf{3}_+ \oplus \mathbf{3}_-$ |
 | 43 | `shioda_aoki_m12_paired_diagonal_orbits_eq` | Shioda--Aoki $m=12$ paired-diagonal 4 orbits (360 residual characters) |
+| 44 | `weyl_d4_transition_matrix_invertible_cert` | Exact $6 \times 6$ integer-cleared matrix $B_{\mathrm{Weyl}} \cdot B_{\mathrm{adj}} = -8 I_6$ and $\det B_{\mathrm{Weyl}} = -8 \neq 0$ certified with 0 axioms |
+| 45 | `macaulay_plane_and_quadric_rank_witness_cert` | Graded polynomial action gives plane profile $[3, 6, 10, 15, 18, 19]$ (sum 72) and quadric profile $[4, 9, 16, 24, 30, 32]$ with 0 axioms |
+| 46 | `shioda_aoki_fermat_fourfold_census_m3_to_m10_empty_band4` | Fermat degrees $m=3\dots 10$ have empty Band 4, $m=12$ has 360 paired-diagonal residual characters, and $m=6$ has $1001+630+120+0=1751$ with 0 axioms |
 
-**Critical Epistemic Scope:** None of these 43 checks formalize algebraic schemes, sheaves, cohomology groups, or global Hodge theory. They verify decidable finite combinatorial and algebraic arithmetic via `by rfl` in core Lean 4.
+### 4.1 Standalone Formal Conjectures Module (`ShiodaFormalConjectures.lean`)
+In accordance with the `google-deepmind/formal-conjectures` specification, `lean_blueprint/ShiodaFormalConjectures.lean` (and `examples/math_gov/LeanDemoProject/ShiodaFormalConjectures.lean`) formalizes Checks 44--46 and defines `ShiodaFermatInductiveConjecture`, formulating Shioda's criterion for Fermat hypersurfaces $X_m^n$ without external Mathlib dependencies.
+
+**Critical Epistemic Scope:** None of these 46 checks formalize algebraic schemes, sheaves, cohomology groups, or global Hodge theory. They verify decidable finite combinatorial and algebraic arithmetic via `by rfl` in core Lean 4.
 
 ---
 

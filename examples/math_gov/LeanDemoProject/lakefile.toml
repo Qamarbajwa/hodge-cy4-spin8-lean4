@@ -9,4 +9,7 @@ name = "HodgeVerification"
 name = "ProofSteps"
 
 [[lean_lib]]
+name = "ShiodaFormalConjectures"
+
+[[lean_lib]]
 name = "LeanDemoProject"
