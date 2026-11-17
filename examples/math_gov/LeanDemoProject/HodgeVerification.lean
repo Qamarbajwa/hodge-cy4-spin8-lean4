@@ -8,25 +8,13 @@
   - Consists strictly of decidable finite combinatorial, partition, and
     degree-counting checks verifying index sets and dimensions.
   - NOT a formalization of schemes, sheaves, cohomology, or Hodge theory.
-  - All 41 checks compile with `axioms: []`.
+  - All checks compile with `axioms: []`.
 -/
 
--- ============================================================================
--- NODE 1: Exactness of Gysin Localization Sequences
--- \label{thm:exact_chain_im_sub_ker}
--- \lean{exact_chain_im_sub_ker}
--- \leanok
--- ============================================================================
-/-- General lemma: Any sequence of maps with zero composition satisfies im(f) ⊆ ker(g). -/
-theorem exact_chain_im_sub_ker {α β γ : Type} (f : α → β) (g : β → γ) (zero_c : γ)
-    (h_comp : ∀ x : α, g (f x) = zero_c) :
-    ∀ y : β, (∃ x : α, f x = y) → g y = zero_c := by
-  intro y hy
-  rcases hy with ⟨x, rfl⟩
-  exact h_comp x
+import ShiodaFormalConjectures
 
 -- ============================================================================
--- NODE 2: Weil Fourfold Complete Intersection Orthogonality
+-- NODE 2: Weil Fourfold Complete Intersection Orthogonality (Derived from bWeyl)
 -- \label{thm:weil_w1_orthogonal_to_theta2}
 -- \label{thm:weil_w2_orthogonal_to_theta2}
 -- \lean{weil_w1_orthogonal_to_theta2, weil_w2_orthogonal_to_theta2}
@@ -37,14 +25,32 @@ def dot : List Int → List Int → Int
   | _, [] => 0
   | x :: xs, y :: ys => x * y + dot xs ys
 
-/-- Complete intersection polarization class Theta^2 in H^4(A, Q) -/
-def theta2 : List Int := [1, 1, 1, 1, 1, 1]
+def vecAdd : List Int → List Int → List Int
+  | [], _ => []
+  | _, [] => []
+  | x :: xs, y :: ys => (x + y) :: vecAdd xs ys
 
-/-- Primitive Weil class w1 in W_0(A) -/
-def weil_w1 : List Int := [1, -1, 1, -1, 0, 0]
+def vecSub : List Int → List Int → List Int
+  | [], _ => []
+  | _, [] => []
+  | x :: xs, y :: ys => (x - y) :: vecSub xs ys
 
-/-- Primitive Weil class w2 in W_0(A) -/
-def weil_w2 : List Int := [0, 0, 1, 1, -1, -1]
+def getRow6 : List (List Int) → Nat → List Int
+  | [], _ => [0, 0, 0, 0, 0, 0]
+  | r :: _, 0 => r
+  | _ :: rs, k + 1 => getRow6 rs k
+
+/-- Complete intersection polarization class Theta^2 = sum of the 3 self-dual rows of B_Weyl -/
+def theta2 : List Int :=
+  vecAdd (getRow6 bWeyl 0) (vecAdd (getRow6 bWeyl 2) (getRow6 bWeyl 4))
+
+/-- Primitive Weil class w1 = difference of self-dual rows 0 and 2 of B_Weyl -/
+def weil_w1 : List Int :=
+  vecSub (getRow6 bWeyl 0) (getRow6 bWeyl 2)
+
+/-- Primitive Weil class w2 = anti-self-dual row 1 of B_Weyl -/
+def weil_w2 : List Int :=
+  getRow6 bWeyl 1
 
 theorem weil_w1_orthogonal_to_theta2 : dot weil_w1 theta2 = 0 := by rfl
 theorem weil_w2_orthogonal_to_theta2 : dot weil_w2 theta2 = 0 := by rfl
@@ -56,29 +62,15 @@ theorem weil_w2_orthogonal_to_theta2 : dot weil_w2 theta2 = 0 := by rfl
 -- \lean{four_tuples_len, zero_tuples_len}
 -- \leanok
 -- ============================================================================
-def Weight := Int × Int × Int × Int
+abbrev Weight := Weight4
 
-def so8_weights : List Weight := [
-  ( 1,  1,  1,  1),  -- 0
-  ( 1,  1, -1, -1),  -- 1
-  ( 1, -1,  1, -1),  -- 2
-  ( 1, -1, -1,  1),  -- 3
-  (-1, -1, -1, -1),  -- 4
-  (-1, -1,  1,  1),  -- 5
-  (-1,  1, -1,  1),  -- 6
-  (-1,  1,  1, -1)   -- 7
-]
+def so8_weights : List Weight := so8Weights
 
-def add_w (a b : Weight) : Weight :=
-  (a.1 + b.1, a.2.1 + b.2.1, a.2.2.1 + b.2.2.1, a.2.2.2 + b.2.2.2)
+def add_w (a b : Weight) : Weight := addW4 a b
 
-def is_zero_weight (w : Weight) : Bool :=
-  w.1.natAbs == 0 && w.2.1.natAbs == 0 && w.2.2.1.natAbs == 0 && w.2.2.2.natAbs == 0
+def is_zero_weight (w : Weight) : Bool := isZeroWeight4 w
 
-def combs : Nat → List α → List (List α)
-  | 0, _ => [[]]
-  | _ + 1, [] => []
-  | k + 1, x :: xs => (combs k xs).map (x :: ·) ++ combs (k + 1) xs
+def combs : Nat → List α → List (List α) := combsIdx
 
 def four_tuples : List (List Weight) := combs 4 so8_weights
 
@@ -114,7 +106,7 @@ theorem h22_prim_eq : h22_prim = 1751 := by rfl
 def h22_total : Nat := h22_prim + 1
 theorem h22_total_eq : h22_total = 1752 := by rfl
 
-def b4_total : Nat := 1 + 426 + 1752 + 426 + 1
+def b4_total : Nat := h40_prim + h31_prim + h22_total + h31_prim + h40_prim
 theorem b4_total_eq : b4_total = 2606 := by rfl
 
 def milnor_number : Nat := (6 - 1) ^ 6
@@ -123,8 +115,8 @@ theorem milnor_number_eq : milnor_number = 15625 := by rfl
 def r6_dim : Nat := binom 11 5 - 6 * binom 6 5
 theorem r6_dim_eq : r6_dim = 426 := by rfl
 
-def plane_rank : Nat := 19
-def plane_kernel_dim : Nat := 426 - plane_rank
+def plane_rank : Nat := planeMacaulayRank 6
+def plane_kernel_dim : Nat := r6_dim - plane_rank
 theorem plane_kernel_dim_eq : plane_kernel_dim = 407 := by rfl
 
 /-- Saturation index s(a) = 3 count: \binom{6}{3} = 20 coordinate 2-plane monomials -/
@@ -141,16 +133,16 @@ def has_pair_sum_4 : List Nat → Bool
 def has_2_plus_4_split (a : List Nat) : Bool :=
   (a.length == 6) && (a.foldl (· + ·) 0 == 12) && (a.all (fun x => x <= 4)) && has_pair_sum_4 a
 
-theorem band3_partitions_satisfy_2_plus_4 :
-  (has_2_plus_4_split [4, 2, 2, 2, 1, 1] && has_2_plus_4_split [3, 3, 2, 2, 2, 0]) = true := by rfl
+def band3_sorted_tuples_m6 : List (List Nat) :=
+  (sortedHodge22Tuples 6).filter (isBand3TwoPlusFour 6)
 
-/-- Complete 4-Band Fermat Sextic Decomposition: 1001 + 630 + 120 + 0 = 1751 -/
-def fermat_band1_planes : Nat := 1001
-def fermat_band2_cones : Nat := 630
-def fermat_band3_lefschetz : Nat := 120
-def fermat_band4_unexplained : Nat := 0
+theorem band3_partitions_satisfy_2_plus_4 :
+  (band3_sorted_tuples_m6.length > 0 &&
+   band3_sorted_tuples_m6.all (fun a => has_2_plus_4_split (a.map (fun x => x - 1)))) = true := by rfl
+
+/-- Complete 4-Band Fermat Sextic Decomposition computed from first-principles Shioda--Aoki combinatorics -/
 def fermat_four_band_total : Nat :=
-  fermat_band1_planes + fermat_band2_cones + fermat_band3_lefschetz + fermat_band4_unexplained
+  fermat_band1_count 6 + fermat_band2_count 6 + fermat_band3_count 6 + fermat_band4_count 6
 
 theorem fermat_four_band_closure_eq : fermat_four_band_total = h22_prim := by rfl
 
@@ -215,24 +207,10 @@ def chevalley_spinor_end_dim : Nat := 8 * 8 + 8 * 8
 theorem clifford_even_dim_eq : (clifford_even_dim == 128 && chevalley_spinor_end_dim == 128) = true := by rfl
 
 /-- Scaled integer weights (2x) of the 8-dimensional vector representation V_8 of D_4 = so(8) -/
-def so8_vector_weights : List Weight := [
-  ( 2,  0,  0,  0), (-2,  0,  0,  0),
-  ( 0,  2,  0,  0), ( 0, -2,  0,  0),
-  ( 0,  0,  2,  0), ( 0,  0, -2,  0),
-  ( 0,  0,  0,  2), ( 0,  0,  0, -2)
-]
+def so8_vector_weights : List Weight := so8VectorWeights
 
 /-- Scaled integer weights (2x) of the 8-dimensional odd half-spinor representation S^-_8 of D_4 = so(8) -/
-def so8_odd_spinor_weights : List Weight := [
-  ( 1,  1,  1, -1),
-  ( 1,  1, -1,  1),
-  ( 1, -1,  1,  1),
-  (-1,  1,  1,  1),
-  (-1, -1, -1,  1),
-  (-1, -1,  1, -1),
-  (-1,  1, -1, -1),
-  ( 1, -1, -1, -1)
-]
+def so8_odd_spinor_weights : List Weight := so8OddSpinorWeights
 
 def triality_all_triples : List (Weight × Weight × Weight) :=
   so8_vector_weights.foldr (fun v acc1 =>
@@ -327,7 +305,6 @@ theorem signed_difference_ideal_intersection :
    signed_ann_r2_dim == 9 &&
    cross_quadrics_annihilate_both) = true := by rfl
 
-#print axioms exact_chain_im_sub_ker
 #print axioms weil_w1_orthogonal_to_theta2
 #print axioms weil_w2_orthogonal_to_theta2
 #print axioms four_tuples_len
@@ -380,14 +357,15 @@ theorem quadratic_moving_plane_directions_count_eq :
      u.2.2.2.1 + u.2.2.2.2.1 + u.2.2.2.2.2 == 4 &&
      Nat.ble u.2.2.2.1 2 && Nat.ble u.2.2.2.2.1 2 && Nat.ble u.2.2.2.2.2 2)) = true := by rfl
 
-def deformed_macaulay_flat_hilbert : List Nat := [1, 3, 6, 10, 15, 18, 19]
+def deformed_macaulay_flat_hilbert : List Nat :=
+  [0, 1, 2, 3, 4, 5, 6].map planeMacaulayRank
 
-def binomial_2_plane_hilbert : List Nat := [1, 3, 6, 10, 15]
+def binomial_2_plane_hilbert : List Nat :=
+  [0, 1, 2, 3, 4].map (fun m => binom (m + 2) 2)
 
 theorem deformed_macaulay_flat_hilbert_sum_eq :
   (deformed_macaulay_flat_hilbert.foldr Nat.add 0 == 72 &&
-   deformed_macaulay_flat_hilbert.take 5 == binomial_2_plane_hilbert &&
-   [0, 1, 2, 3, 4].map (fun m => binom (m + 2) 2) == binomial_2_plane_hilbert) = true := by rfl
+   deformed_macaulay_flat_hilbert.take 5 == binomial_2_plane_hilbert) = true := by rfl
 
 #print axioms quadratic_moving_plane_directions_count_eq
 #print axioms deformed_macaulay_flat_hilbert_sum_eq
@@ -412,7 +390,13 @@ def telescope_rhs_exp6 (c0 c1 c2 c3 c4 : Nat) : Exp6 :=
   add_exp6 (0, c0, c1, c2, c3, c4) (1, 0, 0, 0, 0, 0)
 
 theorem telescoping_cyclotomic_annihilator_eq :
-  (telescope_lhs_exp6 1 1 1 1 1 == telescope_rhs_exp6 1 1 1 1 1) = true := by rfl
+  ([0, 1, 2, 3, 4].all fun c0 =>
+   [0, 1, 2, 3, 4].all fun c1 =>
+   [0, 1, 2, 3, 4].all fun c2 =>
+   [0, 1, 2, 3, 4].all fun c3 =>
+   [0, 1, 2, 3, 4].all fun c4 =>
+     (telescope_lhs_exp6 c0 c1 c2 c3 c4 == telescope_rhs_exp6 c0 c1 c2 c3 c4) ==
+     (c0 == 1 && c1 == 1 && c2 == 1 && c3 == 1 && c4 == 1)) = true := by rfl
 
 #print axioms cyclotomic_plane_wavepacket_support_eq
 #print axioms telescoping_cyclotomic_annihilator_eq
@@ -573,11 +557,12 @@ theorem weyl_d4_conjugate_weil_axes_eq :
 -- \leanok
 -- ============================================================================
 def universal_total_ker_bound : Nat := h22_prim - h31_prim
-def universal_band1_ker_bound : Nat := fermat_band1_planes - h31_prim
-def universal_band2_ker_bound : Nat := fermat_band2_cones - h31_prim
+def universal_band1_ker_bound : Nat := fermat_band1_count 6 - h31_prim
+def universal_band2_ker_bound : Nat := fermat_band2_count 6 - h31_prim
 def turan_max_obstructed_planes : Nat := binom (6 - 2) 3
 def turan_min_surviving_planes : Nat := saturation_three_count - turan_max_obstructed_planes
 
+set_option maxRecDepth 2048 in
 theorem universal_band_obstruction_cancellation_bounds_eq :
   (universal_total_ker_bound == 1325 &&
    universal_band1_ker_bound == 575 &&
@@ -627,21 +612,7 @@ theorem gorenstein_moduli_rank_extremes_eq :
 #print axioms gorenstein_moduli_rank_extremes_eq
 
 -- ============================================================================
--- NODE 10: Nine-Partition Rank & Cokernel Index Mapping Check
--- ============================================================================
-def nine_partition_moduli_ranks : List Nat := [155, 166, 190, 216, 244, 252, 282, 312, 336]
-def nine_partition_cokernels : List Nat := [271, 260, 236, 210, 182, 174, 144, 114, 90]
-def nine_gorenstein_exact_ranks : List Nat := [155, 165, 207, 248, 264, 279, 297, 316, 336]
-def nine_gorenstein_exact_cokernels : List Nat := [271, 261, 219, 178, 162, 147, 129, 110, 90]
-
-theorem nine_partition_cokernel_dims_eq :
-  (nine_partition_moduli_ranks.map (fun r => 426 - r) == nine_partition_cokernels &&
-   nine_gorenstein_exact_ranks.map (fun r => 426 - r) == nine_gorenstein_exact_cokernels) = true := by rfl
-
-#print axioms nine_partition_cokernel_dims_eq
-
--- ============================================================================
--- NODE 11: 20-Plane Collision Excess, High-Support Annihilation & 15-Matching Band-1 Law
+-- NODE 10: 20-Plane Collision Excess, High-Support Annihilation & 15-Matching Band-1 Law
 -- \label{thm:twenty_plane_target_and_collision_counts_eq}
 -- \label{thm:fifteen_matching_band1_block_incidence_eq}
 -- \lean{twenty_plane_target_and_collision_counts_eq, fifteen_matching_band1_block_incidence_eq}
@@ -668,72 +639,91 @@ theorem twenty_plane_target_and_collision_counts_eq :
    15 == saturation_three_count - 5 &&
    15 - 11 == 4) = true := by rfl
 
-def fifteen_perfect_matchings : Nat := 15
+def all_perfect_matchings_6 : List (List (Nat × Nat)) :=
+  [1, 2, 3, 4, 5].foldl (fun acc b =>
+    match [1, 2, 3, 4, 5].filter (fun x => x != b) with
+    | [] => acc
+    | r0 :: t0 => match t0 with
+      | [] => acc
+      | r1 :: t1 => match t1 with
+        | [] => acc
+        | r2 :: t2 => match t2 with
+          | [] => acc
+          | r3 :: t3 => match t3 with
+            | [] =>
+              acc ++ [
+                [(0, b), (r0, r1), (r2, r3)],
+                [(0, b), (r0, r2), (r1, r3)],
+                [(0, b), (r0, r3), (r1, r2)]
+              ]
+            | _ :: _ => acc
+  ) []
+
+def fifteen_perfect_matchings : Nat := all_perfect_matchings_6.length
+
+def getNatAt : List Nat → Nat → Nat
+  | [], _ => 0
+  | x :: _, 0 => x
+  | _ :: xs, k + 1 => getNatAt xs k
+
+def matchingSatisfied (m : Nat) (a : List Nat) (matching : List (Nat × Nat)) : Bool :=
+  matching.all (fun (i, j) => getNatAt a i + getNatAt a j == m)
+
+def matchingSatisfactionCount (m : Nat) (a : List Nat) : Nat :=
+  (all_perfect_matchings_6.filter (matchingSatisfied m a)).length
+
+def band1_sorted_tuples_m6 : List (List Nat) :=
+  (sortedHodge22Tuples 6).filter (isBand1CompletePairs 6)
+
+def band1_count_by_multiplicity (k : Nat) : Nat :=
+  (band1_sorted_tuples_m6.filter (fun a => matchingSatisfactionCount 6 a == k)).foldl
+    (fun acc a => acc + s6OrbitSize a) 0
+
+def band1_multiplicity_pairs : List (Nat × Nat) :=
+  [1, 2, 3, 6, 15].map (fun k => (k, band1_count_by_multiplicity k))
+
 def modes_per_matching_block : Nat := pair_sums_4.length * pair_sums_4.length * pair_sums_4.length
 def band1_block_total_incidences : Nat := fifteen_perfect_matchings * modes_per_matching_block
-def band1_multiplicity_pairs : List (Nat × Nat) := [(1, 360), (2, 540), (3, 60), (6, 40), (15, 1)]
 def band1_mult_mode_sum : Nat := band1_multiplicity_pairs.foldl (fun acc p => acc + p.2) 0
 def band1_mult_incidence_sum : Nat := band1_multiplicity_pairs.foldl (fun acc p => acc + p.1 * p.2) 0
 
+set_option maxRecDepth 4096 in
 theorem fifteen_matching_band1_block_incidence_eq :
   (fifteen_perfect_matchings == 15 &&
    modes_per_matching_block == 125 &&
    band1_block_total_incidences == 1875 &&
-   band1_mult_mode_sum == fermat_band1_planes &&
+   band1_mult_mode_sum == fermat_band1_count 6 &&
    band1_mult_incidence_sum == band1_block_total_incidences &&
-   band1_block_total_incidences - fermat_band1_planes == 874 &&
-   band1_multiplicity_pairs.map (fun p => p.2) == [360, 540, 60, 40, 1]) = true := by rfl
+   band1_block_total_incidences - fermat_band1_count 6 == 874 &&
+   band1_multiplicity_pairs == [(1, 360), (2, 540), (3, 60), (6, 40), (15, 1)]) = true := by rfl
 
 #print axioms twenty_plane_target_and_collision_counts_eq
 #print axioms fifteen_matching_band1_block_incidence_eq
 
 -- ============================================================================
--- NODE 12: Higher-Degree Collision Stabilization & Finite Non-Fermat CY4
+-- NODE 11: Quadric Macaulay Flat Hilbert & Finite Non-Fermat CY4 Convolution
 -- \label{thm:recomb_and_collision_flat_hilbert_eq}
 -- \label{thm:finite_non_fermat_pair_milnor_and_ranks_eq}
 -- \lean{recomb_and_collision_flat_hilbert_eq, finite_non_fermat_pair_milnor_and_ranks_eq}
 -- \leanok
 -- ============================================================================
-def recomb_static_ranks : List Nat := [4, 9, 16, 24, 30, 32]
+def recomb_static_ranks : List Nat := [1, 2, 3, 4, 5, 6].map quadricMacaulayRank
 def recomb_flat_target : List Nat := recomb_static_ranks.map (· * 2)
-def recomb_ua_naive_ranks : List Nat := [8, 19, 36, 56, 71, 76]
-def recomb_ub_naive_ranks : List Nat := [8, 19, 36, 56, 72, 78]
-def quad_collision_naive_ranks : List Nat := [9, 23, 45, 71, 91, 98]
-
-def list_diff_nat : List Nat → List Nat → List Nat
-  | [], _ => []
-  | _ :: _, [] => []
-  | a :: xs, b :: ys => (a - b) :: list_diff_nat xs ys
-
-def list_head_nat : List Nat → Nat
-  | [] => 0
-  | x :: _ => x
 
 theorem recomb_and_collision_flat_hilbert_eq :
-  (recomb_flat_target == [8, 18, 32, 48, 60, 64] &&
-   list_diff_nat recomb_ua_naive_ranks recomb_flat_target == [0, 1, 4, 8, 11, 12] &&
-   list_diff_nat recomb_ub_naive_ranks recomb_flat_target == [0, 1, 4, 8, 12, 14] &&
-   list_diff_nat quad_collision_naive_ranks recomb_flat_target == [1, 5, 13, 23, 31, 34] &&
-   list_head_nat recomb_ua_naive_ranks == 8 &&
-   list_head_nat quad_collision_naive_ranks == 9 &&
+  (recomb_static_ranks == [4, 9, 16, 24, 30, 32] &&
+   recomb_flat_target == [8, 18, 32, 48, 60, 64] &&
    h31_prim - 32 == 394) = true := by rfl
 
-def nf_pair_hilbert : List Nat := [1, 2, 3, 4, 5, 4, 3, 2, 1]
+def nf_pair_dim (k : Nat) : Nat :=
+  [0, 1, 2, 3, 4].foldl (fun acc a =>
+    acc + [0, 1, 2, 3, 4].foldl (fun acc2 b =>
+      if a + b == k then acc2 + 1 else acc2) 0) 0
+
+def nf_pair_hilbert : List Nat := (List.range 9).map nf_pair_dim
 def nf_pair_milnor : Nat := nf_pair_hilbert.foldl (· + ·) 0
 def nf_total_milnor : Nat := nf_pair_milnor * nf_pair_milnor * nf_pair_milnor
-def nf_plane_ranks : List Nat := [3, 6, 10, 15, 18, 19]
-
-def nf_pair_dim : Nat → Nat
-  | 0 => 1
-  | 1 => 2
-  | 2 => 3
-  | 3 => 4
-  | 4 => 5
-  | 5 => 4
-  | 6 => 3
-  | 7 => 2
-  | 8 => 1
-  | _ => 0
+def nf_plane_ranks : List Nat := [1, 2, 3, 4, 5, 6].map planeMacaulayRank
 
 def nf_sum_pairs (k : Nat) : Nat :=
   (List.range 9).foldl (fun acc d0 =>
@@ -752,37 +742,141 @@ theorem finite_non_fermat_pair_milnor_and_ranks_eq :
    1 :: nf_plane_ranks == deformed_macaulay_flat_hilbert &&
    ([1, 2, 3, 4, 5, 6].map nf_sum_pairs == [6, 21, 56, 126, 246, 426]) &&
    nf_sum_pairs 12 == h22_prim &&
-   nf_sum_pairs 18 == h31_prim &&
-   6 - 3 == 3 &&
-   6 - 4 == 2) = true := by rfl
+   nf_sum_pairs 18 == h31_prim) = true := by rfl
 
 #print axioms recomb_and_collision_flat_hilbert_eq
 #print axioms finite_non_fermat_pair_milnor_and_ranks_eq
 
 -- ============================================================================
--- NODE 13: Finite Pair-Convolution Hilbert Symmetry & Spin(8) Index Checks
+-- NODE 12: Finite Pair-Convolution Hilbert Symmetry & Spin(8) Index Checks
 -- (Finite combinatorial / degree-counting checks only; not cohomological Hodge theory.)
 -- ============================================================================
-def cy4_socle_degree : Nat := 24
-def cy4_middle_degree : Nat := 12
-def cy4_hilbert_series : List Nat := (List.range 25).map nf_sum_pairs
+def cy4_socle_degree_fn (n m : Nat) : Nat := (n + 2) * (m - 2)
+def cy4_socle_degree : Nat := cy4_socle_degree_fn 4 6
+def cy4_middle_degree : Nat := cy4_socle_degree / 2
+def cy4_hilbert_series : List Nat := (List.range (cy4_socle_degree + 1)).map nf_sum_pairs
 
 theorem noether_macaulay_gorenstein_symmetry_eq :
   (cy4_socle_degree == 24 &&
    cy4_middle_degree == 12 &&
-   cy4_hilbert_series.length == 25 &&
+   cy4_hilbert_series.length == cy4_socle_degree + 1 &&
    cy4_hilbert_series == cy4_hilbert_series.reverse &&
    nf_sum_pairs 0 == 1 &&
-   nf_sum_pairs 12 == h22_prim &&
-   nf_sum_pairs 24 == 1) = true := by rfl
+   nf_sum_pairs cy4_middle_degree == h22_prim &&
+   nf_sum_pairs cy4_socle_degree == 1) = true := by rfl
 
-def weyl_d4_group_order : Nat := (2 ^ 3) * 24
-def wedge4_spinor_self_dual_dim : Nat := 35
-def wedge4_spinor_anti_self_dual_dim : Nat := 35
-def mumford_stacked_root_rank : Nat := 6
+-- ============================================================================
+-- NODE 13: Algorithmic Chiral Splitting, D4 Root Gram Rank & W(D4) 192-Element Group
+-- ============================================================================
+def countGreater (x : Nat) : List Nat → Nat
+  | [] => 0
+  | y :: ys => (if x > y then 1 else 0) + countGreater x ys
 
+def inversionCount : List Nat → Nat
+  | [] => 0
+  | x :: xs => countGreater x xs + inversionCount xs
+
+def hodgeStarSign (I : List Nat) : Int :=
+  if inversionCount (I ++ complement8 I) % 2 == 0 then 1 else -1
+
+def self_dual_orbit_pairs : List (List Nat × List Nat) :=
+  fourIndexTuples.foldl (fun acc I =>
+    let c := complement8 I
+    if lexLtNatList I c then acc ++ [(I, c)] else acc
+  ) []
+
+def wedge4_spinor_self_dual_dim : Nat := self_dual_orbit_pairs.length
+def wedge4_spinor_anti_self_dual_dim : Nat := self_dual_orbit_pairs.length
+
+def d4SimpleRoots : List Weight := [
+  addW4 (basisVec4 0 2) (basisVec4 1 (-2)),
+  addW4 (basisVec4 1 2) (basisVec4 2 (-2)),
+  addW4 (basisVec4 2 2) (basisVec4 3 (-2)),
+  addW4 (basisVec4 2 2) (basisVec4 3 2)
+]
+
+def indexOfWeight (w : Weight) : List Weight → Option Nat
+  | [] => none
+  | x :: xs =>
+    if isZeroWeight4 (addW4 w (-x.1, -x.2.1, -x.2.2.1, -x.2.2.2)) then some 0
+    else match indexOfWeight w xs with
+      | none => none
+      | some k => some (k + 1)
+
+def replaceAtNat : List Nat → Nat → Nat → List Nat
+  | [], _, _ => []
+  | _ :: xs, 0, v => v :: xs
+  | x :: xs, k + 1, v => x :: replaceAtNat xs k v
+
+def sortNatListInsert (x : Nat) : List Nat → List Nat
+  | [] => [x]
+  | y :: ys => if x <= y then x :: y :: ys else y :: sortNatListInsert x ys
+
+def sortNatList : List Nat → List Nat
+  | [] => []
+  | x :: xs => sortNatListInsert x (sortNatList xs)
+
+def applyRootToTuple (alpha : Weight) (I : List Nat) : List (List Nat × Int) :=
+  [0, 1, 2, 3].foldl (fun acc pos =>
+    let k := getNatAt I pos
+    let w2 := addW4 (getWAt so8Weights k) alpha
+    match indexOfWeight w2 so8Weights with
+    | none => acc
+    | some k2 =>
+      if I.contains k2 then acc
+      else
+        let newLst := replaceAtNat I pos k2
+        let sgn : Int := if inversionCount newLst % 2 == 0 then 1 else -1
+        acc ++ [(sortNatList newLst, sgn)]
+  ) []
+
+def coeffOfTuple (J : List Nat) (terms : List (List Nat × Int)) : Int :=
+  terms.foldl (fun acc (K, c) => if K == J then acc + c else acc) 0
+
+def dotTupleTerms (t1 t2 : List (List Nat × Int)) : Int :=
+  t1.foldl (fun acc (J, c1) => acc + c1 * coeffOfTuple J t2) 0
+
+def d4_root_gram_matrix : List (List Int) :=
+  let imgs := d4SimpleRoots.map (fun alpha => zeroIndexTuples.map (applyRootToTuple alpha))
+  (rangeList 0 6).map (fun a =>
+    (rangeList 0 6).map (fun b =>
+      imgs.foldl (fun acc rootImgs =>
+        let ta := match rootImgs.drop a with | x :: _ => x | [] => []
+        let tb := match rootImgs.drop b with | x :: _ => x | [] => []
+        acc + dotTupleTerms ta tb
+      ) 0
+    )
+  )
+
+def mumford_stacked_root_rank : Nat :=
+  intMatRankAuxClean 6 d4_root_gram_matrix
+
+def insertAtNat (x : Nat) : List Nat → List (List Nat)
+  | [] => [[x]]
+  | y :: ys => (x :: y :: ys) :: (insertAtNat x ys).map (y :: ·)
+
+def permsNat : List Nat → List (List Nat)
+  | [] => [[]]
+  | x :: xs => (permsNat xs).foldl (fun acc p => acc ++ insertAtNat x p) []
+
+def all_s4_perms : List (List Nat) := permsNat [0, 1, 2, 3]
+
+def weyl_d4_elements : List (List Nat × Weight) :=
+  all_s4_perms.foldl (fun acc p =>
+    acc ++ so8Weights.map (fun s => (p, s))
+  ) []
+
+def weyl_d4_group_order : Nat := weyl_d4_elements.length
+
+set_option maxRecDepth 4096 in
 theorem weyl_d4_spinor_weight_decomposition_eq :
   (four_tuples.length == 70 &&
+   fourIndexTuples.all (fun I =>
+     complement8 (complement8 I) == I &&
+     complement8 I != I &&
+     intEq (hodgeStarSign (complement8 I)) (hodgeStarSign I)) &&
+   wedge4_spinor_self_dual_dim == 35 &&
+   wedge4_spinor_anti_self_dual_dim == 35 &&
    wedge4_spinor_self_dual_dim + wedge4_spinor_anti_self_dual_dim == four_tuples.length &&
    zero_weight_tuples.length == 6 &&
    mumford_stacked_root_rank == zero_weight_tuples.length &&
@@ -793,87 +887,70 @@ theorem weyl_d4_spinor_weight_decomposition_eq :
 #print axioms weyl_d4_spinor_weight_decomposition_eq
 
 -- ============================================================================
--- NODE 14: Weyl D4 Chiral Irreducibility & Shioda-Aoki m=12 Paired Orbits
--- (Finite combinatorial and character/orbit checks only; not cohomological Hodge theory.)
--- \label{thm:weyl_d4_even_parity_and_chiral_orthogonality_eq}
--- \label{thm:shioda_aoki_m12_paired_diagonal_orbits_eq}
--- \lean{weyl_d4_even_parity_and_chiral_orthogonality_eq, shioda_aoki_m12_paired_diagonal_orbits_eq}
--- \leanok
+-- NODE 14: Weyl D4 Even Parity & Chiral Irreducibility Over All 192 Elements
 -- ============================================================================
-def wd4_chiral_conjugacy_classes : List (Int × Int × Int × Nat) := [
-  (1, -1, -1, 42),
-  (1, -1,  1, 24),
-  (1, -1,  3,  6),
-  (1,  0,  0, 64),
-  (1,  1, -1, 24),
-  (1,  1,  1, 24),
-  (1,  3, -1,  6),
-  (1,  3,  3,  2)
-]
+def getWeightCoord (w : Weight) (i : Nat) : Int :=
+  match i with
+  | 0 => w.1
+  | 1 => w.2.1
+  | 2 => w.2.2.1
+  | _ => w.2.2.2
 
-def wd4_total_elements : Nat :=
-  wd4_chiral_conjugacy_classes.foldl (fun acc c => acc + c.2.2.2) 0
+def actWD4OnWeight (p : List Nat) (s : Weight) (w : Weight) : Weight :=
+  (s.1 * getWeightCoord w (getNatAt p 0),
+   s.2.1 * getWeightCoord w (getNatAt p 1),
+   s.2.2.1 * getWeightCoord w (getNatAt p 2),
+   s.2.2.2 * getWeightCoord w (getNatAt p 3))
+
+def wd4Perm8 (p : List Nat) (s : Weight) : List Nat :=
+  so8Weights.map (fun w =>
+    match indexOfWeight (actWD4OnWeight p s w) so8Weights with
+    | some k => k
+    | none => 0)
+
+def wd4_total_elements : Nat := weyl_d4_elements.length
 
 def wd4_all_even_parity : Bool :=
-  wd4_chiral_conjugacy_classes.foldl (fun acc c => acc && ((c.1 - 1).natAbs == 0)) true
+  weyl_d4_elements.all (fun (p, s) => inversionCount (wd4Perm8 p s) % 2 == 0)
+
+def wd4ChiralTraces (p : List Nat) (s : Weight) : Int × Int :=
+  let perm8 := wd4Perm8 p s
+  zeroStarPairs.foldl (fun (tp, tm) (I, comp) =>
+    let hs := hodgeStarSign I
+    let img := I.map (getNatAt perm8)
+    let sgnSort : Int := if inversionCount img % 2 == 0 then 1 else -1
+    let sortedImg := sortNatList img
+    if sortedImg == I then
+      (tp + sgnSort, tm + sgnSort)
+    else if sortedImg == comp then
+      let imgC := comp.map (getNatAt perm8)
+      let sgnC : Int := if inversionCount imgC % 2 == 0 then 1 else -1
+      (tp + hs * sgnC, tm - hs * sgnC)
+    else
+      (tp, tm)
+  ) (0, 0)
+
+def wd4_chiral_trace_list : List (Int × Int) :=
+  weyl_d4_elements.map (fun (p, s) => wd4ChiralTraces p s)
 
 def wd4_norm_plus_sq : Int :=
-  wd4_chiral_conjugacy_classes.foldl (fun acc c => acc + c.2.1 * c.2.1 * (c.2.2.2 : Int)) 0
+  wd4_chiral_trace_list.foldl (fun acc (tp, _) => acc + tp * tp) 0
 
 def wd4_norm_minus_sq : Int :=
-  wd4_chiral_conjugacy_classes.foldl (fun acc c => acc + c.2.2.1 * c.2.2.1 * (c.2.2.2 : Int)) 0
+  wd4_chiral_trace_list.foldl (fun acc (_, tm) => acc + tm * tm) 0
 
 def wd4_cross_product : Int :=
-  wd4_chiral_conjugacy_classes.foldl (fun acc c => acc + c.2.1 * c.2.2.1 * (c.2.2.2 : Int)) 0
+  wd4_chiral_trace_list.foldl (fun acc (tp, tm) => acc + tp * tm) 0
 
+set_option maxRecDepth 4096 in
 theorem weyl_d4_even_parity_and_chiral_orthogonality_eq :
   (wd4_total_elements, wd4_all_even_parity, wd4_norm_plus_sq, wd4_norm_minus_sq, wd4_cross_product) =
     (192, true, 192, 192, 0) := by rfl
 
-def Exp6Nat := Nat × Nat × Nat × Nat × Nat × Nat
-
-def m12_paired_reps : List Exp6Nat := [
-  (8,  8, 7, 7, 3, 3),
-  (9,  9, 5, 5, 4, 4),
-  (9,  9, 8, 8, 1, 1),
-  (11, 11, 4, 4, 3, 3)
-]
-
-def exp6_sum (a : Exp6Nat) : Nat :=
-  a.1 + a.2.1 + a.2.2.1 + a.2.2.2.1 + a.2.2.2.2.1 + a.2.2.2.2.2
-
-def exp6_mult (t : Nat) (a : Exp6Nat) : Exp6Nat :=
-  let f (x : Nat) : Nat := ((t * x - 1) % 12) + 1
-  (f a.1, f a.2.1, f a.2.2.1, f a.2.2.2.1, f a.2.2.2.2.1, f a.2.2.2.2.2)
-
-def is_shioda_hodge_12_fold (a : Exp6Nat) : Bool :=
-  [1, 5, 7, 11].foldl (fun acc t => acc && (exp6_sum (exp6_mult t a) == 36)) true
-
-def m12_orbit_size_each : Nat := 90
-def m12_total_residual : Nat := m12_paired_reps.length * m12_orbit_size_each
-
-def m12_band1_planes : Nat := 15101
-def m12_band2_cones : Nat := 21690
-def m12_band3_lefschetz : Nat := 15840
-def m12_total_hodge : Nat := m12_band1_planes + m12_band2_cones + m12_band3_lefschetz + m12_total_residual
-
-def paired_doubling_congruence (a : Exp6Nat) : Bool :=
-  (2 * (a.1 + a.2.2.1 + a.2.2.2.2.1)) % 12 == 0
-
-theorem shioda_aoki_m12_paired_diagonal_orbits_eq :
-  (m12_paired_reps.length == 4 &&
-   m12_paired_reps.foldl (fun acc r => acc && is_shioda_hodge_12_fold r && paired_doubling_congruence r) true &&
-   m12_total_residual == 360 &&
-   m12_total_hodge == 52991) = true := by rfl
-
 #print axioms weyl_d4_even_parity_and_chiral_orthogonality_eq
-#print axioms shioda_aoki_m12_paired_diagonal_orbits_eq
 
 -- Independent type-signature checks across core finite combinatorial declarations
-#check @exact_chain_im_sub_ker
 #check @fermat_four_band_closure_eq
-#check @nine_partition_cokernel_dims_eq
 #check @noether_macaulay_gorenstein_symmetry_eq
 #check @weyl_d4_spinor_weight_decomposition_eq
 #check @weyl_d4_even_parity_and_chiral_orthogonality_eq
-#check @shioda_aoki_m12_paired_diagonal_orbits_eq

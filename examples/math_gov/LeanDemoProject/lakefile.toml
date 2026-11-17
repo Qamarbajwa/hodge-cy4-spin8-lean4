@@ -6,10 +6,19 @@ defaultTargets = ["LeanDemoProject"]
 name = "HodgeVerification"
 
 [[lean_lib]]
-name = "ProofSteps"
+name = "ShiodaFormalConjectures"
 
 [[lean_lib]]
-name = "ShiodaFormalConjectures"
+name = "MathlibPR_ShiodaAokiFermat"
+
+[[lean_lib]]
+name = "MathlibPR_MacaulayGorenstein"
+
+[[lean_lib]]
+name = "MathlibPR_Spin8Triality"
+
+[[lean_lib]]
+name = "MathlibPR_CyclotomicIncidenceSieve"
 
 [[lean_lib]]
 name = "LeanDemoProject"

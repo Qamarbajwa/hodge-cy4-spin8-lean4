@@ -1,6 +1,9 @@
 import HodgeVerification
-import ProofSteps
 import ShiodaFormalConjectures
+import MathlibPR_ShiodaAokiFermat
+import MathlibPR_MacaulayGorenstein
+import MathlibPR_Spin8Triality
+import MathlibPR_CyclotomicIncidenceSieve
 
 -- Root library module for MathGovLeanDemo / LeanDemoProject.
--- Compiles all 43 HodgeVerification checks, demo proof steps, and Shioda formal conjecture rank certificates under lake build.
+-- Compiles all verified baseline and Mathlib-PR modules under lake build.

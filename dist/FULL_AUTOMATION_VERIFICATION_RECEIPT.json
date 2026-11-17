@@ -1,0 +1,140 @@
+{
+  "ALL_CHECKS_PASSED": true,
+  "lean_audit": {
+    "lake_build_ok": true,
+    "lake_returncode": 0,
+    "forbidden_hits": [],
+    "style_errors": [],
+    "theorem_counts": {
+      "LeanDemoProject.lean": 0,
+      "HodgeVerification.lean": 40,
+      "ShiodaFormalConjectures.lean": 6,
+      "MathlibPR_ShiodaAokiFermat.lean": 7,
+      "MathlibPR_MacaulayGorenstein.lean": 5,
+      "MathlibPR_Spin8Triality.lean": 7,
+      "MathlibPR_CyclotomicIncidenceSieve.lean": 4
+    },
+    "total_theorems": 69,
+    "sha256": {
+      "LeanDemoProject.lean": "383b29994bc61e026f74726c37d75c1ba4ec73d3a1d1f2e638582e1443891c60",
+      "HodgeVerification.lean": "54f6aa1af3d98f714b48b98205f6b331cd43dd771a72e5589f1801c848f5e37c",
+      "ShiodaFormalConjectures.lean": "5becb96a0b165b6edc6bdf126b2ee05263b7483cf50ac1e0454155641e97b97d",
+      "MathlibPR_ShiodaAokiFermat.lean": "00e049bcfdd8fb84d814cd9e76357b3466ffb55aa304061fff33ed06aa9e3882",
+      "MathlibPR_MacaulayGorenstein.lean": "bfaf6709ef628d4a4b767a47ef472a143bf8cd2b7fc6b24052ccbfa637025dd3",
+      "MathlibPR_Spin8Triality.lean": "cc4d383292297071dd883681db1bbd7d6119e4e2badb0f0f7bc20f537994b3b9",
+      "MathlibPR_CyclotomicIncidenceSieve.lean": "ee0819fc6002ef5f03d4bd6a1a02cdf0a02dfe2ac437e87aab9d142988e0cb3f"
+    },
+    "passed": true
+  },
+  "upstream_staging_audit": {
+    "staged_files": [
+      "dist/upstream_prs/mathlib4/Mathlib/AlgebraicGeometry/FermatHypersurface/ShiodaAoki.lean",
+      "dist/upstream_prs/mathlib4/Mathlib/RingTheory/ArtinianGorenstein/MacaulayContraction.lean",
+      "dist/upstream_prs/mathlib4/Mathlib/RepresentationTheory/Spin8Triality.lean",
+      "dist/upstream_prs/mathlib4/Mathlib/Combinatorics/IncidenceSieve/CyclotomicResidualForm.lean",
+      "dist/upstream_prs/PR_DESCRIPTIONS_AND_PUSH_COMMANDS.md"
+    ],
+    "standalone_checks": {
+      "dist/upstream_prs/mathlib4/Mathlib/AlgebraicGeometry/FermatHypersurface/ShiodaAoki.lean": {
+        "returncode": 0,
+        "zero_local_imports": true,
+        "long_lines_gt_100": [],
+        "sha256": "f30bcd5f567c6a2becfe5bd60ded3c0d168972351ffb48ba8797e3ad1114faa2",
+        "passed": true
+      },
+      "dist/upstream_prs/mathlib4/Mathlib/RingTheory/ArtinianGorenstein/MacaulayContraction.lean": {
+        "returncode": 0,
+        "zero_local_imports": true,
+        "long_lines_gt_100": [],
+        "sha256": "49e2ade939a06e0897bb022d6dc9212845d981c87a560a24178fbf36f017d46b",
+        "passed": true
+      },
+      "dist/upstream_prs/mathlib4/Mathlib/RepresentationTheory/Spin8Triality.lean": {
+        "returncode": 0,
+        "zero_local_imports": true,
+        "long_lines_gt_100": [],
+        "sha256": "0c5b7ee71adac6ff80678e8a37146900f611be88878be07907f55670fb5968ca",
+        "passed": true
+      },
+      "dist/upstream_prs/mathlib4/Mathlib/Combinatorics/IncidenceSieve/CyclotomicResidualForm.lean": {
+        "returncode": 0,
+        "zero_local_imports": true,
+        "long_lines_gt_100": [],
+        "sha256": "9c7b2a53925330442369ecef55031530b23884af956a93b5182f1b2251924654",
+        "passed": true
+      }
+    },
+    "passed": true
+  },
+  "paper_audit": {
+    "papers": {
+      "Paper1": {
+        "pdf_exists": true,
+        "pages": 10,
+        "latex_errors": 0,
+        "overfull": 0,
+        "underfull": 0,
+        "prose_pronouns": 0,
+        "forbidden_jargon": 0,
+        "tex_sha256": "66fd17f4ffe4e94cecccabec8ace7ff55f3f57332d49e7043603e8b515450999",
+        "pdf_sha256": "3b0dad2147f75665417413f633e75f3f962b4d924d8f177b7dec63a9ac4ef40b",
+        "passed": true
+      },
+      "Paper2": {
+        "pdf_exists": true,
+        "pages": 8,
+        "latex_errors": 0,
+        "overfull": 0,
+        "underfull": 0,
+        "prose_pronouns": 0,
+        "forbidden_jargon": 0,
+        "tex_sha256": "cf46c06068cf942e6d4a745952c7772345de5d4681204726e0dcb868a179ee5a",
+        "pdf_sha256": "3b52ed34a7735d81b07a47f5d93134bb57052876bc180df1c124f6dfc234c15f",
+        "passed": true
+      },
+      "Paper3": {
+        "pdf_exists": true,
+        "pages": 8,
+        "latex_errors": 0,
+        "overfull": 0,
+        "underfull": 0,
+        "prose_pronouns": 0,
+        "forbidden_jargon": 0,
+        "tex_sha256": "3c7fa449cad12371180a19623a1c1b5b0b9748acf5b8698b6575de35eb5c81a9",
+        "pdf_sha256": "4548c8a1f955ff6cdc48f5f8b25fb3e213e4fdb9d0422a0d6025419dbb58d8f4",
+        "passed": true
+      },
+      "Paper4": {
+        "pdf_exists": true,
+        "pages": 10,
+        "latex_errors": 0,
+        "overfull": 0,
+        "underfull": 0,
+        "prose_pronouns": 0,
+        "forbidden_jargon": 0,
+        "tex_sha256": "8c37cffb7f8c5ac90cf326af9387ceb2dccbd4ec1e0e9c12bc436d602c024215",
+        "pdf_sha256": "3cfaaa66c521ee73068028fef0172777656452e652a9bd42ace6a9c85c94581b",
+        "passed": true
+      },
+      "Paper5": {
+        "pdf_exists": true,
+        "pages": 8,
+        "latex_errors": 0,
+        "overfull": 0,
+        "underfull": 0,
+        "prose_pronouns": 0,
+        "forbidden_jargon": 0,
+        "tex_sha256": "38fbba0673e273f8474d865baa1e548250d918f834534ee84f3795923fd0c4dc",
+        "pdf_sha256": "9cd0834bc952f618ef80eab324a2d919435f0dce39ecc6a60802d6310a18a47a",
+        "passed": true
+      }
+    },
+    "passed": true
+  },
+  "release_bundle": {
+    "bundle_path": "dist/HODGE_LEAN4_5PAPER_RELEASE_BUNDLE.zip",
+    "file_count": 26,
+    "size_bytes": 2341169,
+    "sha256": "87bbf36af1ba7c96582e95d1066ad20dc3bbfbe7e41c004ab13dbb9403c0e131"
+  }
+}
