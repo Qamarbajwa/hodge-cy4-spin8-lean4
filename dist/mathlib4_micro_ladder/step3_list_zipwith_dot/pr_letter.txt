@@ -1,0 +1,16 @@
+Hello everyone,
+
+I am submitting a small pull request to add one lemma in List:
+1. List.sum_zipWith_mul_comm
+
+Why this is useful:
+When representing finite vectors or polynomial coefficient lists using List.zipWith (· * ·) xs ys, the dot product should be symmetric even when the two lists are passed in opposite order. Having List.sum_zipWith_mul_comm available lets users swap the two input lists without redoing list induction each time.
+
+Brief school-style derivation:
+Step 1: Perform induction on the first list xs while generalizing the second list ys.
+Step 2: If either xs or ys is empty, both zipWith products are empty lists, so both sums equal 0.
+Step 3: For non-empty heads x :: xs and y :: ys, rewrite x * y as y * x by mul_comm and apply the induction hypothesis on the tails xs and ys.
+
+Kindly review this small addition when convenient.
+
+ai is being used as a tool

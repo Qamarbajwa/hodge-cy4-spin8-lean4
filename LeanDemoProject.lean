@@ -1,0 +1,15 @@
+import HodgeVerification
+import ShiodaFormalConjectures
+import MathlibPR_ShiodaAokiFermat
+import MathlibPR_MacaulayGorenstein
+import MathlibPR_Spin8Triality
+import MathlibPR_CyclotomicIncidenceSieve
+import WiebeSchejaStorch
+import GaussManinJetTransport
+import ShiodaInductiveCycleSynthesis
+import Spin8LieAlgebraTriality
+import GlobalIVHSObstructionSpectrum
+import HigherDegreeSporadicBand4
+
+-- Root library module for MathGovLeanDemo / LeanDemoProject.
+-- Compiles all verified baseline and Mathlib-PR modules under lake build.

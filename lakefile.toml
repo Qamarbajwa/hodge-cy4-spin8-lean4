@@ -1,0 +1,63 @@
+name = "HodgeCY4Spin8Lean4"
+version = "1.1.0"
+defaultTargets = ["LeanDemoProject", "MumfordWeilKernelVecs", "HodgeBridgeInterfaces", "ConditionalFermatHodge", "FermatHighDegreeExt", "HigherOrderJetLifting", "CayleyCompleteInt", "Poly6ToMvPoly"]
+
+[[lean_lib]]
+name = "HodgeVerification"
+
+[[lean_lib]]
+name = "ShiodaFormalConjectures"
+
+[[lean_lib]]
+name = "MathlibPR_ShiodaAokiFermat"
+
+[[lean_lib]]
+name = "MathlibPR_MacaulayGorenstein"
+
+[[lean_lib]]
+name = "MathlibPR_Spin8Triality"
+
+[[lean_lib]]
+name = "MathlibPR_CyclotomicIncidenceSieve"
+
+[[lean_lib]]
+name = "WiebeSchejaStorch"
+
+[[lean_lib]]
+name = "GaussManinJetTransport"
+
+[[lean_lib]]
+name = "ShiodaInductiveCycleSynthesis"
+
+[[lean_lib]]
+name = "Spin8LieAlgebraTriality"
+
+[[lean_lib]]
+name = "GlobalIVHSObstructionSpectrum"
+
+[[lean_lib]]
+name = "HigherDegreeSporadicBand4"
+
+[[lean_lib]]
+name = "LeanDemoProject"
+
+[[lean_lib]]
+name = "MumfordWeilKernelVecs"
+
+[[lean_lib]]
+name = "HodgeBridgeInterfaces"
+
+[[lean_lib]]
+name = "ConditionalFermatHodge"
+
+[[lean_lib]]
+name = "FermatHighDegreeExt"
+
+[[lean_lib]]
+name = "HigherOrderJetLifting"
+
+[[lean_lib]]
+name = "CayleyCompleteInt"
+
+[[lean_lib]]
+name = "Poly6ToMvPoly"

@@ -1,0 +1,17 @@
+Hello everyone,
+
+I am submitting a small pull request to add two Frobenius and rank-one trace formulas in Matrix:
+1. Matrix.trace_vecMulVec_eq_dotProduct
+2. Matrix.trace_transpose_mul_self_eq_sum_sq
+
+Why this is useful:
+Relating the trace of an outer product vecMulVec u v to u ⬝ᵥ v, and the trace of the Gram matrix Aᵀ * A to the double sum of squared entries, bridges matrix trace calculations with explicit entrywise sums over finite index types.
+
+Brief school-style derivation:
+Step 1: Expand Matrix.trace (Matrix.vecMulVec u v) on diagonal entries i = j, which gives ∑ i, u i * v i, matching the definition of u ⬝ᵥ v.
+Step 2: For Matrix.trace (Aᵀ * A), expand the trace of the product as ∑ j, ∑ i, (Aᵀ) j i * A i j = ∑ j, ∑ i, A i j * A i j.
+Step 3: Swap the outer sum over j and the inner sum over i via Finset.sum_comm to get ∑ i, ∑ j, A i j * A i j.
+
+Kindly review this small addition when convenient.
+
+ai is being used as a tool

@@ -1,0 +1,33 @@
+# Ready to Submit Next Mathlib4 Micro-PR (Step 1 of 8)
+
+- **Step:** `step1_finset_filter_sub` (`Step 1/8`)
+- **Fork Branch (`Qamarbajwa/mathlib4`):** `feat/finset-filter-sub-micro`
+- **Target File:** `Mathlib/Algebra/BigOperators/Group/Finset/Basic.lean`
+- **Status:** Branch `feat/finset-filter-sub-micro` pushed cleanly to `Qamarbajwa/mathlib4` and verified via `lake env lean Mathlib/Algebra/BigOperators/Group/Finset/Basic.lean`.
+- **One-Click Compare & Submit URL:** https://github.com/leanprover-community/mathlib4/compare/master...Qamarbajwa:mathlib4:feat/finset-filter-sub-micro?expand=1
+
+## Exact PR Title
+```text
+feat(Algebra/BigOperators/Finset): add filter complement subtraction lemmas
+```
+
+## Ready-to-Copy `pr_letter.txt`
+```text
+Hello everyone,
+
+I am submitting a small pull request to add two helper lemmas for filtered natural number sums in Finset:
+1. Finset.sum_filter_eq_sub_sum_filter_not
+2. Finset.sum_sub_sum_filter_eq_sum_filter_not
+
+Why this is useful:
+Mathlib already provides Finset.sum_filter_add_sum_filter_not, which splits a sum over s into the part where predicate p holds and the part where not p holds. In counting arguments and partition estimates over natural numbers, users often need to isolate one filtered part by subtracting the other part from the total sum. Having both subtraction forms ready saves repeated omega calls in downstream files.
+
+Brief school-style derivation:
+Step 1: Start from the partition identity Finset.sum_filter_add_sum_filter_not s p f, which says the sum over p plus the sum over not p equals the total sum over s.
+Step 2: Since all values are natural numbers, moving the sum over not p to the right side by subtraction gives sum over p equal to total sum minus sum over not p.
+Step 3: Similarly, subtracting the sum over p from the total sum leaves the sum over not p.
+
+Kindly review this small addition when convenient.
+
+ai is being used as a tool
+```
