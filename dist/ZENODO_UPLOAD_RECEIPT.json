@@ -2,7 +2,7 @@
   "gate_passed": true,
   "api_base": "https://zenodo.org/api",
   "token_source": "ZENODO_TOKEN",
-  "total_verified_theorems": 192,
+  "total_verified_theorems": 204,
   "deposit_dir": "dist/zenodo_verified_deposit_v1.0",
   "staged_manifest": [
     {
@@ -64,21 +64,35 @@
     {
       "id": "MillenniumExtReceipt",
       "filename": "MILLENNIUM_EXT_RECEIPT.json",
-      "size_bytes": 17769,
-      "sha256": "ce143c9815688df6598853ee40e6f7bd2932e5f4c8110a8c238b301abbb74286",
-      "md5": "d50ff3eb36ee4ee6b1336150c6b95a22"
+      "size_bytes": 19942,
+      "sha256": "b51a4222e7b256e7cccbf418eee152b595345d89bfb6ee9a7e5f46e43112827c",
+      "md5": "e4c26c4cc881d8ab22436387b7f2752a"
+    },
+    {
+      "id": "PlainEnglishArticle",
+      "filename": "HODGE_FOR_EVERYONE_PLAIN_ENGLISH_ARTICLE.md",
+      "size_bytes": 9930,
+      "sha256": "aa7b3b7d932b174ea12fdbf30747351aaadc41a00d2fba171472a85048e182d9",
+      "md5": "04d151a0e2e63346171271dc3f9b54e9"
+    },
+    {
+      "id": "UnifiedSynthesisDoc",
+      "filename": "WHOLE_PROJECT_UNIFIED_MATRIX_SYNTHESIS.md",
+      "size_bytes": 38223,
+      "sha256": "6732413ec33f1d8bb42b19c7b6b5198fd804abec2d33407e050231988e960ab2",
+      "md5": "a99daa08eb1cdb7928e2d9de2537a42c"
     }
   ],
   "status": "PUBLISHED",
   "state": "done",
-  "deposition_id": 24380741,
-  "parent_deposition_id": 24380054,
+  "deposition_id": 24381741,
+  "parent_deposition_id": 24380741,
   "concept_doi": "10.5281/zenodo.24329779",
-  "doi": "10.5281/zenodo.24380741",
-  "html_url": "https://zenodo.org/deposit/24380741",
-  "record_url": "https://zenodo.org/records/24380741",
-  "latest_url": "https://zenodo.org/records/24380054/latest",
-  "prereserved_doi": "10.5281/zenodo.24380741",
+  "doi": "10.5281/zenodo.24381741",
+  "html_url": "https://zenodo.org/deposit/24381741",
+  "record_url": "https://zenodo.org/records/24381741",
+  "latest_url": "https://zenodo.org/records/24380741/latest",
+  "prereserved_doi": "10.5281/zenodo.24381741",
   "uploaded_files": [
     {
       "filename": "Paper1_Shioda_Aoki_Fermat_Lean4.pdf",
@@ -138,10 +152,24 @@
     },
     {
       "filename": "MILLENNIUM_EXT_RECEIPT.json",
-      "size_bytes": 17769,
-      "local_sha256": "ce143c9815688df6598853ee40e6f7bd2932e5f4c8110a8c238b301abbb74286",
-      "local_md5": "d50ff3eb36ee4ee6b1336150c6b95a22",
-      "remote_checksum": "md5:d50ff3eb36ee4ee6b1336150c6b95a22"
+      "size_bytes": 19942,
+      "local_sha256": "b51a4222e7b256e7cccbf418eee152b595345d89bfb6ee9a7e5f46e43112827c",
+      "local_md5": "e4c26c4cc881d8ab22436387b7f2752a",
+      "remote_checksum": "md5:e4c26c4cc881d8ab22436387b7f2752a"
+    },
+    {
+      "filename": "HODGE_FOR_EVERYONE_PLAIN_ENGLISH_ARTICLE.md",
+      "size_bytes": 9930,
+      "local_sha256": "aa7b3b7d932b174ea12fdbf30747351aaadc41a00d2fba171472a85048e182d9",
+      "local_md5": "04d151a0e2e63346171271dc3f9b54e9",
+      "remote_checksum": "md5:04d151a0e2e63346171271dc3f9b54e9"
+    },
+    {
+      "filename": "WHOLE_PROJECT_UNIFIED_MATRIX_SYNTHESIS.md",
+      "size_bytes": 38223,
+      "local_sha256": "6732413ec33f1d8bb42b19c7b6b5198fd804abec2d33407e050231988e960ab2",
+      "local_md5": "a99daa08eb1cdb7928e2d9de2537a42c",
+      "remote_checksum": "md5:a99daa08eb1cdb7928e2d9de2537a42c"
     }
   ]
 }

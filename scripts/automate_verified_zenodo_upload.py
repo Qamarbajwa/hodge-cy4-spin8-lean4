@@ -134,15 +134,15 @@ def resolve_zenodo_token() -> Tuple[str, str, str]:
     return "", "", ""
 
 
-def build_zenodo_metadata(total_theorems: int, version: str = "1.1.3") -> Dict[str, Any]:
+def build_zenodo_metadata(total_theorems: int, version: str = "1.5.0-rosetta") -> Dict[str, Any]:
     from datetime import datetime, timezone
 
     today_str = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     return {
         "metadata": {
             "title": (
-                "Formalized Lean 4 Series (Papers 1-6): Shioda-Aoki Characters, Artinian "
-                "Gorenstein Apolarity, Spin(8) Triality, Order-8 Gauss-Manin Jets, "
+                "Formalized Lean 4 Series (Papers 1-6) & Plain-English Guide: Shioda-Aoki Characters, "
+                "Macaulay Apolarity, Spin(8)/Cl(0,7) Chiral Schur Isolation, Gauss-Manin Jets, "
                 "Cyclotomic Incidence Sieves, and Conditional Fermat Bridges"
             ),
             "upload_type": "publication",
@@ -171,18 +171,22 @@ def build_zenodo_metadata(total_theorems: int, version: str = "1.1.3") -> Dict[s
             ],
             "description": (
                 f"<p>Verified release archive accompanying the six-paper Lean 4.35.0 series "
-                f"(13 baseline modules + 7 extension modules, {total_theorems} axiom-free kernel "
-                f"declarations, and six peer-review-formatted manuscripts with 12 TikZ diagrams) "
+                f"(13 baseline modules + 28 extension modules, {total_theorems} axiom-free kernel "
+                f"declarations, 26/26 symbolic/GPU explorers, six peer-review-formatted manuscripts "
+                f"with 13 TikZ diagrams, and a plain-English guide <code>HODGE_FOR_EVERYONE_PLAIN_ENGLISH_ARTICLE.md</code>) "
                 "covering Shioda-Aoki cyclotomic character combinatorics through m=60, "
-                "m=25 cyclic-coset cones, Wiebe-Scheja-Storch transition determinants (G<=3 over Z), "
-                "Spin(8) triality and idempotent Weil projectors, order-8 Gauss-Manin jet transport, "
-                "non-Fermat 3-var quotient palindromicity, Cayley-trick complete-intersection "
+                "m=25,35,49,55 conical Schur ladders, Wiebe-Scheja-Storch transition determinants (G<=3 over Z), "
+                "Spin(8) triality, Cl(0,7) chiral Schur complement (1152), Spin(7) Cayley calibration, "
+                "CM graph realization (2 Z_CM = T_ch), order-8 Gauss-Manin jet transport, "
+                "CY4 Koszul Hilbert profile, finite Gysin exactness, Cayley-trick complete-intersection "
                 "profiles in P^6, Poly6 evaluation homomorphisms, and conditional Fermat "
                 "algebraicity bridges.</p>"
-                "<p><strong>Scope and Conditional Interfaces:</strong> Every unconditional Lean 4 theorem in "
-                "this deposit proves exact finite-dimensional combinatorial, polynomial-quotient, or Lie-algebraic "
-                "results, while classical Lefschetz, Griffiths, Shioda, and Aoki algebraic-geometry bridges are "
-                "isolated inside explicit modular hypothesis structures (<code>FermatFourfoldHodgeBridge</code>).</p>"
+                "<p><strong>Scope and Scientific Honesty:</strong> Every unconditional Lean 4 theorem in "
+                "this deposit proves exact finite-dimensional combinatorial, polynomial-quotient, matrix-operator, "
+                "or Lie-algebraic results, while classical Lefschetz, Griffiths, Shioda, and Aoki algebraic-geometry "
+                "bridges are isolated inside explicit modular hypothesis structures (<code>FermatFourfoldHodgeBridge</code>). "
+                "The Clay Millennium Hodge Conjecture (<code>HODGE-MILLENNIUM-001</code>) and global Wall1-Wall5 "
+                "cycle realization on generic smooth projective varieties remain strictly OPEN.</p>"
             ),
             "notes": (
                 "All 6 manuscripts passed pdflatex (0 errors, 0 overfull, 0 underfull, >= 2 TikZ figures each) "
@@ -294,6 +298,8 @@ def verify_and_stage() -> Dict[str, Any]:
     for rec_id, rec_path in (
         ("VerificationReceipt", RECEIPT_PATH),
         ("MillenniumExtReceipt", EXT_RECEIPT_PATH),
+        ("PlainEnglishArticle", REPO_ROOT / "docs" / "HODGE_FOR_EVERYONE_PLAIN_ENGLISH_ARTICLE.md"),
+        ("UnifiedSynthesisDoc", REPO_ROOT / "docs" / "WHOLE_PROJECT_UNIFIED_MATRIX_SYNTHESIS.md"),
     ):
         rec_sha, rec_md5 = file_hashes(rec_path)
         verified_files.append(
