@@ -1,0 +1,21 @@
+{
+  "wall1_cy4_hilbert_profile": [
+    1,
+    6,
+    21,
+    56,
+    126,
+    246,
+    426
+  ],
+  "wall1_dim_r_f_6": 426,
+  "wall5_gysin_exact_gf_zero": true,
+  "wall5_gysin_ranks": [
+    3,
+    3
+  ],
+  "wall5_lefschetz_eigenvalues": {
+    "Q0": 6,
+    "Q_prim": -2
+  }
+}

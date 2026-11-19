@@ -54,6 +54,8 @@ EXT_FILES = [
     "CliffordTripleAndFermat25SchurExt.lean",
     "Spin7CayleyCalibrationCycleExt.lean",
     "MumfordCMSpecializationCycleExt.lean",
+    "FermatPrimeSquareConicalExt.lean",
+    "GlobalG4UnmixedAndHodgeGysinExt.lean",
 ]
 
 THEOREM_DECL_RE = re.compile(r"^\s*(?:private\s+)?(?:theorem|lemma)\s+[A-Za-z0-9_']+", re.MULTILINE)
@@ -172,6 +174,8 @@ def run_symbolic_scripts() -> Dict[str, bool]:
         REPO_ROOT / "toolkit" / "millennium_ext" / "clifford_triple_and_fermat25_schur.py",
         REPO_ROOT / "toolkit" / "millennium_ext" / "spin7_cayley_calibration_cycle.py",
         REPO_ROOT / "toolkit" / "millennium_ext" / "mumford_cm_specialization_cycle.py",
+        REPO_ROOT / "toolkit" / "millennium_ext" / "fermat_prime_square_conical.py",
+        REPO_ROOT / "toolkit" / "millennium_ext" / "global_g4_unmixed_and_hodge_gysin.py",
     ]
     res: Dict[str, bool] = {}
     for sc in scripts:
