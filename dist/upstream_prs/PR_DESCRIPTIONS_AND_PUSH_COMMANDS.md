@@ -1,6 +1,8 @@
-# Mathlib4 Upstream PR Staging Guide
+# Fork-Internal Mathlib4 Staging Guide (`Qamarbajwa/mathlib4` Only)
 
-All staged files below are 100% self-contained (zero local workspace imports) and verified standalone via `lake env lean`.
+> **Governance Lock:** Upstream PR creation and automated comments on external repositories are permanently disabled. Push and merge ONLY into `Qamarbajwa/mathlib4:master`.
+
+All staged files below are 100% self-contained (zero local workspace imports), have zero `#print` commands, `<= 100` char lines, and pass standalone `lake env lean` (`rc=0`).
 
 ## Staged Target Files
 - `Mathlib/AlgebraicGeometry/FermatHypersurface/ShiodaAoki.lean`
@@ -8,12 +10,13 @@ All staged files below are 100% self-contained (zero local workspace imports) an
 - `Mathlib/RepresentationTheory/Spin8Triality.lean`
 - `Mathlib/Combinatorics/IncidenceSieve/CyclotomicResidualForm.lean`
 
-## Push & PR Commands
+## Fork-Internal Merge Commands (`Qamarbajwa/mathlib4` ONLY)
 ```bash
 git checkout -b feat/shioda-aoki-macaulay-spin8-sieve
 cp -r dist/upstream_prs/mathlib4/Mathlib/* Mathlib/
 git add Mathlib/
 git commit -m "feat: add Shioda-Aoki, Macaulay, Spin(8), and cyclotomic sieve modules"
 git push -u origin feat/shioda-aoki-macaulay-spin8-sieve
-gh pr create --title "feat: Shioda-Aoki, Macaulay Gorenstein, Spin(8) triality, and cyclotomic sieve" --body "Formalizes universally quantified Shioda-Aoki character bands, Macaulay transpose duality, Spin(8) weight-lattice laws, and finite cyclotomic incidence sieve conservation laws."
+gh pr create --repo Qamarbajwa/mathlib4 --base master --head feat/shioda-aoki-macaulay-spin8-sieve --title "feat: merge verified zero-axiom Shioda-Aoki, Macaulay, Spin(8) triality, and cyclotomic sieve modules" --body "Merges standalone-verified zero-axiom Lean 4 modules into fork master."
+gh pr merge feat/shioda-aoki-macaulay-spin8-sieve --repo Qamarbajwa/mathlib4 --merge
 ```

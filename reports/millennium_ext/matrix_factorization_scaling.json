@@ -1,0 +1,186 @@
+{
+  "clifford_threshold": {
+    "k1_r1_ab_eq_ba_eq_f": true,
+    "k1_r1_tr3_vanishes": true,
+    "k2_r2_ab_eq_ba_eq_f": true,
+    "k2_r2_tr3_vanishes": true
+  },
+  "k3_r4_sextic_mfs": {
+    "band1": {
+      "r": 4,
+      "ab_eq_ba_eq_f": true,
+      "det_jac_terms": 125,
+      "pv_tr3_scale": 360,
+      "band_counts": {
+        "Band1": 125
+      }
+    },
+    "symmetric_triple_quadric": {
+      "r": 4,
+      "ab_eq_ba_eq_f": true,
+      "det_jac_terms": 36,
+      "pv_tr3_scale": 360,
+      "band_counts": {
+        "Band1": 36
+      }
+    },
+    "symmetric_surface_quadric": {
+      "r": 4,
+      "ab_eq_ba_eq_f": true,
+      "det_jac_terms": 20,
+      "pv_tr3_scale": 360,
+      "band_counts": {
+        "Band1": 20
+      }
+    },
+    "symmetric_surface_cubic": {
+      "r": 4,
+      "ab_eq_ba_eq_f": true,
+      "det_jac_terms": 40,
+      "pv_tr3_scale": 360,
+      "band_counts": {
+        "Band1": 40
+      }
+    }
+  },
+  "k4_r8_excess_codimension_mfs": {
+    "deformed_sextic_r8": {
+      "r": 8,
+      "ab_eq_ba_eq_f": true,
+      "deformation_term": "x0*x1*x2*x3*x4*x5",
+      "tr3_excess_codim_vanishes": true
+    },
+    "cauchy_6_ftri_r8": {
+      "r": 8,
+      "ab_eq_ba_eq_f": true,
+      "tr3_excess_codim_vanishes": true
+    }
+  },
+  "newton_aoki_k3_r4_mfs": {
+    "m5": {
+      "m": 5,
+      "step_d": 1,
+      "r": 4,
+      "ab_eq_ba_eq_f_i4": true,
+      "univariate_x5_tr3_vanishes": true,
+      "newton_aoki_4x4_minor_nonzero": true,
+      "newton_aoki_4x4_minor_terms_mod_j": 24
+    },
+    "m25": {
+      "m": 25,
+      "step_d": 5,
+      "r": 4,
+      "ab_eq_ba_eq_f_i4": true
+    }
+  },
+  "r_f0_deg12_band_totals": {
+    "Band1": 1001,
+    "Band2": 630,
+    "Band3": 120,
+    "Band4": 0
+  },
+  "band1_koszul_saturation": {
+    "covered_band1_dim": 1001,
+    "remaining_non_koszul_gap": 750
+  },
+  "gpu_crt_3prime_scaling": {
+    "stage0_single_r4_mf": {
+      "rows": 1,
+      "cols": 1751,
+      "rank": 1,
+      "prime_ranks": {
+        "65521": 1,
+        "1000000009": 1,
+        "1000000033": 1
+      },
+      "agreement": true,
+      "device": "cuda:0",
+      "gpu_name": "NVIDIA RTX A2000 8GB Laptop GPU",
+      "peak_vram_mb": 0.042
+    },
+    "stage1_k1_matching": {
+      "rows": 125,
+      "cols": 1751,
+      "rank": 125,
+      "prime_ranks": {
+        "65521": 125,
+        "1000000009": 125,
+        "1000000033": 125
+      },
+      "agreement": true,
+      "device": "cuda:0",
+      "gpu_name": "NVIDIA RTX A2000 8GB Laptop GPU",
+      "peak_vram_mb": 6.656
+    },
+    "stage2_k3_matchings": {
+      "rows": 375,
+      "cols": 1751,
+      "rank": 305,
+      "prime_ranks": {
+        "65521": 305,
+        "1000000009": 305,
+        "1000000033": 305
+      },
+      "agreement": true,
+      "device": "cuda:0",
+      "gpu_name": "NVIDIA RTX A2000 8GB Laptop GPU",
+      "peak_vram_mb": 20.019
+    },
+    "stage3_k6_matchings": {
+      "rows": 750,
+      "cols": 1751,
+      "rank": 549,
+      "prime_ranks": {
+        "65521": 549,
+        "1000000009": 549,
+        "1000000033": 549
+      },
+      "agreement": true,
+      "device": "cuda:0",
+      "gpu_name": "NVIDIA RTX A2000 8GB Laptop GPU",
+      "peak_vram_mb": 38.459
+    },
+    "stage4_k10_matchings": {
+      "rows": 1250,
+      "cols": 1751,
+      "rank": 805,
+      "prime_ranks": {
+        "65521": 805,
+        "1000000009": 805,
+        "1000000033": 805
+      },
+      "agreement": true,
+      "device": "cuda:0",
+      "gpu_name": "NVIDIA RTX A2000 8GB Laptop GPU",
+      "peak_vram_mb": 64.534
+    },
+    "stage5_k15_all_matchings": {
+      "rows": 1875,
+      "cols": 1751,
+      "rank": 1001,
+      "prime_ranks": {
+        "65521": 1001,
+        "1000000009": 1001,
+        "1000000033": 1001
+      },
+      "agreement": true,
+      "device": "cuda:0",
+      "gpu_name": "NVIDIA RTX A2000 8GB Laptop GPU",
+      "peak_vram_mb": 97.992
+    },
+    "stage6_add_symmetric_r4_mfs": {
+      "rows": 6555,
+      "cols": 1751,
+      "rank": 1001,
+      "prime_ranks": {
+        "65521": 1001,
+        "1000000009": 1001,
+        "1000000033": 1001
+      },
+      "agreement": true,
+      "device": "cuda:0",
+      "gpu_name": "NVIDIA RTX A2000 8GB Laptop GPU",
+      "peak_vram_mb": 335.59
+    }
+  }
+}

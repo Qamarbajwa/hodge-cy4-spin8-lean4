@@ -1,0 +1,353 @@
+{
+  "so8_even_weights_count": 8,
+  "zero_weight_4tuples": [
+    [
+      0,
+      1,
+      6,
+      7
+    ],
+    [
+      0,
+      2,
+      5,
+      7
+    ],
+    [
+      0,
+      3,
+      4,
+      7
+    ],
+    [
+      1,
+      2,
+      5,
+      6
+    ],
+    [
+      1,
+      3,
+      4,
+      6
+    ],
+    [
+      2,
+      3,
+      4,
+      5
+    ]
+  ],
+  "full_d4_nullspace_dim": 0,
+  "subsystems": {
+    "A1_cubed": {
+      "basis": [
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "gram": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "det": 1
+    },
+    "A2_pair_12": {
+      "basis": [
+        [
+          -1,
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          -1,
+          -1,
+          1
+        ]
+      ],
+      "gram": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "det": 9
+    },
+    "A2_pair_23": {
+      "basis": [
+        [
+          1,
+          -1,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          -1,
+          1
+        ]
+      ],
+      "gram": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "det": 9
+    },
+    "A2_pair_24": {
+      "basis": [
+        [
+          1,
+          -1,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          -1,
+          1
+        ]
+      ],
+      "gram": [
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      "det": 9
+    }
+  },
+  "cm_fiber_surface_graphs_dim": 2,
+  "shimura_curve_mt_invariance": "all_orders",
+  "generic_simple_fiber_rho": 1,
+  "generic_simple_fiber_end_q_dim": 1,
+  "ei4_cm_specialization": {
+    "ns_ei4_j_invariant_dim": 16,
+    "ns_explicit_divisor_rank": 16,
+    "sym2_ns_to_h4_rank": 36,
+    "w_re_nonzero_terms": 8,
+    "w_im_nonzero_terms": 8,
+    "w_re_eq_divisor_wedge": true,
+    "w_im_eq_divisor_wedge": true,
+    "w_re_im_j_invariant": true,
+    "lefschetz_primitive_w_re_wedge_theta_zero": true,
+    "lefschetz_primitive_w_im_wedge_theta_zero": true,
+    "cup_gram_theta2_wre_wim": [
+      [
+        24,
+        0,
+        0
+      ],
+      [
+        0,
+        8,
+        0
+      ],
+      [
+        0,
+        0,
+        8
+      ]
+    ],
+    "weil_orthogonal_to_theta2": true,
+    "generic_rho1_picard_span_dim": 1,
+    "generic_rho1_plus_weil_dim": 3,
+    "w_re_sparse": [
+      [
+        [
+          0,
+          2,
+          4,
+          6
+        ],
+        1
+      ],
+      [
+        [
+          0,
+          2,
+          5,
+          7
+        ],
+        -1
+      ],
+      [
+        [
+          0,
+          3,
+          4,
+          7
+        ],
+        1
+      ],
+      [
+        [
+          0,
+          3,
+          5,
+          6
+        ],
+        1
+      ],
+      [
+        [
+          1,
+          2,
+          4,
+          7
+        ],
+        1
+      ],
+      [
+        [
+          1,
+          2,
+          5,
+          6
+        ],
+        1
+      ],
+      [
+        [
+          1,
+          3,
+          4,
+          6
+        ],
+        -1
+      ],
+      [
+        [
+          1,
+          3,
+          5,
+          7
+        ],
+        1
+      ]
+    ],
+    "w_im_sparse": [
+      [
+        [
+          0,
+          2,
+          4,
+          7
+        ],
+        -1
+      ],
+      [
+        [
+          0,
+          2,
+          5,
+          6
+        ],
+        -1
+      ],
+      [
+        [
+          0,
+          3,
+          4,
+          6
+        ],
+        1
+      ],
+      [
+        [
+          0,
+          3,
+          5,
+          7
+        ],
+        -1
+      ],
+      [
+        [
+          1,
+          2,
+          4,
+          6
+        ],
+        1
+      ],
+      [
+        [
+          1,
+          2,
+          5,
+          7
+        ],
+        -1
+      ],
+      [
+        [
+          1,
+          3,
+          4,
+          7
+        ],
+        1
+      ],
+      [
+        [
+          1,
+          3,
+          5,
+          6
+        ],
+        1
+      ]
+    ]
+  },
+  "open_geometric_gap": "Spanning the 2D ker(A_1^3) / ker(A_2) Weil subspace by an algebraic 2-cycle on A_t when rho(A_t)=1 and End_Q(A_t)=Q (no non-Theta divisors to intersect)."
+}

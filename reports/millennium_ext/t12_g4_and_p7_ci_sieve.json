@@ -1,0 +1,350 @@
+{
+  "order_12_jets": {
+    "band1_quadric": {
+      "max_order": 11,
+      "strict_term_counts_t0_to_t11": [
+        1,
+        3,
+        4,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5
+      ],
+      "unreduced_shadow_counts_t0_to_t11": [
+        1,
+        3,
+        4,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5
+      ],
+      "crt_3prime_t11_rank_agreement": true,
+      "ranks_t11_d0_to_d6": [
+        1,
+        4,
+        10,
+        20,
+        35,
+        48,
+        57
+      ],
+      "gpu_t11_d6_crt": {
+        "rank": 57,
+        "prime_ranks": {
+          "65521": 57,
+          "1000000007": 57,
+          "1000000009": 57
+        },
+        "agreement": true,
+        "device": "cuda:0",
+        "gpu_name": "NVIDIA RTX A2000 8GB Laptop GPU",
+        "peak_vram_mb": 0.551
+      }
+    },
+    "band2_curve_join": {
+      "max_order": 11,
+      "strict_term_counts_t0_to_t11": [
+        1,
+        3,
+        3,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "unreduced_shadow_counts_t0_to_t11": [
+        1,
+        3,
+        6,
+        2,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "crt_3prime_t11_rank_agreement": true,
+      "ranks_t11_d0_to_d6": [
+        1,
+        6,
+        21,
+        53,
+        108,
+        181,
+        254
+      ],
+      "gpu_t11_d6_crt": {
+        "rank": 254,
+        "prime_ranks": {
+          "65521": 254,
+          "1000000007": 254,
+          "1000000009": 254
+        },
+        "agreement": true,
+        "device": "cuda:0",
+        "gpu_name": "NVIDIA RTX A2000 8GB Laptop GPU",
+        "peak_vram_mb": 2.04
+      }
+    },
+    "band3_surface_curve": {
+      "max_order": 11,
+      "strict_term_counts_t0_to_t11": [
+        1,
+        3,
+        3,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "unreduced_shadow_counts_t0_to_t11": [
+        1,
+        3,
+        6,
+        8,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "crt_3prime_t11_rank_agreement": true,
+      "ranks_t11_d0_to_d6": [
+        1,
+        5,
+        15,
+        35,
+        68,
+        113,
+        153
+      ],
+      "gpu_t11_d6_crt": {
+        "rank": 153,
+        "prime_ranks": {
+          "65521": 153,
+          "1000000007": 153,
+          "1000000009": 153
+        },
+        "agreement": true,
+        "device": "cuda:0",
+        "gpu_name": "NVIDIA RTX A2000 8GB Laptop GPU",
+        "peak_vram_mb": 0.705
+      }
+    }
+  },
+  "g4_and_embedded_obstructions": {
+    "z222_quotient_profile_d0_to_d6": [
+      1,
+      6,
+      18,
+      38,
+      63,
+      84,
+      92
+    ],
+    "z311_quotient_profile_d0_to_d6": [
+      1,
+      4,
+      9,
+      15,
+      21,
+      25,
+      25
+    ],
+    "embedded_non_unmixed_profile_d0_to_d6": [
+      1,
+      4,
+      8,
+      13,
+      19,
+      23,
+      23
+    ],
+    "z222_sum_d0_to_d6": 302,
+    "z311_sum_d0_to_d6": 100,
+    "embedded_sum_d0_to_d6": 91,
+    "z311_equals_embedded_failure": true
+  },
+  "p7_codim3_complete_intersections": [
+    {
+      "multidegree": [
+        2,
+        2,
+        4
+      ],
+      "ambient": "P^7",
+      "calabi_yau_canonical": true,
+      "hodge_prim_diamond": [
+        1,
+        263,
+        1099,
+        263,
+        1
+      ],
+      "hodge_prim_palindromic": true,
+      "hodge_prim_total_dim": 1627,
+      "aux_8var_hilbert_length": 17,
+      "aux_8var_hilbert_sum": 6561,
+      "aux_8var_palindromic": true,
+      "aux_8var_hilbert": [
+        1,
+        8,
+        36,
+        112,
+        266,
+        504,
+        784,
+        1016,
+        1107,
+        1016,
+        784,
+        504,
+        266,
+        112,
+        36,
+        8,
+        1
+      ],
+      "weighted_cayley": {
+        "multidegree": [
+          2,
+          2,
+          4
+        ],
+        "ambient": "P^7",
+        "weights": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          3,
+          3,
+          1
+        ],
+        "weighted_jacobian_dims": [
+          1,
+          9,
+          43,
+          149,
+          415
+        ],
+        "gpu_last_w_crt": {
+          "rank": 98,
+          "prime_ranks": {
+            "65521": 98,
+            "1000000007": 98,
+            "1000000009": 98
+          },
+          "agreement": true,
+          "device": "cuda:0",
+          "gpu_name": "NVIDIA RTX A2000 8GB Laptop GPU",
+          "peak_vram_mb": 0.776
+        }
+      }
+    },
+    {
+      "multidegree": [
+        2,
+        3,
+        3
+      ],
+      "ambient": "P^7",
+      "calabi_yau_canonical": true,
+      "hodge_prim_diamond": [
+        1,
+        192,
+        815,
+        192,
+        1
+      ],
+      "hodge_prim_palindromic": true,
+      "hodge_prim_total_dim": 1201,
+      "aux_8var_hilbert_length": 9,
+      "aux_8var_hilbert_sum": 256,
+      "aux_8var_palindromic": true,
+      "aux_8var_hilbert": [
+        1,
+        8,
+        28,
+        56,
+        70,
+        56,
+        28,
+        8,
+        1
+      ],
+      "weighted_cayley": {
+        "multidegree": [
+          2,
+          3,
+          3
+        ],
+        "ambient": "P^7",
+        "weights": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2,
+          1,
+          1
+        ],
+        "weighted_jacobian_dims": [
+          1,
+          10,
+          55,
+          210,
+          616
+        ],
+        "gpu_last_w_crt": {
+          "rank": 155,
+          "prime_ranks": {
+            "65521": 155,
+            "1000000007": 155,
+            "1000000009": 155
+          },
+          "agreement": true,
+          "device": "cuda:0",
+          "gpu_name": "NVIDIA RTX A2000 8GB Laptop GPU",
+          "peak_vram_mb": 1.836
+        }
+      }
+    }
+  ]
+}

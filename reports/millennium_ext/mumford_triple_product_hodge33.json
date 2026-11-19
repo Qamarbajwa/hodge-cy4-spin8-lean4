@@ -1,0 +1,179 @@
+{
+  "h4_70dim_invariant_uniqueness": {
+    "dim_h4_invariants": 1,
+    "drop_col": 9,
+    "b69_det": -211106232532992,
+    "b69_inv_scale": 12,
+    "b69_inv_nnz": 200,
+    "b69_inv_max_abs": 12
+  },
+  "a3_small_diagonal_divisor_identity": {
+    "t_cup_up_nnz": 360,
+    "d_cyc_nnz": 340,
+    "d_cyc_norm2": 352,
+    "s3_totally_symmetric": true,
+    "identity_8_tcup_holds_all_21952": true,
+    "sym3_ns_rank": 5,
+    "sym3_ns_plus_tcup_rank": 5
+  },
+  "a3_19sector_and_closure_ladder": {
+    "casimir_poly_reconstruction_exact": true,
+    "nonzero_sectors": 19,
+    "zero_sectors": 45,
+    "gram19_diagonal_values": [
+      4096,
+      36864,
+      36864,
+      36864,
+      36864,
+      36864,
+      36864,
+      36864,
+      36864,
+      36864,
+      147456,
+      147456,
+      147456,
+      110592,
+      110592,
+      110592,
+      110592,
+      110592,
+      110592
+    ],
+    "probe_nonzero_counts": {
+      "0": 4,
+      "sd": 5,
+      "asd": 5,
+      "ric": 5
+    },
+    "probe_nonzero_blocks": {
+      "0": [
+        [
+          "0",
+          "0",
+          1024
+        ],
+        [
+          "sd",
+          "sd",
+          9216
+        ],
+        [
+          "asd",
+          "asd",
+          9216
+        ],
+        [
+          "ric",
+          "ric",
+          9216
+        ]
+      ],
+      "sd": [
+        [
+          "0",
+          "sd",
+          2048
+        ],
+        [
+          "sd",
+          "0",
+          2048
+        ],
+        [
+          "sd",
+          "sd",
+          8192
+        ],
+        [
+          "asd",
+          "ric",
+          6144
+        ],
+        [
+          "ric",
+          "asd",
+          6144
+        ]
+      ],
+      "asd": [
+        [
+          "0",
+          "asd",
+          2048
+        ],
+        [
+          "sd",
+          "ric",
+          6144
+        ],
+        [
+          "asd",
+          "0",
+          2048
+        ],
+        [
+          "asd",
+          "asd",
+          8192
+        ],
+        [
+          "ric",
+          "sd",
+          6144
+        ]
+      ],
+      "ric": [
+        [
+          "0",
+          "ric",
+          2048
+        ],
+        [
+          "sd",
+          "asd",
+          6144
+        ],
+        [
+          "asd",
+          "sd",
+          6144
+        ],
+        [
+          "ric",
+          "0",
+          2048
+        ],
+        [
+          "ric",
+          "ric",
+          8192
+        ]
+      ]
+    },
+    "closure_diamond_dims": {
+      "stage0_div": 5,
+      "stage1_pairwise": 11,
+      "stage2_even": 12,
+      "stage1_inter_2": 8,
+      "stage1_join_2": 15,
+      "stage3_full": 19
+    },
+    "odd7_orthogonal_to_stage2_12": true,
+    "odd4_triple_orthogonal_to_join15": true
+  },
+  "a3_hodge33_moduli_and_parity": {
+    "all_9_gens_kill_d_cyc": true,
+    "d2_j_mum3_kills_d_cyc": true,
+    "boost_factorization_729x729_exact": true,
+    "w2_g_mum9_scales_d_cyc_531441": true,
+    "p_flip_x3_fixes_d_cyc": true,
+    "sector_parity_split": {
+      "fixed": 5,
+      "swapped_pairs": 7,
+      "even": 12,
+      "odd": 7
+    }
+  }
+}

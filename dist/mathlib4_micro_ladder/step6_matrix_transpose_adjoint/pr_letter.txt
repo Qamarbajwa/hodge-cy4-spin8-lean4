@@ -1,0 +1,17 @@
+Hello everyone,
+
+I am submitting a small pull request to add two transpose dot-product identities in Matrix:
+1. Matrix.mulVec_dotProduct_eq_dotProduct_transpose_mulVec
+2. Matrix.transpose_mul_self_quadratic
+
+Why this is useful:
+The adjoint relationship (A *ᵥ x) ⬝ᵥ y = x ⬝ᵥ (Aᵀ *ᵥ y) and the Gram quadratic form ((Aᵀ * A) *ᵥ x) ⬝ᵥ x = (A *ᵥ x) ⬝ᵥ (A *ᵥ x) appear constantly in linear algebra, normal equations, and quadratic bounds. Having them directly in Matrix.DotProduct saves users from re-combining dotProduct_mulVec and vecMul_transpose.
+
+Brief school-style derivation:
+Step 1: Rewrite the inner product (A *ᵥ x) ⬝ᵥ y using dotProduct_mulVec and vecMul_transpose so A moves across the dot product as its transpose Aᵀ acting on y.
+Step 2: For the Gram quadratic form, rewrite (Aᵀ * A) *ᵥ x as Aᵀ *ᵥ (A *ᵥ x) using Matrix.mulVec_mulVec.
+Step 3: Apply the adjoint identity from Step 1 to move Aᵀ to the right side and cancel transpose_transpose, leaving (A *ᵥ x) ⬝ᵥ (A *ᵥ x).
+
+Kindly review this small addition when convenient.
+
+ai is being used as a tool

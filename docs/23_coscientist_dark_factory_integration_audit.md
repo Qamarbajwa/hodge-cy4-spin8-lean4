@@ -3,7 +3,7 @@
 **Date:** 2026-11-12  
 **Branch:** `candidate/math-gov-v0.6`  
 **Problem Identity:** `HODGE-MILLENNIUM-001`  
-**Global Status:** `NO_HODGE_PROOF = TRUE` (Clay Millennium Hodge Conjecture remains strictly **OPEN**)  
+**Global Status:** `NO_HODGE_PROOF = TRUE` (General Hodge Conjecture remains strictly **OPEN**)  
 
 ---
 

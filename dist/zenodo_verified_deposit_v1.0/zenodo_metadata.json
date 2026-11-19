@@ -1,0 +1,31 @@
+{
+  "metadata": {
+    "title": "Formalized Lean 4 Series (Papers 1-6): Shioda-Aoki Characters, Artinian Gorenstein Apolarity, Spin(8) Triality, Order-8 Gauss-Manin Jets, Cyclotomic Incidence Sieves, and Conditional Fermat Bridges",
+    "upload_type": "publication",
+    "publication_type": "workingpaper",
+    "publication_date": "2026-11-19",
+    "version": "1.1.3",
+    "license": "cc-by-4.0",
+    "language": "eng",
+    "creators": [
+      {
+        "name": "Munawer, Qamar",
+        "affiliation": "Brandenburg University of Technology Cottbus\u2013Senftenberg"
+      }
+    ],
+    "keywords": [
+      "Lean 4",
+      "Fermat fourfolds",
+      "Shioda-Aoki classification",
+      "Macaulay inverse systems",
+      "Wiebe-Scheja-Storch colon ideals",
+      "Spin(8) triality",
+      "Gauss-Manin jet transport",
+      "Gotzmann persistence",
+      "Cyclotomic incidence sieve",
+      "Cayley trick"
+    ],
+    "description": "<p>Verified release archive accompanying the six-paper Lean 4.35.0 series (13 baseline modules + 7 extension modules, 188 axiom-free kernel declarations, and six peer-review-formatted manuscripts with 12 TikZ diagrams) covering Shioda-Aoki cyclotomic character combinatorics through m=60, m=25 cyclic-coset cones, Wiebe-Scheja-Storch transition determinants (G<=3 over Z), Spin(8) triality and idempotent Weil projectors, order-8 Gauss-Manin jet transport, non-Fermat 3-var quotient palindromicity, Cayley-trick complete-intersection profiles in P^6, Poly6 evaluation homomorphisms, and conditional Fermat algebraicity bridges.</p><p><strong>Scope and Conditional Interfaces:</strong> Every unconditional Lean 4 theorem in this deposit proves exact finite-dimensional combinatorial, polynomial-quotient, or Lie-algebraic results, while classical Lefschetz, Griffiths, Shioda, and Aoki algebraic-geometry bridges are isolated inside explicit modular hypothesis structures (<code>FermatFourfoldHodgeBridge</code>).</p>",
+    "notes": "All 6 manuscripts passed pdflatex (0 errors, 0 overfull, 0 underfull, >= 2 TikZ figures each) and live SHA-256 verification against FULL_AUTOMATION_VERIFICATION_RECEIPT.json and MILLENNIUM_EXT_RECEIPT.json."
+  }
+}

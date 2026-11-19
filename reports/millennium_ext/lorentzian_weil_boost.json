@@ -1,0 +1,125 @@
+{
+  "lorentzian_8x8_su22_boost": {
+    "eta8_diag": [
+      1,
+      1,
+      1,
+      1,
+      -1,
+      -1,
+      -1,
+      -1
+    ],
+    "g9_symmetric": true,
+    "g9_preserves_eta8_scale81": true,
+    "g9_preserves_e8_scale81": true,
+    "g9_commutes_phi8": true,
+    "g9_det": 43046721,
+    "null_light_cone_projectors_verified": true,
+    "radial_5050_light_cone_diag": [
+      18,
+      18,
+      18,
+      18,
+      2,
+      2,
+      2,
+      2
+    ]
+  },
+  "boosted_j27_and_mobius_spatial_projection": {
+    "j27_sq_eq_neg729_i8": true,
+    "j27_symplectic_and_commutes_phi8": true,
+    "g_pos_minpoly_roots": [
+      3,
+      243
+    ],
+    "g_pos_bareiss_minors": [
+      123,
+      15129,
+      1860867,
+      228886641,
+      1356572043,
+      8040170889,
+      47652720147,
+      282429536481
+    ],
+    "d2_27_theta_zero_dp02_nonzero": true,
+    "mobius_unit_ball_trajectory": [
+      {
+        "step_k": 0,
+        "u_coeff": "0/2",
+        "ball_margin": "1",
+        "metric_condition_number": 1
+      },
+      {
+        "step_k": 1,
+        "u_coeff": "8/10",
+        "ball_margin": "9/25",
+        "metric_condition_number": 81
+      },
+      {
+        "step_k": 2,
+        "u_coeff": "80/82",
+        "ball_margin": "81/1681",
+        "metric_condition_number": 81
+      },
+      {
+        "step_k": 3,
+        "u_coeff": "728/730",
+        "ball_margin": "729/133225",
+        "metric_condition_number": 81
+      },
+      {
+        "step_k": 4,
+        "u_coeff": "6560/6562",
+        "ball_margin": "6561/10764961",
+        "metric_condition_number": 81
+      },
+      {
+        "step_k": 5,
+        "u_coeff": "59048/59050",
+        "ball_margin": "59049/871725625",
+        "metric_condition_number": 81
+      },
+      {
+        "step_k": 6,
+        "u_coeff": "531440/531442",
+        "ball_margin": "531441/70607649841",
+        "metric_condition_number": 81
+      }
+    ],
+    "boosted_adaptation": {
+      "spectral_gap": 4.0,
+      "max_eigenvalue": 490.271335,
+      "eta_step": 0.00203969,
+      "full_70": {
+        "final_energy": 5.664502e-15,
+        "weil_fidelity": 1.0,
+        "hodge_residual": 9.856177e-16
+      },
+      "half_coord0_35": {
+        "final_energy": 1.751812,
+        "weil_fidelity": 0.12642546,
+        "hodge_residual": 0.09656981
+      }
+    }
+  },
+  "so35_35_exterior_boost_and_weil_invariance": {
+    "l70_symmetric": true,
+    "l70_in_so35_35": true,
+    "fixes_w_re_w_im_theta_sq": true,
+    "l70_commutes_and_fixes_p192": true,
+    "exact_trace_q": "21286/81",
+    "exact_trace_g9_wedge4": 1724166,
+    "spectrum_multiplicities": {
+      "1/81": 1,
+      "1/9": 16,
+      "1": 36,
+      "9": 16,
+      "81": 1
+    },
+    "d27_kills_p192_and_commutes_k4": true,
+    "sheared_noninvariant_cup_preserved": true
+  }
+}

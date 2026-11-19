@@ -2,7 +2,7 @@
 ## Research Project: `HODGE-MILLENNIUM-001` (The Hodge Conjecture)
 ### Governance Standard: MATH-GOV v0.7 Graph Proof Closure Protocol & Co-Scientist Dark Factory OS
 
-**Project Identity:** `HODGE-MILLENNIUM-001` (Clay Mathematics Institute Millennium Prize Problem)  
+**Project Identity:** `HODGE-MILLENNIUM-001` (Deligne (2000) General Hodge Conjecture)  
 **Author:** Qamar Munawer (Brandenburg University of Technology Cottbus--Senftenberg)  
 **Repository Branch:** `candidate/math-gov-v0.6` $\longrightarrow$ `candidate/math-gov-v0.7-graph-closure`  
 **Primary Formal Blueprints:** [`lean_blueprint/HodgeVerification.lean`](file:///d:/Comfy%20UI/hodge%20conjecture/lean_blueprint/HodgeVerification.lean), [`lean_blueprint/ShiodaFormalConjectures.lean`](file:///d:/Comfy%20UI/hodge%20conjecture/lean_blueprint/ShiodaFormalConjectures.lean)  
@@ -18,7 +18,7 @@
 This master document provides the binding forward-path roadmap and line-by-line verification ledger for research project **`HODGE-MILLENNIUM-001`** (The Hodge Conjecture on Complex Projective Varieties). It strictly enforces the MATH-GOV v0.7 Graph Proof Closure Protocol across four foundational pillars:
 
 1. **The Epistemic Firewall (Unconditional Theorems vs. Millennium Boundary):**
-   - The global Clay Millennium Hodge Conjecture remains strictly **`OPEN`** (`NO_HODGE_PROOF = TRUE`).
+   - The global General Hodge Conjecture remains strictly **`OPEN`** (`NO_HODGE_PROOF = TRUE`).
    - Formally proved structural theorems (e.g., Macaulay inverse systems, Wiebe transition determinants, Griffiths residues, Shioda–Aoki character decompositions, and Markman's 2025 Weil fourfold theorem) are celebrated as established mathematical ground truth.
    - Decidable combinatorial and linear algebraic identities are verified inside the Lean 4 kernel with zero axioms (`axioms: []`).
    - The unproved global frontiers (Bridge A and Bridge B) are strictly firewalled and demarcated without unearned claims or hallucinated proofs.
@@ -46,7 +46,7 @@ Following Eyal Markman's (February 2025) affirmative resolution of the Hodge Con
 
 ```mermaid
 flowchart TD
-    HC["Clay Millennium Hodge Conjecture<br>(Deligne 2000, OPEN)"]
+    HC["General Hodge Conjecture<br>(Deligne 2000, OPEN)"]
     HC --> B1["Bridge A: Calabi-Yau Fourfolds<br>(Non-Abelian, b₁ = 0, h²'² = 1751)"]
     HC --> B2["Bridge B: Mumford Spinor Classes<br>(Abelian Sixfolds, End(A) = ℚ, ρ = 1)"]
     
@@ -59,7 +59,7 @@ flowchart TD
     subgraph ObstructionB["Bridge B Obstruction: Mumford Spinor Schur Trap"]
         B2 --> B21["Markman (2025) Secant Sheaves: Requires Auxiliary Y₃ (INAPPLICABLE)"]
         B21 --> B22["D₄ = 𝔰𝔬(8) Spinor Representation: dim ⋀⁴ S⁺₈ = 70 (PROVED)"]
-        B22 --> B23["OPEN BARRIER: Algebraic Cycle over ℚ on A₆<br>Deligne gives absolute Hodge cycle; Chow realization is strictly OPEN"]
+        B22 --> B23["OPEN BARRIER: Algebraic Cycle over ℚ on A₆<br>Deligne gives absolute Hodge cycle; Chow realization is open"]
     end
 ```
 

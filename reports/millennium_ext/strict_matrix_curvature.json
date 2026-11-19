@@ -1,0 +1,444 @@
+{
+  "unimodular_whitening_and_isospectral": {
+    "w_int_symmetric": true,
+    "rational_whitening_exact": true,
+    "det_g_pos": 282429536481,
+    "det_w_int": 4304672100000000,
+    "whitening_denom": 90,
+    "unimodular_whitening_impossible": true,
+    "isospectral_trace": 984,
+    "isospectral_charpoly": "(lam - 243)^4 * (lam - 3)^4",
+    "rk_d2_iso": 12,
+    "rk_d2_27": 12,
+    "j_iso_preserves_factor_divisors": true,
+    "j_27_breaks_factor_divisors": true
+  },
+  "weyl_threshold_and_decomp": {
+    "threshold_polynomial_verified": true,
+    "dim_counts_2_to_6": {
+      "2": {
+        "riemann": 1,
+        "ricci": 1,
+        "weyl": 0
+      },
+      "3": {
+        "riemann": 6,
+        "ricci": 6,
+        "weyl": 0
+      },
+      "4": {
+        "riemann": 20,
+        "ricci": 10,
+        "weyl": 10
+      },
+      "5": {
+        "riemann": 50,
+        "ricci": 15,
+        "weyl": 35
+      },
+      "6": {
+        "riemann": 105,
+        "ricci": 21,
+        "weyl": 84
+      }
+    },
+    "dim3_ricci_to_riemann_det": -2,
+    "dim3_weyl_identically_zero": true,
+    "dim4_r_scal_matrix": [
+      [
+        6,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        6,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        6,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        6,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        6,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        6
+      ]
+    ],
+    "dim4_r_ric0_matrix": [
+      [
+        2,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        2,
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        2,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        -2,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0,
+        -2,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        -2
+      ]
+    ],
+    "dim4_w_plus_matrix": [
+      [
+        2,
+        1,
+        0,
+        0,
+        -1,
+        2
+      ],
+      [
+        1,
+        -1,
+        0,
+        0,
+        1,
+        1
+      ],
+      [
+        0,
+        0,
+        -1,
+        -1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        -1,
+        -1,
+        0,
+        0
+      ],
+      [
+        -1,
+        1,
+        0,
+        0,
+        -1,
+        -1
+      ],
+      [
+        2,
+        1,
+        0,
+        0,
+        -1,
+        2
+      ]
+    ],
+    "dim4_w_minus_matrix": [
+      [
+        1,
+        0,
+        2,
+        -2,
+        0,
+        -1
+      ],
+      [
+        0,
+        -2,
+        0,
+        0,
+        -2,
+        0
+      ],
+      [
+        2,
+        0,
+        1,
+        -1,
+        0,
+        -2
+      ],
+      [
+        -2,
+        0,
+        -1,
+        1,
+        0,
+        2
+      ],
+      [
+        0,
+        -2,
+        0,
+        0,
+        -2,
+        0
+      ],
+      [
+        -1,
+        0,
+        -2,
+        2,
+        0,
+        1
+      ]
+    ],
+    "dim4_orthogonal_traces_zero": true
+  },
+  "su22_normal_coord_curvature": {
+    "X1_matrix": [
+      [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        -1
+      ],
+      [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        -1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        -1,
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "X2_matrix": [
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        -1
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        -1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        -1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        -1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "K_commutator_nonzero": true,
+    "K_in_compact_subalgebra": true,
+    "R_X1_X2_X1_nonzero": true,
+    "sectional_curvature_numerator": -48,
+    "tr_K_sq": -48
+  },
+  "non_fermat_octonionic_mf_pencil": {
+    "octonion_clifford_relations_verified": true,
+    "f0_is_fermat_sextic": true,
+    "f1_str": "2*x0**3*x1*x2*x3 + 2*x0*x1*x2*x5**3 + 2*x0*x1*x4**3*x5 + 2*x0*x3**3*x4*x5 + 2*x1**3*x2*x3*x4 + 2*x2**3*x3*x4*x5",
+    "f2_str": "x0**2*x1**2*x2**2 + x0**2*x1**2*x5**2 + x0**2*x4**2*x5**2 + x1**2*x2**2*x3**2 + x2**2*x3**2*x4**2 + x3**2*x4**2*x5**2",
+    "f1_max_var_exponent_lt_5": 3,
+    "pencil_exact_for_all_t": true,
+    "scaled_pencil_jac6_rank": 36,
+    "r6_mod_jac_dim": 426
+  },
+  "observable_half_reconstruction_and_4d_split": {
+    "ricci_weyl_n_minus_4_polynomial_verified": true,
+    "ricci_weyl_diff_dims_3_to_7": {
+      "3": -6,
+      "4": 0,
+      "5": 20,
+      "6": 63,
+      "7": 140
+    },
+    "unique_5050_dimension": 4,
+    "all_8_splits_conjugate_lift_verified": true,
+    "lift_hits_zero_hodge_defect": true,
+    "observable_50pct_recovers_full_w_re_and_w_im": true
+  }
+}

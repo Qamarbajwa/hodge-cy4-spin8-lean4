@@ -25,7 +25,7 @@ In accordance with `adoption/GEMINI_SELF_APPLICATION_PROTOCOL.md` and `adoption/
 >   6. Complete positive and adversarial test suite (`tests/test_math_gov_suite.py`), passing alongside the existing testbed (96/96 passing tests across 18 modules).
 > - **What is NOT Implemented (Pending Independent Host & External Authority):**
 >   1. **No Self-Authorization:** The implementation agent cannot grant production cutover or release permissions. Status is strictly `CANDIDATE_PREPARED_EXTERNAL_VERIFICATION_PENDING`.
->   2. **No Claim of Clay Millennium Proof:** The Hodge Conjecture remains **OPEN**.
+>   2. **No Claim of General Hodge Conjecture Proof:** The Hodge Conjecture remains **OPEN**.
 >   3. **No Fake Independent Review:** Independent semantic review and distinct acceptor receipts remain pending external human/host execution.
 
 ---
@@ -37,7 +37,7 @@ In accordance with `adoption/GEMINI_SELF_APPLICATION_PROTOCOL.md` and `adoption/
 | **`HOST_MODE`** | `ANTIGRAVITY_AGENT_HOST` | Interactive programming agent host on Windows, running Python 3.12.10 and Lean 4.35.0. Has tool-level read/write/command access; lacks external cryptographic CAS watchdog daemon. |
 | **`PROJECT_ROOT`** | `D:\Comfy UI\hodge conjecture` | Verified filesystem root. |
 | **`REPO_REVISION`** | `e3bb04ec9ebdcaf597fd0d829a71369894393136` | Pristine baseline committed to `main` before candidate branch creation. |
-| **`ORIGINAL_MATH_QUESTION`** | `HODGE-MILLENNIUM-001` | Sourced from `governance/PROBLEM_IDENTITY_REGISTER.yaml` (SHA256: `e829cd38fb13386aa93532397d4f0267c269a3059b7dbce3791edba08434ee05`). Primary source: Pierre Deligne, *The Hodge Conjecture*, Clay Mathematics Institute (2000). |
+| **`ORIGINAL_MATH_QUESTION`** | `HODGE-MILLENNIUM-001` | Sourced from `governance/PROBLEM_IDENTITY_REGISTER.yaml` (SHA256: `e829cd38fb13386aa93532397d4f0267c269a3059b7dbce3791edba08434ee05`). Primary source: Pierre Deligne, *The Hodge Conjecture*, Deligne (2000) (2000). |
 | **Authority Inventory** | 8 foundational registers preserved | Exact SHA256 hashes computed and verified in Phase P0 (see Table 1.1). |
 | **Lean Toolchain** | Observed, functional | `C:\Users\arqam\.elan\bin\lean.exe` (Lean 4.35.0), `C:\Users\arqam\.elan\bin\lake.exe` (Lake 5.0.0). |
 | **`PERMISSIONS`** | Local tool execution only | Authorized for workspace files and test execution; external host release grant `NOT VERIFIED`. |
@@ -207,10 +207,10 @@ Evidence Contract:
 | **C23** | Unbounded retries/cost prevented | `toolkit/governance/lean_step_runner.py` | `LOCAL_TESTED` | Subprocess execution bound by explicit `timeout=120` seconds. | Timeout enforced at process level; token quota requires API gateway. | **LOCAL PASS** |
 | **C24** | Crash/liveness falsely reported rejected | Background task runner | `LOCAL_TESTED` | Background task logs captured with process return code and timing. | System supervisor monitors task status directly. | **LOCAL PASS** |
 | **C25** | Prompt injection / data exfiltration prevented | `governance/GOVERNANCE.md` (H13) | `DOCUMENTED_ONLY` | Untrusted input separation and secret isolation codified. | Requires host network sandbox and credential boundaries. | **CANDIDATE ONLY** |
-| **C26** | Invented source/citation rejected | `governance/PROBLEM_IDENTITY_REGISTER.yaml` | `LOCAL_TESTED` | Problem identity bound to Clay Millennium primary source. | Literature search tools available; automated citation lookup active. | **LOCAL PASS** |
+| **C26** | Invented source/citation rejected | `governance/PROBLEM_IDENTITY_REGISTER.yaml` | `LOCAL_TESTED` | Problem identity bound to General Hodge Conjecture primary source. | Literature search tools available; automated citation lookup active. | **LOCAL PASS** |
 | **C27** | Formal proof under false axioms rejected | `toolkit/governance/lean_step_runner.py` | `LOCAL_TESTED` | `ALLOWED_AXIOMS = {'propext', 'Classical.choice', 'Quot.sound'}` strictly enforced. | Rejects unexpected axioms or unverified declarations. | **LOCAL PASS** |
 | **C28** | Invalid independent acceptance rejected | `governance/PROJECT_STATE.yaml` | `BLOCKED` | `release_authorized` hardcoded to `false` in candidate state. | Awaiting independent human acceptor signature. | **BLOCKED** |
-| **C29** | Unfounded publication novelty rejected | `policies/hodge_gates.rego`, `GOVERNANCE.md` | `DOCUMENTED_ONLY` | Publication Gate G11 blocked while Millennium problem remains open. | Literature novelty audit required before any draft submission. | **BLOCKED** |
+| **C29** | Unfounded publication novelty rejected | `policies/hodge_gates.rego`, `GOVERNANCE.md` | `DOCUMENTED_ONLY` | Publication Gate G11 blocked while General Hodge Conjecture remains open. | Literature novelty audit required before any draft submission. | **BLOCKED** |
 | **C30** | Chrysalis rewiring permissions prevented | `governance/GOVERNANCE.md` (G12) | `LOCAL_TESTED` | Read-only L0 observations permitted; L3 rewiring requires owner signoff. | Hotpatches cannot modify Direction. | **LOCAL PASS** |
 | **C31** | Concurrent workers overwriting state prevented | SQLite `BEGIN IMMEDIATE` / Git branch | `LOCAL_TESTED` | `event_ledger.py` uses `BEGIN IMMEDIATE` transaction locking. | Local database concurrency protected; multi-agent CAS host pending. | **LOCAL PASS** |
 | **C32** | Uncertain external effects retried prevented | `governance/GOVERNANCE.md` (H18) | `DOCUMENTED_ONLY` | Idempotency keys and effect reconciliation codified. | Host effect journal required for distributed side-effects. | **CANDIDATE ONLY** |

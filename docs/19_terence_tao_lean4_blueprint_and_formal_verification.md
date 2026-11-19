@@ -15,8 +15,8 @@
 Following the formal blueprint methodology pioneered by Terence Tao for large-scale mathematical projects (such as the formalization of the Polynomial Freiman–Ruzsa Conjecture), this dossier presents the Lean 4 formalization and automated verification of the foundational algebraic, combinatorial, and cohomological pillars underlying our investigation into the Hodge Conjecture.
 
 > [!IMPORTANT]
-> **Scientific Honesty Law (Millennium Problem Boundary):**
-> We explicitly state that the **Clay Millennium Hodge Conjecture remains an open mathematical problem**.
+> **Scientific Honesty Law (Global Problem Boundary):**
+> We explicitly state that the **General Hodge Conjecture remains an open mathematical problem**.
 > - **What is Formally Verified in Lean 4 and Python:** 
 >   1. The exactness of localization sequences ($\operatorname{im}(\operatorname{Res}) \subseteq \ker(i_*)$).
 >   2. The primitive orthogonality of Weil classes to all divisor complete intersections ($\langle w_i, \Theta^2 \rangle = 0$).
@@ -47,8 +47,8 @@ flowchart TD
     PythonVoisin["Python Engine: Voisin Moving-Cycle Sieve<br/>407/407 Vectors Unobstructed (100.0%)"]
     PythonRoots["Python Engine: Root Annihilation SVD<br/>Rank = 6, Kernel = 0"]
 
-    OpenSpinor["Open Millennium Frontier A:<br/>Mumford Cycle Construction<br/>(End_Q(A) = Q)"]
-    OpenCY["Open Millennium Frontier B:<br/>Global Cycle Realization of<br/>Voisin-Integrable Loci"]
+    OpenSpinor["Open Codimension-Two Cycle Frontier A:<br/>Mumford Cycle Construction<br/>(End_Q(A) = Q)"]
+    OpenCY["Open Codimension-Two Cycle Frontier B:<br/>Global Cycle Realization of<br/>Voisin-Integrable Loci"]
 
     Node1 --> Node2
     Node2 --> Node3

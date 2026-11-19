@@ -9,7 +9,7 @@
 
 ## 1. Typed Conditional Interface (`ClassicalHodgeBridgeInterface`)
 
-Mirroring the Part I / Part II conditional interface architecture (`ClassicalAnalyticInterface`), `HodgeVerification.lean` separates unconditional verified finite structural invariants from the two remaining open Clay Millennium bridge frontiers via:
+Mirroring the Part I / Part II conditional interface architecture (`ClassicalAnalyticInterface`), `HodgeVerification.lean` separates unconditional verified finite structural invariants from the two remaining open General Hodge Conjecture bridge frontiers via:
 
 - **`ClassicalHodgeBridgeInterface`:** Holds the 4 irreducible open premises:
   1. `effective_hilbert_degree_bound_cy4 : Prop` (Bridge A fiber degree bound)

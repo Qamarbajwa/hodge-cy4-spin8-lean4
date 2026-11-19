@@ -4,7 +4,7 @@
 **Author Role:** Single Logical Mathematical Supervisor (Worker $\longleftrightarrow$ Reviewer $\longleftrightarrow$ Acceptor Protocol).  
 **Governance Standard:** MATH-GOV v0.6 OS (`HODGE-MILLENNIUM-001`).  
 **Status:** Certified Structural Theorems Proved in Exact Rational Python & Lean 4.  
-**Clay Millennium Invariant:** The global Hodge Conjecture remains strictly **OPEN** (`NO_HODGE_PROOF = TRUE`).
+**General Hodge Conjecture Invariant:** The global Hodge Conjecture remains strictly **OPEN** (`NO_HODGE_PROOF = TRUE`).
 
 ---
 
@@ -103,11 +103,11 @@ By the **Lefschetz $(1,1)$ Theorem**, every rational $(1,1)$ Hodge class on the 
 $$S = \mathrm{Join}(X^0_6, C_{\mathrm{Lef}}) \subset X^4_6 \subset \mathbb{P}^5$$
 lifts the join product $H^0_{\mathrm{prim}}(X^0_6) \otimes H^{1,1}_{\mathrm{prim}}(X^2_6) \hookrightarrow H^{2,2}_{\mathrm{prim}}(X^4_6)$ directly to algebraic 2-cycles (surfaces) inside $X^4_6$. Hence all $120$ Band-3 modes are algebraic on $X^4_6$, leaving $0 / 1,751$ unexplained modes.
 
-### Millennium Problem Boundary: Fermat Point $X^4_6$ vs. Deformed Sextics $X_t \subset \mathbb{P}^5$
+### Global Problem Boundary: Fermat Point $X^4_6$ vs. Deformed Sextics $X_t \subset \mathbb{P}^5$
 **CRITICAL HONESTY INVARIANT (`NO_HODGE_PROOF = TRUE`):**
 - Closing $1,001 + 630 + 120 + 0 = 1,751$ rigorously recovers Shioda's (1979) algebraic closure for the **single Fermat point** $X^4_6 = \{\sum_{i=0}^5 x_i^6 = 0\} \subset \mathbb{P}^5$, relying fundamentally on the diagonalizable action of the abelian phase group $(\mathbb{Z}/6\mathbb{Z})^6$ and its multiplicative character decomposition.
 - For a general smooth deformation $X_t = \{F_0 + t G = 0\} \subset \mathbb{P}^5$, the $(\mathbb{Z}/6\mathbb{Z})^6$ symmetry is broken; character splitting disappears, the Picard–Lefschetz / IVHS transport mixes bands, and flat horizontal continuation of an individual Hodge class off the Fermat locus is generally blocked by a **Noether–Lefschetz / Cattani–Deligne–Kaplan locus**.
-- Consequently, while the Fermat sextic fourfold is $100\%$ resolved, the global **Clay Millennium Hodge Conjecture (`HODGE-MILLENNIUM-001`) remains strictly OPEN** (`release_authorized = false`).
+- Consequently, while the Fermat sextic fourfold is $100\%$ resolved, the global **General Hodge Conjecture (`HODGE-MILLENNIUM-001`) remains open** (`release_authorized = false`).
 
 ### Proof of the Combinatorial IVHS Rank Theorem
 Let $x^a \in R^{12}(F)$. The map $M_{x^a}: R^6(F) \to R^{18}(F)$ is defined by polynomial multiplication modulo $J(F) = (x_0^5, \dots, x_5^5)$.
@@ -127,4 +127,4 @@ This theorem converts an otherwise costly $426 \times 426$ matrix Gaussian elimi
 
 - **Worker:** Upgraded `toolkit/erdos_fourier_incidence_engine.py` with 4-band Shioda–Lefschetz decomposition (`1,001 + 630 + 120 + 0 = 1,751`) and upgraded `HodgeVerification.lean` (16 theorems, zero axioms `[]`).
 - **Reviewer:** Executed `tests/test_erdos_fourier_incidence_engine.py` (6/6 checks), `tests/test_hodge_case_governance.py`, and `tests/test_lean_blueprint.py` with zero float tolerance and `axioms == []`.
-- **Acceptor:** Compiled the 4-Band Fermat Sextic Resolution Table, anchored Event 16 in `governance/hodge_governance_ledger.db`, rebuilt `ARTIFACT_HASH_MANIFEST.sha256`, and confirmed the global Clay Millennium Boundary (`HODGE-MILLENNIUM-001`) remains strictly OPEN.
+- **Acceptor:** Compiled the 4-Band Fermat Sextic Resolution Table, anchored Event 16 in `governance/hodge_governance_ledger.db`, rebuilt `ARTIFACT_HASH_MANIFEST.sha256`, and confirmed the global Global Problem Boundary (`HODGE-MILLENNIUM-001`) remains open.

@@ -1,0 +1,91 @@
+name: Lean 4 Reservoir CI
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build-and-verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install elan and Lean 4.35.0 toolchain
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain "$(cat lean-toolchain)"
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+
+      - name: Build all 20 modules and verify zero sorry / unexpected axioms
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import os
+          from pathlib import Path
+          import subprocess
+
+          lean_files = sorted(Path(".").glob("*.lean"))
+          if len(lean_files) != 20:
+              raise SystemExit(f"Expected 20 root .lean modules, found {len(lean_files)}")
+
+          for path in lean_files:
+              text = path.read_text(encoding="utf-8")
+              for forbidden in ("sorry", "admit"):
+                  if f" {forbidden}" in text or f"\n{forbidden}" in text:
+                      raise SystemExit(f"Forbidden token '{forbidden}' found in {path.name}")
+
+          # Build root modules sequentially in small batches to keep runner RAM bounded
+          targets = [
+              "HodgeVerification",
+              "ShiodaFormalConjectures",
+              "MathlibPR_ShiodaAokiFermat",
+              "MathlibPR_MacaulayGorenstein",
+              "MathlibPR_Spin8Triality",
+              "MathlibPR_CyclotomicIncidenceSieve",
+              "WiebeSchejaStorch",
+              "GaussManinJetTransport",
+              "ShiodaInductiveCycleSynthesis",
+              "Spin8LieAlgebraTriality",
+              "GlobalIVHSObstructionSpectrum",
+              "HigherDegreeSporadicBand4",
+              "LeanDemoProject",
+              "MumfordWeilKernelVecs",
+              "HodgeBridgeInterfaces",
+              "ConditionalFermatHodge",
+              "FermatHighDegreeExt",
+              "HigherOrderJetLifting",
+              "CayleyCompleteInt",
+              "Poly6ToMvPoly",
+          ]
+
+          axiom_lines = []
+          for t in targets:
+              proc = subprocess.run(["lake", "build", t], capture_output=True, text=True, check=False)
+              out = (proc.stdout or "") + "\n" + (proc.stderr or "")
+              print(out, flush=True)
+              if proc.returncode != 0:
+                  raise SystemExit(f"lake build {t} failed with rc={proc.returncode}")
+              axiom_lines.extend(ln for ln in out.splitlines() if "depends on axioms:" in ln)
+
+          final_proc = subprocess.run(["lake", "build"], capture_output=True, text=True, check=True)
+          final_out = (final_proc.stdout or "") + "\n" + (final_proc.stderr or "")
+          axiom_lines.extend(ln for ln in final_out.splitlines() if "depends on axioms:" in ln)
+
+          if axiom_lines:
+              raise SystemExit("Unexpected axiom lines:\n" + "\n".join(axiom_lines))
+
+          summary_path = os.environ.get("GITHUB_STEP_SUMMARY")
+          if summary_path:
+              Path(summary_path).write_text(
+                  "## Lean 4 Reservoir CI Passed\n\n"
+                  f"- Toolchain: `{Path('lean-toolchain').read_text(encoding='utf-8').strip()}`\n"
+                  f"- Modules verified: `{len(lean_files)}`\n"
+                  "- `sorry` / `admit`: `0`\n"
+                  "- Unexpected axioms: `0`\n",
+                  encoding="utf-8",
+              )
+
+          print(f"CI_LEAN_BUILD_OK=True MODULES={len(lean_files)} SORRY=0 UNEXPECTED_AXIOMS=0")
+          PY

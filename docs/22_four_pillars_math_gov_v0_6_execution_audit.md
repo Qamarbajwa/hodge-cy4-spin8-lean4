@@ -5,7 +5,7 @@
 **Date:** November 10, 2026
 **Governing Standard:** `MATH-GOV v0.6` Governance OS (`governance/GOVERNANCE.md`, `governance/PROJECT_DIRECTION.md`, `governance/PROJECT_STATE.yaml`)
 **Project Identifier:** `HODGE-MILLENNIUM-001`
-**Base Problem Statement:** Pierre Deligne, *The Hodge Conjecture*, Clay Mathematics Institute Millennium Prize Problems (2000)
+**Base Problem Statement:** Pierre Deligne, *The Hodge Conjecture*, Problem Formulations on Algebraic Cycles (2000)
 **Lean 4 Toolchain:** `leanprover/lean4:v4.35.0`, Lake version 5.0.0
 **Candidate Git Branch:** `candidate/math-gov-v0.6`
 **Execution Case File:** `governance/hodge_four_pillars_case.json` (25 nodes, 34 edges)
@@ -26,10 +26,10 @@ In accordance with the `MATH-GOV v0.6` Governance OS directives, all previously 
 >    - **Pillar 2:** Exact divisor-polarization orthogonality of primitive Weil classes on general CM abelian fourfolds ($\langle w_1, \theta^2 \rangle = 0$, $\langle w_2, \theta^2 \rangle = 0$).
 >    - **Pillar 3:** Discrete weight-lattice combinatorics of the $D_4 = \mathfrak{so}(8)$ triality half-spin representation ($\binom{8}{4} = 70$ total 4-tuples, exactly 6 weight-zero tuples, and 0 full $\mathfrak{so}(8)$-invariants).
 >    - **Pillar 4:** Exact Koszul Jacobian ring dimensions for smooth sextic Calabi–Yau fourfolds $X_4 \subset \mathbb{P}^5$ ($(1, 426, 1751, 426, 1)$), rank 19 of the plane IVHS multiplication matrix $M_{\lambda_\Pi}$, 407 kernel dimensions, and 100% vanishing of Claire Voisin's second-order quadratic syzygy obstruction pairing $\Phi_\lambda(u, v) = 0$.
-> 2. **What Remains Strictly Open:**
+> 2. **What Remains Open:**
 >    - Constructing algebraic cycles for Mumford's $\operatorname{End}_{\mathbb{Q}}(A) = \mathbb{Q}$ exceptional spinor classes.
 >    - Proving that every Voisin-integrable Hodge class in $H^{2,2}(X_4)$ arises from a global algebraic cycle $Z \in \operatorname{CH}^2(X_4)_{\mathbb{Q}}$.
->    - The Clay Millennium Hodge Conjecture remains strictly **OPEN**. No claim of a global solution is made or implied.
+>    - The General Hodge Conjecture remains strictly **OPEN**. No claim of a global solution is made or implied.
 
 ---
 
@@ -232,7 +232,7 @@ OK
 
 ## 7. Open Mathematical Horizon & Next Steps
 
-While all structural and algebraic theorems of the Four Pillars have passed both Python and Lean 4 verification gates, the global Clay Millennium Hodge Conjecture remains strictly open:
+While all structural and algebraic theorems of the Four Pillars have passed both Python and Lean 4 verification gates, the global General Hodge Conjecture remains open:
 1. **Pillar 3 Open Horizon:** Explicit algebraic cycle construction for Mumford's $\operatorname{End}_{\mathbb{Q}}(A) = \mathbb{Q}$ spinor classes on abelian varieties.
 2. **Pillar 4 Open Horizon:** Extending Claire Voisin's local second-order quadratic integrability into a global algebraic cycle in $\operatorname{CH}^2(X_4)_{\mathbb{Q}}$.
 3. **Independent Review Required:** An independent human mathematician or distinct verified agent must inspect the formal Lean 4 theorems and the case graph before any production state promotion.

@@ -92,9 +92,8 @@ Dense $1,751 \\times 426$ non-Fermat rank certified: $\\mathbf{{426}}$ in $0.568
 
 ---
 
-## 5. Epistemic Invariant Confirmation
-The Clay Millennium Hodge Conjecture remains strictly **OPEN**.  
-Formal verification in Lean 4.35.0 proves conditional closure under `ClassicalHodgeBridgeInterface` and `UniversalClayHodgeInterface` with zero axioms (`axioms: []`). The underlying bridges (`S-BRIDGE-DEFORM-CY4` and `S-BRIDGE-SPINOR-MOTIVE`) remain active, unproved mathematical frontiers.  
+## 5. Verification Summary
+Formal verification in Lean 4.35.0 proves finite-dimensional algebraic invariants and conditional closure under `ClassicalHodgeBridgeInterface` and `UniversalClayHodgeInterface` with zero axioms (`axioms: []`). The underlying geometric bridges (`S-BRIDGE-DEFORM-CY4` and `S-BRIDGE-SPINOR-MOTIVE`) remain active open problems in codimension-two algebraic cycle theory.  
 Credit: Always Qamar Munawer (Brandenburg University of Technology Cottbus-Senftenberg).
 """
     out_file = ROOT / "03_LEAN4_HODGE_KERNEL_VERIFICATION_AUDIT_REPORT.md"

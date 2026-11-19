@@ -1,0 +1,183 @@
+{
+  "DUAL_REPO_DEPLOY_PASSED": true,
+  "tag": "v1.1.0-verified",
+  "zenodo_status": "PUBLISHED",
+  "zenodo_state": "done",
+  "zenodo_doi": "10.5281/zenodo.24354741",
+  "zenodo_url": "https://zenodo.org/records/24354741",
+  "fork_merge_pr": {
+    "repo": "Qamarbajwa/mathlib4",
+    "branch": "feat/shioda-aoki-macaulay-spin8-sieve",
+    "url": "https://github.com/Qamarbajwa/mathlib4/pull/8",
+    "state": "MERGED",
+    "merge_commit": "01a630c90aa2ca1678857f0e8f30dc33a65df984",
+    "merged_at": "2026-11-18T11:17:37Z"
+  },
+  "external_pr_policy": {
+    "external_upstream_prs_enabled": false,
+    "allowed_github_targets": [
+      "Qamarbajwa/hodge-cy4-spin8-lean4",
+      "Qamarbajwa/hodge-cy4-spin8-papers",
+      "Qamarbajwa/mathlib4"
+    ],
+    "notes": "Fork-internal master merges only; external upstream PR creation permanently disabled."
+  },
+  "repo_lean4": {
+    "repo": "Qamarbajwa/hodge-cy4-spin8-lean4",
+    "repo_url": "https://github.com/Qamarbajwa/hodge-cy4-spin8-lean4",
+    "commit_sha": "3026cc6e025f6eedf4434f79c10eff3fa7cb80e6",
+    "tag": "v1.1.0-verified",
+    "release_url": "https://github.com/Qamarbajwa/hodge-cy4-spin8-lean4/releases/tag/v1.1.0-verified",
+    "topics": [
+      "lean4",
+      "math",
+      "algebraic-geometry",
+      "formal-verification"
+    ],
+    "module_count": 20,
+    "lake_build_ok": true,
+    "unexpected_axiom_lines": []
+  },
+  "repo_papers": {
+    "repo": "Qamarbajwa/hodge-cy4-spin8-papers",
+    "repo_url": "https://github.com/Qamarbajwa/hodge-cy4-spin8-papers",
+    "commit_sha": "2e7548139aa1bd8bd8e1038c1ebbf1f133208ee6",
+    "tag": "v1.1.0-verified",
+    "release_url": "https://github.com/Qamarbajwa/hodge-cy4-spin8-papers/releases/tag/v1.1.0-verified",
+    "topics": [
+      "hodge-conjecture",
+      "lean4",
+      "algebraic-geometry",
+      "formal-verification",
+      "latex"
+    ],
+    "subsection_count": 6,
+    "subsections": {
+      "01_shioda_aoki_fermat": {
+        "paper_id": "Paper1",
+        "pages": 13,
+        "manuscript": [
+          "Paper1_Shioda_Aoki_Fermat_Lean4.pdf",
+          "Paper1_Shioda_Aoki_Fermat_Lean4.tex"
+        ],
+        "lean4_certificates": [
+          "ShiodaFormalConjectures.lean",
+          "MathlibPR_ShiodaAokiFermat.lean",
+          "ShiodaInductiveCycleSynthesis.lean",
+          "HigherDegreeSporadicBand4.lean"
+        ],
+        "symbolic_companion": [
+          "shioda_fermat.py",
+          "constructive_cycle_hunt.py",
+          "exact_linalg.py",
+          "hodge_diamond.py"
+        ]
+      },
+      "02_macaulay_apolarity": {
+        "paper_id": "Paper2",
+        "pages": 10,
+        "manuscript": [
+          "Paper2_Macaulay_Apolarity_CY4_Lean4.pdf",
+          "Paper2_Macaulay_Apolarity_CY4_Lean4.tex"
+        ],
+        "lean4_certificates": [
+          "HodgeVerification.lean",
+          "MathlibPR_MacaulayGorenstein.lean",
+          "WiebeSchejaStorch.lean"
+        ],
+        "symbolic_companion": [
+          "macaulay_apolarity_inverse_engine.py",
+          "deformed_macaulay_transport_engine.py",
+          "calabi_yau_jacobian_engine.py",
+          "non_fermat_determinantal_stabilization_engine.py"
+        ]
+      },
+      "03_spin8_triality_mumford": {
+        "paper_id": "Paper3",
+        "pages": 10,
+        "manuscript": [
+          "Paper3_Spin8_Triality_Mumford_Lean4.pdf",
+          "Paper3_Spin8_Triality_Mumford_Lean4.tex"
+        ],
+        "lean4_certificates": [
+          "MathlibPR_Spin8Triality.lean",
+          "Spin8LieAlgebraTriality.lean"
+        ],
+        "symbolic_companion": [
+          "mumford_spinor_engine.py",
+          "weil_fourfolds.py",
+          "kuga_satake_clifford_engine.py",
+          "mumford_tate_sieve.py"
+        ]
+      },
+      "04_gauss_manin_jets": {
+        "paper_id": "Paper4",
+        "pages": 13,
+        "manuscript": [
+          "Paper4_Gauss_Manin_Jet_Reconstruction.pdf",
+          "Paper4_Gauss_Manin_Jet_Reconstruction.tex"
+        ],
+        "lean4_certificates": [
+          "GaussManinJetTransport.lean",
+          "GlobalIVHSObstructionSpectrum.lean"
+        ],
+        "symbolic_companion": [
+          "blind_gauss_manin_jet_reconstructor.py",
+          "modular_crt_linear_solver.py",
+          "higher_order_gauss_manin_sieve.py",
+          "covariant_apolarity_and_weyl_shioda_census.py"
+        ]
+      },
+      "05_cyclotomic_incidence_sieve": {
+        "paper_id": "Paper5",
+        "pages": 9,
+        "manuscript": [
+          "Paper5_Cyclotomic_Incidence_Sieve_Lean4.pdf",
+          "Paper5_Cyclotomic_Incidence_Sieve_Lean4.tex"
+        ],
+        "lean4_certificates": [
+          "MathlibPR_CyclotomicIncidenceSieve.lean"
+        ],
+        "symbolic_companion": [
+          "erdos_fourier_incidence_engine.py",
+          "universal_obstruction_cancellation_engine.py",
+          "twenty_plane_minimal_rank_stabilization_engine.py",
+          "global_recombination_and_coset_engine.py"
+        ]
+      },
+      "06_higher_degree_and_hodge_bridges": {
+        "paper_id": "Paper6",
+        "pages": 11,
+        "manuscript": [
+          "Paper6_Millennium_Frontier_Extensions_Lean4.pdf",
+          "Paper6_Millennium_Frontier_Extensions_Lean4.tex"
+        ],
+        "lean4_certificates": [
+          "MumfordWeilKernelVecs.lean",
+          "HodgeBridgeInterfaces.lean",
+          "ConditionalFermatHodge.lean",
+          "FermatHighDegreeExt.lean",
+          "HigherOrderJetLifting.lean",
+          "CayleyCompleteInt.lean",
+          "Poly6ToMvPoly.lean"
+        ],
+        "symbolic_companion": [
+          "gpu_exact_linalg.py",
+          "fermat_band4_scout.py",
+          "multi_order_gd_crt.py",
+          "nl_moduli_walk.py",
+          "counterexample_sieve.py",
+          "mumford_cm_specializer.py",
+          "fermat_band4_m18_to_m21.json",
+          "fermat_band4_m18_to_m30.json",
+          "fermat_band4_m18_to_m60.json",
+          "multi_order_gd_crt_t8.json",
+          "nl_moduli_and_g3_lifting.json",
+          "cayley_ci_and_counterexample_sieve.json",
+          "mumford_cm_specialization.json",
+          "MILLENNIUM_EXT_RECEIPT.json"
+        ]
+      }
+    }
+  }
+}

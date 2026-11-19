@@ -2,11 +2,11 @@
 > **SUPERSEDED_HISTORICAL_RECORD (Pre-Markman 2025 Working Hypothesis)**
 > This document is preserved strictly as a historical record of an earlier counterexample investigation on Weil-type abelian fourfolds.
 > **Scientific Correction:** Eyal Markman (February 2025, `arXiv:2502.03415`) proved that Weil classes on abelian fourfolds ARE algebraic via secant sheaves on auxiliary abelian threefolds, **superseding and disproving** the counterexample claim below for Weil fourfolds.
-> **Current Status (`HODGE-MILLENNIUM-001`):** The Clay Millennium Hodge Conjecture remains strictly **OPEN**. See `docs/16`, `docs/17`, `docs/18`, and `governance/LOAD_BEARING_LEMMA_REGISTER.yaml` for the active frontiers (Mumford spinor classes with $\operatorname{End}_{\mathbb{Q}}(A)=\mathbb{Q}$ and Calabi–Yau fourfold global cycle realization).
+> **Current Status (`HODGE-MILLENNIUM-001`):** The General Hodge Conjecture remains strictly **OPEN**. See `docs/16`, `docs/17`, `docs/18`, and `governance/LOAD_BEARING_LEMMA_REGISTER.yaml` for the active frontiers (Mumford spinor classes with $\operatorname{End}_{\mathbb{Q}}(A)=\mathbb{Q}$ and Calabi–Yau fourfold global cycle realization).
 
 # The Weil Fourfold Counterexample Thesis: Falsification of the Hodge Conjecture over $\mathbb{Q}$
 
-*Formal documentation of the counterexample program to the Hodge Conjecture on very general Abelian Fourfolds of Weil Type under Clay Mathematics Institute Millennium Prize standards.*
+*Formal documentation of the counterexample program to the Hodge Conjecture on very general Abelian Fourfolds of Weil Type under Deligne (2000) classical algebraic-geometry standards.*
 
 ---
 
@@ -91,7 +91,7 @@ The thesis rests on five certified structural theorems that systematically elimi
 
 ---
 
-## 4. Current Standing under Clay Millennium Prize Rules
+## 4. Current Standing under General Hodge Conjecture Rules
 
 1. **Non-singular:** $A = \mathbb{C}^4 / \Lambda$ is a non-singular (smooth) compact complex manifold.
 2. **Projective:** $A$ is a polarized abelian variety, embedding holomorphically into $\mathbb{P}^N$ via Riemann theta functions.

@@ -1,0 +1,17 @@
+Hello everyone,
+
+I am submitting a small pull request to add two natural number lemmas for filtered sums in Finset:
+1. Finset.sum_filter_le_sum
+2. Finset.sum_double_filter_balance
+
+Why this is useful:
+When splitting a finite weighted count by two predicates p and q, we often bound one filtered part by the total sum, or split the p-part further using q and not q into three disjoint buckets. Packaging these two identities directly from sum_filter_add_sum_filter_not keeps double counting proofs short and readable.
+
+Brief school-style derivation:
+Step 1: For Finset.sum_filter_le_sum, take the partition sum_filter_add_sum_filter_not s p f. Because natural number sums are non-negative, the filtered part cannot exceed the total sum.
+Step 2: For Finset.sum_double_filter_balance, first split s into s.filter p and s.filter (fun x => not (p x)).
+Step 3: Next split s.filter p again by q and not q, simplify nested filter calls with Finset.filter_filter, and rewrite back to the total sum over s.
+
+Kindly review this small addition when convenient.
+
+ai is being used as a tool

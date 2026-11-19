@@ -1,0 +1,104 @@
+name = "LeanMillenniumExt"
+version = "0.1.0"
+defaultTargets = [
+  "MumfordWeilKernelVecs",
+  "HodgeBridgeInterfaces",
+  "ConditionalFermatHodge",
+  "FermatHighDegreeExt",
+  "FermatAokiSurfaceExt",
+  "ConditionalFermatHodgeExt",
+  "HigherOrderJetLifting",
+  "HigherOrderJetAndObstructionExt",
+  "CayleyCompleteInt",
+  "Poly6ToMvPoly",
+  "MumfordCMSpecializationExt",
+  "MatrixFactorizationAndSchurExt",
+  "NonKoszulMFAndWeilPeriodExt",
+  "WavefunctionMatrixUnificationExt",
+  "ConjugateHalfWaveAdaptationExt",
+  "LorentzianWeilBoostExt",
+  "StrictMatrixCurvatureExt",
+  "MumfordSL2SO4Ext",
+  "WavefunctionBipartiteMatrixExt",
+  "MumfordTripleProductExt",
+  "CliffordKugaSatakeChiralExt",
+  "SchurUniversalSp8ProjectionExt",
+  "CliffordTripleProductSchurExt",
+  "CliffordTripleAndFermat25SchurExt"
+]
+
+[[require]]
+name = "MathGovLeanDemo"
+path = "../LeanDemoProject"
+
+[[lean_lib]]
+name = "MumfordWeilKernelVecs"
+
+[[lean_lib]]
+name = "HodgeBridgeInterfaces"
+
+[[lean_lib]]
+name = "ConditionalFermatHodge"
+
+[[lean_lib]]
+name = "FermatHighDegreeExt"
+
+[[lean_lib]]
+name = "HigherOrderJetLifting"
+
+[[lean_lib]]
+name = "CayleyCompleteInt"
+
+[[lean_lib]]
+name = "Poly6ToMvPoly"
+
+[[lean_lib]]
+name = "FermatAokiSurfaceExt"
+
+[[lean_lib]]
+name = "ConditionalFermatHodgeExt"
+
+[[lean_lib]]
+name = "HigherOrderJetAndObstructionExt"
+
+[[lean_lib]]
+name = "MumfordCMSpecializationExt"
+
+[[lean_lib]]
+name = "MatrixFactorizationAndSchurExt"
+
+[[lean_lib]]
+name = "NonKoszulMFAndWeilPeriodExt"
+
+[[lean_lib]]
+name = "WavefunctionMatrixUnificationExt"
+
+[[lean_lib]]
+name = "ConjugateHalfWaveAdaptationExt"
+
+[[lean_lib]]
+name = "LorentzianWeilBoostExt"
+
+[[lean_lib]]
+name = "StrictMatrixCurvatureExt"
+
+[[lean_lib]]
+name = "MumfordSL2SO4Ext"
+
+[[lean_lib]]
+name = "WavefunctionBipartiteMatrixExt"
+
+[[lean_lib]]
+name = "MumfordTripleProductExt"
+
+[[lean_lib]]
+name = "CliffordKugaSatakeChiralExt"
+
+[[lean_lib]]
+name = "SchurUniversalSp8ProjectionExt"
+
+[[lean_lib]]
+name = "CliffordTripleProductSchurExt"
+
+[[lean_lib]]
+name = "CliffordTripleAndFermat25SchurExt"

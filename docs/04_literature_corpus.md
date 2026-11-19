@@ -4,7 +4,7 @@
 
 ---
 
-## 1. Foundational Papers & Millennium Problem Statements
+## 1. Foundational Papers & Canonical Problem Statements
 
 1. **W. V. D. Hodge (1950)**: *The Topological Invariants of Algebraic Varieties*. Proceedings of the International Congress of Mathematicians, Cambridge, Mass., 1950, Vol. 1, pp. 182–192.
    - **Contribution:** Original formulation of the conjecture linking harmonic $(p,p)$-forms to algebraic cycles.
@@ -12,7 +12,7 @@
    - **Contribution:** Solomon Lefschetz proves the $(1,1)$-theorem: every integral $(1,1)$-class is the first Chern class of an algebraic line bundle (divisor).
 3. **P. Deligne (1971, 1974)**: *Théorie de Hodge I, II, III*. Publ. Math. IHÉS 40 (1971) 5–57; 44 (1974) 5–77.
    - **Contribution:** Foundations of modern Hodge theory, mixed Hodge structures, weights, and the Deligne-Hodge filtration.
-4. **P. Deligne (2000)**: *The Hodge Conjecture*. The Millennium Prize Problems, Clay Mathematics Institute, Cambridge, MA.
+4. **P. Deligne (2000)**: *The Hodge Conjecture*. The Classical Open Problems, Deligne (2000), Cambridge, MA.
    - **Contribution:** Canonical, authenticated definition of the problem under Millennium rules.
 5. **A. Grothendieck (1969)**: *Hodge's general conjecture is false for trivial reasons*. Topology 8 (1969), pp. 299–303. [DOI: 10.1016/0040-9383(69)90016-0](https://doi.org/10.1016/0040-9383(69)90016-0)
    - **Contribution:** Clarified that Hodge's original formulation needed rational coefficients ($\mathbb{Q}$), introduced Grothendieck's standard conjectures on algebraic cycles.

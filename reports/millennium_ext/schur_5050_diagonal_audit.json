@@ -1,0 +1,1025 @@
+{
+  "part_a_spin8_schur_5050_bias": {
+    "G_D4": {
+      "matrix": [
+        [
+          16,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          16,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          16,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          16,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          16,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          16
+        ]
+      ],
+      "det_full": 16777216,
+      "splits": {
+        "contiguous_012_345": {
+          "obs_indices": [
+            0,
+            1,
+            2
+          ],
+          "hid_indices": [
+            3,
+            4,
+            5
+          ],
+          "A": [
+            [
+              16,
+              0,
+              0
+            ],
+            [
+              0,
+              16,
+              0
+            ],
+            [
+              0,
+              0,
+              16
+            ]
+          ],
+          "B": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "C": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "D": [
+            [
+              16,
+              0,
+              0
+            ],
+            [
+              0,
+              16,
+              0
+            ],
+            [
+              0,
+              0,
+              16
+            ]
+          ],
+          "det_A": 4096,
+          "det_D": 4096,
+          "rank_A": 3,
+          "rank_D": 3,
+          "hidden_block_singular": false,
+          "bias_nonzero": false,
+          "S_rational": [
+            [
+              "16",
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "16",
+              "0"
+            ],
+            [
+              "0",
+              "0",
+              "16"
+            ]
+          ],
+          "detD_times_S_int": [
+            [
+              65536,
+              0,
+              0
+            ],
+            [
+              0,
+              65536,
+              0
+            ],
+            [
+              0,
+              0,
+              65536
+            ]
+          ],
+          "bias_rational": [
+            [
+              "0",
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0",
+              "0"
+            ]
+          ],
+          "trace_A": "48",
+          "trace_S": "48",
+          "trace_bias": "0",
+          "det_S": "4096",
+          "schur_det_identity_holds": true
+        },
+        "interleaved_024_135": {
+          "obs_indices": [
+            0,
+            2,
+            4
+          ],
+          "hid_indices": [
+            1,
+            3,
+            5
+          ],
+          "A": [
+            [
+              16,
+              0,
+              0
+            ],
+            [
+              0,
+              16,
+              0
+            ],
+            [
+              0,
+              0,
+              16
+            ]
+          ],
+          "B": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "C": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "D": [
+            [
+              16,
+              0,
+              0
+            ],
+            [
+              0,
+              16,
+              0
+            ],
+            [
+              0,
+              0,
+              16
+            ]
+          ],
+          "det_A": 4096,
+          "det_D": 4096,
+          "rank_A": 3,
+          "rank_D": 3,
+          "hidden_block_singular": false,
+          "bias_nonzero": false,
+          "S_rational": [
+            [
+              "16",
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "16",
+              "0"
+            ],
+            [
+              "0",
+              "0",
+              "16"
+            ]
+          ],
+          "detD_times_S_int": [
+            [
+              65536,
+              0,
+              0
+            ],
+            [
+              0,
+              65536,
+              0
+            ],
+            [
+              0,
+              0,
+              65536
+            ]
+          ],
+          "bias_rational": [
+            [
+              "0",
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0",
+              "0"
+            ]
+          ],
+          "trace_A": "48",
+          "trace_S": "48",
+          "trace_bias": "0",
+          "det_S": "4096",
+          "schur_det_identity_holds": true
+        }
+      }
+    },
+    "G_A13": {
+      "matrix": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          3,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          3,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          3,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          3,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "det_full": 0,
+      "splits": {
+        "contiguous_012_345": {
+          "obs_indices": [
+            0,
+            1,
+            2
+          ],
+          "hid_indices": [
+            3,
+            4,
+            5
+          ],
+          "A": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              3,
+              0
+            ],
+            [
+              0,
+              0,
+              3
+            ]
+          ],
+          "B": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ],
+          "C": [
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "D": [
+            [
+              3,
+              0,
+              0
+            ],
+            [
+              0,
+              3,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "det_A": 0,
+          "det_D": 0,
+          "rank_A": 2,
+          "rank_D": 2,
+          "hidden_block_singular": true,
+          "hidden_kernel_basis": [
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "naive_schur_blocked_by_zero_detD": true
+        },
+        "interleaved_024_135": {
+          "obs_indices": [
+            0,
+            2,
+            4
+          ],
+          "hid_indices": [
+            1,
+            3,
+            5
+          ],
+          "A": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              3,
+              1
+            ],
+            [
+              0,
+              1,
+              3
+            ]
+          ],
+          "B": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "C": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "D": [
+            [
+              3,
+              1,
+              0
+            ],
+            [
+              1,
+              3,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "det_A": 0,
+          "det_D": 0,
+          "rank_A": 2,
+          "rank_D": 2,
+          "hidden_block_singular": true,
+          "hidden_kernel_basis": [
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "naive_schur_blocked_by_zero_detD": true
+        }
+      }
+    },
+    "G_A2_pair12": {
+      "matrix": [
+        [
+          1,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          -1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          -1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          -1,
+          2,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          1
+        ]
+      ],
+      "det_full": 0,
+      "splits": {
+        "contiguous_012_345": {
+          "obs_indices": [
+            0,
+            1,
+            2
+          ],
+          "hid_indices": [
+            3,
+            4,
+            5
+          ],
+          "A": [
+            [
+              1,
+              1,
+              0
+            ],
+            [
+              1,
+              2,
+              -1
+            ],
+            [
+              0,
+              -1,
+              1
+            ]
+          ],
+          "B": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "C": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "D": [
+            [
+              1,
+              -1,
+              0
+            ],
+            [
+              -1,
+              2,
+              1
+            ],
+            [
+              0,
+              1,
+              1
+            ]
+          ],
+          "det_A": 0,
+          "det_D": 0,
+          "rank_A": 2,
+          "rank_D": 2,
+          "hidden_block_singular": true,
+          "hidden_kernel_basis": [
+            [
+              -1,
+              -1,
+              1
+            ]
+          ],
+          "naive_schur_blocked_by_zero_detD": true
+        },
+        "interleaved_024_135": {
+          "obs_indices": [
+            0,
+            2,
+            4
+          ],
+          "hid_indices": [
+            1,
+            3,
+            5
+          ],
+          "A": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              2
+            ]
+          ],
+          "B": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              -1,
+              1
+            ]
+          ],
+          "C": [
+            [
+              1,
+              -1,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "D": [
+            [
+              2,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "det_A": 2,
+          "det_D": 2,
+          "rank_A": 3,
+          "rank_D": 3,
+          "hidden_block_singular": false,
+          "bias_nonzero": true,
+          "S_rational": [
+            [
+              "1/2",
+              "1/2",
+              "0"
+            ],
+            [
+              "1/2",
+              "1/2",
+              "0"
+            ],
+            [
+              "0",
+              "0",
+              "0"
+            ]
+          ],
+          "detD_times_S_int": [
+            [
+              1,
+              1,
+              0
+            ],
+            [
+              1,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          "bias_rational": [
+            [
+              "1/2",
+              "-1/2",
+              "0"
+            ],
+            [
+              "-1/2",
+              "1/2",
+              "0"
+            ],
+            [
+              "0",
+              "0",
+              "2"
+            ]
+          ],
+          "trace_A": "4",
+          "trace_S": "1",
+          "trace_bias": "3",
+          "det_S": "0",
+          "schur_det_identity_holds": true
+        }
+      }
+    }
+  },
+  "part_b_ei4_diagonal_offdiag_ladder": {
+    "ambient_h4_dim": 70,
+    "ladder": [
+      {
+        "stage": "stage0_rho1_theta_only",
+        "divisor_dim": 1,
+        "wedge_pair_count": 1,
+        "sym2_h4_rank": 1,
+        "covers_w_re": false,
+        "covers_w_im": false,
+        "dual_annihilator_w_re": {
+          "dot_w_re": 1,
+          "sparse": [
+            [
+              [
+                0,
+                2,
+                4,
+                6
+              ],
+              1
+            ]
+          ]
+        },
+        "dual_annihilator_w_im": {
+          "dot_w_im": -1,
+          "sparse": [
+            [
+              [
+                0,
+                2,
+                4,
+                7
+              ],
+              1
+            ]
+          ]
+        }
+      },
+      {
+        "stage": "stage1_rho4_pure_diagonals",
+        "divisor_dim": 4,
+        "wedge_pair_count": 10,
+        "sym2_h4_rank": 6,
+        "covers_w_re": false,
+        "covers_w_im": false,
+        "dual_annihilator_w_re": {
+          "dot_w_re": 1,
+          "sparse": [
+            [
+              [
+                0,
+                2,
+                4,
+                6
+              ],
+              1
+            ]
+          ]
+        },
+        "dual_annihilator_w_im": {
+          "dot_w_im": -1,
+          "sparse": [
+            [
+              [
+                0,
+                2,
+                4,
+                7
+              ],
+              1
+            ]
+          ]
+        }
+      },
+      {
+        "stage": "stage2_rho10_diag_plus_50pct_dplus",
+        "divisor_dim": 10,
+        "wedge_pair_count": 55,
+        "sym2_h4_rank": 33,
+        "covers_w_re": true,
+        "covers_w_im": false,
+        "dual_annihilator_w_im": {
+          "dot_w_im": -1,
+          "sparse": [
+            [
+              [
+                0,
+                2,
+                4,
+                7
+              ],
+              1
+            ]
+          ]
+        }
+      },
+      {
+        "stage": "stage3_rho10_diag_plus_50pct_dminus",
+        "divisor_dim": 10,
+        "wedge_pair_count": 55,
+        "sym2_h4_rank": 20,
+        "covers_w_re": false,
+        "covers_w_im": false,
+        "dual_annihilator_w_re": {
+          "dot_w_re": 1,
+          "sparse": [
+            [
+              [
+                0,
+                2,
+                4,
+                6
+              ],
+              1
+            ]
+          ]
+        },
+        "dual_annihilator_w_im": {
+          "dot_w_im": -1,
+          "sparse": [
+            [
+              [
+                0,
+                2,
+                4,
+                7
+              ],
+              1
+            ]
+          ]
+        }
+      },
+      {
+        "stage": "stage4_rho8_minimal_cross_pair",
+        "divisor_dim": 8,
+        "wedge_pair_count": 36,
+        "sym2_h4_rank": 18,
+        "covers_w_re": true,
+        "covers_w_im": true
+      },
+      {
+        "stage": "stage5_rho16_full_ns_ei4",
+        "divisor_dim": 16,
+        "wedge_pair_count": 136,
+        "sym2_h4_rank": 36,
+        "covers_w_re": true,
+        "covers_w_im": true
+      }
+    ]
+  }
+}

@@ -8,7 +8,7 @@
 This document establishes the authoritative execution plan, mathematical foundations, verification protocols, and publication standards for research project **`HODGE-MILLENNIUM-001`** (The Hodge Conjecture). This plan serves as a single source of truth across all modules, formalization blueprints, and autonomous agent instances.
 
 ### Foundational Invariants
-1. **The Clay Millennium Hodge Conjecture Remains Strictly Open (`GLOBAL_HODGE_CONJECTURE = OPEN`, `NO_HODGE_PROOF = TRUE`):**
+1. **The General Hodge Conjecture Remains Open (`GLOBAL_HODGE_CONJECTURE = OPEN`, `NO_HODGE_PROOF = TRUE`):**
    No unconditional proof of the general Hodge Conjecture is claimed. Any statement connecting an infinitesimal deformation, Macaulay inverse system, or representation-theoretic cycle candidate to the Hodge Conjecture is classified strictly as a conditional reduction or equivalence bridge.
 2. **Axiomatic Integrity:**
    Every formal claim accepted into the verified corpus is verified by the Lean 4 kernel using zero axioms (`does not depend on any axioms`) or at most the standard foundational axioms `[propext, Classical.choice, Quot.sound]`. Zero `sorry`, zero `admit`, zero `opaque`, zero `unsafe`, zero `native_decide`, and zero custom or unverified axioms are permitted in any kernel result.

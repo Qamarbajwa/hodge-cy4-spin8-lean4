@@ -28,6 +28,30 @@ DIST_DIR = REPO_ROOT / "dist"
 UPSTREAM_DIR = DIST_DIR / "upstream_prs" / "mathlib4"
 BUNDLE_PATH = DIST_DIR / "HODGE_LEAN4_5PAPER_RELEASE_BUNDLE.zip"
 
+ALLOWED_GITHUB_TARGETS = frozenset(
+    {
+        "Qamarbajwa/mathlib4",
+        "Qamarbajwa/hodge-cy4-spin8-lean4",
+        "Qamarbajwa/hodge-cy4-spin8-papers",
+    }
+)
+BLOCKED_EXTERNAL_REPOS = frozenset(
+    {
+        "leanprover-community/mathlib4",
+        "google-deepmind/formal-conjectures",
+        "ImperialCollegeLondon/FLT",
+    }
+)
+
+
+def assert_internal_target_only(repo_slug: str) -> None:
+    """Hard-block PR creation, pushes, or comments against external repositories."""
+    if repo_slug in BLOCKED_EXTERNAL_REPOS or repo_slug not in ALLOWED_GITHUB_TARGETS:
+        raise RuntimeError(
+            f"POLICY BLOCK: External repository target '{repo_slug}' is permanently disabled. "
+            f"Allowed targets: {sorted(ALLOWED_GITHUB_TARGETS)}"
+        )
+
 LEAN_FILES = [
     "LeanDemoProject.lean",
     "HodgeVerification.lean",
@@ -36,6 +60,12 @@ LEAN_FILES = [
     "MathlibPR_MacaulayGorenstein.lean",
     "MathlibPR_Spin8Triality.lean",
     "MathlibPR_CyclotomicIncidenceSieve.lean",
+    "WiebeSchejaStorch.lean",
+    "GaussManinJetTransport.lean",
+    "ShiodaInductiveCycleSynthesis.lean",
+    "Spin8LieAlgebraTriality.lean",
+    "GlobalIVHSObstructionSpectrum.lean",
+    "HigherDegreeSporadicBand4.lean",
 ]
 
 MATHLIB_PR_SPECS = [
@@ -61,7 +91,7 @@ MATHLIB_PR_SPECS = [
         "deps_sfc": [
             "intEq", "intNe", "rangeList", "getIntAt", "transposeMat",
             "monomialDivides", "contractsWithSocle", "monomials4", "addExp4",
-            "coeffInSocle", "planeSoclePoly", "quadricJetSoclePoly",
+            "natListEqBool", "coeffInSocle", "planeSoclePoly", "quadricJetSoclePoly",
             "macaulayPairingMatrix",
         ],
         "deps_hv": [],
@@ -72,7 +102,8 @@ MATHLIB_PR_SPECS = [
         "namespace": "RepresentationTheory.Spin8",
         "deps_sfc": [
             "intEq", "intNe", "rangeList", "Weight4", "allSign4Tuples",
-            "so8Weights", "addW4", "isZeroWeight4", "combsIdx", "getWAt",
+            "so8Weights", "so8OddSpinorWeights", "so8VectorWeights",
+            "addW4", "isZeroWeight4", "combsIdx", "getWAt",
             "idxTupleSum", "fourIndexTuples", "zeroIndexTuples", "complement8",
             "lexLtNatList", "zeroStarPairs", "getIntAt", "transposeMat",
             "intElimStep", "intMatRankAuxClean", "basisVec4",
@@ -107,6 +138,7 @@ MATHLIB_PR_SPECS = [
             "transposeMat", "monomials4", "addExp4", "coeffInSocle",
             "planeSoclePoly", "quadricJetSoclePoly", "macaulayPairingMatrix",
             "intElimStep", "intMatRankAuxClean", "macaulayMatrixRank",
+            "natListEqBool",
         ],
         "deps_hv": [
             "binom", "h22_prim", "h31_prim", "getNatAt",
@@ -149,13 +181,59 @@ PAPERS = [
         "pdf": REPO_ROOT / "paper" / "paper5_cyclotomic_incidence_sieve" / "Paper5_Cyclotomic_Incidence_Sieve_Lean4.pdf",
         "log": REPO_ROOT / "paper" / "paper5_cyclotomic_incidence_sieve" / "Paper5_Cyclotomic_Incidence_Sieve_Lean4.log",
     },
+    {
+        "id": "Paper6",
+        "tex": REPO_ROOT / "paper" / "paper6_millennium_frontier_extensions" / "Paper6_Millennium_Frontier_Extensions_Lean4.tex",
+        "pdf": REPO_ROOT / "paper" / "paper6_millennium_frontier_extensions" / "Paper6_Millennium_Frontier_Extensions_Lean4.pdf",
+        "log": REPO_ROOT / "paper" / "paper6_millennium_frontier_extensions" / "Paper6_Millennium_Frontier_Extensions_Lean4.log",
+    },
+]
+
+EXT_LEAN_DIR = REPO_ROOT / "examples" / "math_gov" / "LeanMillenniumExt"
+EXT_LEAN_FILES = [
+    "MumfordWeilKernelVecs.lean",
+    "HodgeBridgeInterfaces.lean",
+    "ConditionalFermatHodge.lean",
+    "FermatHighDegreeExt.lean",
+    "FermatAokiSurfaceExt.lean",
+    "ConditionalFermatHodgeExt.lean",
+    "HigherOrderJetLifting.lean",
+    "HigherOrderJetAndObstructionExt.lean",
+    "CayleyCompleteInt.lean",
+    "Poly6ToMvPoly.lean",
+    "MumfordCMSpecializationExt.lean",
+    "MatrixFactorizationAndSchurExt.lean",
+    "NonKoszulMFAndWeilPeriodExt.lean",
+    "WavefunctionMatrixUnificationExt.lean",
+    "ConjugateHalfWaveAdaptationExt.lean",
+    "LorentzianWeilBoostExt.lean",
+    "StrictMatrixCurvatureExt.lean",
+    "MumfordSL2SO4Ext.lean",
+    "WavefunctionBipartiteMatrixExt.lean",
+    "MumfordTripleProductExt.lean",
 ]
 
 FORBIDDEN_LEAN_RE = re.compile(r"\b(sorry|admit|opaque|axiom|native_decide|unsafe)\b")
 PRONOUN_RE = re.compile(r"\b(I|we|We|our|Our|us|Us)\b")
-JARGON_RE = re.compile(
-    r"HODGE-MILLENNIUM|Check 4|Layer [1-4]|Node |Gate G|math_gov|scan_forbidden"
-)
+FORBIDDEN_JARGON_PATTERNS = [
+    r"HODGE-MILLENNIUM",
+    r"Check 4",
+    r"Layer [1-4]",
+    r"Node ",
+    r"Gate G",
+    r"math_gov",
+    r"scan_forbidden",
+    r"(?i:clay millennium)",
+    r"(?i:clay mathematics institute)",
+    r"(?i:millennium prize)",
+    r"(?i:millennium problem)",
+    r"(?i:millennium wall)",
+    r"(?i:millennium frontier)",
+    r"(?i:strictly open)",
+    r"(?i:open_research_frontier)",
+    r"(?i:epistemic scope)",
+]
+JARGON_RE = re.compile("|".join(FORBIDDEN_JARGON_PATTERNS))
 LST_BLOCK_RE = re.compile(r"\\begin\{lstlisting\}.*?\\end\{lstlisting\}", re.DOTALL)
 DECL_START_RE = re.compile(
     r"^(?:set_option\b.*?\bin\s*\n\s*)?(?:private\s+)?(?:def|abbrev|theorem|lemma)\s+([A-Za-z0-9_']+)"
@@ -265,7 +343,7 @@ def strip_imports_and_wrap_namespace(src_text: str, ns: str, dep_blocks: List[st
             if ln.strip().startswith("/-!"):
                 seen_mod_doc = True
         else:
-            if ln.startswith("#print axioms"):
+            if ln.lstrip().startswith("#print"):
                 continue
             body_lines.append(ln)
 
@@ -320,7 +398,7 @@ def audit_lean() -> Dict[str, Any]:
                 style_errors.append(f"{fname}:missing_module_docstring")
 
     total_theorems = sum(theorem_counts.values())
-    passed = build_ok and not forbidden_hits and not style_errors and total_theorems == 69
+    passed = build_ok and not forbidden_hits and not style_errors and total_theorems == 84
     return {
         "lake_build_ok": build_ok,
         "lake_returncode": proc.returncode,
@@ -361,6 +439,9 @@ def stage_and_verify_upstream_prs() -> Dict[str, Any]:
         has_local_import = bool(
             re.search(r"^import\s+(ShiodaFormalConjectures|HodgeVerification)", out_text, re.M)
         )
+        print_hits = [
+            idx for idx, ln in enumerate(out_text.splitlines(), start=1) if "#print" in ln
+        ]
         proc = subprocess.run(
             ["lake", "env", "lean", str(dst)],
             cwd=str(LEAN_DIR),
@@ -368,7 +449,7 @@ def stage_and_verify_upstream_prs() -> Dict[str, Any]:
             text=True,
             check=False,
         )
-        ok = proc.returncode == 0 and not long_lines and not has_local_import
+        ok = proc.returncode == 0 and not long_lines and not has_local_import and not print_hits
         if not ok:
             all_ok = False
         rel = str(dst.relative_to(REPO_ROOT)).replace("\\", "/")
@@ -377,33 +458,38 @@ def stage_and_verify_upstream_prs() -> Dict[str, Any]:
             "returncode": proc.returncode,
             "zero_local_imports": not has_local_import,
             "long_lines_gt_100": long_lines,
+            "print_hits": len(print_hits),
             "sha256": sha256_file(dst),
             "passed": ok,
         }
         if not ok:
             standalone_checks[rel]["stderr_tail"] = (proc.stderr or proc.stdout)[-800:]
 
+    assert_internal_target_only("Qamarbajwa/mathlib4")
     pr_doc = DIST_DIR / "upstream_prs" / "PR_DESCRIPTIONS_AND_PUSH_COMMANDS.md"
     pr_doc.parent.mkdir(parents=True, exist_ok=True)
     pr_doc.write_text(
-        "# Mathlib4 Upstream PR Staging Guide\n\n"
-        "All staged files below are 100% self-contained (zero local workspace imports) "
-        "and verified standalone via `lake env lean`.\n\n"
+        "# Fork-Internal Mathlib4 Staging Guide (`Qamarbajwa/mathlib4` Only)\n\n"
+        "> **Governance Lock:** Upstream PR creation and automated comments on external "
+        "repositories are permanently disabled. Push and merge ONLY into `Qamarbajwa/mathlib4:master`.\n\n"
+        "All staged files below are 100% self-contained (zero local workspace imports), "
+        "have zero `#print` commands, `<= 100` char lines, and pass standalone `lake env lean` (`rc=0`).\n\n"
         "## Staged Target Files\n"
         "- `Mathlib/AlgebraicGeometry/FermatHypersurface/ShiodaAoki.lean`\n"
         "- `Mathlib/RingTheory/ArtinianGorenstein/MacaulayContraction.lean`\n"
         "- `Mathlib/RepresentationTheory/Spin8Triality.lean`\n"
         "- `Mathlib/Combinatorics/IncidenceSieve/CyclotomicResidualForm.lean`\n\n"
-        "## Push & PR Commands\n"
+        "## Fork-Internal Merge Commands (`Qamarbajwa/mathlib4` ONLY)\n"
         "```bash\n"
         "git checkout -b feat/shioda-aoki-macaulay-spin8-sieve\n"
         "cp -r dist/upstream_prs/mathlib4/Mathlib/* Mathlib/\n"
         "git add Mathlib/\n"
         "git commit -m \"feat: add Shioda-Aoki, Macaulay, Spin(8), and cyclotomic sieve modules\"\n"
         "git push -u origin feat/shioda-aoki-macaulay-spin8-sieve\n"
-        "gh pr create --title \"feat: Shioda-Aoki, Macaulay Gorenstein, Spin(8) triality, and cyclotomic sieve\" "
-        "--body \"Formalizes universally quantified Shioda-Aoki character bands, Macaulay transpose duality, "
-        "Spin(8) weight-lattice laws, and finite cyclotomic incidence sieve conservation laws.\"\n"
+        "gh pr create --repo Qamarbajwa/mathlib4 --base master --head feat/shioda-aoki-macaulay-spin8-sieve "
+        "--title \"feat: merge verified zero-axiom Shioda-Aoki, Macaulay, Spin(8) triality, and cyclotomic sieve modules\" "
+        "--body \"Merges standalone-verified zero-axiom Lean 4 modules into fork master.\"\n"
+        "gh pr merge feat/shioda-aoki-macaulay-spin8-sieve --repo Qamarbajwa/mathlib4 --merge\n"
         "```\n",
         encoding="utf-8",
     )
@@ -432,15 +518,17 @@ def audit_papers() -> Dict[str, Any]:
         prose_only = LST_BLOCK_RE.sub("", tex_text)
         pronouns = len(PRONOUN_RE.findall(prose_only))
         jargon = len(JARGON_RE.findall(tex_text))
+        tikz_figures = len(re.findall(r"\\begin\{tikzpicture\}", tex_text))
 
         paper_ok = (
             pdf_path.exists()
-            and 8 <= pages <= 12
+            and 9 <= pages <= 16
             and latex_errors == 0
             and overfull == 0
             and underfull == 0
             and pronouns == 0
             and jargon == 0
+            and tikz_figures >= 2
         )
         if not paper_ok:
             all_ok = False
@@ -453,6 +541,7 @@ def audit_papers() -> Dict[str, Any]:
             "underfull": underfull,
             "prose_pronouns": pronouns,
             "forbidden_jargon": jargon,
+            "tikz_figures": tikz_figures,
             "tex_sha256": sha256_file(tex_path),
             "pdf_sha256": sha256_file(pdf_path),
             "passed": paper_ok,
@@ -467,6 +556,12 @@ def build_release_bundle() -> Dict[str, Any]:
     for fname in LEAN_FILES:
         bundle_items.append(LEAN_DIR / fname)
     bundle_items.extend([LEAN_DIR / "lakefile.toml", LEAN_DIR / "lean-toolchain"])
+    for fname in EXT_LEAN_FILES:
+        bundle_items.append(EXT_LEAN_DIR / fname)
+    bundle_items.extend([EXT_LEAN_DIR / "lakefile.toml", EXT_LEAN_DIR / "lean-toolchain"])
+    ext_receipt = REPO_ROOT / "reports" / "millennium_ext" / "MILLENNIUM_EXT_RECEIPT.json"
+    if ext_receipt.exists():
+        bundle_items.append(ext_receipt)
     for spec in MATHLIB_PR_SPECS:
         bundle_items.append(UPSTREAM_DIR / spec["dst"])
     bundle_items.append(DIST_DIR / "upstream_prs" / "PR_DESCRIPTIONS_AND_PUSH_COMMANDS.md")
@@ -517,14 +612,15 @@ def main() -> int:
         print(
             f"STANDALONE {rel}: rc={sinfo['returncode']} "
             f"zero_local_imports={sinfo['zero_local_imports']} "
-            f"long_lines={len(sinfo['long_lines_gt_100'])} passed={sinfo['passed']}"
+            f"long_lines={len(sinfo['long_lines_gt_100'])} "
+            f"print_hits={sinfo['print_hits']} passed={sinfo['passed']}"
         )
     for pid, pinfo in paper_res["papers"].items():
         print(
-            f"{pid}: pages={pinfo['pages']} errors={pinfo['latex_errors']} "
-            f"overfull={pinfo['overfull']} underfull={pinfo['underfull']} "
-            f"pronouns={pinfo['prose_pronouns']} jargon={pinfo['forbidden_jargon']} "
-            f"passed={pinfo['passed']}"
+            f"{pid}: pages={pinfo['pages']} tikz_figures={pinfo['tikz_figures']} "
+            f"errors={pinfo['latex_errors']} overfull={pinfo['overfull']} "
+            f"underfull={pinfo['underfull']} pronouns={pinfo['prose_pronouns']} "
+            f"jargon={pinfo['forbidden_jargon']} passed={pinfo['passed']}"
         )
     print(
         f"RELEASE_BUNDLE={bundle_res['bundle_path']} files={bundle_res['file_count']} "

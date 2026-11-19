@@ -1,0 +1,90 @@
+{
+  "exact_conjugate_half_matrix_laws": {
+    "p192_exact_rank2_outer_sum": true,
+    "p192_nonzero_entries": 128,
+    "all_8_coord_splits_35_35_50pct_barrier": true,
+    "half_node_norm_sq": 4,
+    "half_node_p192_form": 384,
+    "half_node_d43_sq": 19432,
+    "half_node_rayleigh_quotient": "4858/1849",
+    "parity_dims": [
+      38,
+      32
+    ],
+    "chiral_intertwining_verified": true,
+    "hodge_star_sd_projector_verified": true
+  },
+  "weil_70dim_projected_wave_adaptation": {
+    "eta": 0.03,
+    "steps": 250,
+    "spectral_gap_h_weil": 4.0,
+    "coord_half_slice_min_evals": [
+      3.68393,
+      3.68393,
+      3.598545,
+      3.598545,
+      3.633062,
+      3.633062,
+      3.633062,
+      3.633062
+    ],
+    "discrete_bridge_fidelity_step": [
+      "1/4",
+      "4/7"
+    ],
+    "trajectory_outcomes": {
+      "full_70": {
+        "initial_energy": 4.22731262,
+        "final_energy": 4.478473e-16,
+        "weil_fidelity": 1.0,
+        "hodge_residual": 4.387074e-16,
+        "conjugate_k_leakage": 0.0
+      },
+      "half_coord0_35": {
+        "initial_energy": 4.15990033,
+        "final_energy": 1.842252,
+        "weil_fidelity": 0.18203043,
+        "hodge_residual": 0.6423588,
+        "conjugate_k_leakage": 0.0674954
+      },
+      "half_sd_35": {
+        "initial_energy": 3.68648587,
+        "final_energy": 1.837608e-17,
+        "weil_fidelity": 1.0,
+        "hodge_residual": 3.923439e-16,
+        "conjugate_k_leakage": 0.0
+      },
+      "half_asd_35": {
+        "initial_energy": 4.82017116,
+        "final_energy": 2.0,
+        "weil_fidelity": 0.0,
+        "hodge_residual": 0.0009232508,
+        "conjugate_k_leakage": 0.0
+      },
+      "half_even_38": {
+        "initial_energy": 4.08538731,
+        "final_energy": 3.434577e-17,
+        "weil_fidelity": 1.0,
+        "hodge_residual": 1.703175e-14,
+        "conjugate_k_leakage": 1.0
+      }
+    }
+  },
+  "r12_wave_to_mf_adaptation_and_superdiff": {
+    "r12_total_dim": 1751,
+    "band1_target_overlap": 0.1,
+    "koszul_only_adaptation": {
+      "final_loss": 0.68377223,
+      "target_alignment_sq": 0.1
+    },
+    "full_mixture_adaptation": {
+      "final_loss": 0.0,
+      "target_alignment_sq": 1.0
+    },
+    "z2_graded_8x8_superdifferential": {
+      "qa_sq_zero": true,
+      "qb_sq_zero": true,
+      "q_full_sq_eq_2f1_i8": true
+    }
+  }
+}

@@ -1,0 +1,18 @@
+Hello everyone,
+
+I am submitting a small pull request to add a bilinear pairing helper and its zero and addition lemmas in Finsupp:
+1. Finsupp.contractionPairing
+2. Finsupp.contractionPairing_zero_left
+3. Finsupp.contractionPairing_add_left
+
+Why this is useful:
+Many algebraic and combinatorial arguments evaluate a formal linear combination f in alpha ->₀ R against a weight function g : alpha -> R. Naming this pairing and providing its left zero and left additivity lemmas allows simp and algebraic rewrites to distribute linear combinations directly.
+
+Brief school-style derivation:
+Step 1: Define contractionPairing f g as f.sum (fun m c => c * g m), which sums c * g m over the finite support of f.
+Step 2: When f is 0, its support is empty, so contractionPairing 0 g simplifies immediately to 0.
+Step 3: For f₁ + f₂, apply Finsupp.sum_add_index' using zero_mul 0 and left distributivity add_mul so the pairing splits into the sum of the two pairings.
+
+Kindly review this small addition when convenient.
+
+ai is being used as a tool

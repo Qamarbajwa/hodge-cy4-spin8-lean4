@@ -1,0 +1,184 @@
+{
+  "exact_z_4x4_mixed_1113_c6": {
+    "matrix_a1_degrees": [
+      [
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        3,
+        3,
+        3,
+        3
+      ]
+    ],
+    "ab_eq_ba_eq_2f1_i4": true,
+    "tr_aba_terms_mod_j": 14,
+    "tr_bab_terms_mod_j": 14,
+    "kunneth_band2_003333_product": -3348,
+    "kunneth_band2_111144_product": -5184
+  },
+  "exact_z_3x3_quadric_m3": {
+    "r": 3,
+    "ab_eq_ba_eq_f_i3": true,
+    "tr_aba_terms_mod_j": 3,
+    "tr_bab_terms_mod_j": 3,
+    "kunneth_band_distribution": {
+      "Band1": 9
+    },
+    "graded_18x18_naive_tr3_vanishes_by_z2_parity": true
+  },
+  "exact_z_6x6_buchsbaum_eisenbud_pfaffian": {
+    "r": 6,
+    "a_skew_symmetric": true,
+    "b_skew_symmetric": true,
+    "ab_eq_ba_eq_f_i6": true,
+    "pfaffian_f_terms": 20
+  },
+  "selected_nonkoszul_fp_witnesses": {
+    "65521": {
+      "c6_sample_points_checked": 40,
+      "selected_z6_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    "1000000009": {
+      "c6_sample_points_checked": 40,
+      "selected_z6_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    "1000000033": {
+      "c6_sample_points_checked": 40,
+      "selected_z6_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  },
+  "gpu_crt_3prime_closure_ladder": [
+    {
+      "stage": "stage0_koszul_r4_only",
+      "rows": 1875,
+      "cols": 1751,
+      "total_rank": 1001,
+      "band1_rank": 1001,
+      "band2_rank": 0,
+      "band3_rank": 0,
+      "remaining_gap": 750,
+      "prime_ranks": {
+        "65521": 1001,
+        "1000000009": 1001,
+        "1000000033": 1001
+      },
+      "agreement": true,
+      "device": "cuda:0",
+      "gpu_name": "NVIDIA RTX A2000 8GB Laptop GPU",
+      "peak_vram_mb": 97.992
+    },
+    {
+      "stage": "stage1_exact_z_4x4_1113_plus_koszul",
+      "rows": 5075,
+      "cols": 1751,
+      "total_rank": 1233,
+      "band1_rank": 1001,
+      "band2_rank": 232,
+      "band3_rank": 0,
+      "remaining_gap": 518,
+      "prime_ranks": {
+        "65521": 1233,
+        "1000000009": 1233,
+        "1000000033": 1233
+      },
+      "agreement": true,
+      "device": "cuda:0",
+      "gpu_name": "NVIDIA RTX A2000 8GB Laptop GPU",
+      "peak_vram_mb": 265.467
+    },
+    {
+      "stage": "stage2_ulrich_6x6_only",
+      "rows": 3200,
+      "cols": 1751,
+      "total_rank": 1620,
+      "band1_rank": 948,
+      "band2_rank": 552,
+      "band3_rank": 120,
+      "remaining_gap": 131,
+      "prime_ranks": {
+        "65521": 1620,
+        "1000000009": 1620,
+        "1000000033": 1620
+      },
+      "agreement": true,
+      "device": "cuda:0",
+      "gpu_name": "NVIDIA RTX A2000 8GB Laptop GPU",
+      "peak_vram_mb": 162.712
+    },
+    {
+      "stage": "stage3_single_4x4_1113_nonkoszul",
+      "rows": 6100,
+      "cols": 1751,
+      "total_rank": 1731,
+      "band1_rank": 981,
+      "band2_rank": 630,
+      "band3_rank": 120,
+      "remaining_gap": 20,
+      "prime_ranks": {
+        "65521": 1731,
+        "1000000009": 1731,
+        "1000000033": 1731
+      },
+      "agreement": true,
+      "device": "cuda:0",
+      "gpu_name": "NVIDIA RTX A2000 8GB Laptop GPU",
+      "peak_vram_mb": 315.936
+    },
+    {
+      "stage": "stage4_koszul_plus_4x4_1113_full_closure",
+      "rows": 7975,
+      "cols": 1751,
+      "total_rank": 1751,
+      "band1_rank": 1001,
+      "band2_rank": 630,
+      "band3_rank": 120,
+      "remaining_gap": 0,
+      "prime_ranks": {
+        "65521": 1751,
+        "1000000009": 1751,
+        "1000000033": 1751
+      },
+      "agreement": true,
+      "device": "cuda:0",
+      "gpu_name": "NVIDIA RTX A2000 8GB Laptop GPU",
+      "peak_vram_mb": 418.247
+    }
+  ]
+}

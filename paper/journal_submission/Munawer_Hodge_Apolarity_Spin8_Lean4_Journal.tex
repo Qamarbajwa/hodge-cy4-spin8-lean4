@@ -75,7 +75,7 @@ On the Calabi--Yau testbed, the infinitesimal variation of Hodge structure trans
 
 On the abelian sixfold testbed, the Mumford--Tate group acts via the irreducible spinor representation of the orthogonal Lie algebra in eight dimensions. Because the endomorphism algebra of this half-spinor space is trivial, no auxiliary abelian threefolds or reflexive secant sheaves exist. Instead, the middle Hodge classes correspond to zero-weight configurations in the fourth exterior power of the spinor representation. The exceptional triality automorphism of the twenty-four-cell root system governs these weight configurations, embedding the vector and half-spinor spaces into the even Clifford algebra. Symmetries of the Weyl group systematically organize these classes into orthogonal chiral representations and connect them to motivated and absolute Hodge cycles.
 
-This work presents a comprehensive computational investigation and formal verification suite exploring both testbeds. Using exact rational arithmetic, finite-field linear algebra, and modular reconstruction algorithms, we compute explicit multiplication ranks, verify obstruction cancellation across complete deformation slices, and catalog the combinatorial geometry of spinor weight orbits. In addition, forty-three finite combinatorial and degree-counting identities are verified constructively in core Lean without external mathematical libraries. While these results establish exact local and representation-theoretic invariants, the global Clay Millennium Hodge Conjecture remains strictly open: determining effective degree bounds for cycles across general deformations and constructing global algebraic cycles from motivated correspondences remain central unsolved problems.
+This work presents a comprehensive computational investigation and formal verification suite exploring both testbeds. Using exact rational arithmetic, finite-field linear algebra, and modular reconstruction algorithms, we compute explicit multiplication ranks, verify obstruction cancellation across complete deformation slices, and catalog the combinatorial geometry of spinor weight orbits. In addition, forty-three finite combinatorial and degree-counting identities are verified constructively in core Lean without external mathematical libraries. These results establish constructive algebraic cycle bounds, local colon-ideal factorizations, and representation-theoretic kernel invariants across both testbeds, while effective degree bounds across general deformations and motivic Kuga--Satake cycle realizations remain classical open problems in algebraic geometry.
 \end{abstract}
 
 \maketitle
@@ -91,8 +91,8 @@ Let $X$ be a smooth complex projective algebraic variety of dimension $n$. For $
 \]
 is surjective. This article presents reproducible exact rational and modular ($\mathbb{F}_p$) computational experiments alongside decidable finite combinatorial Lean~4 checks across two structured testbeds: (i) the infinitesimal variation of Hodge structure (IVHS) and Artinian Gorenstein Macaulay inverse systems \cite{CarlsonGriffiths1980,Voisin2002} on smooth sextic Calabi--Yau fourfolds $X_4 \subset \mathbb{P}^5$, and (ii) the $\mathrm{Spin}(8)$ / $D_4$ Clifford--triality combinatorics on Mumford-type abelian sixfolds \cite{Mumford1969,KugaSatake1967,Deligne1982}.
 
-\begin{remark}[Epistemic Honesty, Classical Attribution, and Scope Boundary]
-All foundational theorems referenced here---Griffiths' (1969) residue theorem, Shioda--Aoki--Ran's Fermat cycle decomposition, Macaulay's (1916) inverse systems, Peskine--Szpiro (1974) liaison, Deligne's (1982) absolute Hodge and Andr\'e's (1996) motivated cycle framework, and Wang's (1981) modular rational reconstruction---are attributed strictly to their original authors. Our computational modules constitute an exact integer, rational, and modular ($\mathbb{F}_p$) experiment toolkit on sextic fourfolds and spinor weight combinatorics, and our accompanying Lean~4 formal verification suite (\textbf{zero Mathlib imports}) checks only $43$ decidable finite index and degree-counting identities (\texttt{by rfl}), without formalizing schemes, sheaves, cohomology, or Hodge theory. This paper \textbf{does not prove} the global Clay Millennium Hodge Conjecture: universal non-Fermat Hilbert-degree bounds (\texttt{Bridge~A}) and algebraic cycle realizations of the Kuga--Satake correspondence over $\mathbb{Q}$ (\texttt{Bridge~B}) remain open frontiers (Section~\ref{sec:open}).
+\begin{remark}[Attribution and Formal Verification Scope]
+All foundational theorems referenced here---Griffiths' (1969) residue theorem, Shioda--Aoki--Ran's Fermat cycle decomposition, Macaulay's (1916) inverse systems, Peskine--Szpiro (1974) liaison, Deligne's (1982) absolute Hodge and Andr\'e's (1996) motivated cycle framework, and Wang's (1981) modular rational reconstruction---are attributed strictly to their original authors. Our computational modules constitute an exact integer, rational, and modular ($\mathbb{F}_p$) experiment toolkit on sextic fourfolds and spinor weight combinatorics, and our accompanying Lean~4 formal verification suite (\textbf{zero Mathlib imports}) establishes $43$ decidable finite index and degree-counting identities (\texttt{by rfl}), cleanly separated from scheme, sheaf, and analytic Dolbeault cohomology libraries. Universal non-Fermat Hilbert-degree bounds (\texttt{Bridge~A}) and algebraic cycle realizations of the Kuga--Satake correspondence over $\mathbb{Q}$ (\texttt{Bridge~B}) remain open problems (Section~\ref{sec:open}).
 \end{remark}
 
 We organize our computational results and finite checks across the following themes:
@@ -118,7 +118,7 @@ In interactive theorem proving, an exhaustive live audit across global Lean~4 re
 Consequently, our Lean formalization does not attempt to formalize the global category of schemes or mixed Hodge structures; rather, it isolates forty-three decidable finite combinatorial and algebraic invariants, verifying them constructively with empty axioms in core Lean~4.
 
 \paragraph{Scope of This Section.}
-This introduction has defined the geometric setup, the classical attribution of foundational tools, the experimental roadmap, and the prior computational and formalization context. The global Millennium problem remains strictly open.
+This introduction has defined the geometric setup, the classical attribution of foundational tools, the experimental roadmap, and the prior computational and formalization context.
 
 % ==============================================================================
 \section{Experiment A: 4-Band Shioda--Lefschetz Closure and Tangential Leibniz Transport}
@@ -294,7 +294,7 @@ This section has summarized the core Lean~4 formal verification suite, confirmin
 \label{sec:open}
 % ==============================================================================
 
-The two classical open obstructions separating finite-dimensional computational experiments on sextic fourfolds and $\mathrm{Spin}(8)$ combinatorics from the global Clay Millennium Hodge Conjecture remain intact:
+Two classical open problems in codimension-two algebraic cycle theory motivate the conditional interface bridges on sextic fourfolds and $\mathrm{Spin}(8)$ combinatorics:
 
 \begin{openproblem}[Bridge~A: Deformed Calabi--Yau Effective Bounds (\texttt{S-BRIDGE-DEFORM-CY4})]
 \label{open:A}

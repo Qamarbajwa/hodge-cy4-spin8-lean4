@@ -1,0 +1,128 @@
+name: Mathlib4 8-Step Fork Auto-Stager
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+    inputs:
+      force_arm:
+        description: "Set true to arm queue_state.json before checking"
+        required: false
+        default: "false"
+        type: choice
+        options: ["false", "true"]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mathlib4-micro-ladder-stager
+  cancel-in-progress: false
+
+jobs:
+  stage-next-micro-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout hodge-cy4-spin8-lean4
+        uses: actions/checkout@v4
+
+      - name: Check upstream PR queue and 900s post-merge gate
+        id: gate
+        env:
+          GH_TOKEN: ${{ github.token }}
+          FORCE_ARM: ${{ github.event.inputs.force_arm || 'false' }}
+        run: |
+          if [ "$FORCE_ARM" = "true" ]; then
+            python3 scripts/ci_apply_micro_step.py check --force-arm
+          else
+            python3 scripts/ci_apply_micro_step.py check
+          fi
+
+      - name: Install elan toolchain manager
+        if: steps.gate.outputs.action == 'stage'
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+
+      - name: Clone Qamarbajwa/mathlib4, sync upstream/master, apply patch & verify with lake env lean
+        id: verify_fork
+        if: steps.gate.outputs.action == 'stage'
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          STEP_DIR: ${{ steps.gate.outputs.step_dir }}
+          BRANCH: ${{ steps.gate.outputs.branch }}
+          TARGET_FILE: ${{ steps.gate.outputs.target_file }}
+          PR_TITLE: ${{ steps.gate.outputs.pr_title }}
+        run: |
+          set -euo pipefail
+          FORK_DIR="$RUNNER_TEMP/mathlib4_fork"
+          rm -rf "$FORK_DIR"
+          git clone --depth=1 https://github.com/Qamarbajwa/mathlib4.git "$FORK_DIR"
+          git -C "$FORK_DIR" remote add upstream https://github.com/leanprover-community/mathlib4.git
+          git -C "$FORK_DIR" fetch --depth=1 upstream master
+          git -C "$FORK_DIR" checkout -B "$BRANCH" upstream/master
+
+          python3 scripts/ci_apply_micro_step.py apply \
+            --mathlib-dir "$FORK_DIR" \
+            --step-dir "$STEP_DIR" \
+            --target-file "$TARGET_FILE"
+
+          pushd "$FORK_DIR" >/dev/null
+          elan show || true
+          lake exe cache get
+          lake env lean "$TARGET_FILE"
+          popd >/dev/null
+
+          FORK_PUSHED="false"
+          if [ -n "$GH_PAT" ]; then
+            git -C "$FORK_DIR" config user.name "Qamar Munawer"
+            git -C "$FORK_DIR" config user.email "Qamarbajwa@users.noreply.github.com"
+            git -C "$FORK_DIR" add "$TARGET_FILE"
+            git -C "$FORK_DIR" commit -m "$PR_TITLE"
+            git -C "$FORK_DIR" push -f "https://x-access-token:${GH_PAT}@github.com/Qamarbajwa/mathlib4.git" "HEAD:refs/heads/$BRANCH"
+            FORK_PUSHED="true"
+          elif git ls-remote --heads https://github.com/Qamarbajwa/mathlib4.git "$BRANCH" | grep -q "refs/heads/$BRANCH"; then
+            echo "NOTE: Branch $BRANCH is already live on Qamarbajwa/mathlib4."
+            FORK_PUSHED="true"
+          else
+            echo "NOTE: Repository secret GH_PAT is not set; verified patch locally in CI without pushing to Qamarbajwa/mathlib4."
+          fi
+          echo "fork_pushed=$FORK_PUSHED" >> "$GITHUB_OUTPUT"
+
+      - name: Update READY_TO_SUBMIT_NEXT_PR.md and GitHub Job Summary
+        if: steps.gate.outputs.action == 'stage'
+        env:
+          STEP_NUM: ${{ steps.gate.outputs.step_num }}
+          STEP_DIR: ${{ steps.gate.outputs.step_dir }}
+          BRANCH: ${{ steps.gate.outputs.branch }}
+          TARGET_FILE: ${{ steps.gate.outputs.target_file }}
+          PR_TITLE: ${{ steps.gate.outputs.pr_title }}
+          FORK_PUSHED: ${{ steps.verify_fork.outputs.fork_pushed }}
+        run: |
+          if [ "$FORK_PUSHED" = "true" ]; then
+            python3 scripts/ci_apply_micro_step.py summarize \
+              --step-num "$STEP_NUM" \
+              --step-dir "$STEP_DIR" \
+              --branch "$BRANCH" \
+              --target-file "$TARGET_FILE" \
+              --pr-title "$PR_TITLE" \
+              --fork-pushed
+          else
+            python3 scripts/ci_apply_micro_step.py summarize \
+              --step-num "$STEP_NUM" \
+              --step-dir "$STEP_DIR" \
+              --branch "$BRANCH" \
+              --target-file "$TARGET_FILE" \
+              --pr-title "$PR_TITLE"
+          fi
+
+      - name: Commit READY_TO_SUBMIT_NEXT_PR.md and updated queue_state.json if changed
+        if: always()
+        run: |
+          if [ -n "$(git status --porcelain READY_TO_SUBMIT_NEXT_PR.md dist/mathlib4_micro_ladder/queue_state.json)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add READY_TO_SUBMIT_NEXT_PR.md dist/mathlib4_micro_ladder/queue_state.json
+            git commit -m "chore(micro-ladder): update READY_TO_SUBMIT_NEXT_PR.md [skip ci]"
+            git push origin HEAD:main
+          fi

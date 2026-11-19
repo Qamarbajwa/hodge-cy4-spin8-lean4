@@ -1,0 +1,41 @@
+{
+  "schur_universal_sp8": {
+    "gram_q0_qprim_tch": [
+      [
+        16,
+        0,
+        0
+      ],
+      [
+        0,
+        432,
+        0
+      ],
+      [
+        0,
+        0,
+        1152
+      ]
+    ],
+    "proj_sp8_of_tch_is_zero": true,
+    "schur_complement_of_tch": 1152
+  },
+  "parity_eigenspace_separation": {
+    "h2_split_plus_minus": [
+      16,
+      12
+    ],
+    "end_h2_split_plus_minus": [
+      400,
+      384
+    ],
+    "u_sp8_in_end_plus": true,
+    "t_ch_in_end_minus": true,
+    "dim_end_minus_intersect_mumford": 1
+  },
+  "clifford_half_spinor_isolation": {
+    "chiral_subspace_dim": 18,
+    "u_sp8_acts_as_scalar_on_v18": true,
+    "cl07_cplus_minus_cminus_orthog_sp8": true
+  }
+}

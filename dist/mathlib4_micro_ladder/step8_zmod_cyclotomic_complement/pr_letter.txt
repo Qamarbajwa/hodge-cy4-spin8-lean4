@@ -1,0 +1,17 @@
+Hello everyone,
+
+I am submitting a small pull request to add two modular cancellation lemmas in ZMod:
+1. ZMod.sum_paired_complements_eq_zero
+2. ZMod.sum_mul_smul_eq_zero
+
+Why this is useful:
+When testing balanced signed lists modulo m under multiplication by units u in (ZMod m)ˣ, three opposite pairs cancel regardless of the unit twist, and any zero-sum Finset evaluation remains zero-sum after uniform scalar multiplication. These short helper lemmas keep modular invariance proofs concise.
+
+Brief school-style derivation:
+Step 1: For the balanced list [x, -x, y, -y, z, -z], map multiplication by the unit u over every entry and take the list sum.
+Step 2: Distribute multiplication across negations using mul_neg so each u * x cancels with -(u * x), leaving 0.
+Step 3: For ZMod.sum_mul_smul_eq_zero, reorder u * (t * a i) to t * (u * a i) using mul_left_comm, factor out t by Finset.induction using mul_add, and substitute ha u to get t * 0 = 0.
+
+Kindly review this small addition when convenient.
+
+ai is being used as a tool

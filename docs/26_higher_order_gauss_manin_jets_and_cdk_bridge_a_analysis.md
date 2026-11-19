@@ -79,4 +79,4 @@ Two new theorems in `lean_blueprint/HodgeVerification.lean` and `examples/math_g
 | Effective Upper Bound on Hilbert-Scheme Degree $D$ of $\operatorname{Hilb}_D(X_t)$ | **OPEN / FALSE (`effective_hilbert_degree_bound_known = False`)** | Open Millennium Gap |
 | Bridge Promotion Verdict (`attempt_bridge_promotion`) | **`ADVERSARIALLY_BLOCKED_OPEN_BRIDGE`** | Promotion to `PROVED` / `CLOSED_VERIFIED` rejected |
 
-Knowing $\Sigma_\lambda \subset \mathcal{M}$ is algebraic does not bound the degree $D$ or construct an algebraic cycle $Z_t \subset X_t$ on non-Fermat fibers. The global Clay Millennium Hodge Conjecture remains strictly **`OPEN`**, with `release_authorized = false` and `theorem_progress = "UNKNOWN"`.
+Knowing $\Sigma_\lambda \subset \mathcal{M}$ is algebraic does not bound the degree $D$ or construct an algebraic cycle $Z_t \subset X_t$ on non-Fermat fibers. The global General Hodge Conjecture remains strictly **`OPEN`**, with `release_authorized = false` and `theorem_progress = "UNKNOWN"`.

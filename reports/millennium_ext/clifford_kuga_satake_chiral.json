@@ -1,0 +1,22 @@
+{
+  "universal_sp8_parity_blindness": {
+    "refl4_in_sp8_z": true,
+    "sp8_lie_dim": 36,
+    "end_sp8_h2_dim": 2,
+    "t_ch_parity_odd_under_refl4": true,
+    "sp8_mixes_sd_asd_ric": true
+  },
+  "kuga_satake_spin24_test": {
+    "cl14_dim5_generators_verified": true,
+    "spin24_lie_dim": 15,
+    "end_spin24_h2_dim": 6,
+    "spin24_gens_failing_t_ch": 13,
+    "end_spin24_intersect_mumford_dim": 2,
+    "spin24_realizes_t_ch": false
+  },
+  "cl07_clifford_realization": {
+    "cl07_7_generators_verified": true,
+    "bivectors_realize_so4_and_trivectors_sl2": true,
+    "c_plus_minus_c_minus_equals_minus_t_ch": true
+  }
+}

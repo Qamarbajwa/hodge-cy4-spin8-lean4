@@ -21,4 +21,22 @@ name = "MathlibPR_Spin8Triality"
 name = "MathlibPR_CyclotomicIncidenceSieve"
 
 [[lean_lib]]
+name = "WiebeSchejaStorch"
+
+[[lean_lib]]
+name = "GaussManinJetTransport"
+
+[[lean_lib]]
+name = "ShiodaInductiveCycleSynthesis"
+
+[[lean_lib]]
+name = "Spin8LieAlgebraTriality"
+
+[[lean_lib]]
+name = "GlobalIVHSObstructionSpectrum"
+
+[[lean_lib]]
+name = "HigherDegreeSporadicBand4"
+
+[[lean_lib]]
 name = "LeanDemoProject"

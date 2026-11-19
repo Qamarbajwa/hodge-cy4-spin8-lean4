@@ -9,7 +9,7 @@
 
 ## 1. Executive Summary
 
-This dossier synthesizes the definitive modern resolution of the abelian fourfold bottleneck and charts the true open mathematical horizon for the Clay Millennium Prize Problem.
+This dossier synthesizes the definitive modern resolution of the abelian fourfold bottleneck and charts the true open mathematical horizon for the General Hodge Conjecture.
 
 By integrating the February 2025 breakthrough by **Eyal Markman** (*"Cycles on abelian 2n-folds of Weil type from secant sheaves on abelian n-folds"*, arXiv:2502.03415) with the foundational reduction of **Ben Moonen and Yuri Zarhin** (1995, 1999) and the internal obstruction theorems established in our laboratory, we establish:
 
@@ -18,7 +18,7 @@ By integrating the February 2025 breakthrough by **Eyal Markman** (*"Cycles on a
 2. **The Resolution of the Internal Cycle Paradox:**  
    Our laboratory's proof that internal divisor complete intersections ($\operatorname{Sym}^2 \operatorname{NS}(A)$), curve Pontryagin products ($C_1 * C_2$), and semi-homogeneous bundles on $A$ alone project to zero on $W_0(A)$ is not a contradiction. Rather, it mathematically explains why the cycle **must arise from external correspondences**—specifically, secant sheaves on an auxiliary abelian threefold $Y$ specialized via Chad Schoen's sixfold degeneration.
 3. **The True Open Frontier:**  
-   With abelian fourfolds resolved, the Clay Millennium Prize Problem now centers on:
+   With abelian fourfolds resolved, the General Hodge Conjecture now centers on:
    - **General Non-Abelian Fourfolds:** Calabi-Yau fourfolds, smooth hypersurfaces in $\mathbb{P}^5$ of degree $d \ge 5$, and fourfolds of general type.
    - **Exceptional Abelian Varieties in Dimension $\ge 6$:** Abelian varieties with non-classical Mumford–Tate groups of type $D_4$ (David Mumford 1969).
 
@@ -90,9 +90,9 @@ This resolves the apparent paradox:
 
 ---
 
-## 5. The True Open Horizon for the Clay Millennium Prize
+## 5. The True Open Horizon for the General Hodge Conjecture
 
-With abelian fourfolds affirmatively closed, where does the Clay Millennium Prize Problem stand?
+With abelian fourfolds affirmatively closed, where does the General Hodge Conjecture stand?
 
 ```
                      THE GLOBAL HODGE CONJECTURE HORIZON

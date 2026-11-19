@@ -40,4 +40,4 @@ $$\begin{array}{ccc}
 ## 3. The Core Dilemma
 1. An actual algebraic subvariety creates a special signature: **Proven**.
 2. A mathematical signature satisfying the Hodge conditions exists: **Detected via analysis/topology**.
-3. There exists a rational combination of algebraic subvarieties producing it: **The open Millennium Problem**.
+3. There exists a rational combination of algebraic subvarieties producing it: **The open General Hodge Conjecture**.

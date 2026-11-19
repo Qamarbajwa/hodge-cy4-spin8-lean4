@@ -1,0 +1,60 @@
+{
+  "lefschetz_pairing": {
+    "e2_symmetric_involutive": true,
+    "b2_symmetric": true,
+    "b2_e2_eigenvalues_theta_vs_primitive": {
+      "Q_0": 6,
+      "Q_sd": -2,
+      "Q_asd": -2,
+      "Q_ric": -2
+    },
+    "c_th_separable_equals_4_e2_q0": true
+  },
+  "correspondence_algebra": {
+    "closed_2d_divisor_algebra": true,
+    "closed_3d_parity_even_algebra": true,
+    "single_generator_chiral_reduction": "8*T_r0 == 32*T_dd + 4*T_th - 3*T_ch^2",
+    "t_ch_minpoly_zero": true,
+    "t_r0_minpoly_zero": true
+  },
+  "z2_graded_superoperator": {
+    "p_flip_trace": 4,
+    "even_dim": 16,
+    "odd_dim": 12,
+    "even_ops_block_diagonal": true,
+    "q_sd_q_asd_block_frob2": [
+      576,
+      576,
+      576,
+      576
+    ],
+    "t_ch_purely_off_diagonal_frob2": 9216,
+    "reduced_density_parity_blind": true,
+    "observable_half_recovery_scale": 4
+  },
+  "traces_and_moduli_invariance": {
+    "q0_traces_1_2": [
+      4,
+      16
+    ],
+    "t_dd_traces_1_to_3": [
+      96,
+      576,
+      0
+    ],
+    "t_ch_traces_1_to_4": [
+      0,
+      1152,
+      0,
+      73728
+    ],
+    "t_r0_traces_1_to_4": [
+      0,
+      3456,
+      27648,
+      663552
+    ],
+    "t_ch_semigroup_oscillation_64": true,
+    "d2_j3_and_w2_g9_commute_all_correspondences": true
+  }
+}

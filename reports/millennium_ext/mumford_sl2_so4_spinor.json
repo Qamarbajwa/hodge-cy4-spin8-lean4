@@ -1,0 +1,47 @@
+{
+  "end_q_and_casimir_projectors": {
+    "end_dim_of_h1": 1,
+    "casimir_projector_traces_x4": [
+      4,
+      36,
+      36,
+      36
+    ],
+    "irrep_dims_lambda2": [
+      1,
+      9,
+      9,
+      9
+    ],
+    "all_9_generators_commute": true,
+    "orientation_flip_swaps_q_sd_q_asd": true
+  },
+  "product_non_divisor_obstruction": {
+    "sym2_divisor_rank": 6,
+    "full_invariant_rank_in_h4_prod": 8,
+    "non_divisor_obstruction_dim": 2,
+    "sym2_6x6_gram_det": 37572373905408,
+    "full_8x8_gram_det": 9349208943630483456,
+    "cross_gram_strictly_zero": true,
+    "d_delta_sq_equals_minus_half_sum_casimirs": true
+  },
+  "boosted_mumford_hodge_invariance": {
+    "j_mum3_sq_neg9_i8": true,
+    "j_mum3_bareiss_minors": [
+      5,
+      25,
+      125,
+      625,
+      1125,
+      2025,
+      3645,
+      6561
+    ],
+    "d2_j3_rank": 12,
+    "d2_j3_ker_dim": 16,
+    "d2_j3_minpoly_zero": true,
+    "g_mum9_det": 43046721,
+    "g_mum9_preserves_e_real_scale81": true,
+    "d2_and_wedge2_g9_commute_all_casimirs": true
+  }
+}

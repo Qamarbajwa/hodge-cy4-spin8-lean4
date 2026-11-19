@@ -25,7 +25,7 @@ While initially designed for autonomous, zero-downtime Site Reliability Engineer
 
 ## 2. Why Project Chrysalis is Profoundly Beneficial for the Hodge Lab
 
-Solving a Millennium Prize Problem requires massive symbolic/geometric exploration while maintaining 100% mathematical integrity. Chrysalis provides the exact runtime infrastructure required:
+Solving a General Hodge Conjecture requires massive symbolic/geometric exploration while maintaining 100% mathematical integrity. Chrysalis provides the exact runtime infrastructure required:
 
 ```
 ┌────────────────────────────────────────────────────────────────────────────────────────┐

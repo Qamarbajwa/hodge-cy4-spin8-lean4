@@ -19,7 +19,7 @@ In strict compliance with `adoption/GEMINI_SELF_APPLICATION_PROTOCOL.md` and the
 1. **Implementer Role Only:** The supervisor operating in this workspace acts solely as the implementation agent. It does **not** act as the independent reviewer or authorized acceptor.
 2. **Zero Production Cutover:** The candidate branch `candidate/math-gov-v0.6` remains completely isolated. No merge or promotion to `main` / `master` has occurred or is authorized (`P8_CUTOVER_AUTHORIZED = false`).
 3. **Preservation of Raw Evidence:** All raw user prompts, previous reports (`docs/20_math_gov_v0_6_governance_os_implementation_audit.md`), negative history, failed attempts, and tool receipts are preserved verbatim.
-4. **Millennium Problem Boundary:** The Clay Millennium Hodge Conjecture and the Riemann Hypothesis remain strictly **OPEN**. No claim of a completed global proof is made or implied.
+4. **Global Problem Boundary:** The General Hodge Conjecture and the Riemann Hypothesis remain strictly **OPEN**. No claim of a completed global proof is made or implied.
 
 ---
 

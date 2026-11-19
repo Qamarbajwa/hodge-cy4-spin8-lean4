@@ -178,7 +178,7 @@ Therefore, **Markman's engine cannot be formulated, let alone executed, on Mumfo
 | **Representation Type** | Complex linear / CM eigenspaces | Real / Spinor with trivial centralizer |
 | **Auxiliary Factor $Y$** | **Exists:** $X_{2n} \sim Y \times \hat{Y}$ | **Impossible:** $A$ is simple |
 | **Cycle Construction** | Secant sheaves $\operatorname{Sec}(Y)$ via derived equivalence | **Completely Unknown** (No divisors, no CM) |
-| **Hodge Conjecture Status** | **PROVED AFFIRMATIVELY** (Markman 2025) | **STRICTLY OPEN** (True Frontier) |
+| **Hodge Conjecture Status** | **PROVED AFFIRMATIVELY** (Markman 2025) | **OPEN** (True Frontier) |
 
 ---
 
@@ -186,7 +186,7 @@ Therefore, **Markman's engine cannot be formulated, let alone executed, on Mumfo
 
 The mathematical community's celebration of Markman's (2025) result is entirely justified: it settled the long-standing Weil-class obstruction that had blocked abelian fourfold theory since 1977.
 
-However, from the standpoint of the Clay Millennium Prize:
+However, from the standpoint of the General Hodge Conjecture:
 1. **The Hodge Conjecture for Abelian Varieties is NOT Completely Proved.**
 2. Exceptional classes on simple abelian varieties with $\operatorname{End}_{\mathbb{Q}}(A) = \mathbb{Q}$ remain entirely open.
 3. Because these varieties possess no divisors other than $\Theta$, no curves other than the polarization dual, and no CM endomorphisms, their algebraic cycles must originate from geometric structures fundamentally different from Markman's secant sheaves.

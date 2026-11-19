@@ -1,0 +1,82 @@
+{
+  "pillar_1_cyclotomic_u6_wavefunction": {
+    "ring": "Z[zeta_6]",
+    "matrix_size": [
+      6,
+      6
+    ],
+    "unitary_u_udag_eq_6i": true,
+    "unitary_udag_u_eq_6i": true,
+    "abs_det_squared_expected": 46656
+  },
+  "pillar_2_picard_fuchs_5x5_companions": {
+    "fermat_window_5x5_charpoly_verified": true,
+    "fermat_indicial_cayley_hamilton_zero": true,
+    "fermat_indicial_eigenvalues_6x": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "fermat_indicial_trace": "5/2",
+    "fermat_indicial_det": "5/324",
+    "lcs_window_5x5_charpoly_verified": true,
+    "lcs_z0_nilpotent_order_5": true
+  },
+  "pillar_3_weil_u22_spectral_projectors": {
+    "j43_denominator": 43,
+    "j43_sq_eq_neg1849_i8": true,
+    "j43_symplectic_and_commutes_phi8": true,
+    "polarization_g_pos_minors": [
+      47,
+      2209,
+      115197,
+      6007401,
+      226594950,
+      8547002500,
+      316068152450,
+      11688200277601
+    ],
+    "h11_operator_d2_shape": [
+      28,
+      28
+    ],
+    "h11_operator_d2_rank": 12,
+    "h11_ker_dim": 16,
+    "h11_d2_minpoly_d_d2_plus_4": true,
+    "theta_in_ker_d2": true,
+    "dp02_killed_by_d2": true,
+    "h22_operator_d4_shape": [
+      70,
+      70
+    ],
+    "h22_operator_d4_rank": 34,
+    "h22_ker_dim": 36,
+    "h22_d4_minpoly_d_d2p4_d2p16": true,
+    "d4_commutes_with_kphi4": true,
+    "p_weil_shape": [
+      70,
+      70
+    ],
+    "p_weil_idempotent": true,
+    "p_weil_trace": 2,
+    "p_weil_rank": 2,
+    "d4_times_p_weil_zero": true,
+    "kphi_rotates_wre_to_wim_factor": -4,
+    "h_even_total_dim": 128,
+    "divisor_mukai_p_weil_always_zero": true,
+    "non_divisor_mukai_generates_2d_weil_plane": true
+  },
+  "unified_project_scorecard": {
+    "pillars_verified_this_run": 3,
+    "previous_reports_loaded": {
+      "matrix_factorization_scaling.json": true,
+      "schur_5050_diagonal_audit.json": true,
+      "non_koszul_mf_closure.json": true,
+      "high_precision_period_pslq.json": true
+    },
+    "locked_baseline_theorems": 84,
+    "locked_baseline_passed": true
+  }
+}

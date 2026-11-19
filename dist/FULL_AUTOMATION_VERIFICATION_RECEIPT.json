@@ -12,17 +12,29 @@
       "MathlibPR_ShiodaAokiFermat.lean": 7,
       "MathlibPR_MacaulayGorenstein.lean": 5,
       "MathlibPR_Spin8Triality.lean": 7,
-      "MathlibPR_CyclotomicIncidenceSieve.lean": 4
+      "MathlibPR_CyclotomicIncidenceSieve.lean": 4,
+      "WiebeSchejaStorch.lean": 2,
+      "GaussManinJetTransport.lean": 3,
+      "ShiodaInductiveCycleSynthesis.lean": 2,
+      "Spin8LieAlgebraTriality.lean": 3,
+      "GlobalIVHSObstructionSpectrum.lean": 2,
+      "HigherDegreeSporadicBand4.lean": 3
     },
-    "total_theorems": 69,
+    "total_theorems": 84,
     "sha256": {
-      "LeanDemoProject.lean": "383b29994bc61e026f74726c37d75c1ba4ec73d3a1d1f2e638582e1443891c60",
+      "LeanDemoProject.lean": "3305591663c94ec98a8d0b77df19d4d7582d56fb8f024365e622013d6047ce3e",
       "HodgeVerification.lean": "54f6aa1af3d98f714b48b98205f6b331cd43dd771a72e5589f1801c848f5e37c",
-      "ShiodaFormalConjectures.lean": "5becb96a0b165b6edc6bdf126b2ee05263b7483cf50ac1e0454155641e97b97d",
+      "ShiodaFormalConjectures.lean": "334e52a0f20c856d502de61e94b1a8eca1b2378c155420dddde59cfb2c7bddd5",
       "MathlibPR_ShiodaAokiFermat.lean": "00e049bcfdd8fb84d814cd9e76357b3466ffb55aa304061fff33ed06aa9e3882",
-      "MathlibPR_MacaulayGorenstein.lean": "bfaf6709ef628d4a4b767a47ef472a143bf8cd2b7fc6b24052ccbfa637025dd3",
-      "MathlibPR_Spin8Triality.lean": "cc4d383292297071dd883681db1bbd7d6119e4e2badb0f0f7bc20f537994b3b9",
-      "MathlibPR_CyclotomicIncidenceSieve.lean": "ee0819fc6002ef5f03d4bd6a1a02cdf0a02dfe2ac437e87aab9d142988e0cb3f"
+      "MathlibPR_MacaulayGorenstein.lean": "55974fee713e961131978a6e39726cb29297b97f99b529a652fa097d754d8acc",
+      "MathlibPR_Spin8Triality.lean": "c3e3f604b41ca136e3b6257fc2aa9a31b01c057d5f4fa17c0da30a43abd25102",
+      "MathlibPR_CyclotomicIncidenceSieve.lean": "ee0819fc6002ef5f03d4bd6a1a02cdf0a02dfe2ac437e87aab9d142988e0cb3f",
+      "WiebeSchejaStorch.lean": "8ee0da01b797f04f2fbbaa08de863edfbc5cd59f1fd7944072d7ce93797f0a5b",
+      "GaussManinJetTransport.lean": "23aee87dacbc9b65af36658aa63c9bc864ec67cf9370da778f62a34357406637",
+      "ShiodaInductiveCycleSynthesis.lean": "d6ec4d41e4a822c16e69c41b49500c82be02de5f3729baaf8b2e79c5fc44e28e",
+      "Spin8LieAlgebraTriality.lean": "4a118e126e92bb1aac5070b80e74e51341c7a248b9e52fbb7059537fb7e72c3f",
+      "GlobalIVHSObstructionSpectrum.lean": "bd183d99161b1862c46d4fa9f3abaeb51897820ed37836f27031ebc00d668177",
+      "HigherDegreeSporadicBand4.lean": "52f273aff322ecf8352c92539058445cc8c97381b0b7cb36817fefce8f578871"
     },
     "passed": true
   },
@@ -39,6 +51,7 @@
         "returncode": 0,
         "zero_local_imports": true,
         "long_lines_gt_100": [],
+        "print_hits": 0,
         "sha256": "f30bcd5f567c6a2becfe5bd60ded3c0d168972351ffb48ba8797e3ad1114faa2",
         "passed": true
       },
@@ -46,21 +59,24 @@
         "returncode": 0,
         "zero_local_imports": true,
         "long_lines_gt_100": [],
-        "sha256": "49e2ade939a06e0897bb022d6dc9212845d981c87a560a24178fbf36f017d46b",
+        "print_hits": 0,
+        "sha256": "2854bd309d95191d88401cd756cd7a252a71d90b404b123e340ca161fc200acf",
         "passed": true
       },
       "dist/upstream_prs/mathlib4/Mathlib/RepresentationTheory/Spin8Triality.lean": {
         "returncode": 0,
         "zero_local_imports": true,
         "long_lines_gt_100": [],
-        "sha256": "0c5b7ee71adac6ff80678e8a37146900f611be88878be07907f55670fb5968ca",
+        "print_hits": 0,
+        "sha256": "f0fd7b851a1ef6122fd72b2ffb8cdbd54e233344ca6b99d428ad23a9c3405105",
         "passed": true
       },
       "dist/upstream_prs/mathlib4/Mathlib/Combinatorics/IncidenceSieve/CyclotomicResidualForm.lean": {
         "returncode": 0,
         "zero_local_imports": true,
         "long_lines_gt_100": [],
-        "sha256": "9c7b2a53925330442369ecef55031530b23884af956a93b5182f1b2251924654",
+        "print_hits": 0,
+        "sha256": "fc798cfcd59a139f512e10e717e98cbd53f93fd12470fc7e4f90c633a6d57212",
         "passed": true
       }
     },
@@ -70,41 +86,31 @@
     "papers": {
       "Paper1": {
         "pdf_exists": true,
-        "pages": 10,
+        "pages": 13,
         "latex_errors": 0,
         "overfull": 0,
         "underfull": 0,
         "prose_pronouns": 0,
         "forbidden_jargon": 0,
-        "tex_sha256": "66fd17f4ffe4e94cecccabec8ace7ff55f3f57332d49e7043603e8b515450999",
-        "pdf_sha256": "3b0dad2147f75665417413f633e75f3f962b4d924d8f177b7dec63a9ac4ef40b",
+        "tikz_figures": 2,
+        "tex_sha256": "82b70e5eb157485fe14530711a0d4a4ee1f5f669abd4b9df50d48536a043dbe2",
+        "pdf_sha256": "d0b44ba3ae119f1950d6fdd7eba6479dc5a5444d9ab29b4796c77a4f969dad58",
         "passed": true
       },
       "Paper2": {
         "pdf_exists": true,
-        "pages": 8,
+        "pages": 10,
         "latex_errors": 0,
         "overfull": 0,
         "underfull": 0,
         "prose_pronouns": 0,
         "forbidden_jargon": 0,
-        "tex_sha256": "cf46c06068cf942e6d4a745952c7772345de5d4681204726e0dcb868a179ee5a",
-        "pdf_sha256": "3b52ed34a7735d81b07a47f5d93134bb57052876bc180df1c124f6dfc234c15f",
+        "tikz_figures": 2,
+        "tex_sha256": "dc00070d56c4c0e903249f8ee8398626baec6a7c8c03e64f5775e69861e6d99f",
+        "pdf_sha256": "ea0590143807aac2ed0158abc4a7e4282ecb50fd3bdb7e101d61de7d34d1fc34",
         "passed": true
       },
       "Paper3": {
-        "pdf_exists": true,
-        "pages": 8,
-        "latex_errors": 0,
-        "overfull": 0,
-        "underfull": 0,
-        "prose_pronouns": 0,
-        "forbidden_jargon": 0,
-        "tex_sha256": "3c7fa449cad12371180a19623a1c1b5b0b9748acf5b8698b6575de35eb5c81a9",
-        "pdf_sha256": "4548c8a1f955ff6cdc48f5f8b25fb3e213e4fdb9d0422a0d6025419dbb58d8f4",
-        "passed": true
-      },
-      "Paper4": {
         "pdf_exists": true,
         "pages": 10,
         "latex_errors": 0,
@@ -112,20 +118,48 @@
         "underfull": 0,
         "prose_pronouns": 0,
         "forbidden_jargon": 0,
-        "tex_sha256": "8c37cffb7f8c5ac90cf326af9387ceb2dccbd4ec1e0e9c12bc436d602c024215",
-        "pdf_sha256": "3cfaaa66c521ee73068028fef0172777656452e652a9bd42ace6a9c85c94581b",
+        "tikz_figures": 2,
+        "tex_sha256": "6958fab953dd8efb4115a052cd83c2aaddd20542fce093cc0cba65a5a3aeba5c",
+        "pdf_sha256": "904017f9f1a106cbf22a73fb8ceb654319ceb01ede4e3c5b5bf9e8d4a4530dcc",
         "passed": true
       },
-      "Paper5": {
+      "Paper4": {
         "pdf_exists": true,
-        "pages": 8,
+        "pages": 13,
         "latex_errors": 0,
         "overfull": 0,
         "underfull": 0,
         "prose_pronouns": 0,
         "forbidden_jargon": 0,
-        "tex_sha256": "38fbba0673e273f8474d865baa1e548250d918f834534ee84f3795923fd0c4dc",
-        "pdf_sha256": "9cd0834bc952f618ef80eab324a2d919435f0dce39ecc6a60802d6310a18a47a",
+        "tikz_figures": 2,
+        "tex_sha256": "ddf5ba9fbd1bbe96cede07a43bb5abb1fce4358b8bfa745c03b533e44673f30b",
+        "pdf_sha256": "8cd6ae0ede4fbc033baf8360a6e94f026cdd256b5e0b48f9ac89c38aa50dbf16",
+        "passed": true
+      },
+      "Paper5": {
+        "pdf_exists": true,
+        "pages": 9,
+        "latex_errors": 0,
+        "overfull": 0,
+        "underfull": 0,
+        "prose_pronouns": 0,
+        "forbidden_jargon": 0,
+        "tikz_figures": 2,
+        "tex_sha256": "c80ae06bf3755f405dc22bd731a0c76644790d23e63f9f4aa74d2b22541bfaf4",
+        "pdf_sha256": "8691d265850271a8da53f791c2c9b958f7b8fd20480252d0c36dfb47a8b23048",
+        "passed": true
+      },
+      "Paper6": {
+        "pdf_exists": true,
+        "pages": 15,
+        "latex_errors": 0,
+        "overfull": 0,
+        "underfull": 0,
+        "prose_pronouns": 0,
+        "forbidden_jargon": 0,
+        "tikz_figures": 3,
+        "tex_sha256": "9632029771da0fd793967c971f170d7ae403cb0b0505478d638ed780e29437a0",
+        "pdf_sha256": "c91aaa8fb7cd13d9f41064947cce0b358c9d91a64b81632e83ad0e71ed6172e1",
         "passed": true
       }
     },
@@ -133,8 +167,8 @@
   },
   "release_bundle": {
     "bundle_path": "dist/HODGE_LEAN4_5PAPER_RELEASE_BUNDLE.zip",
-    "file_count": 26,
-    "size_bytes": 2341169,
-    "sha256": "87bbf36af1ba7c96582e95d1066ad20dc3bbfbe7e41c004ab13dbb9403c0e131"
+    "file_count": 57,
+    "size_bytes": 3689036,
+    "sha256": "6e8ef089c74516d127503bac949d81b35faad0a319bb98dd5ddb30c535019f23"
   }
 }

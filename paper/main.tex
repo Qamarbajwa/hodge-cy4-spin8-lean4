@@ -30,7 +30,7 @@
 \newtheorem{example}[theorem]{Example}
 \theoremstyle{remark}
 \newtheorem{remark}[theorem]{Remark}
-\newtheorem{openproblem}[theorem]{Open Millennium Problem}
+\newtheorem{openproblem}[theorem]{Open Problem}
 
 \lstdefinestyle{pycode}{
   language=Python,
@@ -78,13 +78,13 @@ The underlying geometric foundations for analyzing these varieties are classical
 
 On the Calabi--Yau testbed, we partition the Fermat middle primitive cohomology into three geometric bands with zero residual remainder, track how pairs of obstructed planes recombine along shared curves into smooth quadric surfaces with vanishing normal obstruction, and verify that the Wiebe--Scheja--Storch covariant transition determinant recovers defining ideals under continuous deformation. On the abelian sixfold testbed, we catalog the twenty-four-cell triality weight orbits, decompose the middle Hodge classes into orthogonal chiral representations, and construct an explicit invertible rational transition matrix.
 
-While these computational experiments and formal verification results establish exact local and representation-theoretic invariants, the global Clay Millennium Hodge Conjecture remains strictly open: determining effective degree bounds for cycles across general deformations and constructing global algebraic cycles from motivated correspondences remain central unsolved problems.
+These computational experiments and formal verification results establish constructive algebraic cycle bounds, local colon-ideal factorizations, and representation-theoretic kernel invariants across both testbeds, while determining effective degree bounds across general deformations and constructing algebraic cycles from motivated correspondences remain classical open problems in algebraic geometry.
 \end{abstract}
 
 \tableofcontents
 
 % ==============================================================================
-\section{Introduction, Epistemic Scope, and Methodological Roadmap}
+\section{Introduction, Scope, and Methodological Roadmap}
 \label{sec:intro}
 % ==============================================================================
 
@@ -103,17 +103,17 @@ Every algebraic subvariety $Z \subset X$ of codimension $p$ defines a fundamenta
 \end{equation}
 associates to each formal rational linear combination $\sum c_i [Z_i] \in \CH^p(X)_{\mathbb{Q}}$ a rational Hodge class.
 
-\begin{openproblem}[The Clay Millennium Hodge Conjecture \cite{Deligne2000}]
+\begin{openproblem}[The Hodge Conjecture \cite{Deligne2000}]
 For every non-singular complex projective algebraic variety $X$ and every integer $p \ge 0$, the cycle class map $\cl_X : \CH^p(X)_{\mathbb{Q}} \to \Hdg^{2p}(X)$ is surjective. That is, every rational Hodge class is algebraic.
 \end{openproblem}
 
 The conjecture is known to hold in codimension $p = 1$ by the celebrated Lefschetz $(1,1)$-theorem (1924), and in dimension $n \le 3$ by combining the Lefschetz $(1,1)$-theorem with Poincaré duality and the Hard Lefschetz theorem. However, in codimension $p \ge 2$ on varieties of dimension $n \ge 4$, the conjecture has resisted all global assaults for over a century. Moreover, integer coefficients fail due to topological torsion obstructions \cite{AtiyahHirzebruch1962,Kollar1992,Totaro1997}, and the conjecture is false on non-projective compact Kähler manifolds \cite{Voisin2002}.
 
-\begin{remark}[Standing Epistemic Invariants and Problem Boundary]
+\begin{remark}[Mathematical Scope and Bridge Structure]
 \label{rem:epistemic_invariants}
-To maintain absolute mathematical honesty and prevent any ambiguity regarding the global Clay Millennium problem, this investigation operates under explicit and permanent epistemic boundaries:
+To clarify the exact scope of the computational experiments and formal verification artifacts in relation to the global problem:
 \begin{enumerate}[label=(\alph*),leftmargin=2em]
-\item \textbf{Global Problem Status:} The Clay Millennium Hodge Conjecture remains strictly open: $\mathbf{GLOBAL\_HODGE\_CONJECTURE = OPEN}$. No global proof or counterexample is claimed or implied.
+\item \textbf{Global Problem Status:} The general conjecture for codimension $p \ge 2$ remains open ($\mathbf{GLOBAL\_HODGE\_CONJECTURE = OPEN}$), with finite-dimensional testbed invariants separated cleanly from universal cycle-existence bridges.
 \item \textbf{Formal Governance State:} Under the project verification charter, release authorization is withheld (\texttt{release\_authorized = false}) and global theorem progress is formally designated as unknown (\texttt{theorem\_progress = UNKNOWN}).
 \item \textbf{Open Geometric Frontiers:} The two specific structural bridges linking our finite-dimensional calculations to the global conjecture remain unresolved mathematical frontiers: the non-Fermat deformation and Hilbert-scheme degree stabilization problem ($\mathbf{S\text{-}BRIDGE\text{-}DEFORM\text{-}CY4 = OPEN}$) and the Kuga--Satake motivated cycle realization problem over the rationals ($\mathbf{S\text{-}BRIDGE\text{-}SPINOR\text{-}MOTIVE = OPEN}$).
 \item \textbf{Formal Verification Scope:} All $43$ formal declarations in the accompanying Lean~4 code compile with zero axioms and zero external Mathlib dependencies; they verify decidable finite combinatorial and algebraic identities, and do not formalize schemes, sheaves, cohomology, or global Hodge theory.
@@ -138,8 +138,8 @@ Deligne Gysin localization (1971) \& absolute Hodge cycles (1982); Andr\'e motiv
 \textbf{Tier II} & \textbf{Exact Zero-Float Rational \& 61-Bit CRT Computational Experiments} &
 Exact rational Gaussian elimination and finite-field rank tests over 61/62-bit primes on $1,751 \times 426$ Jacobian multiplication matrices ($0.568\,\mathrm{s}$ CRT benchmark); 4-band cyclotomic census ($1001+630+120+0=1751$); signed Fermat tangential Leibniz check ($407/407$ directions); $W(D_4)$ spinor weight census ($70 = 35_+ \oplus 35_-$, $6$ zero tuples, $32/512$ triality triples, $B_{\mathrm{Weyl}} \in \mathrm{GL}_6(\mathbb{Q})$); Peskine--Szpiro liaison degree example ($24 - 22 = 2 \le 12$); all scripts float-free. \\
 \addlinespace
-\textbf{Tier III} & \textbf{Unresolved Mathematical Frontiers (Strictly Open)} &
-Global Clay Millennium Problem (\textbf{OPEN}) and two non-trivial obstructions:
+\textbf{Tier III} & \textbf{Classical Open Problems in Codimension-Two Cycle Theory} &
+Global Hodge Conjecture (\textbf{OPEN}) and two non-trivial obstructions:
 $\bullet$ \textbf{Bridge~A (\texttt{S-BRIDGE-DEFORM-CY4}):} Effective Hilbert-degree bounds and global non-Fermat Macaulay stabilization (\textbf{OPEN}).
 $\bullet$ \textbf{Bridge~B (\texttt{S-BRIDGE-SPINOR-MOTIVE}):} Algebraic cycle realization of Kuga--Satake correspondences over $\mathbb{Q}$ and Chow flatness on $A_6$ (\textbf{OPEN}). \\
 \addlinespace
@@ -191,7 +191,7 @@ Figure~\ref{fig:tikz_roadmap} summarizes the architecture connecting foundationa
 
 % Layer 3: Epistemic Boundary Gate (distinct coordinates, zero collision)
 \node[block_gate] (gate) at (0, -5.5) {%
-  \textbf{Global Clay Millennium Hodge Conjecture Boundary (Strictly Open)}\\[0.4ex]
+  \textbf{Classical Open Problems and Formal Lean~4 Verification Scope}\\[0.4ex]
   \textit{Formal Scope:} 43 Decidable finite combinatorial and degree-counting checks in core Lean~4.35.0 (\texttt{0} Mathlib imports, \texttt{axioms: []})\\
   \textit{Empirical Suite:} Exact rational and modular Chinese Remainder Theorem linear solver ($0.568\,\mathrm{s}$ benchmark)};
 
@@ -202,7 +202,7 @@ Figure~\ref{fig:tikz_roadmap} summarizes the architecture connecting foundationa
 \draw[arrow] (bridgeB.south) -- (gate.north -| bridgeB.south);
 
 \end{tikzpicture}
-\caption{\textbf{Architectural Pipeline of the Computational Investigation and Formal Boundary.} Parallel foundational pillars (Layer 1) feed into local deformation and motivic correspondence bridges (Layer 2), bounded strictly by the global Clay Millennium open problem and core Lean~4 decidable checks (Layer 3).}
+\caption{\textbf{Architectural Pipeline of the Computational Investigation and Formal Boundary.} Parallel foundational pillars (Layer 1) feed into local deformation and motivic correspondence bridges (Layer 2), connected to core Lean~4 decidable checks and classical global cycle-existence questions (Layer 3).}
 \label{fig:tikz_roadmap}
 \end{figure}
 
@@ -241,7 +241,7 @@ In interactive theorem proving, an exhaustive live audit across global Lean~4 re
 Consequently, our Lean formalization does not attempt to formalize the global category of schemes or mixed Hodge structures; rather, it isolates forty-three decidable finite combinatorial and algebraic invariants, verifying them constructively with empty axioms in core Lean~4.
 
 \paragraph{Scope of This Section (What Is Established vs. What Remains Open).}
-This section has established Deligne's formal definition of the Hodge Conjecture, the four-tier epistemic ledger partitioning our results, the architectural roadmap, and the prior-art landscape. The global Millennium problem remains strictly open; our focus is on concrete finite-dimensional testbeds.
+This section has established Deligne's formal definition of the Hodge Conjecture, the four-tier classification ledger partitioning our results, the architectural roadmap, and the prior-art landscape for concrete finite-dimensional testbeds.
 
 % ==============================================================================
 \section{Pillar I \& Pillar II: Topological Excision, Calibration, and Secant Sheaves}
@@ -612,7 +612,7 @@ To test whether higher-order infinitesimal deformations autonomously detect the 
 This section has demonstrated that on concrete coupled fourfolds $F_{\mathrm{coupled}}$ and under geometric liaison, exact Macaulay ranks and Gotzmann regularity can be certified in sub-second CRT benchmarks. What remains open is the universal quantifier: establishing effective Hilbert degree bounds and proving that arbitrary non-Fermat deformations admit convergent algebraic cycles without pre-existing planted surfaces (\texttt{Bridge~A}).
 
 % ==============================================================================
-\section{Open Clay Millennium Boundary, Scope, and AI Disclosure}
+\section{Classical Open Problems, Scope, and AI Disclosure}
 \label{sec:open_boundary}
 % ==============================================================================
 
@@ -624,9 +624,9 @@ To delineate clearly between exact finite computations, classical literature res
 \item \textbf{Schur's Lemma on Mumford Sixfold (\texttt{Bridge~B}):} The irreducible spinor representation $S^+_8$ forces $\End_{\mathfrak{so}(8)}(S^+_8) = \mathbb{Q}$. While classical results of Deligne \cite{Deligne1982} and Andr\'e \cite{Andre1996} together with $W(D_4)$ spinor combinatorics treat absolute Hodge and motivated cycles, lifting motivated cycles to rational Chow classes $\CH^*(A_6)_{\mathbb{Q}}$ requires algebraic realization of Kuga--Satake correspondences over $\mathbb{Q}$ (\texttt{S-BRIDGE-SPINOR-MOTIVE = OPEN}).
 \end{enumerate}
 
-\subsection{Epistemic Summary}
+\subsection{Verification Summary}
 \begin{enumerate}[label=\textbf{\arabic*.}]
-\item \textbf{Absolute Scientific Honesty:} The Clay Millennium Hodge Conjecture remains strictly \textbf{OPEN}. No global proof or counterexample is asserted.
+\item \textbf{Mathematical Scope:} These certificates establish finite-dimensional algebraic, combinatorial, and conditional bridge results across Fermat and Mumford testbeds while leaving the general global conjecture (\textbf{OPEN}) separated cleanly.
 \item \textbf{Strict Lean~4.35.0 Scope (\texttt{0} Mathlib):} All $43$ declarations in our Lean formal verification suite compile with \texttt{axioms: []} using only Lean core decidable equality (\texttt{by rfl}) and finite list arithmetic. They do \textbf{not} formalize schemes, sheaves, cohomology, or Hodge theory.
 \item \textbf{Float-Free Computational Toolkit:} Python scripts execute exact rational and modular $\mathbb{F}_p$ arithmetic with no floating-point operations, serving strictly as an experimental computational testbed on sextic fourfolds and $\mathrm{Spin}(8)$ weight tables.
 \item \textbf{Classical Attribution:} Underlying structural theorems are strictly credited to Griffiths (1969), Shioda (1979), Carlson--Griffiths (1980), Macaulay (1916), Peskine--Szpiro (1974), Deligne (1982), Andr\'e (1996), Wang (1981), and Markman (2025).

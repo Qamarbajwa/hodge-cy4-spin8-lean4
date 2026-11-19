@@ -1,0 +1,116 @@
+{
+  "experiment": "Exp14_CliffordKugaSatakeSchurExt",
+  "cp_reflection_and_pin_ok": true,
+  "bivector_opposite_parity_15_ok": true,
+  "wedge2_weight_split_16_plus_12_ok": true,
+  "h4_a2_spin24_split": {
+    "total": 20,
+    "sp8_pos": 6,
+    "eta12_div": 4,
+    "weil_prim": 10
+  },
+  "h8_a2_sym4_div_ks_split": {
+    "total": 35,
+    "parity_pos": 22,
+    "parity_neg": 13
+  },
+  "weil_polynomial_filter_70dim": {
+    "dim_h4_a": 70,
+    "dim_22_ks": 36,
+    "dim_31_ks": 32,
+    "dim_40_weil": 2,
+    "non_weil_exact_zeros": 68,
+    "weil_filter_values": [
+      -8,
+      8
+    ],
+    "omega4_im_sq_norm": 8,
+    "omega4_re_sq_norm": 32,
+    "filter_68_zero_ok": true
+  },
+  "h8_a2_12870dim_schur": {
+    "dim_h8_a2": 12870,
+    "d8_eta_rank": 35,
+    "d8_eta_parity_plus": 22,
+    "d8_eta_parity_minus": 13,
+    "quartic_68_zero_filter_cos": 0.9999999999999999,
+    "tiers": {
+      "Tier1_Sp8": {
+        "dim": 15,
+        "targets": {
+          "T_ch^graph": {
+            "R2": 0.0,
+            "Schur_ratio": 1.0
+          },
+          "T_ch^(Weil,-)": {
+            "R2": 0.0,
+            "Schur_ratio": 1.0
+          },
+          "T_ch^(Weil,+)": {
+            "R2": 0.0,
+            "Schur_ratio": 1.0
+          },
+          "T_ch^(Weil-corr)": {
+            "R2": 0.0,
+            "Schur_ratio": 1.0
+          },
+          "T_ch^(Weil-pull)": {
+            "R2": 0.0,
+            "Schur_ratio": 1.0
+          }
+        }
+      },
+      "Tier2A_Spin24_Biv": {
+        "dim": 110,
+        "targets": {
+          "T_ch^graph": {
+            "R2": 1.0,
+            "Schur_ratio": -0.0
+          },
+          "T_ch^(Weil,-)": {
+            "R2": 1.0,
+            "Schur_ratio": 0.0
+          },
+          "T_ch^(Weil,+)": {
+            "R2": 0.0,
+            "Schur_ratio": 1.0
+          },
+          "T_ch^(Weil-corr)": {
+            "R2": 0.5,
+            "Schur_ratio": 0.5
+          },
+          "T_ch^(Weil-pull)": {
+            "R2": 0.0,
+            "Schur_ratio": 1.0
+          }
+        }
+      },
+      "Tier2B_Full_Clifford": {
+        "dim": 138,
+        "targets": {
+          "T_ch^graph": {
+            "R2": 1.0,
+            "Schur_ratio": 0.0
+          },
+          "T_ch^(Weil,-)": {
+            "R2": 1.0,
+            "Schur_ratio": 0.0
+          },
+          "T_ch^(Weil,+)": {
+            "R2": 1.0,
+            "Schur_ratio": 0.0
+          },
+          "T_ch^(Weil-corr)": {
+            "R2": 1.0,
+            "Schur_ratio": 0.0
+          },
+          "T_ch^(Weil-pull)": {
+            "R2": 1.0,
+            "Schur_ratio": -0.0
+          }
+        }
+      }
+    }
+  },
+  "passed": true
+}

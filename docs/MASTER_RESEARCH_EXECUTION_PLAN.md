@@ -8,7 +8,7 @@
 This document establishes the authoritative execution plan, mathematical foundations, verification protocols, and publication standards for research project **`HODGE-MILLENNIUM-001`** (The Hodge Conjecture). This plan serves as a single source of truth across all modules, formalization blueprints, and autonomous agent instances.
 
 ### Foundational Invariants
-1. **The Clay Millennium Hodge Conjecture Remains Strictly Open (`GLOBAL_HODGE_CONJECTURE = OPEN`, `NO_HODGE_PROOF = TRUE`):**
+1. **The General Hodge Conjecture Remains Open (`GLOBAL_HODGE_CONJECTURE = OPEN`, `NO_HODGE_PROOF = TRUE`):**
    No unconditional proof of the general Hodge Conjecture is claimed. Any statement connecting an infinitesimal deformation, Macaulay inverse system, or representation-theoretic cycle candidate to the Hodge Conjecture is classified strictly as a conditional reduction or equivalence bridge.
 2. **Axiomatic Integrity:**
    Every formal claim accepted into the verified corpus is verified by the Lean 4 kernel using zero axioms (`does not depend on any axioms`) or at most the standard foundational axioms `[propext, Classical.choice, Quot.sound]`. Zero `sorry`, zero `admit`, zero `opaque`, zero `unsafe`, zero `native_decide`, and zero custom or unverified axioms are permitted in any kernel result.
@@ -29,32 +29,66 @@ This document establishes the authoritative execution plan, mathematical foundat
 * **Lean Toolchain Dependency:** `leanprover/lean4:v4.35.0` (Lake version 5.0.0)
 * **Lean Build Receipt:**
   ```text
-  Build completed successfully (5 jobs).
+  Build completed successfully (15 jobs).
   ```
 
 ### Primary Document & Compiled Manuscript Ledger
-* **Paper 1 (Shioda--Aoki Fermat Fourfold Character Cohomology):** `paper/paper1_shioda_aoki_lean4/Paper1_Shioda_Aoki_Fermat_Lean4.tex` -> `Paper1_Shioda_Aoki_Fermat_Lean4.pdf` (**10 pages**, 0 errors, 0 overfull/underfull hboxes, 0 pronouns, **PASSED**)
-* **Paper 2 (Artinian Gorenstein Apolarity & Macaulay Contraction Ranks):** `paper/paper2_macaulay_apolarity_lean4/Paper2_Macaulay_Apolarity_CY4_Lean4.tex` -> `Paper2_Macaulay_Apolarity_CY4_Lean4.pdf` (**8 pages**, 0 errors, 0 overfull/underfull hboxes, 0 pronouns, **PASSED**)
-* **Paper 3 ($\operatorname{Spin}(8)$ Triality, $W(D_4)$ Chiral Orthogonality & Mumford Spinors):** `paper/paper3_spin8_mumford_lean4/Paper3_Spin8_Triality_Mumford_Lean4.tex` -> `Paper3_Spin8_Triality_Mumford_Lean4.pdf` (**8 pages**, 0 errors, 0 overfull/underfull hboxes, 0 prose pronouns, **PASSED**)
-* **Paper 4 (Exact Float-Free Gauss--Manin Jet Reconstruction):** `paper/paper4_gauss_manin_jets/Paper4_Gauss_Manin_Jet_Reconstruction.tex` -> `Paper4_Gauss_Manin_Jet_Reconstruction.pdf` (**10 pages**, 0 errors, 0 overfull/underfull hboxes, 0 pronouns, **PASSED**)
-* **Paper 5 (Finite Cyclotomic Incidence Sieves & Residual Form Extraction):** `paper/paper5_cyclotomic_incidence_sieve/Paper5_Cyclotomic_Incidence_Sieve_Lean4.tex` -> `Paper5_Cyclotomic_Incidence_Sieve_Lean4.pdf` (**8 pages**, 0 errors, 0 overfull/underfull hboxes, 0 pronouns, **PASSED**)
-* **Automated PR & Verification Pipeline:** `scripts/automate_mathlib_pr_pipeline.py` (stages 4 `MathlibPR_*.lean` modules, audits 7 `.lean` files / 69 theorems + 5 papers, emits `dist/FULL_AUTOMATION_VERIFICATION_RECEIPT.json`)
+* **Paper 1 (Shioda--Aoki Fermat Fourfold Character Cohomology):** `paper/paper1_shioda_aoki_lean4/Paper1_Shioda_Aoki_Fermat_Lean4.tex` -> `Paper1_Shioda_Aoki_Fermat_Lean4.pdf` (**13 pages**, 0 errors, 0 overfull/underfull hboxes, 0 pronouns, 2 TikZ figures, **PASSED**)
+* **Paper 2 (Artinian Gorenstein Apolarity & Macaulay Contraction Ranks):** `paper/paper2_macaulay_apolarity_lean4/Paper2_Macaulay_Apolarity_CY4_Lean4.tex` -> `Paper2_Macaulay_Apolarity_CY4_Lean4.pdf` (**10 pages**, 0 errors, 0 overfull/underfull hboxes, 0 pronouns, 2 TikZ figures, **PASSED**)
+* **Paper 3 ($\operatorname{Spin}(8)$ Triality, $W(D_4)$ Chiral Orthogonality & Mumford Spinors):** `paper/paper3_spin8_mumford_lean4/Paper3_Spin8_Triality_Mumford_Lean4.tex` -> `Paper3_Spin8_Triality_Mumford_Lean4.pdf` (**10 pages**, 0 errors, 0 overfull/underfull hboxes, 0 prose pronouns, 2 TikZ figures, **PASSED**)
+* **Paper 4 (Exact Float-Free Gauss--Manin Jet Reconstruction):** `paper/paper4_gauss_manin_jets/Paper4_Gauss_Manin_Jet_Reconstruction.tex` -> `Paper4_Gauss_Manin_Jet_Reconstruction.pdf` (**13 pages**, 0 errors, 0 overfull/underfull hboxes, 0 pronouns, 2 TikZ figures, **PASSED**)
+* **Paper 5 (Finite Cyclotomic Incidence Sieves & Residual Form Extraction):** `paper/paper5_cyclotomic_incidence_sieve/Paper5_Cyclotomic_Incidence_Sieve_Lean4.tex` -> `Paper5_Cyclotomic_Incidence_Sieve_Lean4.pdf` (**9 pages**, 0 errors, 0 overfull/underfull hboxes, 0 pronouns, 2 TikZ figures, **PASSED**)
+* **Paper 6 (High-Degree Fermat Sporadic Orbits, Order-8 Gauss--Manin Jet Lifting, & Conditional Bridges):** `paper/paper6_millennium_frontier_extensions/Paper6_Millennium_Frontier_Extensions_Lean4.tex` -> `Paper6_Millennium_Frontier_Extensions_Lean4.pdf` (**10 pages**, 0 errors, 0 overfull/underfull hboxes, 0 pronouns, 2 TikZ figures, **PASSED**)
+* **Automated PR & Verification Pipelines:** `scripts/automate_mathlib_pr_pipeline.py` (stages 4 `MathlibPR_*.lean` modules, audits 13 locked baseline `.lean` files / 84 theorems + 6 papers, emits `dist/FULL_AUTOMATION_VERIFICATION_RECEIPT.json`) and `scripts/run_millennium_ext_pipeline.py` (verifies baseline lock + `lake clean && lake build` on `LeanMillenniumExt/` + 4 frontier scripts, emits `reports/millennium_ext/MILLENNIUM_EXT_RECEIPT.json`)
 * **Legacy Frozen Drafts:** `paper/main.tex` (frozen), `paper/blueprint.tex` (frozen), `paper/journal_submission/Munawer_Hodge_Apolarity_Spin8_Lean4_Journal.tex` (frozen)
 
 ---
 
 ## 2. Complete Inventory of the Lean 4 Formalization Corpus
 
-The unified Lean 4 Lake workspace (`examples/math_gov/LeanDemoProject/`) comprises **3 source files** totaling **1,432 lines of code**, **46 theorems**, **239 definitions**, **4 `#check` assertions**, and **46 `#print axioms` assertions**, with **0 `sorry` tokens**, **0 external Mathlib dependencies**, and **46/46 theorems printing `does not depend on any axioms`**.
+The unified Lean 4 Lake workspace (`examples/math_gov/LeanDemoProject/`) comprises **13 source files** totaling **3,517 lines of code**, **84 theorems**, **379 definitions/abbreviations**, **1 inductive witness type**, **4 `#check` assertions**, and **84 `#print axioms` assertions**, with **0 `sorry` tokens**, **0 external Mathlib dependencies**, and **84/84 theorems printing `does not depend on any axioms`**.
 
 ### Master Declaration and Metric Ledger
 
-| File Path | Lines | Theorems | Definitions | Structures | `#check` | `#print axioms` | `sorry` | Axiom Receipt |
+| File Path | Lines | Theorems | Definitions | Inductives | `#check` | `#print axioms` | `sorry` | Axiom Receipt |
 |---|---|---|---|---|---|---|---|---|
-| `examples/math_gov/LeanDemoProject/LeanDemoProject.lean` | 5 | 0 | 0 | 0 | 0 | 0 | 0 | Root Manifest |
+| `examples/math_gov/LeanDemoProject/LeanDemoProject.lean` | 15 | 0 | 0 | 0 | 0 | 0 | 0 | Root Manifest |
 | `examples/math_gov/LeanDemoProject/HodgeVerification.lean` | 956 | 40 | 172 | 0 | 4 | 40 | 0 | `does not depend on any axioms` (40/40) |
-| `examples/math_gov/LeanDemoProject/ShiodaFormalConjectures.lean` | 471 | 6 | 67 | 0 | 0 | 6 | 0 | `does not depend on any axioms` (6/6) |
-| **Unified Lake Corpus Total** | **1,432** | **46** | **239** | **0** | **4** | **46** | **0** | **46/46 Axiom-Free (`axioms: []`)** |
+| `examples/math_gov/LeanDemoProject/ShiodaFormalConjectures.lean` | 476 | 6 | 68 | 0 | 0 | 6 | 0 | `does not depend on any axioms` (6/6) |
+| `examples/math_gov/LeanDemoProject/MathlibPR_ShiodaAokiFermat.lean` | 243 | 7 | 0 | 0 | 0 | 7 | 0 | `does not depend on any axioms` (7/7) |
+| `examples/math_gov/LeanDemoProject/MathlibPR_MacaulayGorenstein.lean` | 114 | 5 | 2 | 0 | 0 | 5 | 0 | `does not depend on any axioms` (5/5) |
+| `examples/math_gov/LeanDemoProject/MathlibPR_Spin8Triality.lean` | 86 | 7 | 2 | 0 | 0 | 7 | 0 | `does not depend on any axioms` (7/7) |
+| `examples/math_gov/LeanDemoProject/MathlibPR_CyclotomicIncidenceSieve.lean` | 115 | 4 | 5 | 0 | 0 | 4 | 0 | `does not depend on any axioms` (4/4) |
+| `examples/math_gov/LeanDemoProject/WiebeSchejaStorch.lean` | 353 | 2 | 42 | 0 | 0 | 2 | 0 | `does not depend on any axioms` (2/2) |
+| `examples/math_gov/LeanDemoProject/GaussManinJetTransport.lean` | 296 | 3 | 28 | 0 | 0 | 3 | 0 | `does not depend on any axioms` (3/3) |
+| `examples/math_gov/LeanDemoProject/ShiodaInductiveCycleSynthesis.lean` | 239 | 2 | 14 | 1 | 0 | 2 | 0 | `does not depend on any axioms` (2/2) |
+| `examples/math_gov/LeanDemoProject/Spin8LieAlgebraTriality.lean` | 216 | 3 | 22 | 0 | 0 | 3 | 0 | `does not depend on any axioms` (3/3) |
+| `examples/math_gov/LeanDemoProject/GlobalIVHSObstructionSpectrum.lean` | 224 | 2 | 16 | 0 | 0 | 2 | 0 | `does not depend on any axioms` (2/2) |
+| `examples/math_gov/LeanDemoProject/HigherDegreeSporadicBand4.lean` | 184 | 3 | 8 | 0 | 0 | 3 | 0 | `does not depend on any axioms` (3/3) |
+| **Unified Lake Corpus Total** | **3,517** | **84** | **379** | **1** | **4** | **84** | **0** | **84/84 Axiom-Free (`axioms: []`)** |
+
+### Complete 84-Theorem Index by Module
+1. **`HodgeVerification.lean` (40 theorems):** `weil_w1_orthogonal_to_theta2`, `weil_w2_orthogonal_to_theta2`, `four_tuples_len`, `zero_tuples_len`, `h40_prim_eq`, `h31_prim_eq`, `h22_prim_eq`, `h22_total_eq`, `b4_total_eq`, `milnor_number_eq`, `r6_dim_eq`, `plane_kernel_dim_eq`, `saturation_three_count_eq`, `band3_partitions_satisfy_2_plus_4`, `fermat_four_band_closure_eq`, `f_p3_surface_h11_prim_eq`, `min_ivhs_codimension_pos`, `max_ivhs_monomial_rank_eq`, `canonical_fixed_plane_subspace_dim_eq`, `clifford_even_dim_eq`, `d4_triality_zero_triples_len`, `macaulay_annihilator_dim_bound`, `signed_difference_ideal_intersection`, `quadratic_moving_plane_directions_count_eq`, `deformed_macaulay_flat_hilbert_sum_eq`, `cyclotomic_plane_wavepacket_support_eq`, `telescoping_cyclotomic_annihilator_eq`, `spinor_to_weil_su22_branching_eq`, `tangential_leibniz_annihilator_eq`, `recombination_kernel_dim_gain_eq`, `weyl_d4_conjugate_weil_axes_eq`, `universal_band_obstruction_cancellation_bounds_eq`, `gorenstein_moduli_rank_extremes_eq`, `twenty_plane_target_and_collision_counts_eq`, `fifteen_matching_band1_block_incidence_eq`, `recomb_and_collision_flat_hilbert_eq`, `finite_non_fermat_pair_milnor_and_ranks_eq`, `noether_macaulay_gorenstein_symmetry_eq`, `weyl_d4_spinor_weight_decomposition_eq`, `weyl_d4_even_parity_and_chiral_orthogonality_eq`.
+2. **`ShiodaFormalConjectures.lean` (6 theorems):** `shioda_m6_orbit_census_cert`, `shioda_aoki_fermat_fourfold_census_m3_to_m10_empty_band4`, `shioda_aoki_fermat_m12_census_cert`, `weyl_d4_transition_matrix_invertible_cert`, `macaulay_plane_and_quadric_rank_witness_cert`, `macaulay_pairing_matrix_rank_cert`.
+3. **`MathlibPR_ShiodaAokiFermat.lean` (7 theorems):** `gcdFuel_zero_right`, `gcdFuel_eq_nat_gcd_le_20`, `band_partition_mutually_exclusive`, `band_partition_exhaustive`, `isBand1CompletePairs_swap01`, `shioda_aoki_band4_empty_of_le_ten`, `shioda_aoki_m12_band4_orbits`.
+4. **`MathlibPR_MacaulayGorenstein.lean` (5 theorems):** `monomialDivides_refl`, `monomialDivides_trans`, `addExp4_comm`, `coeffInSocle_addExp4_comm`, `macaulayPairingMatrix_transpose_duality`.
+5. **`MathlibPR_Spin8Triality.lean` (7 theorems):** `addW4_comm`, `addW4_assoc`, `addW4_zero_right`, `signProd4_mul_eq_one`, `wd4_preserves_spinor_chirality`, `spin8_wedge4_hodge_star_and_root_rank`, `wd4_chiral_character_orthogonality`.
+6. **`MathlibPR_CyclotomicIncidenceSieve.lean` (4 theorems):** `activeSupport_le_totalIncidences`, `activeSupport_add_collisionExcess`, `activeSupport_add_residualFormDim`, `cyclotomic_incidence_residual_form_master_cert`.
+7. **`WiebeSchejaStorch.lean` (2 theorems):** `wiebe_scheja_storch_plane_colon_ideal_cert`, `wiebe_scheja_storch_quadric_colon_ideal_cert`.
+8. **`GaussManinJetTransport.lean` (3 theorems):** `gauss_manin_band1_quadric_jet_cert`, `gauss_manin_band2_curve_join_jet_cert`, `gauss_manin_band3_surface_curve_jet_cert`.
+9. **`ShiodaInductiveCycleSynthesis.lean` (2 theorems):** `shioda_band3_implies_surface_hodge11_m3_to_m12`, `shioda_aoki_complete_cycle_witness_synthesis_m3_to_m10_and_m12`.
+10. **`Spin8LieAlgebraTriality.lean` (3 theorems):** `d4_weyl_reflection_invariance_cert`, `spin8_outer_triality_order3_and_dynkin_cert`, `spin8_casimir_and_subalgebra_kernels_cert`.
+11. **`GlobalIVHSObstructionSpectrum.lean` (2 theorems):** `gorenstein_poincare_duality_bijection_cert`, `global_ivhs_1751_obstruction_spectrum_cert`.
+12. **`HigherDegreeSporadicBand4.lean` (3 theorems):** `shioda_prime_degree_band1_purity_cert`, `shioda_aoki_higher_degree_band4_decomposition_m11_to_m16_cert`, `shioda_aoki_band4_decomposition_m18_cert`.
+
+### Extension Verification Workspace (`examples/math_gov/LeanMillenniumExt/`, `reports/millennium_ext/MILLENNIUM_EXT_RECEIPT.json`)
+Comprises **6 Lean 4 extension modules** (`21` total theorem/lemma declarations, `14` public axiom-free certificates printing `does not depend on any axioms`, `0` lines > 100 chars):
+1. **`MumfordWeilKernelVecs.lean` (1 theorem):** `mumford_weil_2d_kernel_bases_cert`.
+2. **`HodgeBridgeInterfaces.lean` (0 theorems):** `FermatFourfoldHodgeBridge` explicit analytic-to-algebraic hypothesis structure.
+3. **`ConditionalFermatHodge.lean` (5 public theorems, 7 private helper lemmas):** `valid_witness_implies_algebraic`, `conditional_glued_surface_join_algebraic`, `synthesizable_implies_algebraic`, `conditional_fermat_hodge22_all_synthesized_algebraic`, `conditional_fermat_hodge22_verified_m3_to_m22_cert`.
+4. **`FermatHighDegreeExt.lean` (3 theorems):** `shioda_prime_degree_band1_purity_ext_cert`, `shioda_aoki_band4_decomposition_m20_to_m22_cert`, `shioda_aoki_m25_sporadic_isolation_cert`.
+5. **`HigherOrderJetLifting.lean` (3 theorems):** `multi_order_t8_gauss_manin_jet_cert`, `multi_order_t8_exact_z_rank_witness_cert`, `codim3_unmixed_complete_intersection_profiles_cert`.
+6. **`CayleyCompleteInt.lean` (2 theorems):** `cayley_ci34_gorenstein_palindromic_cert`, `cayley_ci33_and_ci34_gorenstein_symmetry_cert`.
 
 ---
 

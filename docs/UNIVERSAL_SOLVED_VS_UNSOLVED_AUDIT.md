@@ -14,7 +14,7 @@ To ensure absolute scientific honesty and avoid any category errors between clas
 1. `[SOLVED-CLASSICAL-LITERATURE]`: Foundational theorems from peer-reviewed mathematical literature (1916--2025). These theorems were proved by their original authors and are cited as established mathematical background; they are not claimed as discoveries of this project.
 2. `[SOLVED-COMPUTATIONAL-FINITE]`: Exact rational (`fractions.Fraction`), integer, and modular ($\mathbb{F}_p$) Python algorithms operating on concrete sextic fourfold hypersurfaces in $\mathbb{P}^5$, specific Artinian Gorenstein Jacobian rings, and finite $\mathrm{Spin}(8)$ weight lattices.
 3. `[SOLVED-LEAN4-FINITE-RFL]`: Decidable finite combinatorial, dimensional, and degree-counting identities formalized in core Lean 4.35.0 (`lean_blueprint/HodgeVerification.lean`) with zero external Mathlib dependencies, zero custom axioms, and zero `sorry` (`axioms: []`).
-4. `[UNSOLVED-OPEN-GLOBAL]`: The Clay Millennium Hodge Conjecture and the structural mathematical barriers that separate finite-dimensional or formal infinitesimal calculations from global algebraic cycle existence.
+4. `[UNSOLVED-OPEN-GLOBAL]`: The General Hodge Conjecture and the structural mathematical barriers that separate finite-dimensional or formal infinitesimal calculations from global algebraic cycle existence.
 
 ---
 
@@ -47,7 +47,7 @@ All 20 computational modules in `toolkit/` operate strictly with exact integer, 
 | `calabi_yau_jacobian_engine.py` | Milnor number $\mu=15,625$, Gorenstein Hilbert dimensions $(1, 426, 1751, 426, 1)$ | `[SOLVED-COMPUTATIONAL-FINITE]` | Exact dimensions on Fermat sextic; does not prove global cycle existence |
 | `covariant_apolarity_and_weyl_shioda_census.py` | Wiebe transition determinant, initial-monomial bound $\ge 155$, $W(D_4)$ characters, Shioda census | `[SOLVED-COMPUTATIONAL-FINITE]` | Finite algebraicity tests on $I_\Pi \setminus I_\Pi^2$; does not prove global Hilbert bounds |
 | `cmi_autonomous_cycle1_engine.py` | First-order formal syzygy extension along Fermat deformation vectors | `[SOLVED-COMPUTATIONAL-FINITE]` | Solves local 1st-order infinitesimal deformation; formal series convergence to $\mathrm{CH}^2$ open |
-| `cmi_five_condition_attack_engine.py` | Finite evaluation of CMI Millennium conditions across five computational targets | `[SOLVED-COMPUTATIONAL-FINITE]` | Evaluates local testbeds; confirms Millennium Problem boundary is `OPEN` |
+| `cmi_five_condition_attack_engine.py` | Finite evaluation of CMI Millennium conditions across five computational targets | `[SOLVED-COMPUTATIONAL-FINITE]` | Evaluates local testbeds; confirms Global Problem Boundary is `OPEN` |
 | `deformed_macaulay_transport_engine.py` | Dual-number transport $F_0 + \epsilon W$, rank doubling $[8, 18, 32, 48, 60, 64]$ | `[SOLVED-COMPUTATIONAL-FINITE]` | Verifies 1st-order Macaulay rank doubling; global multi-parameter stability open |
 | `erdos_fourier_incidence_engine.py` | 4-band Fourier partition ($1001 + 630 + 120 + 0 = 1751$) on $R^{12}(F_0)$ | `[SOLVED-COMPUTATIONAL-FINITE]` | Proves exhaustive cyclotomic split of Fermat basis; non-Fermat fourfolds lack diagonal group |
 | `four_wall_strategic_resolution_engine.py` | Audit of 4 classical obstruction walls (normal, liaison, nodal, Mumford) | `[SOLVED-COMPUTATIONAL-FINITE]` | Verifies local algebraic resolutions; global Hodge conjecture remains open |
@@ -124,7 +124,7 @@ In accordance with the `google-deepmind/formal-conjectures` specification:
 - `lean_blueprint/ShiodaFormalConjectures.lean` (and `examples/math_gov/LeanDemoProject/ShiodaFormalConjectures.lean`) formalizes Checks 44--46 with generative polynomial basis enumerators and Galois-norm census evaluators (`axioms: []`).
 - `docs/upstream_formal_conjectures/ShiodaFermatHodgeConjecture.lean` provides the full canonical Mathlib4 upstream pull request for `google-deepmind/formal-conjectures` along with `docs/upstream_formal_conjectures/UPSTREAM_PR_GUIDE.md`.
 
-**Critical Epistemic Scope:** None of these 46 checks formalize algebraic schemes, sheaves, cohomology groups, or global Hodge theory. They verify decidable finite combinatorial and algebraic arithmetic via `by rfl` in core Lean 4.
+**Formal Verification Scope:** None of these 46 checks formalize algebraic schemes, sheaves, cohomology groups, or global Hodge theory. They verify decidable finite combinatorial and algebraic arithmetic via `by rfl` in core Lean 4.
 
 ---
 
@@ -132,7 +132,7 @@ In accordance with the `google-deepmind/formal-conjectures` specification:
 
 The following problems remain strictly **OPEN** and are beyond the scope of local or finite-dimensional computation:
 
-1. **The Clay Millennium Hodge Conjecture (`Deligne 2000`):** Is every rational Hodge class on an arbitrary smooth complex projective variety algebraic? (**STRICTLY OPEN**).
+1. **The General Hodge Conjecture (`Deligne 2000`):** Is every rational Hodge class on an arbitrary smooth complex projective variety algebraic? (**OPEN**).
 2. **Universal Non-Fermat Calabi--Yau Fourfold Algebraic Cycles (`Bridge A`):** Can every Hodge class on a general, non-Fermat sextic Calabi--Yau fourfold without planted surfaces be represented by an algebraic cycle? (**OPEN**).
 3. **Effective Hilbert-Scheme Degree Bounds:** Does there exist an effective a priori upper bound $D(\gamma)$ on the degree of algebraic subvarieties representing Hodge classes under continuous deformation? (**OPEN**).
 4. **Algebraic Cycle Realization of Kuga--Satake Correspondences (`Bridge B`):** Are Kuga--Satake motivated correspondences algebraic over $\mathbb{Q}$? (**OPEN**).

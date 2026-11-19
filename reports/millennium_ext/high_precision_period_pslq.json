@@ -1,0 +1,151 @@
+{
+  "total_elapsed_s": 72.945,
+  "part_a_dwork_picard_fuchs_pslq": {
+    "dps": 85,
+    "psi0": "pi/10",
+    "z0": "1/(6^6 * e)",
+    "fermat_frobenius_periods": {
+      "y_1": {
+        "val_prefix": "0.314159684915492696641341",
+        "hyper_diff": "8.043e-87"
+      },
+      "y_2": {
+        "val_prefix": "0.0986972491495871933064349",
+        "hyper_diff": "1.005e-87"
+      },
+      "y_3": {
+        "val_prefix": "0.0310073548534376396369432",
+        "hyper_diff": "0.0"
+      },
+      "y_4": {
+        "val_prefix": "0.00974154350283651441964779",
+        "hyper_diff": "2.513e-88"
+      },
+      "y_5": {
+        "val_prefix": "0.0030605009679762625427248",
+        "hyper_diff": "3.142e-89"
+      }
+    },
+    "pslq_fermat_pf_ode_coeffs": [
+      -648,
+      648,
+      -1620,
+      1530,
+      -675,
+      137,
+      -10
+    ],
+    "pslq_fermat_pf_residual": "1.287e-85",
+    "pslq_lcs_pf_ode_coeffs": [
+      1,
+      -46656,
+      -116640,
+      -110160,
+      -48600,
+      -9864,
+      -720
+    ],
+    "pslq_lcs_pf_residual": "7.54e-88",
+    "lcs_integrality_n0_to_n20_verified": true,
+    "lcs_coeffs_n0_to_n8": [
+      {
+        "n": 0,
+        "coeff": 1
+      },
+      {
+        "n": 1,
+        "coeff": 720
+      },
+      {
+        "n": 2,
+        "coeff": 7484400
+      },
+      {
+        "n": 3,
+        "coeff": 137225088000
+      },
+      {
+        "n": 4,
+        "coeff": 3246670537110000
+      },
+      {
+        "n": 5,
+        "coeff": 88832646059788350720
+      },
+      {
+        "n": 6,
+        "coeff": 2670177736637149247308800
+      },
+      {
+        "n": 7,
+        "coeff": 85722533226982363751829504000
+      },
+      {
+        "n": 8,
+        "coeff": 2889253496242619386328267523990000
+      }
+    ]
+  },
+  "part_b_weil_u22_period_lll": {
+    "dps": 90,
+    "lll_scale_log10": 32,
+    "symbolic_proof": {
+      "rbr_equations_proved_identically_zero": 16,
+      "hodge_40_and_31_equations_proved_zero": 34
+    },
+    "weil_u22_deformation_ladder": [
+      {
+        "stage": "stage0_ei4_cm",
+        "rho": 16,
+        "sym2_ns_rank": 36,
+        "covers_w_re": true,
+        "covers_w_im": true,
+        "max_rbr_residual": "0.0",
+        "max_w_re_hodge_residual": "0.0",
+        "max_w_im_hodge_residual": "0.0",
+        "max_lll_ns_residual": "0.0",
+        "min_non_ns_gap": "1.0",
+        "elapsed_s": 0.643
+      },
+      {
+        "stage": "stage1_block1d_transcendental",
+        "rho": 7,
+        "sym2_ns_rank": 14,
+        "covers_w_re": true,
+        "covers_w_im": true,
+        "max_rbr_residual": "0.0",
+        "max_w_re_hodge_residual": "6.136e-91",
+        "max_w_im_hodge_residual": "6.136e-91",
+        "max_lll_ns_residual": "0.0",
+        "min_non_ns_gap": "3.798e-17",
+        "elapsed_s": 3.788
+      },
+      {
+        "stage": "stage2_diag_transcendental",
+        "rho": 6,
+        "sym2_ns_rank": 11,
+        "covers_w_re": true,
+        "covers_w_im": true,
+        "max_rbr_residual": "0.0",
+        "max_w_re_hodge_residual": "2.455e-91",
+        "max_w_im_hodge_residual": "2.455e-91",
+        "max_lll_ns_residual": "0.0",
+        "min_non_ns_gap": "4.45e-18",
+        "elapsed_s": 10.779
+      },
+      {
+        "stage": "stage3_generic_weil_u22",
+        "rho": 1,
+        "sym2_ns_rank": 1,
+        "covers_w_re": false,
+        "covers_w_im": false,
+        "max_rbr_residual": "0.0",
+        "max_w_re_hodge_residual": "1.227e-91",
+        "max_w_im_hodge_residual": "4.909e-91",
+        "max_lll_ns_residual": "0.0",
+        "min_non_ns_gap": "1.562e-22",
+        "elapsed_s": 57.162
+      }
+    ]
+  }
+}

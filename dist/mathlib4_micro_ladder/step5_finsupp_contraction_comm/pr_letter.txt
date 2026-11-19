@@ -1,0 +1,16 @@
+Hello everyone,
+
+I am submitting a small pull request to add a commutative support-sum identity in Finsupp:
+1. Finsupp.sum_support_mul_comm
+
+Why this is useful:
+When multiplying two finitely supported functions f and g over a commutative semiring, the sum over f.support equals the sum over g.support after swapping f m * g m to g m * f m. This lemma avoids repeatedly extending each sum to f.support union g.support by hand.
+
+Brief school-style derivation:
+Step 1: Extend the sum over f.support to f.support ∪ g.support, noting that any index outside f.support contributes f m * g m = 0 * g m = 0.
+Step 2: Extend the sum over g.support to f.support ∪ g.support in the same way using g m = 0 outside g.support.
+Step 3: On the common finite set f.support ∪ g.support, swap f m * g m to g m * f m term by term via mul_comm, and fold back to the sum over g.support.
+
+Kindly review this small addition when convenient.
+
+ai is being used as a tool

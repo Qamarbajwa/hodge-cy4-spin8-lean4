@@ -1,6 +1,6 @@
-# Clay Mathematics Institute Resolution Strategies for the Hodge Conjecture
+# Deligne (2000) Resolution Strategies for the Hodge Conjecture
 
-*Canonical roadmap for resolving the Millennium Prize Problem under the rules of the Clay Mathematics Institute (CMI) and Pierre Deligne (2000).*
+*Canonical roadmap for resolving the General Hodge Conjecture under the rules of the Deligne (2000) and Pierre Deligne (2000).*
 
 ---
 
@@ -45,7 +45,7 @@ Every rational $(p,p)$-class is a $\mathbb{Q}$-linear combination of classes of 
 
 ## 3. Path 2: The Counterexample Architecture
 
-Under CMI rules, disproving the conjecture over $\mathbb{Q}$ is an equally valid resolution of the Millennium Prize.
+Under CMI rules, disproving the conjecture over $\mathbb{Q}$ is an equally valid resolution of the General Hodge Conjecture.
 
 ### The Canonical Candidate: Abelian Fourfolds of Weil Type
 - **Space:** An abelian fourfold $A$ with $\operatorname{End}^0(A) \supset \mathbb{Q}(\sqrt{-d})$.

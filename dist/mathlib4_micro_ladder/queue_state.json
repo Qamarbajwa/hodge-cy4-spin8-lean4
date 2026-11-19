@@ -1,0 +1,109 @@
+{
+  "armed": true,
+  "cooldown_seconds": 900,
+  "active_step_index": 0,
+  "active_pr_number": null,
+  "circuit_breaker_tripped": false,
+  "circuit_breaker_reason": null,
+  "upstream_repo": "leanprover-community/mathlib4",
+  "fork_repo": "Qamarbajwa/mathlib4",
+  "local_mathlib_dir": "d:/Comfy UI/mathlib4_upstream_pr",
+  "steps": [
+    {
+      "step": 1,
+      "dir": "step1_finset_filter_sub",
+      "branch": "feat/finset-filter-sub-micro",
+      "target_file": "Mathlib/Algebra/BigOperators/Group/Finset/Basic.lean",
+      "title": "feat(Algebra/BigOperators/Finset): add filter complement subtraction lemmas",
+      "status": "STAGED",
+      "pr_number": null,
+      "pr_url": null,
+      "merged_at": null,
+      "closed_at": null
+    },
+    {
+      "step": 2,
+      "dir": "step2_finset_double_partition",
+      "branch": "feat/finset-double-partition-micro",
+      "target_file": "Mathlib/Algebra/BigOperators/Group/Finset/Basic.lean",
+      "title": "feat(Algebra/BigOperators/Finset): add double-filter balance and upper bound lemmas",
+      "status": "STAGED",
+      "pr_number": null,
+      "pr_url": null,
+      "merged_at": null,
+      "closed_at": null
+    },
+    {
+      "step": 3,
+      "dir": "step3_list_zipwith_dot",
+      "branch": "feat/list-zipwith-mul-comm-micro",
+      "target_file": "Mathlib/Algebra/BigOperators/Group/List/Basic.lean",
+      "title": "feat(Algebra/BigOperators/List): add commutativity lemma for zipWith mul sum",
+      "status": "STAGED",
+      "pr_number": null,
+      "pr_url": null,
+      "merged_at": null,
+      "closed_at": null
+    },
+    {
+      "step": 4,
+      "dir": "step4_finsupp_contraction_add",
+      "branch": "feat/finsupp-contraction-add-micro",
+      "target_file": "Mathlib/Algebra/BigOperators/Finsupp/Basic.lean",
+      "title": "feat(Algebra/BigOperators/Finsupp): add contractionPairing and left additivity lemmas",
+      "status": "STAGED",
+      "pr_number": null,
+      "pr_url": null,
+      "merged_at": null,
+      "closed_at": null
+    },
+    {
+      "step": 5,
+      "dir": "step5_finsupp_contraction_comm",
+      "branch": "feat/finsupp-contraction-comm-micro",
+      "target_file": "Mathlib/Algebra/BigOperators/Finsupp/Basic.lean",
+      "title": "feat(Algebra/BigOperators/Finsupp): add support multiplication commutativity lemma",
+      "status": "STAGED",
+      "pr_number": null,
+      "pr_url": null,
+      "merged_at": null,
+      "closed_at": null
+    },
+    {
+      "step": 6,
+      "dir": "step6_matrix_transpose_adjoint",
+      "branch": "feat/matrix-transpose-adjoint-micro",
+      "target_file": "Mathlib/LinearAlgebra/Matrix/DotProduct.lean",
+      "title": "feat(LinearAlgebra/Matrix): add transpose dot-product adjoint and quadratic lemmas",
+      "status": "STAGED",
+      "pr_number": null,
+      "pr_url": null,
+      "merged_at": null,
+      "closed_at": null
+    },
+    {
+      "step": 7,
+      "dir": "step7_matrix_outer_trace",
+      "branch": "feat/matrix-outer-trace-micro",
+      "target_file": "Mathlib/LinearAlgebra/Matrix/Trace.lean",
+      "title": "feat(LinearAlgebra/Matrix): add trace formulas for vecMulVec and transpose mul self",
+      "status": "STAGED",
+      "pr_number": null,
+      "pr_url": null,
+      "merged_at": null,
+      "closed_at": null
+    },
+    {
+      "step": 8,
+      "dir": "step8_zmod_cyclotomic_complement",
+      "branch": "feat/zmod-cyclotomic-complement-micro",
+      "target_file": "Mathlib/Data/ZMod/Basic.lean",
+      "title": "feat(Data/ZMod): add unit-balanced complement zero-sum lemmas",
+      "status": "STAGED",
+      "pr_number": null,
+      "pr_url": null,
+      "merged_at": null,
+      "closed_at": null
+    }
+  ]
+}
