@@ -24,7 +24,8 @@ defaultTargets = [
   "CliffordKugaSatakeChiralExt",
   "SchurUniversalSp8ProjectionExt",
   "CliffordTripleProductSchurExt",
-  "CliffordTripleAndFermat25SchurExt"
+  "CliffordTripleAndFermat25SchurExt",
+  "Spin7CayleyCalibrationCycleExt"
 ]
 
 [[require]]
@@ -102,3 +103,6 @@ name = "CliffordTripleProductSchurExt"
 
 [[lean_lib]]
 name = "CliffordTripleAndFermat25SchurExt"
+
+[[lean_lib]]
+name = "Spin7CayleyCalibrationCycleExt"

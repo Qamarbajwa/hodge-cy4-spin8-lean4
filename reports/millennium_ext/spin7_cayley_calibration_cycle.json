@@ -1,0 +1,32 @@
+{
+  "part_a_spin7_cayley": {
+    "dim_h4_spin7_invariant": 1,
+    "phi_cayley_nnz": 14,
+    "phi_cayley_norm2": 14,
+    "phi_cayley_refl4_even_odd_split": [
+      6,
+      8
+    ],
+    "phi_cayley_dot_theta2": 12,
+    "m_phi_inner_products": {
+      "Q0": 12,
+      "Qsd": 12,
+      "Qasd": 12,
+      "Qric": -36,
+      "Tch": 0
+    },
+    "spin4_casimir_tch_inner_products": {
+      "C_plus": -576,
+      "C_minus": 576,
+      "C_plus_minus_C_minus": -1152
+    }
+  },
+  "part_b_wall2_fermat25": {
+    "linear_2_plane_deg": 1,
+    "linear_2_plane_s25_projection": 0,
+    "glued_surface_s25_projection": 0,
+    "minimal_conical_cyclic_quotient_deg": 5,
+    "w_div5_total": 82480,
+    "s25_schur_residual_norm2": 2880
+  }
+}

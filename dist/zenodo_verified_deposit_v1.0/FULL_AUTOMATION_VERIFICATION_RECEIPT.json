@@ -158,8 +158,8 @@
         "prose_pronouns": 0,
         "forbidden_jargon": 0,
         "tikz_figures": 3,
-        "tex_sha256": "9632029771da0fd793967c971f170d7ae403cb0b0505478d638ed780e29437a0",
-        "pdf_sha256": "c91aaa8fb7cd13d9f41064947cce0b358c9d91a64b81632e83ad0e71ed6172e1",
+        "tex_sha256": "ecdccab0390b57fc61fd5018daa894b47f55254280159dd8e3366900b2bf7ad0",
+        "pdf_sha256": "942294ce32ec56f3168a252a030d7de57b3ef567d0ed9c2ec7033f5fe7936a9c",
         "passed": true
       }
     },
@@ -168,7 +168,7 @@
   "release_bundle": {
     "bundle_path": "dist/HODGE_LEAN4_5PAPER_RELEASE_BUNDLE.zip",
     "file_count": 57,
-    "size_bytes": 3689036,
-    "sha256": "6e8ef089c74516d127503bac949d81b35faad0a319bb98dd5ddb30c535019f23"
+    "size_bytes": 3693302,
+    "sha256": "754dbdf40a11eec569a77895ec310d27e5f4b2d7abffacabb6bd0a64935e1415"
   }
 }
