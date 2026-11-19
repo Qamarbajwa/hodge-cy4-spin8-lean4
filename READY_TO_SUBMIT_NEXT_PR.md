@@ -3,7 +3,7 @@
 - **Step:** `step1_finset_filter_sub` (`Step 1/8`)
 - **Fork Branch (`Qamarbajwa/mathlib4`):** `feat/finset-filter-sub-micro`
 - **Target File:** `Mathlib/Algebra/BigOperators/Group/Finset/Basic.lean`
-- **Status:** Branch `feat/finset-filter-sub-micro` pushed cleanly to `Qamarbajwa/mathlib4` and verified via `lake env lean Mathlib/Algebra/BigOperators/Group/Finset/Basic.lean`.
+- **Status:** Patch verified via `lake env lean Mathlib/Algebra/BigOperators/Group/Finset/Basic.lean` (`rc=0`). Add repository secret `GH_PAT` if not yet set so Actions pushes `feat/finset-filter-sub-micro` to `Qamarbajwa/mathlib4` automatically.
 - **One-Click Compare & Submit URL:** https://github.com/leanprover-community/mathlib4/compare/master...Qamarbajwa:mathlib4:feat/finset-filter-sub-micro?expand=1
 
 ## Exact PR Title
