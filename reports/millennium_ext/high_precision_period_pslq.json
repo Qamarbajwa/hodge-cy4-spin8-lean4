@@ -1,5 +1,5 @@
 {
-  "total_elapsed_s": 62.263,
+  "total_elapsed_s": 59.922,
   "part_a_dwork_picard_fuchs_pslq": {
     "dps": 85,
     "psi0": "pi/10",
@@ -105,7 +105,7 @@
         "max_w_im_hodge_residual": "0.0",
         "max_lll_ns_residual": "0.0",
         "min_non_ns_gap": "1.0",
-        "elapsed_s": 0.694
+        "elapsed_s": 0.671
       },
       {
         "stage": "stage1_block1d_transcendental",
@@ -118,7 +118,7 @@
         "max_w_im_hodge_residual": "6.136e-91",
         "max_lll_ns_residual": "0.0",
         "min_non_ns_gap": "3.798e-17",
-        "elapsed_s": 3.397
+        "elapsed_s": 3.281
       },
       {
         "stage": "stage2_diag_transcendental",
@@ -131,7 +131,7 @@
         "max_w_im_hodge_residual": "2.455e-91",
         "max_lll_ns_residual": "0.0",
         "min_non_ns_gap": "4.45e-18",
-        "elapsed_s": 9.019
+        "elapsed_s": 8.553
       },
       {
         "stage": "stage3_generic_weil_u22",
@@ -144,7 +144,7 @@
         "max_w_im_hodge_residual": "4.909e-91",
         "max_lll_ns_residual": "0.0",
         "min_non_ns_gap": "1.562e-22",
-        "elapsed_s": 48.555
+        "elapsed_s": 46.831
       }
     ]
   }

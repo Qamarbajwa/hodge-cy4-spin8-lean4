@@ -1,0 +1,18 @@
+{
+  "cm_quaternionic_endomorphisms": {
+    "count": 6,
+    "all_square_minus_i8": true,
+    "all_preserve_e_real": true,
+    "all_commute_with_j_mum3": true
+  },
+  "cm_algebraic_graph_realization": {
+    "two_z_cm_equals_t_ch": true,
+    "z_cm_norm2": 288,
+    "pi_sp8_of_z_cm_is_zero": true,
+    "z_cm_dot_t_ch": 576
+  },
+  "griffiths_horizontal_invariance": {
+    "commutes_with_all_9_mumford_lie_gens": true,
+    "commutes_with_d2_j_mum3": true
+  }
+}

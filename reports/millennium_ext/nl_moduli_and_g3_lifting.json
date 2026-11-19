@@ -35,7 +35,7 @@
   "non_fermat_plane_isomorphism_d0_to_12": {
     "max_6var_degree": 6,
     "max_3var_columns": 91,
-    "elapsed_sec": 0.5567,
+    "elapsed_sec": 0.453,
     "r_non_fermat_d0_to_6": [
       1,
       6,
@@ -82,7 +82,7 @@
         "device": "cuda:0",
         "gpu_name": "NVIDIA RTX A2000 8GB Laptop GPU",
         "peak_vram_mb": 0.254,
-        "elapsed_ms": 361.57
+        "elapsed_ms": 291.092
       },
       {
         "matrix": "S_mod_J_F_nf_plus_I_Pi_d12",
@@ -98,7 +98,7 @@
         "device": "cuda:0",
         "gpu_name": "NVIDIA RTX A2000 8GB Laptop GPU",
         "peak_vram_mb": 0.151,
-        "elapsed_ms": 183.093
+        "elapsed_ms": 152.242
       }
     ]
   }

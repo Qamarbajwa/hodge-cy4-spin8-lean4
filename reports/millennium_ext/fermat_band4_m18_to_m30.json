@@ -1,13 +1,13 @@
 [
   {
     "m": 18,
-    "elapsed_sec": 0.457,
+    "elapsed_sec": 0.385,
     "gpu_galois_filter": {
       "device": "cuda:0",
       "gpu_name": "NVIDIA RTX A2000 8GB Laptop GPU",
       "torch_version": "2.6.0+cu124",
       "vram_limit_gb": 6.0,
-      "elapsed_ms": 452.25,
+      "elapsed_ms": 380.677,
       "peak_vram_mb": 0.356,
       "input_count": 597,
       "matched_count": 597
@@ -301,7 +301,7 @@
       "gpu_name": "NVIDIA RTX A2000 8GB Laptop GPU",
       "torch_version": "2.6.0+cu124",
       "vram_limit_gb": 6.0,
-      "elapsed_ms": 1.079,
+      "elapsed_ms": 0.908,
       "peak_vram_mb": 0.281,
       "input_count": 165,
       "matched_count": 165
@@ -327,13 +327,13 @@
   },
   {
     "m": 20,
-    "elapsed_sec": 0.009,
+    "elapsed_sec": 0.007,
     "gpu_galois_filter": {
       "device": "cuda:0",
       "gpu_name": "NVIDIA RTX A2000 8GB Laptop GPU",
       "torch_version": "2.6.0+cu124",
       "vram_limit_gb": 6.0,
-      "elapsed_ms": 2.365,
+      "elapsed_ms": 1.15,
       "peak_vram_mb": 0.583,
       "input_count": 748,
       "matched_count": 748
@@ -599,7 +599,7 @@
       "gpu_name": "NVIDIA RTX A2000 8GB Laptop GPU",
       "torch_version": "2.6.0+cu124",
       "vram_limit_gb": 6.0,
-      "elapsed_ms": 1.043,
+      "elapsed_ms": 0.987,
       "peak_vram_mb": 0.473,
       "input_count": 412,
       "matched_count": 412
@@ -631,7 +631,7 @@
       "gpu_name": "NVIDIA RTX A2000 8GB Laptop GPU",
       "torch_version": "2.6.0+cu124",
       "vram_limit_gb": 6.0,
-      "elapsed_ms": 1.136,
+      "elapsed_ms": 0.869,
       "peak_vram_mb": 0.546,
       "input_count": 566,
       "matched_count": 566
@@ -827,7 +827,7 @@
       "gpu_name": "NVIDIA RTX A2000 8GB Laptop GPU",
       "torch_version": "2.6.0+cu124",
       "vram_limit_gb": 6.0,
-      "elapsed_ms": 1.031,
+      "elapsed_ms": 0.924,
       "peak_vram_mb": 0.59,
       "input_count": 286,
       "matched_count": 286
@@ -859,7 +859,7 @@
       "gpu_name": "NVIDIA RTX A2000 8GB Laptop GPU",
       "torch_version": "2.6.0+cu124",
       "vram_limit_gb": 6.0,
-      "elapsed_ms": 1.999,
+      "elapsed_ms": 1.761,
       "peak_vram_mb": 1.152,
       "input_count": 1478,
       "matched_count": 1478
@@ -1147,13 +1147,13 @@
   },
   {
     "m": 25,
-    "elapsed_sec": 0.009,
+    "elapsed_sec": 0.008,
     "gpu_galois_filter": {
       "device": "cuda:0",
       "gpu_name": "NVIDIA RTX A2000 8GB Laptop GPU",
       "torch_version": "2.6.0+cu124",
       "vram_limit_gb": 6.0,
-      "elapsed_ms": 1.146,
+      "elapsed_ms": 1.076,
       "peak_vram_mb": 0.692,
       "input_count": 368,
       "matched_count": 368
@@ -1259,13 +1259,13 @@
   },
   {
     "m": 26,
-    "elapsed_sec": 0.014,
+    "elapsed_sec": 0.013,
     "gpu_galois_filter": {
       "device": "cuda:0",
       "gpu_name": "NVIDIA RTX A2000 8GB Laptop GPU",
       "torch_version": "2.6.0+cu124",
       "vram_limit_gb": 6.0,
-      "elapsed_ms": 1.39,
+      "elapsed_ms": 1.429,
       "peak_vram_mb": 0.976,
       "input_count": 851,
       "matched_count": 851
@@ -1475,7 +1475,7 @@
       "gpu_name": "NVIDIA RTX A2000 8GB Laptop GPU",
       "torch_version": "2.6.0+cu124",
       "vram_limit_gb": 6.0,
-      "elapsed_ms": 1.256,
+      "elapsed_ms": 1.191,
       "peak_vram_mb": 0.958,
       "input_count": 565,
       "matched_count": 565
@@ -1643,7 +1643,7 @@
       "gpu_name": "NVIDIA RTX A2000 8GB Laptop GPU",
       "torch_version": "2.6.0+cu124",
       "vram_limit_gb": 6.0,
-      "elapsed_ms": 1.662,
+      "elapsed_ms": 1.669,
       "peak_vram_mb": 1.375,
       "input_count": 1200,
       "matched_count": 1200
@@ -1931,13 +1931,13 @@
   },
   {
     "m": 30,
-    "elapsed_sec": 0.061,
+    "elapsed_sec": 0.068,
     "gpu_galois_filter": {
       "device": "cuda:0",
       "gpu_name": "NVIDIA RTX A2000 8GB Laptop GPU",
       "torch_version": "2.6.0+cu124",
       "vram_limit_gb": 6.0,
-      "elapsed_ms": 4.884,
+      "elapsed_ms": 7.625,
       "peak_vram_mb": 2.993,
       "input_count": 3844,
       "matched_count": 3844
