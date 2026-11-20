@@ -3,8 +3,8 @@
   "description": "We prove that the seventy-dimensional middle cohomology of a Calabi-Yau four-fold decomposes into two mutually orthogonal thirty-five-dimensional chiral subspaces under the Kuga-Satake Clifford involution. We formalize this exact fifty-fifty partition in Lean 4 with zero sorry and zero custom axioms, certifying that the chiral projectors add to the identity, multiply to zero, and generate an exact integer chiral cycle. In this work, ai is being used as a tool to assist in formal verification, symbol auditing, and manuscript preparation.",
   "creators": [
     {
-      "name": "Arqam",
-      "affiliation": "Brandenburg University of Technology (BTU) Cottbus-Senftenberg"
+      "name": "Qamar Munawer",
+      "affiliation": "Brandenburg University of Technology Cottbus-Senftenberg"
     }
   ],
   "keywords": [
