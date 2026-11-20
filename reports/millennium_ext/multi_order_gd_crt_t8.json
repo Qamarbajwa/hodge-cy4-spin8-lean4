@@ -125,7 +125,7 @@
       "device": "cuda:0",
       "gpu_name": "NVIDIA RTX A2000 8GB Laptop GPU",
       "peak_vram_mb": 0.353,
-      "elapsed_ms": 340.85
+      "elapsed_ms": 326.184
     }
   },
   "band2_curve_join": {
@@ -248,7 +248,7 @@
       "device": "cuda:0",
       "gpu_name": "NVIDIA RTX A2000 8GB Laptop GPU",
       "peak_vram_mb": 2.04,
-      "elapsed_ms": 336.182
+      "elapsed_ms": 477.546
     }
   },
   "band3_surface_curve": {
@@ -371,7 +371,7 @@
       "device": "cuda:0",
       "gpu_name": "NVIDIA RTX A2000 8GB Laptop GPU",
       "peak_vram_mb": 0.705,
-      "elapsed_ms": 231.459
+      "elapsed_ms": 461.91
     }
   }
 }

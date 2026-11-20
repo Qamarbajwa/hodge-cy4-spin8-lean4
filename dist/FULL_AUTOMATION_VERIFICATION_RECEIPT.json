@@ -151,15 +151,15 @@
       },
       "Paper6": {
         "pdf_exists": true,
-        "pages": 15,
+        "pages": 16,
         "latex_errors": 0,
         "overfull": 0,
         "underfull": 0,
         "prose_pronouns": 0,
         "forbidden_jargon": 0,
         "tikz_figures": 3,
-        "tex_sha256": "ecdccab0390b57fc61fd5018daa894b47f55254280159dd8e3366900b2bf7ad0",
-        "pdf_sha256": "942294ce32ec56f3168a252a030d7de57b3ef567d0ed9c2ec7033f5fe7936a9c",
+        "tex_sha256": "d8990d184806ec2afaf5ea380d826d6307a264d264425882dbdd444b1d630eab",
+        "pdf_sha256": "33b26ec90b7a2d03fa8a8b503fbf03add3df5ec5aff9efddbe49be805aca1325",
         "passed": true
       }
     },

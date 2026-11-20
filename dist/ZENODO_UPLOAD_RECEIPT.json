@@ -2,7 +2,7 @@
   "gate_passed": true,
   "api_base": "https://zenodo.org/api",
   "token_source": "ZENODO_TOKEN",
-  "total_verified_theorems": 204,
+  "total_verified_theorems": 208,
   "deposit_dir": "dist/zenodo_verified_deposit_v1.0",
   "staged_manifest": [
     {
@@ -43,9 +43,9 @@
     {
       "id": "Paper6",
       "filename": "Paper6_Millennium_Frontier_Extensions_Lean4.pdf",
-      "size_bytes": 599278,
-      "sha256": "942294ce32ec56f3168a252a030d7de57b3ef567d0ed9c2ec7033f5fe7936a9c",
-      "md5": "62d0226a4e10d80de04aee42c4737962"
+      "size_bytes": 607507,
+      "sha256": "33b26ec90b7a2d03fa8a8b503fbf03add3df5ec5aff9efddbe49be805aca1325",
+      "md5": "a343fa09ede8b13990be38f3dcd0d74e"
     },
     {
       "id": "ReleaseBundle",
@@ -58,15 +58,15 @@
       "id": "VerificationReceipt",
       "filename": "FULL_AUTOMATION_VERIFICATION_RECEIPT.json",
       "size_bytes": 7186,
-      "sha256": "f28819659e572efe097431e76da8a9b9a9c5f84af412d2aa4fc4003c20547e91",
-      "md5": "02d974b9ef63eb8c2af743b488aa1788"
+      "sha256": "f3e2bd05df45efa5ebed878a99ac75001f0cbccc15a1267d01af7edab4414256",
+      "md5": "00632b1574aa16700ebab8a045389cf2"
     },
     {
       "id": "MillenniumExtReceipt",
       "filename": "MILLENNIUM_EXT_RECEIPT.json",
-      "size_bytes": 19942,
-      "sha256": "b51a4222e7b256e7cccbf418eee152b595345d89bfb6ee9a7e5f46e43112827c",
-      "md5": "e4c26c4cc881d8ab22436387b7f2752a"
+      "size_bytes": 20886,
+      "sha256": "b423530b32dc4bca95c3875d0b0cf40e02da2c2cba5584cf004d9cf6cf7bb9c8",
+      "md5": "d9fc7bd55dc67cd9c19af81da4a1e38f"
     },
     {
       "id": "PlainEnglishArticle",
@@ -78,21 +78,21 @@
     {
       "id": "UnifiedSynthesisDoc",
       "filename": "WHOLE_PROJECT_UNIFIED_MATRIX_SYNTHESIS.md",
-      "size_bytes": 38223,
-      "sha256": "6732413ec33f1d8bb42b19c7b6b5198fd804abec2d33407e050231988e960ab2",
-      "md5": "a99daa08eb1cdb7928e2d9de2537a42c"
+      "size_bytes": 38643,
+      "sha256": "aa6f8308009f668d20fb716ba6d64f2c2d7e979bbcc81930b267aebb1871743c",
+      "md5": "c47a5e32dbfec6b9da9f7769f4c40088"
     }
   ],
   "status": "PUBLISHED",
   "state": "done",
-  "deposition_id": 24381741,
-  "parent_deposition_id": 24380741,
+  "deposition_id": 24398323,
+  "parent_deposition_id": 24381741,
   "concept_doi": "10.5281/zenodo.24329779",
-  "doi": "10.5281/zenodo.24381741",
-  "html_url": "https://zenodo.org/deposit/24381741",
-  "record_url": "https://zenodo.org/records/24381741",
-  "latest_url": "https://zenodo.org/records/24380741/latest",
-  "prereserved_doi": "10.5281/zenodo.24381741",
+  "doi": "10.5281/zenodo.24398323",
+  "html_url": "https://zenodo.org/deposit/24398323",
+  "record_url": "https://zenodo.org/records/24398323",
+  "latest_url": "https://zenodo.org/records/24381741/latest",
+  "prereserved_doi": "10.5281/zenodo.24398323",
   "uploaded_files": [
     {
       "filename": "Paper1_Shioda_Aoki_Fermat_Lean4.pdf",
@@ -131,10 +131,10 @@
     },
     {
       "filename": "Paper6_Millennium_Frontier_Extensions_Lean4.pdf",
-      "size_bytes": 599278,
-      "local_sha256": "942294ce32ec56f3168a252a030d7de57b3ef567d0ed9c2ec7033f5fe7936a9c",
-      "local_md5": "62d0226a4e10d80de04aee42c4737962",
-      "remote_checksum": "md5:62d0226a4e10d80de04aee42c4737962"
+      "size_bytes": 607507,
+      "local_sha256": "33b26ec90b7a2d03fa8a8b503fbf03add3df5ec5aff9efddbe49be805aca1325",
+      "local_md5": "a343fa09ede8b13990be38f3dcd0d74e",
+      "remote_checksum": "md5:a343fa09ede8b13990be38f3dcd0d74e"
     },
     {
       "filename": "HODGE_LEAN4_5PAPER_RELEASE_BUNDLE.zip",
@@ -146,16 +146,16 @@
     {
       "filename": "FULL_AUTOMATION_VERIFICATION_RECEIPT.json",
       "size_bytes": 7186,
-      "local_sha256": "f28819659e572efe097431e76da8a9b9a9c5f84af412d2aa4fc4003c20547e91",
-      "local_md5": "02d974b9ef63eb8c2af743b488aa1788",
-      "remote_checksum": "md5:02d974b9ef63eb8c2af743b488aa1788"
+      "local_sha256": "f3e2bd05df45efa5ebed878a99ac75001f0cbccc15a1267d01af7edab4414256",
+      "local_md5": "00632b1574aa16700ebab8a045389cf2",
+      "remote_checksum": "md5:00632b1574aa16700ebab8a045389cf2"
     },
     {
       "filename": "MILLENNIUM_EXT_RECEIPT.json",
-      "size_bytes": 19942,
-      "local_sha256": "b51a4222e7b256e7cccbf418eee152b595345d89bfb6ee9a7e5f46e43112827c",
-      "local_md5": "e4c26c4cc881d8ab22436387b7f2752a",
-      "remote_checksum": "md5:e4c26c4cc881d8ab22436387b7f2752a"
+      "size_bytes": 20886,
+      "local_sha256": "b423530b32dc4bca95c3875d0b0cf40e02da2c2cba5584cf004d9cf6cf7bb9c8",
+      "local_md5": "d9fc7bd55dc67cd9c19af81da4a1e38f",
+      "remote_checksum": "md5:d9fc7bd55dc67cd9c19af81da4a1e38f"
     },
     {
       "filename": "HODGE_FOR_EVERYONE_PLAIN_ENGLISH_ARTICLE.md",
@@ -166,10 +166,10 @@
     },
     {
       "filename": "WHOLE_PROJECT_UNIFIED_MATRIX_SYNTHESIS.md",
-      "size_bytes": 38223,
-      "local_sha256": "6732413ec33f1d8bb42b19c7b6b5198fd804abec2d33407e050231988e960ab2",
-      "local_md5": "a99daa08eb1cdb7928e2d9de2537a42c",
-      "remote_checksum": "md5:a99daa08eb1cdb7928e2d9de2537a42c"
+      "size_bytes": 38643,
+      "local_sha256": "aa6f8308009f668d20fb716ba6d64f2c2d7e979bbcc81930b267aebb1871743c",
+      "local_md5": "c47a5e32dbfec6b9da9f7769f4c40088",
+      "remote_checksum": "md5:c47a5e32dbfec6b9da9f7769f4c40088"
     }
   ]
 }
