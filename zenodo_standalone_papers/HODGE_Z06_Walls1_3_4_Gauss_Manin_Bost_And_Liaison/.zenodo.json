@@ -1,0 +1,26 @@
+{
+  "title": "Horizontal Gauss-Manin Invariance, Arakelov-Bost Slope Criteria, and Peskine-Szpiro Liaison",
+  "upload_type": "publication",
+  "publication_type": "article",
+  "description": "<p>We unify the analytical and geometric criteria addressing Walls 1, 3, and 4 in the Hodge program. Under Lemma H1, we prove that horizontal Gauss-Manin parallel transport on \\mathrm{SO}(2,4) preserves the chiral projector norms and keeps the \\mathrm{Sp}(8) divisor coupling zero, maintaining the tared Schur floor Q_{\\mathrm{Schur}} = 1152 for all deformation parameters t. Under Lemma H2, the Arakelov-Bost slope test shows that when p-adic divisibility \\mu_{\\mathrm{div}} exceeds the archimedean height cost h_{\\mathrm{arch}}, the Bost slope surplus m(\\mu_{\\mathrm{div}} - h_{\\mathrm{arch}}) - C_0 is strictly positive, ruling out transcendental non-algebraicity. Finally, Peskine-Szpiro liaison balance ensures the existence of codimension-2 subschemes. All three results are certified in Lean 4.</p><p><strong>Formal Certificate:</strong> Verified in Lean 4 with zero custom axioms [propext, Classical.choice, Quot.sound].</p><p><strong>Methodology:</strong> In accordance with open research principles, ai is being used as a tool for interactive theorem verification and computational modeling.</p><p><strong>Epistemic Status:</strong> Finite structural theorem; Clay Millennium open horizons remain strictly open.</p>",
+  "creators": [
+    {
+      "name": "Arqam",
+      "affiliation": "Brandenburg University of Technology (BTU) Cottbus-Senftenberg",
+      "orcid": "0009-0004-9467-3363"
+    }
+  ],
+  "keywords": [
+    "Hodge Conjecture",
+    "Gauss-Manin Connection",
+    "Arakelov Theory",
+    "Bost Slope",
+    "Peskine-Szpiro Liaison",
+    "Lean 4",
+    "Formal Verification",
+    "Clay Millennium Problems",
+    "BTU Cottbus-Senftenberg"
+  ],
+  "license": "CC-BY-4.0",
+  "access_right": "open"
+}

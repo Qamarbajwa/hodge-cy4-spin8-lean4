@@ -1,0 +1,26 @@
+{
+  "title": "Prime-Square Band-1 Purity and Arithmetic-Progression Exclusion for p >= 7",
+  "upload_type": "publication",
+  "publication_type": "article",
+  "description": "<p>We resolve the Fermat cyclotomic incidence problem for prime-power degrees p^k with p \\ge 7 (Wall 2). We prove that because the Fermat fourfold has exactly 6 projective coordinates, no arithmetic progression of length p \\ge 7 can be embedded into the index set \\{0, 1, 2, 3, 4, 5\\}. Consequently, the sporadic Band-4 cycle components vanish identically (\\mathrm{band}_4 = 0), leaving pure Band-1 primitive Hodge classes. We establish that the Schur ladder step evaluates to 720 \\varphi(d) \\ge 720 > 0. Both the combinatorial exclusion and the positivity of the Schur ladder are formally proven in Lean 4 without custom axioms.</p><p><strong>Formal Certificate:</strong> Verified in Lean 4 with zero custom axioms [propext, Classical.choice, Quot.sound].</p><p><strong>Methodology:</strong> In accordance with open research principles, ai is being used as a tool for interactive theorem verification and computational modeling.</p><p><strong>Epistemic Status:</strong> Finite structural theorem; Clay Millennium open horizons remain strictly open.</p>",
+  "creators": [
+    {
+      "name": "Arqam",
+      "affiliation": "Brandenburg University of Technology (BTU) Cottbus-Senftenberg",
+      "orcid": "0009-0004-9467-3363"
+    }
+  ],
+  "keywords": [
+    "Hodge Conjecture",
+    "Fermat Fourfold",
+    "Cyclotomic Sieve",
+    "Arithmetic Progression",
+    "Schur Ladder",
+    "Lean 4",
+    "Formal Verification",
+    "Clay Millennium Problems",
+    "BTU Cottbus-Senftenberg"
+  ],
+  "license": "CC-BY-4.0",
+  "access_right": "open"
+}

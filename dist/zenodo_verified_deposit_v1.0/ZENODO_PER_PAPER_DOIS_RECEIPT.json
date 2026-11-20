@@ -1,0 +1,161 @@
+{
+  "status": "PUBLISHED",
+  "api_base": "https://zenodo.org/api",
+  "token_source": "ZENODO_TOKEN",
+  "published_utc": "2026-11-20T16:44:56.692506+00:00",
+  "collection_doi": "10.5281/zenodo.24398323",
+  "collection_concept_doi": "10.5281/zenodo.24329779",
+  "papers": {
+    "Paper1": {
+      "deposition_id": 24403310,
+      "doi": "10.5281/zenodo.24403310",
+      "concept_doi": "10.5281/zenodo.24403309",
+      "record_url": "https://zenodo.org/records/24403310",
+      "pdf_filename": "Paper1_Shioda_Aoki_Fermat_Lean4.pdf",
+      "pdf_sha256": "d0b44ba3ae119f1950d6fdd7eba6479dc5a5444d9ab29b4796c77a4f969dad58",
+      "uploaded_files": [
+        {
+          "filename": "Paper1_Shioda_Aoki_Fermat_Lean4.pdf",
+          "size_bytes": 689891,
+          "local_sha256": "d0b44ba3ae119f1950d6fdd7eba6479dc5a5444d9ab29b4796c77a4f969dad58",
+          "local_md5": "3c04442c9b98fbbdde1b7ccb6cb088df",
+          "remote_checksum": "md5:3c04442c9b98fbbdde1b7ccb6cb088df"
+        },
+        {
+          "filename": "FULL_AUTOMATION_VERIFICATION_RECEIPT.json",
+          "size_bytes": 7186,
+          "local_sha256": "f3e2bd05df45efa5ebed878a99ac75001f0cbccc15a1267d01af7edab4414256",
+          "local_md5": "00632b1574aa16700ebab8a045389cf2",
+          "remote_checksum": "md5:00632b1574aa16700ebab8a045389cf2"
+        }
+      ]
+    },
+    "Paper2": {
+      "deposition_id": 24403312,
+      "doi": "10.5281/zenodo.24403312",
+      "concept_doi": "10.5281/zenodo.24403311",
+      "record_url": "https://zenodo.org/records/24403312",
+      "pdf_filename": "Paper2_Macaulay_Apolarity_CY4_Lean4.pdf",
+      "pdf_sha256": "ea0590143807aac2ed0158abc4a7e4282ecb50fd3bdb7e101d61de7d34d1fc34",
+      "uploaded_files": [
+        {
+          "filename": "Paper2_Macaulay_Apolarity_CY4_Lean4.pdf",
+          "size_bytes": 629232,
+          "local_sha256": "ea0590143807aac2ed0158abc4a7e4282ecb50fd3bdb7e101d61de7d34d1fc34",
+          "local_md5": "8f88a028f899afe3da5710df72301949",
+          "remote_checksum": "md5:8f88a028f899afe3da5710df72301949"
+        },
+        {
+          "filename": "FULL_AUTOMATION_VERIFICATION_RECEIPT.json",
+          "size_bytes": 7186,
+          "local_sha256": "f3e2bd05df45efa5ebed878a99ac75001f0cbccc15a1267d01af7edab4414256",
+          "local_md5": "00632b1574aa16700ebab8a045389cf2",
+          "remote_checksum": "md5:00632b1574aa16700ebab8a045389cf2"
+        }
+      ]
+    },
+    "Paper3": {
+      "deposition_id": 24403314,
+      "doi": "10.5281/zenodo.24403314",
+      "concept_doi": "10.5281/zenodo.24403313",
+      "record_url": "https://zenodo.org/records/24403314",
+      "pdf_filename": "Paper3_Spin8_Triality_Mumford_Lean4.pdf",
+      "pdf_sha256": "904017f9f1a106cbf22a73fb8ceb654319ceb01ede4e3c5b5bf9e8d4a4530dcc",
+      "uploaded_files": [
+        {
+          "filename": "Paper3_Spin8_Triality_Mumford_Lean4.pdf",
+          "size_bytes": 669945,
+          "local_sha256": "904017f9f1a106cbf22a73fb8ceb654319ceb01ede4e3c5b5bf9e8d4a4530dcc",
+          "local_md5": "12f30816923fdd944bd936b19a2b2524",
+          "remote_checksum": "md5:12f30816923fdd944bd936b19a2b2524"
+        },
+        {
+          "filename": "FULL_AUTOMATION_VERIFICATION_RECEIPT.json",
+          "size_bytes": 7186,
+          "local_sha256": "f3e2bd05df45efa5ebed878a99ac75001f0cbccc15a1267d01af7edab4414256",
+          "local_md5": "00632b1574aa16700ebab8a045389cf2",
+          "remote_checksum": "md5:00632b1574aa16700ebab8a045389cf2"
+        }
+      ]
+    },
+    "Paper4": {
+      "deposition_id": 24403316,
+      "doi": "10.5281/zenodo.24403316",
+      "concept_doi": "10.5281/zenodo.24403315",
+      "record_url": "https://zenodo.org/records/24403316",
+      "pdf_filename": "Paper4_Gauss_Manin_Jet_Reconstruction.pdf",
+      "pdf_sha256": "8cd6ae0ede4fbc033baf8360a6e94f026cdd256b5e0b48f9ac89c38aa50dbf16",
+      "uploaded_files": [
+        {
+          "filename": "Paper4_Gauss_Manin_Jet_Reconstruction.pdf",
+          "size_bytes": 703605,
+          "local_sha256": "8cd6ae0ede4fbc033baf8360a6e94f026cdd256b5e0b48f9ac89c38aa50dbf16",
+          "local_md5": "11ddf66c29060d1a4c31ee0a1d09e6ff",
+          "remote_checksum": "md5:11ddf66c29060d1a4c31ee0a1d09e6ff"
+        },
+        {
+          "filename": "FULL_AUTOMATION_VERIFICATION_RECEIPT.json",
+          "size_bytes": 7186,
+          "local_sha256": "f3e2bd05df45efa5ebed878a99ac75001f0cbccc15a1267d01af7edab4414256",
+          "local_md5": "00632b1574aa16700ebab8a045389cf2",
+          "remote_checksum": "md5:00632b1574aa16700ebab8a045389cf2"
+        }
+      ]
+    },
+    "Paper5": {
+      "deposition_id": 24403318,
+      "doi": "10.5281/zenodo.24403318",
+      "concept_doi": "10.5281/zenodo.24403317",
+      "record_url": "https://zenodo.org/records/24403318",
+      "pdf_filename": "Paper5_Cyclotomic_Incidence_Sieve_Lean4.pdf",
+      "pdf_sha256": "8691d265850271a8da53f791c2c9b958f7b8fd20480252d0c36dfb47a8b23048",
+      "uploaded_files": [
+        {
+          "filename": "Paper5_Cyclotomic_Incidence_Sieve_Lean4.pdf",
+          "size_bytes": 616473,
+          "local_sha256": "8691d265850271a8da53f791c2c9b958f7b8fd20480252d0c36dfb47a8b23048",
+          "local_md5": "47149c4c3f44751f0d64d09b4ac327f8",
+          "remote_checksum": "md5:47149c4c3f44751f0d64d09b4ac327f8"
+        },
+        {
+          "filename": "FULL_AUTOMATION_VERIFICATION_RECEIPT.json",
+          "size_bytes": 7186,
+          "local_sha256": "f3e2bd05df45efa5ebed878a99ac75001f0cbccc15a1267d01af7edab4414256",
+          "local_md5": "00632b1574aa16700ebab8a045389cf2",
+          "remote_checksum": "md5:00632b1574aa16700ebab8a045389cf2"
+        }
+      ]
+    },
+    "Paper6": {
+      "deposition_id": 24403320,
+      "doi": "10.5281/zenodo.24403320",
+      "concept_doi": "10.5281/zenodo.24403319",
+      "record_url": "https://zenodo.org/records/24403320",
+      "pdf_filename": "Paper6_Millennium_Frontier_Extensions_Lean4.pdf",
+      "pdf_sha256": "33b26ec90b7a2d03fa8a8b503fbf03add3df5ec5aff9efddbe49be805aca1325",
+      "uploaded_files": [
+        {
+          "filename": "Paper6_Millennium_Frontier_Extensions_Lean4.pdf",
+          "size_bytes": 607507,
+          "local_sha256": "33b26ec90b7a2d03fa8a8b503fbf03add3df5ec5aff9efddbe49be805aca1325",
+          "local_md5": "a343fa09ede8b13990be38f3dcd0d74e",
+          "remote_checksum": "md5:a343fa09ede8b13990be38f3dcd0d74e"
+        },
+        {
+          "filename": "FULL_AUTOMATION_VERIFICATION_RECEIPT.json",
+          "size_bytes": 7186,
+          "local_sha256": "f3e2bd05df45efa5ebed878a99ac75001f0cbccc15a1267d01af7edab4414256",
+          "local_md5": "00632b1574aa16700ebab8a045389cf2",
+          "remote_checksum": "md5:00632b1574aa16700ebab8a045389cf2"
+        },
+        {
+          "filename": "MILLENNIUM_EXT_RECEIPT.json",
+          "size_bytes": 20886,
+          "local_sha256": "b423530b32dc4bca95c3875d0b0cf40e02da2c2cba5584cf004d9cf6cf7bb9c8",
+          "local_md5": "d9fc7bd55dc67cd9c19af81da4a1e38f",
+          "remote_checksum": "md5:d9fc7bd55dc67cd9c19af81da4a1e38f"
+        }
+      ]
+    }
+  }
+}

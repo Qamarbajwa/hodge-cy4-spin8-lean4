@@ -1,0 +1,26 @@
+{
+  "title": "Universal Sp(8) Divisor Taring and the Invariant 1152 Hodge Schur Floor",
+  "upload_type": "publication",
+  "publication_type": "article",
+  "description": "<p>We construct the universal Schur complement projection that isolates the transcendental Hodge class from the algebraic divisor lattice on polarized Calabi-Yau fourfolds. By taring out the symmetric \\mathrm{Sp}(8) divisor background classes of norms 16 and 432 via S = D - B^T A^{-1} B, we prove that the cross-coupling vanishes identically, forcing \\cos(\\Theta_{\\mathrm{Hodge}}) = 0 and \\sin(\\Theta_{\\mathrm{Hodge}}) = 1. The resulting invariant transcendental floor evaluates to exactly S_{\\mathrm{Schur}} = 1152 \\ge 1. The formal theorem is certified in Lean 4 with zero sorry and standard axioms.</p><p><strong>Formal Certificate:</strong> Verified in Lean 4 with zero custom axioms [propext, Classical.choice, Quot.sound].</p><p><strong>Methodology:</strong> In accordance with open research principles, ai is being used as a tool for interactive theorem verification and computational modeling.</p><p><strong>Epistemic Status:</strong> Finite structural theorem; Clay Millennium open horizons remain strictly open.</p>",
+  "creators": [
+    {
+      "name": "Arqam",
+      "affiliation": "Brandenburg University of Technology (BTU) Cottbus-Senftenberg",
+      "orcid": "0009-0004-9467-3363"
+    }
+  ],
+  "keywords": [
+    "Hodge Conjecture",
+    "Schur Complement",
+    "Sp(8) Invariance",
+    "Transcendental Lattice",
+    "Orthogonality",
+    "Lean 4",
+    "Formal Verification",
+    "Clay Millennium Problems",
+    "BTU Cottbus-Senftenberg"
+  ],
+  "license": "CC-BY-4.0",
+  "access_right": "open"
+}
