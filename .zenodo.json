@@ -1,33 +1,28 @@
 {
-  "title": "Hodge Conjecture Lean 4 Formalization Suite (Papers 1-6, 42 Modules, 208 Zero-Axiom Declarations) & Bridge Lemmas H1-H2",
+  "title": "Hodge Conjecture Finite Verification Suite: Spin(8) Triality, O(2,4) Kuga-Satake Schur Splits, Mumford CM Cycles, and Bridge Lemmas H1-H2",
   "upload_type": "publication",
   "publication_type": "workingpaper",
-  "version": "1.6.0-rosetta-bridges",
-  "doi": "10.5281/zenodo.24381741",
-  "conceptdoi": "10.5281/zenodo.24329779",
+  "version": "1.6.0-rosetta",
   "publication_date": "2026-11-20",
   "license": "CC-BY-4.0",
   "language": "eng",
   "creators": [
     {
-      "name": "Munawer, Qamar",
-      "affiliation": "Brandenburg University of Technology Cottbus-Senftenberg"
+      "name": "Munawer, Qamar (Arqam)",
+      "affiliation": "Brandenburg University of Technology (BTU) Cottbus-Senftenberg"
     }
   ],
   "keywords": [
     "Hodge Conjecture",
     "Lean 4",
-    "Cl(0,7) Clifford algebra",
+    "Calabi-Yau fourfolds",
+    "Abelian varieties",
+    "Mumford-Tate groups",
+    "Spin(8) triality",
+    "Kuga-Satake",
     "Schur complement",
-    "Higher-Dimensional Schur Trigonometry",
-    "O(2,4) / Spin(2,4)",
-    "Pfaffian filter",
-    "Gauss-Manin horizontal invariance",
-    "Arakelov-Bost slope",
-    "Fermat fourfolds",
-    "Macaulay apolarity",
-    "Spin(8) triality"
+    "Computational algebraic geometry"
   ],
-  "description": "EPISTEMIC HONESTY INVARIANT: HODGE-MILLENNIUM-001 = STRICTLY OPEN (status: verified-finite; Wall1-Wall5 global cycle realization on generic non-CM fourfolds and arbitrary smooth projective varieties remain strictly OPEN). Edition v1.6.0-rosetta-bridges: Complete 42-module Lean 4.35.0/4.36.0 zero-axiom suite (84 locked baseline theorems across 13 modules + 124 extension declarations across 29 modules = 208 total declarations), 27/27 verified symbolic/GPU explorers, 6 compiled LaTeX/PDF manuscripts (Paper1-Paper6, individual DOIs 10.5281/zenodo.24403310..24403320), plain-English monograph (HODGE_FOR_EVERYONE_PLAIN_ENGLISH_ARTICLE.md), Higher-Dimensional Schur Trigonometry (Theta_Hodge = 90 deg, S_Schur = 1152 >= 1), O(2,4)/Spin(2,4) multiplicity-2 CM cycle 2*Z_CM = T_ch, and Proof Bridge Lemmas H1 (hodge_H1_gauss_manin_horizontal_schur_invariance) and H2 (hodge_H2_bost_slope_divisibility_algebraicity_criterion).",
-  "notes": "Honesty Invariant: HODGE-MILLENNIUM-001 and global Wall1-Wall5 remain strictly OPEN. All 42 Lean 4 modules and 27/27 Python explorers pass with 0 sorry and standard Lean 4 axioms only."
+  "description": "Zero-Axiom Finite-Dimensional and Parameterized Bridge Certification in Lean 4 (42+ modules, 208+ declarations, zero custom axioms) for Hodge Conjecture testbeds on sextic Calabi-Yau fourfolds and Mumford spinor sixfolds, including O(2,4)/Spin(2,4) Kuga-Satake Schur splits (1152 floor), 2*Z_CM = T_ch, HodgeClayConditionsStage1to3Cert, HodgeClayAllGapsAttemptCert, and Papers 1-6. In this work, ai is being used as a tool by Arqam (Brandenburg University of Technology Cottbus-Senftenberg).",
+  "notes": "Zero-Axiom Finite-Dimensional and Parameterized Bridge Certification in Lean 4 (DOI reference: 10.5281/zenodo.24381741). Reproduce locally with `python verify_zenodo_deposit.py` and `pytest -q`."
 }

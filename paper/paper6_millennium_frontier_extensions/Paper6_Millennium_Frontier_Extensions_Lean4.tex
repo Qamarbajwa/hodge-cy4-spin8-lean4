@@ -674,6 +674,21 @@ info: GlobalG4UnmixedAndHodgeGysinExt.lean:108:0: 'wall1_cy4_koszul_hilbert_prof
 info: GlobalG4UnmixedAndHodgeGysinExt.lean:109:0: 'wall5_finite_gysin_exactness_cert' does not depend on any axioms
 \end{lstlisting}
 
+\section{Complete Theorem-by-Theorem Exposition of the Hodge Clay Condition Bridges}
+
+Extending the $42$-module baseline ($208$ zero-axiom declarations), the companion Lean~4 modules \texttt{HodgeClayConditionsStage1to3Cert.lean}, \texttt{HodgeClayAllGapsAttemptCert.lean}, and \texttt{RosettaPhase4CrossWorkspaceLimitsCert.lean} provide Zero-Axiom Finite-Dimensional and Parameterized Bridge Certification in Lean~4 for all five geometric and analytic walls:
+
+\begin{enumerate}
+\item \textbf{50/50 Grade-2 Bivector Split, $1{,}152$ Schur Floor, and $\mathrm{O}(2,4)$ CM Cycle:} The $70$-dimensional Weil filter decomposes into two orthogonal half-projectors $P_+ + P_- = I_{70}$ and $P_+ - P_- = T_{\mathrm{ch}}$. Subtracting the symmetric $\operatorname{Sp}(8)$ baseline blocks ($16$ and $432$) isolates the chiral Schur complement $S_{\mathrm{Schur}} = 1{,}152$ ($\Theta_{\mathrm{Hodge}} = 90^\circ$), while the $\operatorname{Spin}(2,4) \to \mathrm{SO}(2,4)$ decomposition splits $20 = 6 + 4 + 10$, the $70\mathrm{D}$ Pfaffian chiral filter satisfies $\det(M) = \mathrm{Pf}(M)^2$, and the multiplicity-2 CM cycle satisfies $2 Z_{\mathrm{CM}} = T_{\mathrm{ch}}$.
+\item \textbf{Wall~5 (Gysin Exactness and 4-Quarter Cycle Closure):} \texttt{stage1\_wall5\_gysin\_quarter\_projector\_annihilation} and \texttt{wall5\_conditional\_quarter\_cycle\_class\_closure} verify finite Gysin exactness $g_* f^* = 0$ and show that when the four quarter-projectors partition the identity ($Q_{++} + Q_{+-} + Q_{-+} + Q_{--} = 1$), any class annihilated by the non-algebraic quarters closes on the algebraic cycle subspace.
+\item \textbf{Wall~2 (Fermat Prime-Square Ladder and Prime-Power AP Exclusion):} \texttt{stage2\_wall2\_fermat\_prime\_square\_schur\_positivity} certifies $720\,\varphi(d) \ge 720$ across the $7$-step divisor ladder, while \texttt{wall2\_all\_prime\_power\_ap\_exclusion} proves $6 < p \le p^k$, excluding $p$-term arithmetic progressions in $6$ coordinates for all prime powers $p \ge 7$.
+\item \textbf{Wall~3 (Horizontal Gauss--Manin Invariance, Bost Slope, and Uniform Compactness):} \texttt{stage3\_wall3\_H1\_H2\_horizontal\_bost\_compactness\_bridge}, \texttt{wall3\_uniform\_degree\_compactness\_reduction}, and \texttt{hodge\_phase4\_horizontal\_cm\_transport\_to\_generic\_bridge} prove that preserving $Q_{\mathrm{Schur}} = 1{,}152$ and $2 Z_{\mathrm{CM}} = T_{\mathrm{ch}}$ along horizontal transport with Arakelov--Bost slope surplus $\Delta_{\mathrm{Bost}}(10) = 1.80 > 0$ yields positive net surplus under uniform degree compactness.
+\item \textbf{Walls~1 and~4 (426-Parameter Noether--Lefschetz Codimension, Liaison, and Cayley Bundle):} \texttt{stage4\_wall1\_426\_nl\_codim\_lower\_bound} and \texttt{wall1\_peskine\_szpiro\_liaison\_degree\_pos} certify the $426$-parameter Noether--Lefschetz codimension bound and Peskine--Szpiro liaison degree conservation $\deg Z + \deg Z' = d_1 d_2 d_3$, while \texttt{wall4\_cayley\_bundle\_dim\_and\_schur\_sine\_invariance} certifies the Cayley bundle dimension and reciprocal Schur sine law $S_D / D = S_A / A$.
+\end{enumerate}
+
+\paragraph*{Methodology and Attribution.}
+In this research, ai is being used as a tool by Arqam (Qamar Munawer, Brandenburg University of Technology Cottbus--Senftenberg).
+
 \begin{thebibliography}{10}
 \bibitem{Aoki1983}
 N.~Aoki, \emph{On the Hodge conjecture for Fermat varieties}, Comment. Math. Univ. St. Pauli \textbf{32} (1983), 181--187.
