@@ -563,6 +563,42 @@ Experiments~10 through~19 trace a decisive methodological shift from searching d
 \end{enumerate}
 This relative Schur--Clifford architecture aligns with the cross-project Rosetta parity-subtraction framework established in the companion Riemann~\cite{RosettaRiemann2026}, Yang--Mills (\texttt{v1.1.0-rosetta}, \texttt{YM176}), and Navier--Stokes (\texttt{v1.0.0-rosetta}) formalizations, while leaving the geometric cycle-existence problem (the global Hodge Conjecture and Walls~1--5) open.
 
+\section{Complete Theorem-by-Theorem Mathematical and Geometric Exposition (All 42 Modules and Bridge Lemmas H1--H2)}
+\label{sec:complete_exposition}
+
+Every formal declaration across the $42$ Lean~4 modules ($84$ locked baseline theorems across $13$ modules in \texttt{LeanDemoProject}, covered in Papers~1--5, $124$ extension declarations across $29$ modules in \texttt{LeanMillenniumExt}, and Bridge Lemmas~H1--H2) admits a transparent geometric and algebraic interpretation. Together, these modules organize into four unified mathematical pillars and an explicit open-horizon boundary.
+
+\subsection{The Identity of One as Two Chiral Halves (\texttt{Clifford\allowbreak{}Kuga\allowbreak{}Satake\allowbreak{}Schur\allowbreak{}Ext.lean})}
+On the $70$-dimensional middle cohomology $H^4(A)$ and its $28$-dimensional $\bigwedge^2(\mathbb{Z}^8)$ bivector sector, the Kuga--Satake reflection involution $J$ satisfies $J^2 = I$. Splitting the identity into two mutually orthogonal chiral projectors,
+\[
+  P_+ = \frac{I + J}{2}, \qquad P_- = \frac{I - J}{2},
+\]
+yields $P_+ + P_- = I$, $P_+ P_- = 0$, and the parity-odd chiral difference $P_+ - P_- = T_{\mathrm{ch}}$. In \texttt{Clifford\allowbreak{}Kuga\allowbreak{}Satake\allowbreak{}Schur\allowbreak{}Ext.lean} (\texttt{level2\_\allowbreak{}bivector\_\allowbreak{}50\_\allowbreak{}50\_\allowbreak{}schur\_\allowbreak{}and\_\allowbreak{}full\_\allowbreak{}clifford\_\allowbreak{}closure\_\allowbreak{}cert}, \texttt{ks\_\allowbreak{}parity\_\allowbreak{}reflection\_\allowbreak{}involutive\_\allowbreak{}and\_\allowbreak{}form\_\allowbreak{}parities\_\allowbreak{}cert}), this $50/50$ Grade-$2$ bivector split decomposes $\bigwedge^2(\mathbb{Z}^8) = 16 \oplus 12$ orthogonally by $U(1)_{\mathrm{KS}}$ weight and generates the exact $0 \to 1/2 \to 1$ Level-$2$ Clifford Schur hierarchy on $T_{\mathrm{ch}}^{\mathrm{Weil\text{-}corr}}$.
+
+\subsection{Higher-Dimensional Schur Trigonometry and the $1152$ Schur Floor (\texttt{Schur\allowbreak{}Universal\allowbreak{}Sp8\allowbreak{}Projection\allowbreak{}Ext.lean})}
+Subtracting the symmetric $\operatorname{Sp}(8)$ divisor baseline ($Q_0 = 16$ and $Q_{\mathrm{prim}} = 432$) from the chiral generator $T_{\mathrm{ch}}$ via the Schur complement $S = D - B^T A^{-1} B$ produces the exact diagonal Gram matrix $\operatorname{diag}(16, 432, 1152)$. In Schur--Cholesky trigonometric coordinates ($\tan^2\Theta_{\mathrm{Hodge}} = S / B_{\mathrm{proj}}$), the vanishing cross-term $B = 0$ ($\Pi_{\operatorname{Sp}(8)}(T_{\mathrm{ch}}) = 0$) drives
+\[
+  \cos\Theta_{\mathrm{Hodge}} = 0, \qquad \sin\Theta_{\mathrm{Hodge}} = 1 \qquad (\Theta_{\mathrm{Hodge}} = 90^\circ),
+\]
+establishing exact $90^\circ$ orthogonality and an invariant integer Schur floor $S_{\mathrm{Schur}}(T_{\mathrm{ch}}) = 1{,}152 \ge 1$ (\texttt{sp8\_\allowbreak{}universal\_\allowbreak{}gram\_\allowbreak{}and\_\allowbreak{}schur\_\allowbreak{}complement\_\allowbreak{}cert}, \texttt{parity\_\allowbreak{}eigenspace\_\allowbreak{}orthogonal\_\allowbreak{}split\_\allowbreak{}cert}, \texttt{mumford\_\allowbreak{}parity\_\allowbreak{}odd\_\allowbreak{}uniqueness\_\allowbreak{}cert}, \texttt{cl07\_\allowbreak{}half\_\allowbreak{}spinor\_\allowbreak{}chiral\_\allowbreak{}isolation\_\allowbreak{}cert}).
+
+\subsection{The $\operatorname{O}(2,4)/\operatorname{Spin}(2,4)$ Multiplicity-2 CM Poincar\'e Cycle and Pfaffian Filter (\texttt{Mumford\allowbreak{}CM\allowbreak{}Specialization\allowbreak{}Cycle\allowbreak{}Ext.lean})}
+In \texttt{Clifford\allowbreak{}Kuga\allowbreak{}Satake\allowbreak{}Schur\allowbreak{}Ext.lean} and \texttt{Mumford\allowbreak{}CM\allowbreak{}Specialization\allowbreak{}Cycle\allowbreak{}Ext.lean}, the period-domain cohomology decomposes as $20 = 6 + 4 + 10$ on $H^4(A^2)$ and $70 - 28 = 42$ on $H^4(A)$ (\texttt{h4\_\allowbreak{}a2\_\allowbreak{}spin24\_\allowbreak{}20\_\allowbreak{}eq\_\allowbreak{}6\_\allowbreak{}plus\_\allowbreak{}4\_\allowbreak{}plus\_\allowbreak{}10\_\allowbreak{}schur\_\allowbreak{}split\_\allowbreak{}cert}). Because the bivector pairing $M$ on $\bigwedge^2(\mathbb{Z}^8)$ is skew-symmetric, its determinant factors as the square of the Pfaffian, $\det(M) = (\operatorname{Pf}(M))^2$, producing the $68$-zero quartic Pfaffian Weil filter $F_{\mathrm{ch}}(s) = e_1(s) + e_3(s)$ (\texttt{pfaffian\_\allowbreak{}chiral\_\allowbreak{}polynomial\_\allowbreak{}70dim\_\allowbreak{}weil\_\allowbreak{}filter\_\allowbreak{}cert}). At the Complex Multiplication point $A_{\mathrm{CM}}$, six quaternionic endomorphisms $I_2 \otimes J_a^\pm$ construct the explicit algebraic graph cycle $Z_{\mathrm{CM}}$ obeying
+\[
+  2 Z_{\mathrm{CM}} = P_+ - P_- = T_{\mathrm{ch}}, \qquad \|Z_{\mathrm{CM}}\|^2 = 288, \qquad \|T_{\mathrm{ch}}\|^2 = 1{,}152,
+\]
+while inert symmetric derivations vanish identically ($D_{\mathrm{sym}}(T_{\mathrm{ch}}) = 0$, \texttt{mumford\_\allowbreak{}cm\_\allowbreak{}graph\_\allowbreak{}cycle\_\allowbreak{}equals\_\allowbreak{}t\_\allowbreak{}ch\_\allowbreak{}cert}, \texttt{mumford\_\allowbreak{}cm\_\allowbreak{}cycle\_\allowbreak{}griffiths\_\allowbreak{}horizontal\_\allowbreak{}invariance\_\allowbreak{}cert}).
+
+\subsection{Proof Bridge Lemmas H1 and H2 (\texttt{RosettaMongeAmpere\allowbreak{}SeesawCrossProofsCert.lean})}
+Two companion Lean~4 bridge lemmas (verified over \texttt{Mathlib} with strictly standard axioms \texttt{[propext, Classical.choice, Quot.sound]}) connect finite Schur invariants to horizontal deformation and Arakelov height bounds:
+\begin{enumerate}
+  \item \textbf{Lemma~H1 (\texttt{hodge\_\allowbreak{}H1\_\allowbreak{}gauss\_\allowbreak{}manin\_\allowbreak{}horizontal\_\allowbreak{}schur\_\allowbreak{}invariance}):} Along any horizontal Gauss--Manin deformation parameter $t$ on the $\operatorname{SO}(2,4)$ period domain where parallel transport preserves $Q(P_\pm(t), P_\pm(t)) = S/2$, $Q(P_+(t), P_-(t)) = 0$, and $\Pi_{\operatorname{Sp}(8)}(T_{\mathrm{ch}}(t)) = 0$, the tared Schur complement norm $Q_{\mathrm{Schur}}(T_{\mathrm{ch}}(t)) = S = 1{,}152$ and the multiplicity-2 decomposition $2 Z(t) = P_+(t) - P_-(t) = T_{\mathrm{ch}}(t)$ remain invariant for all $t$.
+  \item \textbf{Lemma~H2 (\texttt{hodge\_\allowbreak{}H2\_\allowbreak{}bost\_\allowbreak{}slope\_\allowbreak{}divisibility\_\allowbreak{}algebraicity\_\allowbreak{}criterion}):} In the Arakelov--Bost slope test across $m$ prime/theta stages, whenever the per-stage Chowla--Selberg $p$-adic divisibility gain $\mu_{\mathrm{div}}$ strictly exceeds the archimedean height cost $h_{\mathrm{arch}}$ ($\mu_{\mathrm{div}} > h_{\mathrm{arch}}$), every stage $m > C_0 / (\mu_{\mathrm{div}} - h_{\mathrm{arch}})$ yields a strictly positive net Arakelov slope surplus $\Delta_{\mathrm{Bost}}(m) = m(\mu_{\mathrm{div}} - h_{\mathrm{arch}}) - C_0 > 0$.
+\end{enumerate}
+
+\subsection{Complete 42-Module Coverage and Epistemic Boundary (\texttt{HODGE-MILLENNIUM-001: STRICTLY OPEN})}
+All $13$ locked baseline modules ($84$ theorems covering Fermat Shioda--Aoki characters, Macaulay Gorenstein contraction, Wiebe--Scheja--Storch determinants, $\operatorname{Spin}(8)$ triality, $\bmod\, t^4$ Gauss--Manin jets, and $1{,}751$-mode IVHS spectra) together with all $29$ extension modules ($124$ declarations summarized in Table~\ref{tab:ext_inventory}) and Bridge Lemmas~H1--H2 are unconditionally verified over finite algebraic, polynomial, and representation-theoretic domains. By contrast, constructing explicit algebraic subvarieties on generic non-CM Mumford fourfolds and arbitrary smooth projective varieties $X \subset \mathbb{P}^N$ (Walls~1--5 and \texttt{HODGE-MILLENNIUM-001}) remains strictly \textbf{OPEN}.
+
 \appendix
 \section{Extension Kernel Build and Zero-Axiom Verification Receipts}
 

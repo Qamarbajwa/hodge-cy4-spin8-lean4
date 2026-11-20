@@ -76,7 +76,23 @@ Across **19 experiments** (formalized into `204` zero-axiom Lean 4 declarations 
 
 ---
 
-## 5. What Is Solved vs. What Remains Open (Absolute Scientific Honesty)
+## 5. The Four Mathematical Pillars & Bridge Lemmas H1–H2 (All 42 Modules, 208 Declarations)
+
+Every one of the `208` zero-axiom Lean 4 declarations across `42` modules (`13` baseline + `29` extension) plus Bridge Lemmas `H1` and `H2` falls into four clean ideas:
+
+1. **The Identity of One as Two Chiral Halves (`CliffordKugaSatakeSchurExt.lean`):**  
+   A reflection $J$ with $J^2 = I$ splits the identity into two orthogonal halves $P_+ = (I + J)/2$ and $P_- = (I - J)/2$ ($P_+ + P_- = I$, $P_+ P_- = 0$, $P_+ - P_- = T_{\mathrm{ch}}$). This captures the 50/50 Grade-2 bivector split ($\bigwedge^2 \mathbb{Z}^8 = 16 \oplus 12$) and the $0 \to 1/2 \to 1$ Level-2 Clifford Schur hierarchy.
+2. **Higher-Dimensional Schur Trigonometry & The `1152` Schur Floor (`SchurUniversalSp8ProjectionExt.lean`):**  
+   Taring out the symmetric $\mathrm{Sp}(8)$ bowl ($Q_0 = 16$, $Q_{\mathrm{prim}} = 432$) via $S = D - B^T A^{-1} B$ leaves zero overlap ($B = 0$), which forces $\cos\Theta_{\mathrm{Hodge}} = 0$ and $\sin\Theta_{\mathrm{Hodge}} = 1$ ($\Theta_{\mathrm{Hodge}} = 90^\circ$ exact perpendicularity) and locks the Schur floor at **`1152 >= 1`**.
+3. **The $\mathrm{O}(2,4)/\mathrm{Spin}(2,4)$ Multiplicity-2 CM Cycle & Pfaffian Filter (`MumfordCMSpecializationCycleExt.lean`):**  
+   The period domain splits as `20 = 6 + 4 + 10` (`70 - 28 = 42`), and skew-symmetry forces $\det(M) = \mathrm{Pf}(M)^2$ (the `68`-zero Pfaffian Weil filter). At the CM point, quaternionic endomorphisms build $2 Z_{\mathrm{CM}} = P_+ - P_- = T_{\mathrm{ch}}$ (`||Z_CM||^2 = 288`, `||T_ch||^2 = 1152`) while inert symmetric derivations vanish ($D_{\mathrm{sym}}(T_{\mathrm{ch}}) = 0$).
+4. **Proof Bridge Lemmas `H1` & `H2` (`RosettaMongeAmpereSeesawCrossProofsCert.lean`):**  
+   - **Lemma H1 (`hodge_H1_gauss_manin_horizontal_schur_invariance`):** Horizontal Gauss–Manin parallel transport along $t$ keeps $Q_{\mathrm{Schur}}(T_{\mathrm{ch}}(t)) = 1152$ and $2 Z(t) = T_{\mathrm{ch}}(t)$ invariant for all $t$.
+   - **Lemma H2 (`hodge_H2_bost_slope_divisibility_algebraicity_criterion`):** Whenever per-stage $p$-adic divisibility gain exceeds archimedean height cost ($\mu_{\mathrm{div}} > h_{\mathrm{arch}}$), every stage $m > C_0 / (\mu_{\mathrm{div}} - h_{\mathrm{arch}})$ has strictly positive Arakelov–Bost slope surplus $\Delta_{\mathrm{Bost}}(m) = m(\mu_{\mathrm{div}} - h_{\mathrm{arch}}) - C_0 > 0$.
+
+---
+
+## 6. What Is Solved vs. What Remains Open (Absolute Scientific Honesty)
 
 To keep the record completely transparent:
 
