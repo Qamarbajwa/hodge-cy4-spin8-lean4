@@ -97,7 +97,7 @@ Every one of the `208` zero-axiom Lean 4 declarations across `42` modules (`13` 
 To keep the record completely transparent:
 
 - **Zero-Axiom Finite-Dimensional and Parameterized Bridge Certification in Lean 4:**  
-  Every number, matrix identity, Schur complement (`1152`), 50/50 Grade-2 bivector split (`P_+ + P_- = I`), `O(2,4)` multiplicity-2 CM cycle (`2 Z_CM = T_ch`), eigenvalue, orbit count, and Bridge Lemma (`H1` and `H2`) in the table above (`208` declarations across `42` Lean 4 modules, `27/27` Python/GPU explorers, and `6` LaTeX papers with zero build errors) is formally certified with zero custom axioms. In this work, ai is being used as a tool by Arqam (Brandenburg University of Technology Cottbus-Senftenberg).
+  Every number, matrix identity, Schur complement (`1152`), 50/50 Grade-2 bivector split (`P_+ + P_- = I`), `O(2,4)` multiplicity-2 CM cycle (`2 Z_CM = T_ch`), eigenvalue, orbit count, and Bridge Lemma (`H1` and `H2`) in the table above (`208` declarations across `42` Lean 4 modules, `27/27` Python/GPU explorers, and `6` LaTeX papers with zero build errors) is formally certified with zero custom axioms. In this work, ai is being used as a tool by Qamar Munawer (Brandenburg University of Technology Cottbus-Senftenberg).
 - **Remaining Geometric Walls (`Wall1` to `Wall5`):**  
   1. **`Wall1`:** Proving global connectedness across all `426` parameters of the sextic Noether–Lefschetz locus.  
   2. **`Wall2`:** Constructing unconditional geometric cycles for all sporadic Band-4 orbits as degree $m \to \infty$.  

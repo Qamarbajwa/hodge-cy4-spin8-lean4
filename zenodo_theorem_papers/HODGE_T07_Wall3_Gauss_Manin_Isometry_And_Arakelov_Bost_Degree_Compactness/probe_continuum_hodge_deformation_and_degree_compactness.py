@@ -9,7 +9,7 @@ Numerical continuum simulation and verification of:
    the entire horizontal deformation from CM fiber to generic End_Q(X) = Q fiber.
 
 Methodology note: ai is being used as a tool.
-Author: Arqam, Brandenburg University of Technology Cottbus-Senftenberg.
+Author: Qamar Munawer, Brandenburg University of Technology Cottbus-Senftenberg.
 """
 
 from __future__ import annotations
@@ -90,7 +90,7 @@ def main() -> int:
     print("=" * 80)
     print("PROBE: CONTINUUM HODGE DEFORMATION & DEGREE COMPACTNESS")
     print("Methodology note: ai is being used as a tool.")
-    print("Author: Arqam, Brandenburg University of Technology Cottbus-Senftenberg.")
+    print("Author: Qamar Munawer, Brandenburg University of Technology Cottbus-Senftenberg.")
     print("=" * 80)
 
     res = run_hodge_deformation_probe()

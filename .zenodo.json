@@ -8,8 +8,8 @@
   "language": "eng",
   "creators": [
     {
-      "name": "Munawer, Qamar (Arqam)",
-      "affiliation": "Brandenburg University of Technology (BTU) Cottbus-Senftenberg"
+      "name": "Qamar Munawer",
+      "affiliation": "Brandenburg University of Technology Cottbus-Senftenberg"
     }
   ],
   "keywords": [
@@ -23,6 +23,6 @@
     "Schur complement",
     "Computational algebraic geometry"
   ],
-  "description": "Zero-Axiom Finite-Dimensional and Parameterized Bridge Certification in Lean 4 (42+ modules, 208+ declarations, zero custom axioms) for Hodge Conjecture testbeds on sextic Calabi-Yau fourfolds and Mumford spinor sixfolds, including O(2,4)/Spin(2,4) Kuga-Satake Schur splits (1152 floor), 2*Z_CM = T_ch, HodgeClayConditionsStage1to3Cert, HodgeClayAllGapsAttemptCert, and Papers 1-6. In this work, ai is being used as a tool by Arqam (Brandenburg University of Technology Cottbus-Senftenberg).",
+  "description": "Zero-Axiom Finite-Dimensional and Parameterized Bridge Certification in Lean 4 (42+ modules, 208+ declarations, zero custom axioms) for Hodge Conjecture testbeds on sextic Calabi-Yau fourfolds and Mumford spinor sixfolds, including O(2,4)/Spin(2,4) Kuga-Satake Schur splits (1152 floor), 2*Z_CM = T_ch, HodgeClayConditionsStage1to3Cert, HodgeClayAllGapsAttemptCert, and Papers 1-6. In this work, ai is being used as a tool by Qamar Munawer (Brandenburg University of Technology Cottbus-Senftenberg).",
   "notes": "Zero-Axiom Finite-Dimensional and Parameterized Bridge Certification in Lean 4 (DOI reference: 10.5281/zenodo.24381741). Reproduce locally with `python verify_zenodo_deposit.py` and `pytest -q`."
 }

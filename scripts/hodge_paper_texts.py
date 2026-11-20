@@ -5,7 +5,7 @@ Complete mathematical and human-readable texts for the 9 Hodge papers:
 - Paper 00: The Common-Person Relational Master Guide
 - Papers T01 to T08: Individual Standalone Theorem Papers
 
-Author: Arqam, Brandenburg University of Technology (BTU) Cottbus-Senftenberg.
+Author: Qamar Munawer, Brandenburg University of Technology Cottbus-Senftenberg.
 Methodology: "ai is being used as a tool"
 """
 
@@ -159,8 +159,8 @@ Thank you for walking this mathematical path with us. When you look past the int
 
 \vspace{1.5em}
 \noindent Warm regards,\\
-\textbf{Arqam}\\
-Brandenburg University of Technology (BTU) Cottbus-Senftenberg
+\textbf{Qamar Munawer}\\
+Brandenburg University of Technology Cottbus-Senftenberg
 """
 }
 

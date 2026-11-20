@@ -103,4 +103,4 @@ Verifying Shioda–Aoki–Ran's decomposition $1,001 + 630 + 120 + 0 = 1,751$ nu
 ## Edition `v1.6.0-rosetta` Update
 
 - **Zero-Axiom Finite-Dimensional & Parameterized Bridge Certification in Lean 4:** Includes `Paper1`–`Paper6.pdf` (`42` baseline modules, `208` declarations), `HodgeClayConditionsStage1to3Cert.lean`, `HodgeClayAllGapsAttemptCert.lean`, and `hodge_phase4_horizontal_cm_transport_to_generic_bridge` (`1152` Schur floor, `2*Z_CM = T_ch`, Bost slope surplus, Peskine–Szpiro liaison, and Cayley bundle `S_D/D = S_A/A`).
-- **Methodology:** In this work, ai is being used as a tool by Arqam (Brandenburg University of Technology Cottbus-Senftenberg).
+- **Methodology:** In this work, ai is being used as a tool by Qamar Munawer (Brandenburg University of Technology Cottbus-Senftenberg).
