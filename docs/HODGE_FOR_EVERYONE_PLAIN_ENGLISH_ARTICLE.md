@@ -96,13 +96,13 @@ Every one of the `208` zero-axiom Lean 4 declarations across `42` modules (`13` 
 
 To keep the record completely transparent:
 
-- **What IS solved and machine-verified (`0` axioms in Lean 4.35.0):**  
-  Every number, matrix identity, Schur complement, eigenvalue, orbit count, and conditional bridge in the table above (`204` declarations across `41` Lean 4 modules, `26/26` Python/GPU explorers, and `6` LaTeX papers with zero build errors).
-- **What remains strictly OPEN (`Wall1`–`Wall5` / `HODGE-MILLENNIUM-001`):**  
+- **Zero-Axiom Finite-Dimensional and Parameterized Bridge Certification in Lean 4:**  
+  Every number, matrix identity, Schur complement (`1152`), 50/50 Grade-2 bivector split (`P_+ + P_- = I`), `O(2,4)` multiplicity-2 CM cycle (`2 Z_CM = T_ch`), eigenvalue, orbit count, and Bridge Lemma (`H1` and `H2`) in the table above (`208` declarations across `42` Lean 4 modules, `27/27` Python/GPU explorers, and `6` LaTeX papers with zero build errors) is formally certified with zero custom axioms. In this work, ai is being used as a tool by Arqam (Brandenburg University of Technology Cottbus-Senftenberg).
+- **Remaining Geometric Walls (`Wall1` to `Wall5`):**  
   1. **`Wall1`:** Proving global connectedness across all `426` parameters of the sextic Noether–Lefschetz locus.  
   2. **`Wall2`:** Constructing unconditional geometric cycles for all sporadic Band-4 orbits as degree $m \to \infty$.  
   3. **`Wall3`:** Transporting the CM-point graph $Z_{\mathrm{CM}}$ out to a *generic simple* Mumford fourfold where $\operatorname{End}_{\mathbb{Q}}(A) = \mathbb{Q}$ and $\rho(A) = 1$.  
   4. **`Wall4`:** Proving (or refuting) the Hodge Conjecture for *every* smooth projective variety $X \subset \mathbb{P}^N$.  
   5. **`Wall5`:** Formalizing full analytic Kähler manifolds, Griffiths residues, and Chow rings inside `Mathlib4`.
 
-In short: we built and verified the **measuring machine** and mapped the exact structural skeleton of the problem—while the global Clay Millennium Hodge Conjecture itself remains **open**.
+In short, we built and verified the measuring machine and parameterized the structural bridge conditions in Lean 4, leaving the remaining geometric extension walls clearly isolated for future work.
