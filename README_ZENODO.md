@@ -96,3 +96,11 @@
 ## Scientific Scope Boundary
 
 Verifying Shioda–Aoki–Ran's decomposition $1,001 + 630 + 120 + 0 = 1,751$ numerically reproduces the primitive $(2,2)$ Hodge dimension at the **Fermat sextic Calabi–Yau fourfold** $X^4_6 = \{\sum_{i=0}^5 x_i^6 = 0\} \subset \mathbb{P}^5$ via $(\mathbb{Z}/6\mathbb{Z})^6$ character splitting and Lefschetz $(1,1)$ on $X^2_6 \subset \mathbb{P}^3$ ($\dim R^8(F_{\mathbb{P}^3}) = 85$), while our non-separable 6-variable cross-coupled CY4 experiment records the preserved plane orbit `[3, 6, 10, 15, 18, 19]`. General deformed sextics $X_t \subset \mathbb{P}^5$ lack a universal effective Hilbert degree bound, and simple Mumford spinor varieties satisfy $\operatorname{End}_{\mathbb{Q}}(A) = \mathbb{Q}$; hence `GLOBAL_HODGE_CONJECTURE` remains strictly **OPEN**.
+
+
+---
+
+## Edition `v1.6.0-rosetta` Update
+
+- **Zero-Axiom Finite-Dimensional & Parameterized Bridge Certification in Lean 4:** Includes `Paper1`–`Paper6.pdf` (`42` baseline modules, `208` declarations), `HodgeClayConditionsStage1to3Cert.lean`, `HodgeClayAllGapsAttemptCert.lean`, and `hodge_phase4_horizontal_cm_transport_to_generic_bridge` (`1152` Schur floor, `2*Z_CM = T_ch`, Bost slope surplus, Peskine–Szpiro liaison, and Cayley bundle `S_D/D = S_A/A`).
+- **Methodology:** In this work, ai is being used as a tool by Arqam (Brandenburg University of Technology Cottbus-Senftenberg).
