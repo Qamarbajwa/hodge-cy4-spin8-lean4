@@ -22,6 +22,7 @@ defaultTargets = [
   "WavefunctionBipartiteMatrixExt",
   "MumfordTripleProductExt",
   "CliffordKugaSatakeChiralExt",
+  "CliffordKugaSatakeSchurExt",
   "SchurUniversalSp8ProjectionExt",
   "CliffordTripleProductSchurExt",
   "CliffordTripleAndFermat25SchurExt",
@@ -97,6 +98,9 @@ name = "MumfordTripleProductExt"
 
 [[lean_lib]]
 name = "CliffordKugaSatakeChiralExt"
+
+[[lean_lib]]
+name = "CliffordKugaSatakeSchurExt"
 
 [[lean_lib]]
 name = "SchurUniversalSp8ProjectionExt"
