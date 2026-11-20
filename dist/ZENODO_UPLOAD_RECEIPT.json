@@ -9,43 +9,43 @@
       "id": "Paper1",
       "filename": "Paper1_Shioda_Aoki_Fermat_Lean4.pdf",
       "size_bytes": 689891,
-      "sha256": "d0b44ba3ae119f1950d6fdd7eba6479dc5a5444d9ab29b4796c77a4f969dad58",
-      "md5": "3c04442c9b98fbbdde1b7ccb6cb088df"
+      "sha256": "803584057b91845f57f91c13f990af58bf820831fa5807eb23b175e86a6e18a6",
+      "md5": "3cb4be8dd91bc1f6f9b2d868f4323eb0"
     },
     {
       "id": "Paper2",
       "filename": "Paper2_Macaulay_Apolarity_CY4_Lean4.pdf",
       "size_bytes": 629232,
-      "sha256": "ea0590143807aac2ed0158abc4a7e4282ecb50fd3bdb7e101d61de7d34d1fc34",
-      "md5": "8f88a028f899afe3da5710df72301949"
+      "sha256": "2dce694d4d062f950bc553f182cd53b81067f257a2fa03af7ae8f28ba0a6e37d",
+      "md5": "71d2bde9328044023277da768db8b398"
     },
     {
       "id": "Paper3",
       "filename": "Paper3_Spin8_Triality_Mumford_Lean4.pdf",
       "size_bytes": 669945,
-      "sha256": "904017f9f1a106cbf22a73fb8ceb654319ceb01ede4e3c5b5bf9e8d4a4530dcc",
-      "md5": "12f30816923fdd944bd936b19a2b2524"
+      "sha256": "eb4824098de54b50e23e076cf1ad95c1b6d2eb0abe35f8363eb923892ac9f29f",
+      "md5": "38103cdb1c98b08b833a9228cfd6f37e"
     },
     {
       "id": "Paper4",
       "filename": "Paper4_Gauss_Manin_Jet_Reconstruction.pdf",
       "size_bytes": 703605,
-      "sha256": "8cd6ae0ede4fbc033baf8360a6e94f026cdd256b5e0b48f9ac89c38aa50dbf16",
-      "md5": "11ddf66c29060d1a4c31ee0a1d09e6ff"
+      "sha256": "c189228db4ff652aab1a8d5b18afc713695137e03e03454440120a1acf0ceb53",
+      "md5": "e71714ef9237b11177d4b647a2861597"
     },
     {
       "id": "Paper5",
       "filename": "Paper5_Cyclotomic_Incidence_Sieve_Lean4.pdf",
       "size_bytes": 616473,
-      "sha256": "8691d265850271a8da53f791c2c9b958f7b8fd20480252d0c36dfb47a8b23048",
-      "md5": "47149c4c3f44751f0d64d09b4ac327f8"
+      "sha256": "12ec2b8266ba0147421c87832d30cb5c5fce76f13ad2e7c7e058383a1458c055",
+      "md5": "e4a30efaea10622affc2cd41c6e24530"
     },
     {
       "id": "Paper6",
       "filename": "Paper6_Millennium_Frontier_Extensions_Lean4.pdf",
-      "size_bytes": 607507,
-      "sha256": "33b26ec90b7a2d03fa8a8b503fbf03add3df5ec5aff9efddbe49be805aca1325",
-      "md5": "a343fa09ede8b13990be38f3dcd0d74e"
+      "size_bytes": 630717,
+      "sha256": "cefb2e81b06cfc61cc5302071b73c88ff16410e93a7c1babe8dbd31693b72690",
+      "md5": "db01ca125d3e376d56ae596ab7c9a0ff"
     },
     {
       "id": "ReleaseBundle",
@@ -58,8 +58,8 @@
       "id": "VerificationReceipt",
       "filename": "FULL_AUTOMATION_VERIFICATION_RECEIPT.json",
       "size_bytes": 7186,
-      "sha256": "f3e2bd05df45efa5ebed878a99ac75001f0cbccc15a1267d01af7edab4414256",
-      "md5": "00632b1574aa16700ebab8a045389cf2"
+      "sha256": "e42acf2db1dfb8e60b0a80f96f622e6ee10bb059ecd1f916b386dcb0627907ed",
+      "md5": "965e7305b4a07ea6f8a595c7b7927224"
     },
     {
       "id": "MillenniumExtReceipt",
@@ -69,11 +69,25 @@
       "md5": "d9fc7bd55dc67cd9c19af81da4a1e38f"
     },
     {
+      "id": "PerPaperDOIsReceipt",
+      "filename": "ZENODO_PER_PAPER_DOIS_RECEIPT.json",
+      "size_bytes": 7184,
+      "sha256": "ab71b5d6f344abe8be21b45d71190b41b006b92a573f21882fb15ceaacc72fae",
+      "md5": "d0740cdfb4f601f1684bae7190eac7f7"
+    },
+    {
+      "id": "ReleaseBundleV160",
+      "filename": "HODGE_LEAN4_6PAPER_RELEASE_BUNDLE_v1.6.0.zip",
+      "size_bytes": 3829554,
+      "sha256": "394f5e1898db57f5c7253ed6036cdea79710f108fc5d9d4a88e39c29dbc4af48",
+      "md5": "6a90b9f1618b2f97ac77d99a76636bd9"
+    },
+    {
       "id": "PlainEnglishArticle",
       "filename": "HODGE_FOR_EVERYONE_PLAIN_ENGLISH_ARTICLE.md",
-      "size_bytes": 9930,
-      "sha256": "aa7b3b7d932b174ea12fdbf30747351aaadc41a00d2fba171472a85048e182d9",
-      "md5": "04d151a0e2e63346171271dc3f9b54e9"
+      "size_bytes": 12601,
+      "sha256": "6d9bc96618d9c070733c5586e328763a1d89215238e2f044f1d20b21cdc13f79",
+      "md5": "a4ff34fdcfbb0efcdb4fb7795785a67c"
     },
     {
       "id": "UnifiedSynthesisDoc",
@@ -81,60 +95,74 @@
       "size_bytes": 38643,
       "sha256": "aa6f8308009f668d20fb716ba6d64f2c2d7e979bbcc81930b267aebb1871743c",
       "md5": "c47a5e32dbfec6b9da9f7769f4c40088"
+    },
+    {
+      "id": "Stage1to3LeanCert",
+      "filename": "HodgeClayConditionsStage1to3Cert.lean",
+      "size_bytes": 5164,
+      "sha256": "542d0baeaaeb7852df51faba968f624612110437e7f0d2a55dbe72502eab31e2",
+      "md5": "67dac8ca4a7feced37aff8fa264ee726"
+    },
+    {
+      "id": "Stage1to3ProbeReceipt",
+      "filename": "probe_hodge_clay_stage1to3_results.json",
+      "size_bytes": 3582,
+      "sha256": "8802529657b581d436c286dc8a630c5ccd30363e37a4b19cf5c09cb570c98fca",
+      "md5": "bc49714aa857d92507110ccdb6b6723b"
     }
   ],
   "status": "PUBLISHED",
   "state": "done",
-  "deposition_id": 24398323,
-  "parent_deposition_id": 24381741,
+  "deposition_id": 24405096,
+  "parent_deposition_id": 24398323,
   "concept_doi": "10.5281/zenodo.24329779",
-  "doi": "10.5281/zenodo.24398323",
-  "html_url": "https://zenodo.org/deposit/24398323",
-  "record_url": "https://zenodo.org/records/24398323",
-  "latest_url": "https://zenodo.org/records/24381741/latest",
-  "prereserved_doi": "10.5281/zenodo.24398323",
+  "doi": "10.5281/zenodo.24405096",
+  "html_url": "https://zenodo.org/deposit/24405096",
+  "record_url": "https://zenodo.org/records/24405096",
+  "latest_url": "https://zenodo.org/records/24398323/latest",
+  "prereserved_doi": "10.5281/zenodo.24405096",
   "uploaded_files": [
     {
       "filename": "Paper1_Shioda_Aoki_Fermat_Lean4.pdf",
       "size_bytes": 689891,
-      "local_sha256": "d0b44ba3ae119f1950d6fdd7eba6479dc5a5444d9ab29b4796c77a4f969dad58",
-      "local_md5": "3c04442c9b98fbbdde1b7ccb6cb088df",
-      "remote_checksum": "md5:3c04442c9b98fbbdde1b7ccb6cb088df"
+      "local_sha256": "803584057b91845f57f91c13f990af58bf820831fa5807eb23b175e86a6e18a6",
+      "local_md5": "3cb4be8dd91bc1f6f9b2d868f4323eb0",
+      "remote_checksum": "md5:3cb4be8dd91bc1f6f9b2d868f4323eb0"
     },
     {
       "filename": "Paper2_Macaulay_Apolarity_CY4_Lean4.pdf",
       "size_bytes": 629232,
-      "local_sha256": "ea0590143807aac2ed0158abc4a7e4282ecb50fd3bdb7e101d61de7d34d1fc34",
-      "local_md5": "8f88a028f899afe3da5710df72301949",
-      "remote_checksum": "md5:8f88a028f899afe3da5710df72301949"
+      "local_sha256": "2dce694d4d062f950bc553f182cd53b81067f257a2fa03af7ae8f28ba0a6e37d",
+      "local_md5": "71d2bde9328044023277da768db8b398",
+      "remote_checksum": "md5:71d2bde9328044023277da768db8b398"
     },
     {
       "filename": "Paper3_Spin8_Triality_Mumford_Lean4.pdf",
       "size_bytes": 669945,
-      "local_sha256": "904017f9f1a106cbf22a73fb8ceb654319ceb01ede4e3c5b5bf9e8d4a4530dcc",
-      "local_md5": "12f30816923fdd944bd936b19a2b2524",
-      "remote_checksum": "md5:12f30816923fdd944bd936b19a2b2524"
+      "local_sha256": "eb4824098de54b50e23e076cf1ad95c1b6d2eb0abe35f8363eb923892ac9f29f",
+      "local_md5": "38103cdb1c98b08b833a9228cfd6f37e",
+      "remote_checksum": "md5:38103cdb1c98b08b833a9228cfd6f37e"
     },
     {
       "filename": "Paper4_Gauss_Manin_Jet_Reconstruction.pdf",
       "size_bytes": 703605,
-      "local_sha256": "8cd6ae0ede4fbc033baf8360a6e94f026cdd256b5e0b48f9ac89c38aa50dbf16",
-      "local_md5": "11ddf66c29060d1a4c31ee0a1d09e6ff",
-      "remote_checksum": "md5:11ddf66c29060d1a4c31ee0a1d09e6ff"
+      "local_sha256": "c189228db4ff652aab1a8d5b18afc713695137e03e03454440120a1acf0ceb53",
+      "local_md5": "e71714ef9237b11177d4b647a2861597",
+      "remote_checksum": "md5:e71714ef9237b11177d4b647a2861597"
     },
     {
       "filename": "Paper5_Cyclotomic_Incidence_Sieve_Lean4.pdf",
       "size_bytes": 616473,
-      "local_sha256": "8691d265850271a8da53f791c2c9b958f7b8fd20480252d0c36dfb47a8b23048",
-      "local_md5": "47149c4c3f44751f0d64d09b4ac327f8",
-      "remote_checksum": "md5:47149c4c3f44751f0d64d09b4ac327f8"
+      "local_sha256": "12ec2b8266ba0147421c87832d30cb5c5fce76f13ad2e7c7e058383a1458c055",
+      "local_md5": "e4a30efaea10622affc2cd41c6e24530",
+      "remote_checksum": "md5:e4a30efaea10622affc2cd41c6e24530"
     },
     {
       "filename": "Paper6_Millennium_Frontier_Extensions_Lean4.pdf",
-      "size_bytes": 607507,
-      "local_sha256": "33b26ec90b7a2d03fa8a8b503fbf03add3df5ec5aff9efddbe49be805aca1325",
-      "local_md5": "a343fa09ede8b13990be38f3dcd0d74e",
-      "remote_checksum": "md5:a343fa09ede8b13990be38f3dcd0d74e"
+      "size_bytes": 630717,
+      "local_sha256": "cefb2e81b06cfc61cc5302071b73c88ff16410e93a7c1babe8dbd31693b72690",
+      "local_md5": "db01ca125d3e376d56ae596ab7c9a0ff",
+      "remote_checksum": "md5:db01ca125d3e376d56ae596ab7c9a0ff"
     },
     {
       "filename": "HODGE_LEAN4_5PAPER_RELEASE_BUNDLE.zip",
@@ -146,9 +174,9 @@
     {
       "filename": "FULL_AUTOMATION_VERIFICATION_RECEIPT.json",
       "size_bytes": 7186,
-      "local_sha256": "f3e2bd05df45efa5ebed878a99ac75001f0cbccc15a1267d01af7edab4414256",
-      "local_md5": "00632b1574aa16700ebab8a045389cf2",
-      "remote_checksum": "md5:00632b1574aa16700ebab8a045389cf2"
+      "local_sha256": "e42acf2db1dfb8e60b0a80f96f622e6ee10bb059ecd1f916b386dcb0627907ed",
+      "local_md5": "965e7305b4a07ea6f8a595c7b7927224",
+      "remote_checksum": "md5:965e7305b4a07ea6f8a595c7b7927224"
     },
     {
       "filename": "MILLENNIUM_EXT_RECEIPT.json",
@@ -158,11 +186,25 @@
       "remote_checksum": "md5:d9fc7bd55dc67cd9c19af81da4a1e38f"
     },
     {
+      "filename": "ZENODO_PER_PAPER_DOIS_RECEIPT.json",
+      "size_bytes": 7184,
+      "local_sha256": "ab71b5d6f344abe8be21b45d71190b41b006b92a573f21882fb15ceaacc72fae",
+      "local_md5": "d0740cdfb4f601f1684bae7190eac7f7",
+      "remote_checksum": "md5:d0740cdfb4f601f1684bae7190eac7f7"
+    },
+    {
+      "filename": "HODGE_LEAN4_6PAPER_RELEASE_BUNDLE_v1.6.0.zip",
+      "size_bytes": 3829554,
+      "local_sha256": "394f5e1898db57f5c7253ed6036cdea79710f108fc5d9d4a88e39c29dbc4af48",
+      "local_md5": "6a90b9f1618b2f97ac77d99a76636bd9",
+      "remote_checksum": "md5:6a90b9f1618b2f97ac77d99a76636bd9"
+    },
+    {
       "filename": "HODGE_FOR_EVERYONE_PLAIN_ENGLISH_ARTICLE.md",
-      "size_bytes": 9930,
-      "local_sha256": "aa7b3b7d932b174ea12fdbf30747351aaadc41a00d2fba171472a85048e182d9",
-      "local_md5": "04d151a0e2e63346171271dc3f9b54e9",
-      "remote_checksum": "md5:04d151a0e2e63346171271dc3f9b54e9"
+      "size_bytes": 12601,
+      "local_sha256": "6d9bc96618d9c070733c5586e328763a1d89215238e2f044f1d20b21cdc13f79",
+      "local_md5": "a4ff34fdcfbb0efcdb4fb7795785a67c",
+      "remote_checksum": "md5:a4ff34fdcfbb0efcdb4fb7795785a67c"
     },
     {
       "filename": "WHOLE_PROJECT_UNIFIED_MATRIX_SYNTHESIS.md",
@@ -170,6 +212,20 @@
       "local_sha256": "aa6f8308009f668d20fb716ba6d64f2c2d7e979bbcc81930b267aebb1871743c",
       "local_md5": "c47a5e32dbfec6b9da9f7769f4c40088",
       "remote_checksum": "md5:c47a5e32dbfec6b9da9f7769f4c40088"
+    },
+    {
+      "filename": "HodgeClayConditionsStage1to3Cert.lean",
+      "size_bytes": 5164,
+      "local_sha256": "542d0baeaaeb7852df51faba968f624612110437e7f0d2a55dbe72502eab31e2",
+      "local_md5": "67dac8ca4a7feced37aff8fa264ee726",
+      "remote_checksum": "md5:67dac8ca4a7feced37aff8fa264ee726"
+    },
+    {
+      "filename": "probe_hodge_clay_stage1to3_results.json",
+      "size_bytes": 3582,
+      "local_sha256": "8802529657b581d436c286dc8a630c5ccd30363e37a4b19cf5c09cb570c98fca",
+      "local_md5": "bc49714aa857d92507110ccdb6b6723b",
+      "remote_checksum": "md5:bc49714aa857d92507110ccdb6b6723b"
     }
   ]
 }

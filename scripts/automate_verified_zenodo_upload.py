@@ -134,16 +134,15 @@ def resolve_zenodo_token() -> Tuple[str, str, str]:
     return "", "", ""
 
 
-def build_zenodo_metadata(total_theorems: int, version: str = "1.5.0-rosetta") -> Dict[str, Any]:
+def build_zenodo_metadata(total_theorems: int, version: str = "1.6.0-rosetta-bridges") -> Dict[str, Any]:
     from datetime import datetime, timezone
 
     today_str = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     return {
         "metadata": {
             "title": (
-                "Formalized Lean 4 Series (Papers 1-6) & Plain-English Guide: Shioda-Aoki Characters, "
-                "Macaulay Apolarity, Spin(8)/Cl(0,7) Chiral Schur Isolation, Gauss-Manin Jets, "
-                "Cyclotomic Incidence Sieves, and Conditional Fermat Bridges"
+                "Hodge Conjecture Lean 4 Formalization Suite (Papers 1-6, 42 Modules, "
+                "208 Zero-Axiom Declarations), Bridge Lemmas H1-H2 & Stage 1-3 Certificates"
             ),
             "upload_type": "publication",
             "publication_type": "workingpaper",
@@ -298,9 +297,15 @@ def verify_and_stage() -> Dict[str, Any]:
     for rec_id, rec_path in (
         ("VerificationReceipt", RECEIPT_PATH),
         ("MillenniumExtReceipt", EXT_RECEIPT_PATH),
+        ("PerPaperDOIsReceipt", REPO_ROOT / "dist" / "ZENODO_PER_PAPER_DOIS_RECEIPT.json"),
+        ("ReleaseBundleV160", REPO_ROOT / "dist" / "HODGE_LEAN4_6PAPER_RELEASE_BUNDLE_v1.6.0.zip"),
         ("PlainEnglishArticle", REPO_ROOT / "docs" / "HODGE_FOR_EVERYONE_PLAIN_ENGLISH_ARTICLE.md"),
         ("UnifiedSynthesisDoc", REPO_ROOT / "docs" / "WHOLE_PROJECT_UNIFIED_MATRIX_SYNTHESIS.md"),
+        ("Stage1to3LeanCert", Path(r"d:\Comfy UI\tubulance\formal\HodgeClayConditionsStage1to3Cert.lean")),
+        ("Stage1to3ProbeReceipt", Path(r"d:\Comfy UI\tubulance\probe_hodge_clay_stage1to3_results.json")),
     ):
+        if not rec_path.exists():
+            continue
         rec_sha, rec_md5 = file_hashes(rec_path)
         verified_files.append(
             {
