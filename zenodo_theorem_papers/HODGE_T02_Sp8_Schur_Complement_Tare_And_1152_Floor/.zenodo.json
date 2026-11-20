@@ -1,0 +1,25 @@
+{
+  "title": "Higher-Dimensional Schur Trigonometry and the 1152 Invariant Integer Floor",
+  "description": "We prove that taring out the symmetric Sp(8) divisor classes of norms sixteen and four hundred thirty-two via the matrix Schur complement isolates an exact integer floor of eleven hundred fifty-two at an exact ninety-degree right angle. We formalize this constructive identity in Lean 4 with zero sorry, confirming that the algebraic cycle cannot collapse to zero or decay into background divisor noise. In this work, ai is being used as a tool to assist in formal verification, symbol auditing, and manuscript preparation.",
+  "creators": [
+    {
+      "name": "Arqam",
+      "affiliation": "Brandenburg University of Technology (BTU) Cottbus-Senftenberg"
+    }
+  ],
+  "keywords": [
+    "Schur Complement",
+    "Sp(8) Invariance",
+    "Tare Button",
+    "Integer Floor",
+    "Hodge Theory",
+    "Hodge Conjecture",
+    "Lean 4",
+    "Formal Verification",
+    "Calabi-Yau 4-folds"
+  ],
+  "license": "CC-BY-4.0",
+  "upload_type": "publication",
+  "publication_type": "article",
+  "access_right": "open"
+}

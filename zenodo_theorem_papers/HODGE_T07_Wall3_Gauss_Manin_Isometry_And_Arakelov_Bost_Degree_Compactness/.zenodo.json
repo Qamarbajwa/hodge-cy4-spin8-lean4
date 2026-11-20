@@ -1,0 +1,25 @@
+{
+  "title": "Wall 3 Gauss-Manin Isometry Preservation and Arakelov-Bost Cycle Degree Uniform Compactness",
+  "description": "We prove that along horizontal Gauss-Manin deformation paths on the SO(2,4) period domain, parallel transport preserves the eleven hundred fifty-two Schur norm identically, while Arakelov-Bost slope positivity bounds the intersection degree of algebraic cycles by five point three three three three. We formalize this uniform degree compactness theorem in Lean 4 with zero sorry. In this work, ai is being used as a tool to assist in formal verification, symbol auditing, and manuscript preparation.",
+  "creators": [
+    {
+      "name": "Arqam",
+      "affiliation": "Brandenburg University of Technology (BTU) Cottbus-Senftenberg"
+    }
+  ],
+  "keywords": [
+    "Gauss-Manin",
+    "Arakelov Theory",
+    "Bost Slope",
+    "Degree Compactness",
+    "Lean 4",
+    "Hodge Conjecture",
+    "Lean 4",
+    "Formal Verification",
+    "Calabi-Yau 4-folds"
+  ],
+  "license": "CC-BY-4.0",
+  "upload_type": "publication",
+  "publication_type": "article",
+  "access_right": "open"
+}

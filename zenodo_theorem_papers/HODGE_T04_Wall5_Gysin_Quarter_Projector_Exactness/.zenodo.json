@@ -1,0 +1,25 @@
+{
+  "title": "Wall 5 Gysin Quarter-Projector Exactness and Invertible Transfer Kernels in Hodge Theory",
+  "description": "We prove that the Gysin pushforward and pullback maps under geometric blow-ups resolve the identity into four mutually orthogonal quarter-projectors, ensuring that algebraic cycle energy is conserved with zero dissipation across singular transitions. We formalize this exact transfer kernel in Lean 4 with zero sorry. In this work, ai is being used as a tool to assist in formal verification, symbol auditing, and manuscript preparation.",
+  "creators": [
+    {
+      "name": "Arqam",
+      "affiliation": "Brandenburg University of Technology (BTU) Cottbus-Senftenberg"
+    }
+  ],
+  "keywords": [
+    "Gysin Exactness",
+    "Quarter Projector",
+    "Wall 5",
+    "Cycle Class",
+    "Lean 4",
+    "Hodge Conjecture",
+    "Lean 4",
+    "Formal Verification",
+    "Calabi-Yau 4-folds"
+  ],
+  "license": "CC-BY-4.0",
+  "upload_type": "publication",
+  "publication_type": "article",
+  "access_right": "open"
+}

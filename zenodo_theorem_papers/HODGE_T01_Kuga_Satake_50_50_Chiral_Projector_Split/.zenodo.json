@@ -1,0 +1,25 @@
+{
+  "title": "The 50/50 Kuga-Satake Clifford Involution Split and Grade-2 Chiral Projector Orthogonality",
+  "description": "We prove that the seventy-dimensional middle cohomology of a Calabi-Yau four-fold decomposes into two mutually orthogonal thirty-five-dimensional chiral subspaces under the Kuga-Satake Clifford involution. We formalize this exact fifty-fifty partition in Lean 4 with zero sorry and zero custom axioms, certifying that the chiral projectors add to the identity, multiply to zero, and generate an exact integer chiral cycle. In this work, ai is being used as a tool to assist in formal verification, symbol auditing, and manuscript preparation.",
+  "creators": [
+    {
+      "name": "Arqam",
+      "affiliation": "Brandenburg University of Technology (BTU) Cottbus-Senftenberg"
+    }
+  ],
+  "keywords": [
+    "Kuga-Satake",
+    "Clifford Algebra",
+    "Chiral Projector",
+    "Middle Cohomology",
+    "Calabi-Yau 4-folds",
+    "Hodge Conjecture",
+    "Lean 4",
+    "Formal Verification",
+    "Calabi-Yau 4-folds"
+  ],
+  "license": "CC-BY-4.0",
+  "upload_type": "publication",
+  "publication_type": "article",
+  "access_right": "open"
+}

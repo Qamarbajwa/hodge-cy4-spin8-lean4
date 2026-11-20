@@ -1,0 +1,26 @@
+{
+  "title": "What Is Happening and What Relates to What: A Common-Person Relational Guide to the Hodge Conjecture and the Rosetta Patterns",
+  "description": "This guide provides a warm, complete, and step-by-step relational explanation of our mathematical research on the Hodge Conjecture for Calabi-Yau four-folds and its connection to the other Millennium problems. We explain in simple everyday language what the Hodge Conjecture is asking, how the seventy-dimensional shape space splits fifty-fifty into two thirty-five-dimensional chiral halves, how pressing a mathematical tare button removes the ordinary symmetric shapes of sizes sixteen and four hundred thirty-two to reveal the hidden eleven hundred fifty-two core at an exact ninety-degree right angle, and how every formal Lean 4 theorem module connects to the next like links in a chain. In this work, ai is being used as a tool to assist in formal verification, symbol auditing, and manuscript preparation.",
+  "creators": [
+    {
+      "name": "Arqam",
+      "affiliation": "Brandenburg University of Technology (BTU) Cottbus-Senftenberg"
+    }
+  ],
+  "keywords": [
+    "Hodge Conjecture",
+    "Common Person Guide",
+    "Kuga-Satake Involution",
+    "Schur Complement Tare",
+    "Rosetta Patterns",
+    "Lean 4",
+    "Hodge Conjecture",
+    "Lean 4",
+    "Formal Verification",
+    "Calabi-Yau 4-folds"
+  ],
+  "license": "CC-BY-4.0",
+  "upload_type": "publication",
+  "publication_type": "article",
+  "access_right": "open"
+}

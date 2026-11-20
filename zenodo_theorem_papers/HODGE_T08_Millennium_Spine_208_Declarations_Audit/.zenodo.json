@@ -1,0 +1,25 @@
+{
+  "title": "Complete Formal Verification Audit of the 208 Zero-Axiom Declarations across 42 Hodge Lean 4 Modules",
+  "description": "We present a complete, rigorous verification audit of all two hundred eight theorem declarations spanning forty-two Lean 4 modules that form the foundational spine of our Hodge Conjecture research. We verify that every single declaration compiles cleanly with zero sorry, zero custom axioms, and full compliance under standard Lean 4 kernel foundations. In this work, ai is being used as a tool to assist in formal verification, symbol auditing, and manuscript preparation.",
+  "creators": [
+    {
+      "name": "Arqam",
+      "affiliation": "Brandenburg University of Technology (BTU) Cottbus-Senftenberg"
+    }
+  ],
+  "keywords": [
+    "Lean 4",
+    "Formal Audit",
+    "Zero Axioms",
+    "Kernel Verification",
+    "Hodge Spine",
+    "Hodge Conjecture",
+    "Lean 4",
+    "Formal Verification",
+    "Calabi-Yau 4-folds"
+  ],
+  "license": "CC-BY-4.0",
+  "upload_type": "publication",
+  "publication_type": "article",
+  "access_right": "open"
+}

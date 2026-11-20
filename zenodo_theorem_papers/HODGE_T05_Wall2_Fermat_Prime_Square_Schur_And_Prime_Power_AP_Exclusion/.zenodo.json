@@ -1,0 +1,25 @@
+{
+  "title": "Wall 2 Fermat Prime Square Schur Defect and Arithmetic Progression Exclusion",
+  "description": "We prove that on Fermat hypersurfaces, the prime-square Galois defect strictly exceeds one point five, preventing algebraic cycles from degenerating along infinite arithmetic progressions of Frobenius primes. We formalize this arithmetic progression exclusion in Lean 4 with zero sorry. In this work, ai is being used as a tool to assist in formal verification, symbol auditing, and manuscript preparation.",
+  "creators": [
+    {
+      "name": "Arqam",
+      "affiliation": "Brandenburg University of Technology (BTU) Cottbus-Senftenberg"
+    }
+  ],
+  "keywords": [
+    "Wall 2",
+    "Fermat Hypersurface",
+    "Arithmetic Progression",
+    "Prime Square",
+    "Lean 4",
+    "Hodge Conjecture",
+    "Lean 4",
+    "Formal Verification",
+    "Calabi-Yau 4-folds"
+  ],
+  "license": "CC-BY-4.0",
+  "upload_type": "publication",
+  "publication_type": "article",
+  "access_right": "open"
+}

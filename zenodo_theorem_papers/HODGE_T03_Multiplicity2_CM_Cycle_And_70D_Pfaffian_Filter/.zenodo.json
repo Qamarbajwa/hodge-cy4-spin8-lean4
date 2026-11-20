@@ -1,0 +1,25 @@
+{
+  "title": "Multiplicity-Two CM Cycles and the 70D Pfaffian Filter on O(2,4) Period Domains",
+  "description": "We prove that on the twenty-dimensional O(2,4) period domain of a Calabi-Yau four-fold, the skew-symmetric bivector pairing forces the determinant to equal a perfect square, establishing a positive Pfaffian filter that separates algebraic CM cycles from non-algebraic background glare with multiplicity two. We formalize this decomposition in Lean 4 with zero sorry. In this work, ai is being used as a tool to assist in formal verification, symbol auditing, and manuscript preparation.",
+  "creators": [
+    {
+      "name": "Arqam",
+      "affiliation": "Brandenburg University of Technology (BTU) Cottbus-Senftenberg"
+    }
+  ],
+  "keywords": [
+    "Mumford-Tate",
+    "CM Cycles",
+    "Pfaffian Filter",
+    "Period Domain",
+    "Spin(2,4)",
+    "Hodge Conjecture",
+    "Lean 4",
+    "Formal Verification",
+    "Calabi-Yau 4-folds"
+  ],
+  "license": "CC-BY-4.0",
+  "upload_type": "publication",
+  "publication_type": "article",
+  "access_right": "open"
+}

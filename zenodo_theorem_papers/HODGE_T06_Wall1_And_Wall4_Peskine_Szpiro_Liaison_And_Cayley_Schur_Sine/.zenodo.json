@@ -1,0 +1,25 @@
+{
+  "title": "Walls 1 and 4: Peskine-Szpiro Liaison Rank Bounds and Cayley Bundle Schur Sine Invariance",
+  "description": "We prove that the Noether-Lefschetz locus on sextic Calabi-Yau four-folds has codimension bounded below by four hundred twenty-six, and that Peskine-Szpiro liaison preserves geometric cycle degree positivity while the Cayley calibration bundle fixes the Schur sine identically at one. We formalize these twin geometric barriers in Lean 4 with zero sorry. In this work, ai is being used as a tool to assist in formal verification, symbol auditing, and manuscript preparation.",
+  "creators": [
+    {
+      "name": "Arqam",
+      "affiliation": "Brandenburg University of Technology (BTU) Cottbus-Senftenberg"
+    }
+  ],
+  "keywords": [
+    "Peskine-Szpiro",
+    "Liaison",
+    "Wall 1",
+    "Wall 4",
+    "Cayley Calibration",
+    "Hodge Conjecture",
+    "Lean 4",
+    "Formal Verification",
+    "Calabi-Yau 4-folds"
+  ],
+  "license": "CC-BY-4.0",
+  "upload_type": "publication",
+  "publication_type": "article",
+  "access_right": "open"
+}
