@@ -1,0 +1,28 @@
+{
+  "title": "Higher-Codimension Algebraic Cycle Synthesis on General Projective Varieties via Iterated Clifford-Fredholm Divisors",
+  "description": "Formal machine-verified Lean 4 proof and numerical probes extending Subtractive Spectral Holography to arbitrary codimension p using iterated Clifford algebras and multivariable Poincare-Lelong exactness. In this work, ai is being used as a tool to assist in formal verification, symbol auditing, and manuscript preparation.",
+  "creators": [
+    {
+      "name": "Arqam",
+      "affiliation": "Brandenburg University of Technology (BTU) Cottbus-Senftenberg"
+    }
+  ],
+  "access_right": "open",
+  "license": "cc-by-4.0",
+  "keywords": [
+    "Hodge Conjecture",
+    "Higher Codimension",
+    "Clifford Algebra",
+    "Lean 4",
+    "Fredholm Divisors",
+    "Poincare-Lelong"
+  ],
+  "communities": [
+    {
+      "identifier": "math"
+    },
+    {
+      "identifier": "algebraic-geometry"
+    }
+  ]
+}
