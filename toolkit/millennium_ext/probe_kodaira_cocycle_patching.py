@@ -4,6 +4,10 @@ Numerical Verification Probe for Paper T23:
 The Global Kodaira--Fredholm Cocycle Patching Theorem:
 Bridging Local Analytic Fredholm Divisors to Global Algebraic Line Bundle Sections
 
+Author: Qamar Munawer
+Affiliation: Brandenburg University of Technology Cottbus-Senftenberg
+Methodology Note: In this work, ai is being used as a tool.
+
 Validates:
 1. Kodaira curvature positivity floor: k * omega_FS - Ric >= delta > 0.
 2. Hörmander L^2 error bound decay: 1 / (k * omega_FS - Ric) -> 0 as k increases.

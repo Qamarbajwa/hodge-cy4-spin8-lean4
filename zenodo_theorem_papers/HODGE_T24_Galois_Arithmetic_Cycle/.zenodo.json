@@ -3,8 +3,8 @@
   "description": "Formal Lean 4 machine-certified proof and numerical verification of the Galois-Symmetrized Arithmetic Cycle Theorem, establishing that Galois orbit averaging produces algebraic cycles defined over Q with rational Chow class. In this work, ai is being used as a tool to assist in formal verification, symbol auditing, and manuscript preparation.",
   "creators": [
     {
-      "name": "Arqam",
-      "affiliation": "Brandenburg University of Technology (BTU) Cottbus-Senftenberg"
+      "name": "Qamar Munawer",
+      "affiliation": "Brandenburg University of Technology Cottbus-Senftenberg"
     }
   ],
   "access_right": "open",

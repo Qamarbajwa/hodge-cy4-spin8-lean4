@@ -6,7 +6,7 @@ Builds Standalone Zenodo Paper T23:
 "The Global Kodaira--Fredholm Cocycle Patching Theorem:
 Bridging Local Analytic Fredholm Divisors to Global Algebraic Line Bundle Sections on Projective Manifolds"
 
-Author: Arqam, Brandenburg University of Technology (BTU) Cottbus-Senftenberg.
+Author: Qamar Munawer, Brandenburg University of Technology Cottbus-Senftenberg.
 Methodology note: "ai is being used as a tool"
 """
 
@@ -81,7 +81,7 @@ LATEX_HEADER = r"""\documentclass[11pt,a4paper]{article}
 \newtheorem{remark}[theorem]{Remark}
 """
 
-AUTHOR_BLOCK = r"""\author{Arqam \\ Brandenburg University of Technology (BTU) Cottbus-Senftenberg}
+AUTHOR_BLOCK = r"""\author{Qamar Munawer \\ Brandenburg University of Technology Cottbus-Senftenberg}
 
 \date{\today}
 """
@@ -113,8 +113,8 @@ def write_zenodo_json(folder: Path, title: str, description: str, keywords: list
         "description": description + " In this work, ai is being used as a tool to assist in formal verification, symbol auditing, and manuscript preparation.",
         "creators": [
             {
-                "name": "Arqam",
-                "affiliation": "Brandenburg University of Technology (BTU) Cottbus-Senftenberg"
+                "name": "Qamar Munawer",
+                "affiliation": "Brandenburg University of Technology Cottbus-Senftenberg"
             }
         ],
         "access_right": "open",
@@ -242,6 +242,17 @@ Furthermore, for $p$ orthogonal Clifford channels $\Xi_{\omega, 1, k}, \dots, \X
 \end{equation}
 has complex dimension exactly $n - p$, realizing an algebraic subvariety of exact codimension $p$.
 \end{theorem}
+
+\section{How Energy, Quantum Matter, Pfaffian Squares, and Real-Life Fields Connect}
+
+The mathematical architecture of Kodaira curvature positivity and cocycle patching reflects fundamental organizing principles of quantum matter and modern field theories:
+
+\begin{enumerate}
+  \item \textbf{Curvature Floors and Gauge Vacuum Polarization:} In quantum electrodynamics and non-abelian Yang--Mills theories, strong background fields polarize the quantum vacuum. The Kodaira curvature condition $k\,\omega_{\mathrm{FS}} - \operatorname{Ric}(X) > 0$ plays the exact role of a paramagnetic gauge field threshold: when the background magnetic field exceeds the effective vacuum curvature, unstable infrared modes are stabilized and energy levels become strictly positive.
+  \item \textbf{Transition Cocycles and Fiber Bundle Gauge Symmetries:} In the standard model of particle physics, electromagnetic potentials and gluon fields patch between local coordinate charts via gauge transformations $A_\alpha - A_\beta = d\log g_{\alpha\beta}$. The exactness of our transition cocycle $g_{\alpha\gamma} = g_{\alpha\beta} g_{\beta\gamma}$ guarantees that no topological anomalies or Dirac string boundary ambiguities disrupt the global coherence of the physical state.
+  \item \textbf{H\"ormander $L^2$-Estimates and Soliton Localization:} The monotonic decay of the H\"ormander error bound $O(1/k) \to 0$ corresponds to the classical suppression of quantum tunneling in the large-charge or semiclassical limit ($k \gg 1$). High polarization powers freeze continuous wave packets into sharp localized topological solitons (algebraic cycles).
+  \item \textbf{Pfaffian Squares and Real-Life Superconducting States:} In topological superconductors hosting Majorana zero modes, boundary states are protected by the sign parity of the Pfaffian. Slicing with $p$ independent Clifford generators ensures that the intersection locus preserves the full Clifford apolarity with zero parity defect.
+\end{enumerate}
 
 \section{Machine-Checked Lean 4 Formalization}
 

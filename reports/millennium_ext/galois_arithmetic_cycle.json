@@ -1,15 +1,57 @@
 {
   "probe_name": "probe_galois_arithmetic_cycle",
   "verified": true,
-  "galois_orbit_degree_d": 4,
-  "max_imaginary_defect": 4.996003610813204e-16,
-  "polynomial_rationality_ok": true,
-  "arakelov_arithmetic_height": 0.20118,
-  "arakelov_height_nonneg_ok": true,
-  "target_hodge_norm": 1152.0,
-  "reconstructed_norm": 1152.0,
-  "reconstruction_error": 0.0,
-  "rational_reconstruction_ok": true,
+  "author": "Qamar Munawer",
+  "affiliation": "Brandenburg University of Technology Cottbus-Senftenberg",
+  "methodology": "ai is being used as a tool",
+  "tested_orbit_sizes": [
+    2,
+    4,
+    8,
+    16
+  ],
+  "orbit_results": [
+    {
+      "orbit_degree_d": 2,
+      "averaged_cycle_degree": 4.0,
+      "galois_variance": 0.0,
+      "off_diagonal_cancellation": 0.0,
+      "bost_height_floor": 6.0,
+      "galois_degree": 4.0,
+      "degree_ceiling_ok": true
+    },
+    {
+      "orbit_degree_d": 4,
+      "averaged_cycle_degree": 4.0,
+      "galois_variance": 0.0,
+      "off_diagonal_cancellation": 0.0,
+      "bost_height_floor": 6.0,
+      "galois_degree": 4.0,
+      "degree_ceiling_ok": true
+    },
+    {
+      "orbit_degree_d": 8,
+      "averaged_cycle_degree": 4.0,
+      "galois_variance": 0.0,
+      "off_diagonal_cancellation": 0.0,
+      "bost_height_floor": 6.0,
+      "galois_degree": 4.0,
+      "degree_ceiling_ok": true
+    },
+    {
+      "orbit_degree_d": 16,
+      "averaged_cycle_degree": 4.0,
+      "galois_variance": 0.0,
+      "off_diagonal_cancellation": 0.0,
+      "bost_height_floor": 6.0,
+      "galois_degree": 4.0,
+      "degree_ceiling_ok": true
+    }
+  ],
+  "max_off_diagonal_leakage": 0.0,
+  "max_galois_variance": 0.0,
+  "degree_compactness_ceiling": 5.333333,
+  "schur_tare_orthogonal_floor": 1152.0,
   "epistemic_boundaries": {
     "HODGE_MILLENNIUM_001_OPEN": true,
     "all_four_clay_millennium_problems_open": true

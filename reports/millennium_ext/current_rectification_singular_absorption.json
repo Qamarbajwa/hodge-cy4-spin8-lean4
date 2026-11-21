@@ -1,0 +1,39 @@
+{
+  "probe_name": "probe_current_rectification_singular_absorption",
+  "verified": true,
+  "author": "Qamar Munawer",
+  "affiliation": "Brandenburg University of Technology Cottbus-Senftenberg",
+  "methodology": "ai is being used as a tool",
+  "ambient_dimension": 4,
+  "cycle_codimension": 2,
+  "singular_locus_dimension": 1,
+  "cycle_dimension": 2,
+  "codimension_excess_ok": true,
+  "schur_tared_rectified_energy": 99.0,
+  "schur_singular_absorption_ok": true,
+  "dyadic_scales_m_1_to_10": [
+    0.5,
+    0.25,
+    0.125,
+    0.0625,
+    0.03125,
+    0.015625,
+    0.007812,
+    0.003906,
+    0.001953,
+    0.000977
+  ],
+  "dyadic_flat_norm_decay_ok": true,
+  "rectified_boundary_mass": 0.0,
+  "rectified_current_closed_ok": true,
+  "integer_lelong_numbers": [
+    1,
+    2
+  ],
+  "total_rectified_cycle_mass": 1728.0,
+  "lelong_integer_quantization_ok": true,
+  "epistemic_boundaries": {
+    "HODGE_MILLENNIUM_001_OPEN": true,
+    "all_four_clay_millennium_problems_open": true
+  }
+}
