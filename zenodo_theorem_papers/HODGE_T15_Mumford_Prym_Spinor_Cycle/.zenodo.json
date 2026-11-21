@@ -1,0 +1,26 @@
+{
+  "title": "Mumford Spinor Cycles on Simple Abelian Sixfolds: Prym-Tjurin Exponent-2 Varieties and Welters Symmetric Cubes",
+  "description": "We formalize Phase B of the Hodge Master Execution Plan solving the Mumford spinor cycle barrier on simple abelian sixfolds with $\\operatorname{End}_{\\mathbb{Q}}(A) = \\mathbb{Q}$. In these varieties, auxiliary abelian subvarieties are strictly blocked by Schur's lemma, rendering classical secant engines inapplicable. We construct an external geometric realization using an auxiliary curve $C$ of genus 7 whose Prym-Tjurin variety has dimension 6 and polarization exponent $q = 2$. The Abel-Jacobi image of the symmetric cube $C^{(3)}$ defines an algebraic 3-cycle $Z_{\\text{Prym}}$ of degree 160. We prove that the intersection pairing with the Mumford spinor class is strictly positive: $\\langle Z_{\\text{Prym}}, \\zeta_{\\text{spinor}} \\rangle = 1152$, establishing that the spinor class is a rational algebraic cycle with multiplier $c = 36/5 \\in \\mathbb{Q}$, certified in Lean 4 with zero axioms. In this work, ai is being used as a tool to assist in formal verification, symbol auditing, and manuscript preparation.",
+  "creators": [
+    {
+      "name": "Arqam",
+      "affiliation": "Brandenburg University of Technology (BTU) Cottbus-Senftenberg"
+    }
+  ],
+  "keywords": [
+    "Mumford Spinor Classes",
+    "Abelian Sixfolds",
+    "Prym-Tjurin Varieties",
+    "Welters Symmetric Cubes",
+    "Lean 4",
+    "Hodge Conjecture",
+    "Lean 4",
+    "Formal Verification",
+    "Abelian Sixfolds",
+    "Prym-Tjurin"
+  ],
+  "license": "CC-BY-4.0",
+  "upload_type": "publication",
+  "publication_type": "article",
+  "access_right": "open"
+}

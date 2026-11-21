@@ -1,0 +1,30 @@
+{
+  "curve_and_prym_geometry": {
+    "genus": 7,
+    "dim_H1": 14,
+    "prym_dimension": 6,
+    "quotient_dimension": 1,
+    "polarization_exponent": 2,
+    "plus1_multiplicity": 2,
+    "minus1_multiplicity": 12,
+    "dimension_sum_consistent": true
+  },
+  "symmetric_cube_cycle": {
+    "cycle_dimension": 3,
+    "ambient_dimension": 6,
+    "cycle_codimension": 3,
+    "welters_degree": 160,
+    "verified": true
+  },
+  "mumford_spinor_pairing": {
+    "spinor_polarization_norm": 1152.0,
+    "intersection_pairing": 1152.0,
+    "rational_multiplier_str": "36/5",
+    "rational_multiplier_float": 7.2,
+    "numerator": 36,
+    "denominator": 5,
+    "pairing_strictly_positive": true,
+    "spinor_class_is_algebraic": true
+  },
+  "all_passed": true
+}
