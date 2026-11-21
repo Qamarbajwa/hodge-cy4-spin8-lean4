@@ -1,0 +1,18 @@
+{
+  "probe_name": "probe_analytic_non_triviality",
+  "verified": true,
+  "heat_kernel_leading_a0": 4.0,
+  "a0_positivity_ok": true,
+  "min_spectral_gap_observed": 5.0,
+  "spectral_gap_positivity_ok": true,
+  "generic_basepoint_x0": 0.5,
+  "generic_fredholm_det_value": 1.020855,
+  "non_vanishing_x0_ok": true,
+  "zero_locus_nowhere_dense": true,
+  "codimension_exactness": 2,
+  "ambient_dimension": 4,
+  "epistemic_boundaries": {
+    "HODGE_MILLENNIUM_001_OPEN": true,
+    "all_four_clay_millennium_problems_open": true
+  }
+}

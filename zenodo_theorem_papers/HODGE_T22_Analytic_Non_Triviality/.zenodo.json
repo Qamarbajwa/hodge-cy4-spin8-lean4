@@ -1,0 +1,28 @@
+{
+  "title": "The Analytic Non-Triviality Theorem for Schur-Tared Fredholm Divisors on K\u00e4hler Manifolds: Resolving the Trivial-Zero Obstruction via Heat-Kernel Index Theory and Holomorphic Rigidity",
+  "description": "Formal Lean 4 machine-certified proof and numerical verification of the Analytic Non-Triviality Theorem, establishing that regularized Schur-tared Fredholm determinants cannot vanish identically, resolving the trivial-zero obstruction in algebraic cycle extraction. In this work, ai is being used as a tool to assist in formal verification, symbol auditing, and manuscript preparation.",
+  "creators": [
+    {
+      "name": "Arqam",
+      "affiliation": "Brandenburg University of Technology (BTU) Cottbus-Senftenberg"
+    }
+  ],
+  "access_right": "open",
+  "license": "cc-by-4.0",
+  "keywords": [
+    "Hodge Conjecture",
+    "Fredholm Determinant",
+    "Heat Kernel",
+    "Spectral Holography",
+    "Lean 4",
+    "Algebraic Cycles"
+  ],
+  "communities": [
+    {
+      "identifier": "math"
+    },
+    {
+      "identifier": "algebraic-geometry"
+    }
+  ]
+}
