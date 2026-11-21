@@ -2,17 +2,34 @@
   "probe_name": "probe_kodaira_cocycle_patching",
   "verified": true,
   "min_twist_degree_k": 5,
+  "tested_twist_degrees": [
+    5,
+    10,
+    20,
+    50
+  ],
   "curvature_floors_tested": [
     4.5,
     17.0,
-    29.5
+    42.0,
+    117.0
+  ],
+  "hormander_decay_bounds": [
+    0.222222,
+    0.058824,
+    0.02381,
+    0.008547
   ],
   "kodaira_curvature_positivity_ok": true,
-  "max_cocycle_deviation": 2.220446049250313e-16,
+  "hormander_error_decay_ok": true,
+  "max_cocycle_deviation": 4.440892098500626e-16,
   "triple_cocycle_identity_ok": true,
   "sheaf_gluing_consistency_ok": true,
   "global_algebraic_divisor_degree": 30,
   "ambient_dimension": 4,
+  "complete_intersection_codimension": 2,
+  "cycle_dimension": 2,
+  "codimension_realization_ok": true,
   "epistemic_boundaries": {
     "HODGE_MILLENNIUM_001_OPEN": true,
     "all_four_clay_millennium_problems_open": true
