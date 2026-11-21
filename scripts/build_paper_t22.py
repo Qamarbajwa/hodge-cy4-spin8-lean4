@@ -6,7 +6,7 @@ Builds Standalone Zenodo Paper T22:
 "The Analytic Non-Triviality Theorem for Schur-Tared Fredholm Divisors on Kähler Manifolds:
 Resolving the Trivial-Zero Obstruction via Heat-Kernel Index Theory and Holomorphic Rigidity"
 
-Author: Arqam, Brandenburg University of Technology (BTU) Cottbus-Senftenberg.
+Author: Qamar Munawer, Brandenburg University of Technology Cottbus-Senftenberg.
 Methodology note: "ai is being used as a tool"
 """
 
@@ -81,7 +81,7 @@ LATEX_HEADER = r"""\documentclass[11pt,a4paper]{article}
 \newtheorem{remark}[theorem]{Remark}
 """
 
-AUTHOR_BLOCK = r"""\author{Arqam \\ Brandenburg University of Technology (BTU) Cottbus-Senftenberg}
+AUTHOR_BLOCK = r"""\author{Qamar Munawer \\ Brandenburg University of Technology Cottbus-Senftenberg}
 
 \date{\today}
 """
@@ -113,8 +113,8 @@ def write_zenodo_json(folder: Path, title: str, description: str, keywords: list
         "description": description + " In this work, ai is being used as a tool to assist in formal verification, symbol auditing, and manuscript preparation.",
         "creators": [
             {
-                "name": "Arqam",
-                "affiliation": "Brandenburg University of Technology (BTU) Cottbus-Senftenberg"
+                "name": "Qamar Munawer",
+                "affiliation": "Brandenburg University of Technology Cottbus-Senftenberg"
             }
         ],
         "access_right": "open",

@@ -3,8 +3,8 @@
   "description": "Formal machine-verified Lean 4 proof and numerical probes extending Subtractive Spectral Holography to arbitrary codimension p using iterated Clifford algebras and multivariable Poincare-Lelong exactness. In this work, ai is being used as a tool to assist in formal verification, symbol auditing, and manuscript preparation.",
   "creators": [
     {
-      "name": "Arqam",
-      "affiliation": "Brandenburg University of Technology (BTU) Cottbus-Senftenberg"
+      "name": "Qamar Munawer",
+      "affiliation": "Brandenburg University of Technology Cottbus-Senftenberg"
     }
   ],
   "access_right": "open",

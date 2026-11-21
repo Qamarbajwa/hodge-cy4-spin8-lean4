@@ -3,8 +3,8 @@
   "description": "We formalize Phase C of the Hodge Master Execution Plan synthesizing the four-Rosetta quarter-projectors into an algebraic Chow-K\u00fcnneth correspondence $\\pi^4 \\in \\operatorname{CH}^4(X \\times X)_{\\mathbb{Q}}$. We prove that $\\pi^4 = q_{++} + q_{+-} + q_{-+} + q_{--}$ is an exact idempotent ($(\\pi^4)^2 = \\pi^4$) in the rational Chow ring, acting as the identity on middle cohomology classes. By the Banachiewicz reciprocal seesaw duality, the higher-dimensional Schur sine is identically locked to unity ($\\sin^2\\Theta = 1.0$), ensuring complete absence of off-diagonal leakage. Applying the correspondence directly constructs rational algebraic cycles $Z_\\zeta = (\\pi^4)_*(\\zeta)$ without referencing deformation limits, certified in Lean 4 with zero axioms. In this work, ai is being used as a tool to assist in formal verification, symbol auditing, and manuscript preparation.",
   "creators": [
     {
-      "name": "Arqam",
-      "affiliation": "Brandenburg University of Technology (BTU) Cottbus-Senftenberg"
+      "name": "Qamar Munawer",
+      "affiliation": "Brandenburg University of Technology Cottbus-Senftenberg"
     }
   ],
   "keywords": [

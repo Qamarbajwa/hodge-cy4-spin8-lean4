@@ -3,8 +3,8 @@
   "description": "We formalize Step 2 of the Hodge global closure program covering the full 426-dimensional moduli space of degree-6 Calabi-Yau fourfolds in $\\mathbb{P}^5$. Using Macaulay apolarity, the Jacobian ideal has a one-dimensional socle at degree 24. We prove that Peskine-Szpiro geometric linkage produces residual subschemes with strictly positive degree $\\deg(V_2) = d_1 \\cdot d_2 - \\deg(V_1) \\ge 1$ whenever $\\deg(V_1) < d_1 \\cdot d_2$, certifying that algebraic cycle generation never degenerates into empty schemes. Transitive Picard-Lefschetz monodromy covers every connected component of the Noether-Lefschetz locus, verified in Lean 4 with zero axioms. In this work, ai is being used as a tool to assist in formal verification, symbol auditing, and manuscript preparation.",
   "creators": [
     {
-      "name": "Arqam",
-      "affiliation": "Brandenburg University of Technology (BTU) Cottbus-Senftenberg"
+      "name": "Qamar Munawer",
+      "affiliation": "Brandenburg University of Technology Cottbus-Senftenberg"
     }
   ],
   "keywords": [

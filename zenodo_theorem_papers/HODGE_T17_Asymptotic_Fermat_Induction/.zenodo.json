@@ -3,8 +3,8 @@
   "description": "Formal machine-verified Lean 4 proof and numerical probes establishing the algebraicity of rational Hodge classes on Fermat fourfolds for all moduli m -> infinity via prime-power Galois defect bounds and AP exclusion in dimension 6. In this work, ai is being used as a tool to assist in formal verification, symbol auditing, and manuscript preparation.",
   "creators": [
     {
-      "name": "Arqam",
-      "affiliation": "Brandenburg University of Technology (BTU) Cottbus-Senftenberg"
+      "name": "Qamar Munawer",
+      "affiliation": "Brandenburg University of Technology Cottbus-Senftenberg"
     }
   ],
   "access_right": "open",

@@ -1,8 +1,8 @@
 /-
-Copyright (c) 2026 Arqam (Brandenburg University of Technology Cottbus-Senftenberg).
+Copyright (c) 2026 Qamar Munawer (Brandenburg University of Technology Cottbus-Senftenberg).
 All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
-Authors: Arqam
+Authors: Qamar Munawer
 
 Formal Lean 4 Certification of Paper T19:
 Subtractive Spectral Holography and the Fredholm Determinant Divisor

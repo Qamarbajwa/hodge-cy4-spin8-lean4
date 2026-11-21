@@ -3,8 +3,8 @@
   "description": "We analyze the primitive middle cohomology of smooth degree-6 Calabi-Yau fourfolds in $\\mathbb{P}^5$. Using the exact palindromic Poincare polynomial $P(t) = (1 + t + t^2 + t^3 + t^4)^6$, we prove that the middle degree has exact dimension 1751, which decomposes into 1325 unobstructed moving-cycle classes and 426 deformation directions. We show that Peskine-Szpiro liaison produces residual subschemes with strictly positive degree across all complete intersection degrees, formalizing the syzygy span in Lean 4 with zero axioms. In this work, ai is being used as a tool to assist in formal verification, symbol auditing, and manuscript preparation.",
   "creators": [
     {
-      "name": "Arqam",
-      "affiliation": "Brandenburg University of Technology (BTU) Cottbus-Senftenberg"
+      "name": "Qamar Munawer",
+      "affiliation": "Brandenburg University of Technology Cottbus-Senftenberg"
     }
   ],
   "keywords": [

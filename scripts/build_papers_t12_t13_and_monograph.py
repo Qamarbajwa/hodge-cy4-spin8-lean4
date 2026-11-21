@@ -7,7 +7,7 @@ Builds:
 2. Paper T13: Sextic Calabi-Yau Fourfold 1751 Syzygy Span & Liaison Coverage
 3. Unified Monograph: Compiles the updated 4-Workspace Master Monograph PDF.
 
-Author: Arqam, Brandenburg University of Technology (BTU) Cottbus-Senftenberg.
+Author: Qamar Munawer, Brandenburg University of Technology Cottbus-Senftenberg.
 Methodology phrase: "ai is being used as a tool"
 """
 
@@ -82,7 +82,7 @@ LATEX_HEADER = r"""\documentclass[11pt,a4paper]{article}
 \newtheorem{remark}[theorem]{Remark}
 """
 
-AUTHOR_BLOCK = r"""\author{Arqam \\ Brandenburg University of Technology (BTU) Cottbus-Senftenberg}
+AUTHOR_BLOCK = r"""\author{Qamar Munawer \\ Brandenburg University of Technology Cottbus-Senftenberg}
 
 \date{\today}
 """
@@ -114,8 +114,8 @@ def write_zenodo_json(folder: Path, title: str, description: str, keywords: list
         "description": description + " In this work, ai is being used as a tool to assist in formal verification, symbol auditing, and manuscript preparation.",
         "creators": [
             {
-                "name": "Arqam",
-                "affiliation": "Brandenburg University of Technology (BTU) Cottbus-Senftenberg"
+                "name": "Qamar Munawer",
+                "affiliation": "Brandenburg University of Technology Cottbus-Senftenberg"
             }
         ],
         "keywords": keywords + ["Hodge Conjecture", "Lean 4", "Formal Verification", "Calabi-Yau 4-folds"],

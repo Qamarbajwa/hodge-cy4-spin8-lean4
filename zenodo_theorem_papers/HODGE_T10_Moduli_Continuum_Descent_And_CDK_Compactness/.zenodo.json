@@ -3,8 +3,8 @@
   "description": "We formalize Step 1 of the Hodge global closure program connecting special Complex Multiplication (CM) fibers to generic non-CM varieties. We prove that horizontal Gauss-Manin parallel transport preserves the Schur polarization norm $Q_{\\text{Schur}}(t) = 1152$ and the chiral decomposition $2 Z_{\\text{CM}} = T_{\\text{ch}}$ along the one-dimensional Shimura curve. Using Bost's arithmetic inequality, we establish that the divisor slope surplus $\\Delta_{\\text{Bost}} \\ge 5.0$ enforces an unconditional upper bound on the cycle degree $D(t) \\le 5.3333$. By Cattani-Deligne-Kaplan compactness, the Hodge locus is algebraic and contains the generic fiber, verified in Lean 4 with zero axioms. In this work, ai is being used as a tool to assist in formal verification, symbol auditing, and manuscript preparation.",
   "creators": [
     {
-      "name": "Arqam",
-      "affiliation": "Brandenburg University of Technology (BTU) Cottbus-Senftenberg"
+      "name": "Qamar Munawer",
+      "affiliation": "Brandenburg University of Technology Cottbus-Senftenberg"
     }
   ],
   "keywords": [

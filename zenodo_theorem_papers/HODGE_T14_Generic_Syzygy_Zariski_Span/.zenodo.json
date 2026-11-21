@@ -3,8 +3,8 @@
   "description": "We formalize Phase A of the Hodge Master Execution Plan proving that the 1751 algebraic cycle classes span the entire primitive middle cohomology on generic non-Fermat degree-6 Calabi-Yau fourfolds in $\\mathbb{P}^5$. Using the Grothendieck residue pairing, the intersection Gram determinant $\\det \\mathcal{G}(t)$ varies as a non-zero polynomial in the 426 deformation variables. Because the determinant is strictly positive at the Fermat basepoint, the non-vanishing locus $\\{t : \\det \\mathcal{G}(t) \\ne 0\\}$ is a dense Zariski-open subset of the moduli space. Within an explicit Lipschitz safety radius $r = D_0 / (2L) > 0$, the cycles maintain full rank 1751 with zero linear dependencies, certified in Lean 4 with zero axioms. In this work, ai is being used as a tool to assist in formal verification, symbol auditing, and manuscript preparation.",
   "creators": [
     {
-      "name": "Arqam",
-      "affiliation": "Brandenburg University of Technology (BTU) Cottbus-Senftenberg"
+      "name": "Qamar Munawer",
+      "affiliation": "Brandenburg University of Technology Cottbus-Senftenberg"
     }
   ],
   "keywords": [
