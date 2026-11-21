@@ -1,0 +1,47 @@
+{
+  "title": "Constructive Hodge Spinor & Galois Matrix Audit",
+  "author": "Qamar Munawer",
+  "affiliation": "Brandenburg University of Technology Cottbus-Senftenberg",
+  "methodology": "ai is being used as a tool",
+  "status": "PASS",
+  "verified": true,
+  "epistemic_lock": {
+    "all_four_clay_millennium_problems_open": true,
+    "status": "verified-finite"
+  },
+  "metrics": {
+    "spin8_total_dimension": 70,
+    "spin8_chiral_split": [
+      35,
+      35
+    ],
+    "chiral_difference": 0,
+    "sp8_schur_floor": 1152.0,
+    "galois_orbit_records": [
+      {
+        "orbit_size_d": 2,
+        "degree_avg": 5.333333333333333,
+        "variance": 0.0,
+        "off_diagonal_cancellation": 0.0
+      },
+      {
+        "orbit_size_d": 4,
+        "degree_avg": 5.333333333333333,
+        "variance": 0.0,
+        "off_diagonal_cancellation": 0.0
+      },
+      {
+        "orbit_size_d": 8,
+        "degree_avg": 5.333333333333333,
+        "variance": 0.0,
+        "off_diagonal_cancellation": 0.0
+      },
+      {
+        "orbit_size_d": 16,
+        "degree_avg": 5.333333333333333,
+        "variance": 0.0,
+        "off_diagonal_cancellation": 0.0
+      }
+    ]
+  }
+}
