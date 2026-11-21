@@ -1,0 +1,135 @@
+{
+  "quaternary_diamond": {
+    "dim": 70,
+    "half_dim": 35,
+    "sum_error": 0.0,
+    "idempotence_error": 0.0,
+    "orthogonality_error": 0.0,
+    "j1_reconstruction_error": 0.0,
+    "j2_reconstruction_error": 0.0,
+    "j1j2_reconstruction_error": 0.0,
+    "verified": true
+  },
+  "banachiewicz_schur_seesaw": {
+    "A": 16.0,
+    "D": 1152.0,
+    "tests": [
+      {
+        "B": 0.0,
+        "S_D": 1152.0,
+        "S_A": 16.0,
+        "A_times_S_D": 18432.0,
+        "D_times_S_A": 18432.0,
+        "abs_diff_prod": 0.0,
+        "sin2_Theta_D": 1.0,
+        "sin2_Theta_A": 1.0,
+        "abs_diff_sin2": 0.0
+      },
+      {
+        "B": 1.0,
+        "S_D": 1151.9375,
+        "S_A": 15.999131944444445,
+        "A_times_S_D": 18431.0,
+        "D_times_S_A": 18431.0,
+        "abs_diff_prod": 0.0,
+        "sin2_Theta_D": 0.9999457465277778,
+        "sin2_Theta_A": 0.9999457465277778,
+        "abs_diff_sin2": 0.0
+      },
+      {
+        "B": 5.0,
+        "S_D": 1150.4375,
+        "S_A": 15.97829861111111,
+        "A_times_S_D": 18407.0,
+        "D_times_S_A": 18407.0,
+        "abs_diff_prod": 0.0,
+        "sin2_Theta_D": 0.9986436631944444,
+        "sin2_Theta_A": 0.9986436631944444,
+        "abs_diff_sin2": 0.0
+      },
+      {
+        "B": 10.0,
+        "S_D": 1145.75,
+        "S_A": 15.913194444444445,
+        "A_times_S_D": 18332.0,
+        "D_times_S_A": 18332.0,
+        "abs_diff_prod": 0.0,
+        "sin2_Theta_D": 0.9945746527777778,
+        "sin2_Theta_A": 0.9945746527777778,
+        "abs_diff_sin2": 0.0
+      },
+      {
+        "B": 100.0,
+        "S_D": 527.0,
+        "S_A": 7.319444444444445,
+        "A_times_S_D": 8432.0,
+        "D_times_S_A": 8432.0,
+        "abs_diff_prod": 0.0,
+        "sin2_Theta_D": 0.4574652777777778,
+        "sin2_Theta_A": 0.4574652777777778,
+        "abs_diff_sin2": 0.0
+      }
+    ],
+    "cayley_calibration": {
+      "B": 0.0,
+      "S_D": 1152.0,
+      "S_A": 16.0,
+      "sin2_Theta": 1.0,
+      "schur_floor": 1152
+    },
+    "verified": true
+  },
+  "hard_lefschetz_hierarchy": {
+    "dimensions_verified": [
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "slices": [
+      {
+        "dimension_n": 4,
+        "slicing_steps_to_4fold": 0,
+        "weak_lefschetz_isomorphism_range": "k <= 2",
+        "primitive_middle_injection": "H^4_prim(X^4) -> H^4(Y^4)",
+        "cayley_calibration_volume": 14.0,
+        "hard_lefschetz_isomorphism": true
+      },
+      {
+        "dimension_n": 5,
+        "slicing_steps_to_4fold": 1,
+        "weak_lefschetz_isomorphism_range": "k <= 3",
+        "primitive_middle_injection": "H^5_prim(X^5) -> H^4(Y^4)",
+        "cayley_calibration_volume": 14.0,
+        "hard_lefschetz_isomorphism": true
+      },
+      {
+        "dimension_n": 6,
+        "slicing_steps_to_4fold": 2,
+        "weak_lefschetz_isomorphism_range": "k <= 4",
+        "primitive_middle_injection": "H^6_prim(X^6) -> H^4(Y^4)",
+        "cayley_calibration_volume": 14.0,
+        "hard_lefschetz_isomorphism": true
+      },
+      {
+        "dimension_n": 7,
+        "slicing_steps_to_4fold": 3,
+        "weak_lefschetz_isomorphism_range": "k <= 5",
+        "primitive_middle_injection": "H^7_prim(X^7) -> H^4(Y^4)",
+        "cayley_calibration_volume": 14.0,
+        "hard_lefschetz_isomorphism": true
+      },
+      {
+        "dimension_n": 8,
+        "slicing_steps_to_4fold": 4,
+        "weak_lefschetz_isomorphism_range": "k <= 6",
+        "primitive_middle_injection": "H^8_prim(X^8) -> H^4(Y^4)",
+        "cayley_calibration_volume": 14.0,
+        "hard_lefschetz_isomorphism": true
+      }
+    ],
+    "status": "PASS"
+  },
+  "all_passed": true
+}

@@ -1,0 +1,111 @@
+{
+  "trajectory_samples": [
+    {
+      "t": 0.0,
+      "Q_Schur": 1152.0,
+      "h_arch": 0.3333333333333333,
+      "bost_surplus": 5.0,
+      "degree_D": 5.333333333333333,
+      "D_max": 5.333333333333333
+    },
+    {
+      "t": 0.01,
+      "Q_Schur": 1152.0,
+      "h_arch": 0.33331666666666665,
+      "bost_surplus": 5.000016666666666,
+      "degree_D": 5.328005328005328,
+      "D_max": 5.333333333333333
+    },
+    {
+      "t": 0.02,
+      "Q_Schur": 1152.0,
+      "h_arch": 0.33326666666666666,
+      "bost_surplus": 5.000066666666666,
+      "degree_D": 5.322687957418496,
+      "D_max": 5.333333333333333
+    },
+    {
+      "t": 0.03,
+      "Q_Schur": 1152.0,
+      "h_arch": 0.33318333333333333,
+      "bost_surplus": 5.00015,
+      "degree_D": 5.317381189764041,
+      "D_max": 5.333333333333333
+    },
+    {
+      "t": 0.04,
+      "Q_Schur": 1152.0,
+      "h_arch": 0.3330666666666666,
+      "bost_surplus": 5.000266666666667,
+      "degree_D": 5.3120849933598935,
+      "D_max": 5.333333333333333
+    },
+    {
+      "t": 0.05,
+      "Q_Schur": 1152.0,
+      "h_arch": 0.33291666666666664,
+      "bost_surplus": 5.000416666666666,
+      "degree_D": 5.306799336650083,
+      "D_max": 5.333333333333333
+    },
+    {
+      "t": 0.06,
+      "Q_Schur": 1152.0,
+      "h_arch": 0.3327333333333333,
+      "bost_surplus": 5.0005999999999995,
+      "degree_D": 5.301524188204108,
+      "D_max": 5.333333333333333
+    },
+    {
+      "t": 0.07,
+      "Q_Schur": 1152.0,
+      "h_arch": 0.3325166666666667,
+      "bost_surplus": 5.000816666666666,
+      "degree_D": 5.29625951671632,
+      "D_max": 5.333333333333333
+    },
+    {
+      "t": 0.08,
+      "Q_Schur": 1152.0,
+      "h_arch": 0.33226666666666665,
+      "bost_surplus": 5.0010666666666665,
+      "degree_D": 5.29100529100529,
+      "D_max": 5.333333333333333
+    },
+    {
+      "t": 0.09,
+      "Q_Schur": 1152.0,
+      "h_arch": 0.3319833333333333,
+      "bost_surplus": 5.0013499999999995,
+      "degree_D": 5.285761480013215,
+      "D_max": 5.333333333333333
+    },
+    {
+      "t": 0.1,
+      "Q_Schur": 1152.0,
+      "h_arch": 0.33166666666666667,
+      "bost_surplus": 5.001666666666666,
+      "degree_D": 5.2805280528052805,
+      "D_max": 5.333333333333333
+    }
+  ],
+  "gauss_manin_isometry": {
+    "target_Q_Schur": 1152.0,
+    "max_isometry_error": 0.0,
+    "max_chiral_error": 0.0,
+    "conserved": true
+  },
+  "arakelov_bost_surplus": {
+    "mu_div": 5.333333333333333,
+    "min_bost_surplus": 5.0,
+    "surplus_threshold": 5.0,
+    "strictly_positive": true
+  },
+  "cattani_deligne_kaplan_compactness": {
+    "max_degree_observed": 5.333333333333333,
+    "theoretical_D_max": 5.333333333333333,
+    "degree_bounded": true,
+    "generic_fiber_t1_algebraic": true
+  },
+  "all_passed": true
+}

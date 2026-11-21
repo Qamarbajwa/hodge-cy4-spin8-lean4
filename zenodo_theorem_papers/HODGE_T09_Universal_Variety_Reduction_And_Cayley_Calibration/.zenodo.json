@@ -1,0 +1,25 @@
+{
+  "title": "Universal Variety Reduction to Middle Cohomology, Cayley Calibration Orthogonality, and the Quaternary Diamond Projector Split",
+  "description": "We formalize Step 3 of the Hodge global closure program for arbitrary smooth projective varieties. Using the classical Hard Lefschetz slicing theorem, primitive Hodge classes on any n-dimensional smooth variety reduce inductively to the middle cohomology of complete intersection fourfolds. We prove that the Cayley 4-form calibration eliminates cross-coupling terms, locking the higher-dimensional Schur sine to unity, while the four-Rosetta quaternary diamond projectors form an exact orthogonal idempotent partition of unity. All proofs are certified in Lean 4 with zero sorry and zero custom axioms. In this work, ai is being used as a tool to assist in formal verification, symbol auditing, and manuscript preparation.",
+  "creators": [
+    {
+      "name": "Arqam",
+      "affiliation": "Brandenburg University of Technology (BTU) Cottbus-Senftenberg"
+    }
+  ],
+  "keywords": [
+    "Universal Variety Reduction",
+    "Hard Lefschetz Theorem",
+    "Cayley Calibration",
+    "Quaternary Diamond",
+    "Banachiewicz Seesaw",
+    "Hodge Conjecture",
+    "Lean 4",
+    "Formal Verification",
+    "Calabi-Yau 4-folds"
+  ],
+  "license": "CC-BY-4.0",
+  "upload_type": "publication",
+  "publication_type": "article",
+  "access_right": "open"
+}

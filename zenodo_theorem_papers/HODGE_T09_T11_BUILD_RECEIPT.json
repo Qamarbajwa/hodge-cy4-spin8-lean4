@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "papers_built": 3,
+  "papers": [
+    {
+      "name": "HODGE_T09_Universal_Variety_Reduction_And_Cayley_Calibration_Paper.pdf",
+      "size_bytes": 271362,
+      "path": "D:\\Comfy UI\\hodge conjecture\\zenodo_theorem_papers\\HODGE_T09_Universal_Variety_Reduction_And_Cayley_Calibration\\HODGE_T09_Universal_Variety_Reduction_And_Cayley_Calibration_Paper.pdf"
+    },
+    {
+      "name": "HODGE_T10_Moduli_Continuum_Descent_And_CDK_Compactness_Paper.pdf",
+      "size_bytes": 332517,
+      "path": "D:\\Comfy UI\\hodge conjecture\\zenodo_theorem_papers\\HODGE_T10_Moduli_Continuum_Descent_And_CDK_Compactness\\HODGE_T10_Moduli_Continuum_Descent_And_CDK_Compactness_Paper.pdf"
+    },
+    {
+      "name": "HODGE_T11_Noether_Lefschetz_426_Coverage_And_Liaison_Paper.pdf",
+      "size_bytes": 299301,
+      "path": "D:\\Comfy UI\\hodge conjecture\\zenodo_theorem_papers\\HODGE_T11_Noether_Lefschetz_426_Coverage_And_Liaison\\HODGE_T11_Noether_Lefschetz_426_Coverage_And_Liaison_Paper.pdf"
+    }
+  ]
+}
