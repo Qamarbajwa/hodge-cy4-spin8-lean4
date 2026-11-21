@@ -1,0 +1,28 @@
+{
+  "title": "Topological Torsion Immunity and the Mathlib4 Sheaf Gate: Why Integral Counterexamples Cannot Obstruct the Rational Hodge Conjecture",
+  "description": "Formal machine-verified Lean 4 proof and adversarial sieve establishing that the rational Hodge conjecture is immune to topological torsion obstructions from Atiyah-Hirzebruch, Kollar, Totaro, and Voisin. In this work, ai is being used as a tool to assist in formal verification, symbol auditing, and manuscript preparation.",
+  "creators": [
+    {
+      "name": "Arqam",
+      "affiliation": "Brandenburg University of Technology (BTU) Cottbus-Senftenberg"
+    }
+  ],
+  "access_right": "open",
+  "license": "cc-by-4.0",
+  "keywords": [
+    "Hodge Conjecture",
+    "Topological Torsion",
+    "Lean 4",
+    "Atiyah-Hirzebruch",
+    "Lefschetz (1,1)",
+    "Steenrod Squares"
+  ],
+  "communities": [
+    {
+      "identifier": "math"
+    },
+    {
+      "identifier": "algebraic-geometry"
+    }
+  ]
+}

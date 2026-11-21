@@ -1,0 +1,15 @@
+{
+  "probe_name": "probe_asymptotic_fermat_induction",
+  "verified": true,
+  "galois_defect_all_p_ge_7_ok": true,
+  "ap_coordinate_exclusion_in_c6_ok": true,
+  "conical_ladder_positivity_ok": true,
+  "composite_moduli_tested": 12,
+  "primes_tested": 20,
+  "min_galois_defect_p_ge_7": 5.142857,
+  "coordinate_dim": 6,
+  "epistemic_boundaries": {
+    "HODGE_MILLENNIUM_001_OPEN": true,
+    "all_four_clay_millennium_problems_open": true
+  }
+}
