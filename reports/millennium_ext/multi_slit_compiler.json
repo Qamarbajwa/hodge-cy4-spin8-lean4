@@ -1,0 +1,34 @@
+{
+  "probe_name": "probe_multi_slit_compiler",
+  "verified": true,
+  "sorkin_3slit_null_identity_ok": true,
+  "sorkin_i3_residual": 0.0,
+  "composite_b6_grating": {
+    "modulus": 6,
+    "leakage": 4.810844794340266e-16,
+    "surviving_polynomial_terms": {
+      "z^0": 1.0,
+      "z^6": 0.05555556,
+      "z^12": 0.00016397
+    }
+  },
+  "composite_b12_grating": {
+    "modulus": 12,
+    "leakage": 4.85362524926156e-16,
+    "surviving_polynomial_terms": {
+      "z^0": 1.0,
+      "z^12": 0.00016397
+    }
+  },
+  "lefschetz_slicing_induction": {
+    "ambient_dim": 6,
+    "target_dim": 4,
+    "slits_applied": 2,
+    "primitive_cohomology_rank_preserved": 1751,
+    "passed": true
+  },
+  "epistemic_boundaries": {
+    "HODGE_MILLENNIUM_001_OPEN": true,
+    "all_four_clay_millennium_problems_open": true
+  }
+}
