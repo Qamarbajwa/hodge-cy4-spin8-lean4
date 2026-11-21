@@ -1,0 +1,24 @@
+{
+  "probe_name": "probe_singular_current_rectification",
+  "verified": true,
+  "ambient_dimension": 4,
+  "cycle_codimension": 2,
+  "cycle_dimension": 2,
+  "singular_stratum_dimension": 1,
+  "dimension_floor_ok": true,
+  "epsilon_boundary_masses": [
+    0.0001,
+    1e-08,
+    1e-12,
+    1.0000000000000001e-16
+  ],
+  "boundary_mass_decay_ok": true,
+  "hironaka_exceptional_pushforward_norm": 0.0,
+  "exceptional_pushforward_zero_ok": true,
+  "cohomology_difference": 0.0,
+  "rectified_cohomology_match_ok": true,
+  "epistemic_boundaries": {
+    "HODGE_MILLENNIUM_001_OPEN": true,
+    "all_four_clay_millennium_problems_open": true
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "probe_name": "probe_kodaira_cocycle_patching",
+  "verified": true,
+  "min_twist_degree_k": 5,
+  "curvature_floors_tested": [
+    4.5,
+    17.0,
+    29.5
+  ],
+  "kodaira_curvature_positivity_ok": true,
+  "max_cocycle_deviation": 2.220446049250313e-16,
+  "triple_cocycle_identity_ok": true,
+  "sheaf_gluing_consistency_ok": true,
+  "global_algebraic_divisor_degree": 30,
+  "ambient_dimension": 4,
+  "epistemic_boundaries": {
+    "HODGE_MILLENNIUM_001_OPEN": true,
+    "all_four_clay_millennium_problems_open": true
+  }
+}

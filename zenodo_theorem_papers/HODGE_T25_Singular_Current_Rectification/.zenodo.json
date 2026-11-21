@@ -1,0 +1,28 @@
+{
+  "title": "Current Rectification and Singular Locus Absorption on K\u00e4hler Manifolds: Resolving the Singular Intersection Obstruction via Hironaka Desingularization and Federer-Fleming Currents",
+  "description": "Formal Lean 4 machine-certified proof and numerical verification of the Singular Current Rectification Theorem, establishing that codimension >= p+1 singular loci carry zero current boundary mass and exceptional divisors vanish under pushforward. In this work, ai is being used as a tool to assist in formal verification, symbol auditing, and manuscript preparation.",
+  "creators": [
+    {
+      "name": "Arqam",
+      "affiliation": "Brandenburg University of Technology (BTU) Cottbus-Senftenberg"
+    }
+  ],
+  "access_right": "open",
+  "license": "cc-by-4.0",
+  "keywords": [
+    "Hodge Conjecture",
+    "Current Rectification",
+    "Hironaka Desingularization",
+    "Federer-Fleming",
+    "Lean 4",
+    "Poincare-Lelong"
+  ],
+  "communities": [
+    {
+      "identifier": "math"
+    },
+    {
+      "identifier": "algebraic-geometry"
+    }
+  ]
+}

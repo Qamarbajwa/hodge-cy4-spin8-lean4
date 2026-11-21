@@ -1,0 +1,17 @@
+{
+  "probe_name": "probe_galois_arithmetic_cycle",
+  "verified": true,
+  "galois_orbit_degree_d": 4,
+  "max_imaginary_defect": 4.996003610813204e-16,
+  "polynomial_rationality_ok": true,
+  "arakelov_arithmetic_height": 0.20118,
+  "arakelov_height_nonneg_ok": true,
+  "target_hodge_norm": 1152.0,
+  "reconstructed_norm": 1152.0,
+  "reconstruction_error": 0.0,
+  "rational_reconstruction_ok": true,
+  "epistemic_boundaries": {
+    "HODGE_MILLENNIUM_001_OPEN": true,
+    "all_four_clay_millennium_problems_open": true
+  }
+}
