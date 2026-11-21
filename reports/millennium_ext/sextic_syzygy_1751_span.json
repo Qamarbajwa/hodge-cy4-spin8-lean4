@@ -1,0 +1,112 @@
+{
+  "jacobian_poincare_polynomial": {
+    "socle_degree": 24,
+    "dim_R0": 1,
+    "dim_R6": 426,
+    "dim_R12": 1751,
+    "dim_R24": 1,
+    "target_R6": 426,
+    "target_R12": 1751,
+    "is_palindromic": true,
+    "verified": true
+  },
+  "ivhs_rank_partition": {
+    "first_order_rank": 19,
+    "moving_plane_kernel": 407,
+    "total_deformation": 426,
+    "verified": true
+  },
+  "middle_cohomology_decomposition": {
+    "unobstructed_moving_cycles": 1325,
+    "deformation_directions": 426,
+    "total_primitive_middle": 1751,
+    "verified": true
+  },
+  "liaison_positivity": {
+    "samples_tested": 10,
+    "all_positive": true,
+    "samples": [
+      {
+        "d1": 2,
+        "d2": 2,
+        "D_CI": 4,
+        "deg_V1": 2,
+        "deg_V2": 2,
+        "positive": true
+      },
+      {
+        "d1": 2,
+        "d2": 3,
+        "D_CI": 6,
+        "deg_V1": 3,
+        "deg_V2": 3,
+        "positive": true
+      },
+      {
+        "d1": 3,
+        "d2": 3,
+        "D_CI": 9,
+        "deg_V1": 4,
+        "deg_V2": 5,
+        "positive": true
+      },
+      {
+        "d1": 3,
+        "d2": 4,
+        "D_CI": 12,
+        "deg_V1": 6,
+        "deg_V2": 6,
+        "positive": true
+      },
+      {
+        "d1": 4,
+        "d2": 4,
+        "D_CI": 16,
+        "deg_V1": 8,
+        "deg_V2": 8,
+        "positive": true
+      },
+      {
+        "d1": 4,
+        "d2": 5,
+        "D_CI": 20,
+        "deg_V1": 10,
+        "deg_V2": 10,
+        "positive": true
+      },
+      {
+        "d1": 5,
+        "d2": 5,
+        "D_CI": 25,
+        "deg_V1": 12,
+        "deg_V2": 13,
+        "positive": true
+      },
+      {
+        "d1": 5,
+        "d2": 6,
+        "D_CI": 30,
+        "deg_V1": 15,
+        "deg_V2": 15,
+        "positive": true
+      },
+      {
+        "d1": 6,
+        "d2": 6,
+        "D_CI": 36,
+        "deg_V1": 18,
+        "deg_V2": 18,
+        "positive": true
+      },
+      {
+        "d1": 6,
+        "d2": 7,
+        "D_CI": 42,
+        "deg_V1": 21,
+        "deg_V2": 21,
+        "positive": true
+      }
+    ]
+  },
+  "all_passed": true
+}

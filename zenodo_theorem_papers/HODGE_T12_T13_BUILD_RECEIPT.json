@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "papers_built": 2,
+  "papers": [
+    {
+      "name": "HODGE_T12_Cattani_Deligne_Kaplan_Hodge_Loci_Algebraicity_Paper.pdf",
+      "size_bytes": 263087,
+      "path": "D:\\Comfy UI\\hodge conjecture\\zenodo_theorem_papers\\HODGE_T12_Cattani_Deligne_Kaplan_Hodge_Loci_Algebraicity\\HODGE_T12_Cattani_Deligne_Kaplan_Hodge_Loci_Algebraicity_Paper.pdf"
+    },
+    {
+      "name": "HODGE_T13_Sextic_Calabi_Yau_1751_Syzygy_Span_Paper.pdf",
+      "size_bytes": 287443,
+      "path": "D:\\Comfy UI\\hodge conjecture\\zenodo_theorem_papers\\HODGE_T13_Sextic_Calabi_Yau_1751_Syzygy_Span\\HODGE_T13_Sextic_Calabi_Yau_1751_Syzygy_Span_Paper.pdf"
+    }
+  ]
+}

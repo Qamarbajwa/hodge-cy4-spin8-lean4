@@ -1,0 +1,25 @@
+{
+  "title": "Cattani-Deligne-Kaplan Foundations: Griffiths Transversality, Nilpotent Monodromy Annihilation, and Arithmetic Lattice Finiteness",
+  "description": "We formalize the core geometric and algebraic foundations of the Cattani-Deligne-Kaplan (CDK) theorem for variations of polarized Hodge structure. We prove that the tangent space to the Hodge locus is the exact kernel of the horizontal covariant derivative, that monodromy invariance under unipotent boundary monodromy is equivalent to annihilation by the nilpotent logarithm, and that bounded intersection degrees trap the rational cycle classes in a finite discrete set of components. All proofs are machine-checked in Lean 4 with zero axioms. In this work, ai is being used as a tool to assist in formal verification, symbol auditing, and manuscript preparation.",
+  "creators": [
+    {
+      "name": "Arqam",
+      "affiliation": "Brandenburg University of Technology (BTU) Cottbus-Senftenberg"
+    }
+  ],
+  "keywords": [
+    "Cattani-Deligne-Kaplan",
+    "Hodge Locus",
+    "Griffiths Transversality",
+    "Nilpotent Monodromy",
+    "Arithmetic Finiteness",
+    "Hodge Conjecture",
+    "Lean 4",
+    "Formal Verification",
+    "Calabi-Yau 4-folds"
+  ],
+  "license": "CC-BY-4.0",
+  "upload_type": "publication",
+  "publication_type": "article",
+  "access_right": "open"
+}
