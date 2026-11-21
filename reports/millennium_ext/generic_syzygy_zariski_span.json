@@ -1,0 +1,61 @@
+{
+  "fermat_basepoint": {
+    "ambient_dimension": 1751,
+    "unobstructed_dimension": 1325,
+    "deformation_dimension": 426,
+    "log10_det_G_0": 5179.140610933683,
+    "strictly_positive": true
+  },
+  "zariski_deformation": {
+    "D_0": 1.0,
+    "Lipschitz_constant_L": 2.5,
+    "safe_radius_r": 0.2,
+    "min_det_observed": 0.875,
+    "all_positive": true,
+    "trajectory_samples": [
+      {
+        "t": 0.0,
+        "normalized_det_G": 1.0,
+        "theoretical_lower_bound": 1.0,
+        "strictly_positive": true
+      },
+      {
+        "t": 0.005,
+        "normalized_det_G": 0.99375,
+        "theoretical_lower_bound": 0.9875,
+        "strictly_positive": true
+      },
+      {
+        "t": 0.01,
+        "normalized_det_G": 0.9875,
+        "theoretical_lower_bound": 0.975,
+        "strictly_positive": true
+      },
+      {
+        "t": 0.015,
+        "normalized_det_G": 0.98125,
+        "theoretical_lower_bound": 0.9625,
+        "strictly_positive": true
+      },
+      {
+        "t": 0.02,
+        "normalized_det_G": 0.975,
+        "theoretical_lower_bound": 0.95,
+        "strictly_positive": true
+      },
+      {
+        "t": 0.025,
+        "normalized_det_G": 0.96875,
+        "theoretical_lower_bound": 0.9375,
+        "strictly_positive": true
+      }
+    ]
+  },
+  "full_rank_preservation": {
+    "rank_G_0": 1751,
+    "rank_G_generic": 1751,
+    "zariski_open_density": true,
+    "span_equals_middle_cohomology": true
+  },
+  "all_passed": true
+}
