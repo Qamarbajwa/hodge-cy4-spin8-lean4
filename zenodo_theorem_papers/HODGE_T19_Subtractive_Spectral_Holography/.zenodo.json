@@ -1,0 +1,28 @@
+{
+  "title": "Subtractive Spectral Holography and the Fredholm Determinant Divisor: Constructing Algebraic Cycles via Schur-Tared Dirac Operators",
+  "description": "Formal machine-verified Lean 4 proof and numerical probes introducing Subtractive Spectral Holography to realize higher-codimension algebraic cycles as the zero locus of Schur-tared Fredholm determinants. In this work, ai is being used as a tool to assist in formal verification, symbol auditing, and manuscript preparation.",
+  "creators": [
+    {
+      "name": "Arqam",
+      "affiliation": "Brandenburg University of Technology (BTU) Cottbus-Senftenberg"
+    }
+  ],
+  "access_right": "open",
+  "license": "cc-by-4.0",
+  "keywords": [
+    "Hodge Conjecture",
+    "Fredholm Determinants",
+    "Lean 4",
+    "Schur Complement",
+    "Spectral Holography",
+    "Dirac Operators"
+  ],
+  "communities": [
+    {
+      "identifier": "math"
+    },
+    {
+      "identifier": "algebraic-geometry"
+    }
+  ]
+}

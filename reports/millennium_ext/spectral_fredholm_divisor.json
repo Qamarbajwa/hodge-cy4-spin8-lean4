@@ -1,0 +1,53 @@
+{
+  "probe_name": "probe_spectral_fredholm_divisor",
+  "verified": true,
+  "schur_tare_container_subtraction_ok": true,
+  "schur_eigenvalue_anomaly": 24.0,
+  "rational_fredholm_polynomial_rigidity_ok": true,
+  "rational_cases_tested": 3,
+  "max_leakage_observed": 3.930227312078039e-16,
+  "test_cases": [
+    {
+      "case": "Rational q = 1/3",
+      "period": 0.333333,
+      "rational": true,
+      "cyclic_modulus_b": 3,
+      "off_lattice_leakage": 3.930227312078039e-16,
+      "is_pure_algebraic_polynomial": true,
+      "surviving_polynomial_terms": {
+        "z^0": 1.0,
+        "z^3": 0.33333333,
+        "z^6": 0.05555556
+      }
+    },
+    {
+      "case": "Rational q = 2/5",
+      "period": 0.4,
+      "rational": true,
+      "cyclic_modulus_b": 5,
+      "off_lattice_leakage": 1.5423727186761813e-16,
+      "is_pure_algebraic_polynomial": true,
+      "surviving_polynomial_terms": {
+        "z^0": 1.0,
+        "z^5": 0.11666667
+      }
+    },
+    {
+      "case": "Rational q = 1/4",
+      "period": 0.25,
+      "rational": true,
+      "cyclic_modulus_b": 4,
+      "off_lattice_leakage": 1.1788580794310092e-16,
+      "is_pure_algebraic_polynomial": true,
+      "surviving_polynomial_terms": {
+        "z^0": 1.0,
+        "z^4": 0.125,
+        "z^8": 0.00885417
+      }
+    }
+  ],
+  "epistemic_boundaries": {
+    "HODGE_MILLENNIUM_001_OPEN": true,
+    "all_four_clay_millennium_problems_open": true
+  }
+}
