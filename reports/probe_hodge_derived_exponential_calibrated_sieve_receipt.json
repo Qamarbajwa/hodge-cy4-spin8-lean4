@@ -1,0 +1,24 @@
+{
+  "probe": "probe_hodge_derived_exponential_calibrated_sieve",
+  "verified": true,
+  "status": "PASS",
+  "timestamp": "2026-11-22 06:59:45",
+  "author": "Qamar Munawer",
+  "affiliation": "Brandenburg University of Technology Cottbus-Senftenberg",
+  "methodology": "ai is being used as a tool",
+  "epistemic_lock": {
+    "hodge_clay_millennium_open": true,
+    "status": "verified-finite",
+    "open_horizon_lock": "STRICTLY OPEN"
+  },
+  "results": {
+    "curvature_norm_sq": 68.0,
+    "min_schur_tare": 89.25,
+    "min_period_det": 4284.0,
+    "pfaffian": 65.45227268781429,
+    "spectral_gap_lambda_1": 4.0,
+    "final_defect_energy": 2.061153622438558e-08,
+    "conserved_integer_degree": 12,
+    "elapsed_seconds": 0.003
+  }
+}
