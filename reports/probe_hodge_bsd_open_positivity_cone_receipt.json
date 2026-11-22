@@ -1,0 +1,28 @@
+{
+  "probe": "probe_hodge_bsd_open_positivity_cone",
+  "verified": true,
+  "status": "PASS",
+  "timestamp": "2026-11-22 07:15:30",
+  "author": "Qamar Munawer",
+  "affiliation": "Brandenburg University of Technology Cottbus-Senftenberg",
+  "methodology": "ai is being used as a tool",
+  "epistemic_lock": {
+    "hodge_clay_millennium_open": true,
+    "bsd_clay_millennium_open": true,
+    "status": "verified-finite",
+    "open_horizon_lock": "STRICTLY OPEN"
+  },
+  "results": {
+    "n_trials": 10000,
+    "hodge_open_cone_trials_passed": 10000,
+    "min_perturbed_hodge_det": 34.530232014046504,
+    "bsd_open_cone_trials_passed": 10000,
+    "min_perturbed_bsd_regulator": 6.594502773225748,
+    "dimensional_elevator_passed": 1000,
+    "elevator_scale_factor": 12.0,
+    "max_elevator_drift": 1.7763568394002505e-15,
+    "pfaffian_square_trials_passed": 10000,
+    "max_pfaffian_error": 7.450580596923828e-09,
+    "elapsed_seconds": 0.319
+  }
+}
