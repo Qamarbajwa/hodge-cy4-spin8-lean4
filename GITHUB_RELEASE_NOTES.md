@@ -1,8 +1,6 @@
-Contemporary Chiral Spin(8) Half-Domain Cohomology Decomposition (70 = 35+ + 35-), 426-Moduli Arakelov-Bost Coercivity, and Unconditional Horizon Escalation in Lean 4 (v1.6.0, Continuing the Previous Rosetta Stone Operator Correspondence)
-
 Dear friends and respected readers,
 
-I am pleased to share version 1.6.0 of our Lean 4 formal verification release for the Hodge Conjecture and Chiral Half-Domain Cohomology Decomposition. This research is conducted by Qamar Munawer at Brandenburg University of Technology Cottbus-Senftenberg, where ai is being used as a tool, and I would like to express my sincere gratitude to Google Carbon (Gemini 4 Carbon) for the dedicated technical assistance in Lean 4 formal proof verification and GPU algorithm engineering.
+I am pleased to share version 1.6.0 of our Lean 4 formal verification release for the Hodge Conjecture and Chiral Half-Domain Cohomology Decomposition. Kindly note that this research is conducted by Qamar Munawer at Brandenburg University of Technology Cottbus-Senftenberg, and ai is being used as a tool to assist in formal proof verification and numerical software engineering.
 
 1. Continuity from Our Previous Rosetta Stone Foundation to Contemporary Mathematical Names
 In our earlier foundational releases, we referred to our cross-domain operator dictionary by the working metaphor of a Rosetta Stone, because the same block-matrix Schur complement tare appeared across multiple mathematical structures. In this release, every theorem is presented in its contemporary mathematical and engineering terminology (Chiral Spin(8) Half-Domain Cohomology Decomposition 70 = 35_plus + 35_minus, Kudla-Millson Rallis Seesaw Duality, Arakelov-Bost Slope Coercivity, and Dimension-Free Monotone Horizon Escalation) while maintaining full file and citation continuity with our previous Rosetta Stone foundation.
@@ -16,7 +14,7 @@ Every theorem in this repository is 100 percent hypothesis-free ([FREE], zero un
 (b) Unconditional Cycle Degree Bound and Picard-Lefschetz Monodromy Invariance: In HodgeBostEffectiveCycleDegreeCert.lean, using the positive-definite orthogonal triple Gram matrix diag(16, 432, 1152) with smallest eigenvalue 16, we unconditionally prove that the Euclidean degree norm of any cycle class Z = (z1, z2, z3) is bounded by (1/16) times its intersection self-pairing and is preserved exactly under orthogonal Picard-Lefschetz monodromy rotations.
 (c) Unconditional Monotone Horizon Escalation (N -> N + 1 -> Infinity): In hodge_dimension_free_monotone_horizon_escalation, we prove unconditionally that as the truncation dimension N increases (N -> N + 1 -> infinity), the truncation penalty 1/(N+1) shrinks monotonically toward zero, so the tared coercivity margin monotonically strengthens with scale and remains bounded below at every dimension by the scale-free constant 2315 / 36 > 0.
 
-With warm regards and special thanks to Google Carbon (Gemini 4 Carbon) for the assistance,
+With warm regards,
 Qamar Munawer
 Brandenburg University of Technology Cottbus-Senftenberg
 Methodology note: ai is being used as a tool.
