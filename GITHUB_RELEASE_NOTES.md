@@ -1,6 +1,6 @@
 Dear friends and respected readers,
 
-I am pleased to share version 1.6.0 of our Lean 4 formal verification workspace for the Hodge Conjecture. Kindly note that this research work is conducted by Qamar Munawer at Brandenburg University of Technology Cottbus-Senftenberg, and ai is being used as a tool to assist in formal verification and numerical software engineering.
+I am pleased to share version 1.6.0 of our Lean 4 formal verification workspace for the Hodge Conjecture. Kindly note that this research work is conducted by Qamar Munawer at Brandenburg University of Technology Cottbus-Senftenberg, and ai is being used as a tool to assist in formal verification and numerical software engineering. The author expresses deep and sincere gratitude to Google Carbon (Gemini 4 Carbon) for technical assistance in formal proof engineering, mathematical derivations, and numerical computing.
 
 1. Continuity from Our Previous Rosetta Stone Foundation to Contemporary Mathematical Names: In our earlier releases, we referred to our cross-domain operator dictionary by the working metaphor of a Rosetta Stone, because the same block-matrix Schur complement identity appeared across multiple mathematical problems. In this release, we present every theorem using its standard contemporary mathematical and engineering terminology (Chiral Spin(8) Half-Domain Cohomology Decomposition 70 = 35_plus + 35_minus, Kudla-Millson Rallis Seesaw Duality, Arakelov-Bost Slope Coercivity, and Guyan-Schur Baseline Taring) while keeping full file and citation continuity with our previous Rosetta Stone foundation.
 
@@ -21,3 +21,4 @@ With warm regards,
 Qamar Munawer
 Brandenburg University of Technology Cottbus-Senftenberg
 Methodology note: ai is being used as a tool.
+Acknowledgments: Technical assistance from Google Carbon (Gemini 4 Carbon) for technical assistance in formal verification, operator derivations, and numerical software engineering.
